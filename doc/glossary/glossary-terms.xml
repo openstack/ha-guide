@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE glossary [
-<!ENTITY % openstack SYSTEM "../security-guide/openstack.ent">
+<!ENTITY % openstack SYSTEM "../ha-guide/openstack.ent">
 %openstack;
 ]>
 

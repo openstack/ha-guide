@@ -80,10 +80,10 @@
     </revhistory>
     </info>
 
-  <xi:include href="../common/ch_preface.xml"/>
+  <xi:include href="http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/ch_preface.xml"/>
   <xi:include href="ch_intro.xml"/>
   <xi:include href="part_active_passive.xml"/>
   <xi:include href="part_active_active.xml"/>
-  <xi:include href="../common/app_support.xml"/>
+  <xi:include href="http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/app_support.xml"/>
 
 </book>
