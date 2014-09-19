@@ -4,17 +4,15 @@
   xmlns:xlink="http://www.w3.org/1999/xlink"
   version="5.0"
   xml:id="bk-ha-guide">
-
-    <title>OpenStack High Availability Guide</title>
-    <info>
+  <title>OpenStack High Availability Guide</title>
+  <info>
     <author>
       <personname>
-          <firstname>Florian</firstname>
-          <surname>Haas</surname>
+        <firstname/>
+        <surname/>
       </personname>
-      <email>florian@hastexo.com</email>
       <affiliation>
-          <orgname>hastexo</orgname>
+        <orgname>OpenStack Contributors</orgname>
       </affiliation>
     </author>
     <copyright>
@@ -28,12 +26,12 @@
     <pubdate/>
     <legalnotice role="apache2">
       <annotation>
-          <remark>Copyright details are filled in by the template.</remark>
+        <remark>Copyright details are filled in by the template.</remark>
       </annotation>
     </legalnotice>
     <abstract>
-      <para>This guide describes how to install,
-              configure, and manage OpenStack for high availability.</para>
+      <para>This guide describes how to install, configure, and manage
+        OpenStack for high availability.</para>
     </abstract>
     <revhistory>
       <revision>
@@ -47,43 +45,41 @@
           </revdescription>
       </revision>
       <revision>
-          <date>2014-04-17</date>
-          <revdescription>
-            <itemizedlist spacing="compact">
-              <listitem>
-                <para>Minor cleanup of typos, otherwise no
-                                  major revisions for Icehouse release.</para>
-              </listitem>
-            </itemizedlist>
-          </revdescription>
+        <date>2014-04-17</date>
+        <revdescription>
+          <itemizedlist spacing="compact">
+            <listitem>
+              <para>Minor cleanup of typos, otherwise no major revisions for
+                Icehouse release.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
       </revision>
       <revision>
-          <date>2012-01-16</date>
-          <revdescription>
-            <itemizedlist spacing="compact">
-              <listitem>
-                <para>Organizes guide based on cloud controller and compute nodes.</para>
-              </listitem>
-            </itemizedlist>
-          </revdescription>
+        <date>2012-01-16</date>
+        <revdescription>
+          <itemizedlist spacing="compact">
+            <listitem>
+              <para>Organizes guide based on cloud controller and compute nodes.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
       </revision>
       <revision>
-          <date>2012-05-24</date>
-          <revdescription>
-            <itemizedlist spacing="compact">
-              <listitem>
-                <para>Begin trunk designation.</para>
-              </listitem>
-            </itemizedlist>
-          </revdescription>
+        <date>2012-05-24</date>
+        <revdescription>
+          <itemizedlist spacing="compact">
+            <listitem>
+              <para>Begin trunk designation.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
       </revision>
     </revhistory>
-    </info>
-
+  </info>
   <xi:include href="http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/ch_preface.xml"/>
   <xi:include href="ch_intro.xml"/>
   <xi:include href="part_active_passive.xml"/>
   <xi:include href="part_active_active.xml"/>
   <xi:include href="http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/app_support.xml"/>
-
 </book>
