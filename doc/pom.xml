@@ -11,7 +11,7 @@
 
   <modules>
     <module>glossary</module>
-    <module>high-availability-guide</module>
+    <module>ha-guide</module>
   </modules>
   <profiles>
     <profile>
