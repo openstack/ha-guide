@@ -10,8 +10,7 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>glossary</module>
-    <module>ha-guide</module>
+    <module>high-availability-guide</module>
   </modules>
   <profiles>
     <profile>

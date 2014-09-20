@@ -18,7 +18,7 @@ primitive p_fs_mysql ocf:heartbeat:Filesystem \
   op stop timeout="180s" \
   op monitor interval="60s" timeout="60s"
 primitive p_mysql ocf:heartbeat:mysql \
-  params additional_parameters="--bind-address=50.56.179.138" 
+  params additional_parameters="--bind-address=50.56.179.138" \
     config="/etc/mysql/my.cnf" \
     pid="/var/run/mysqld/mysqld.pid" \
     socket="/var/run/mysqld/mysqld.sock" \

@@ -29,21 +29,21 @@ Building
 ========
 
 The root directory of the *OpenStack High Availability Guide*
-is ``doc/ha-guide``.
+is ``doc/high-availability-guide``.
 
-To build the guide, move into the directory ``doc/ha-guide``,
+To build the guide, move into the directory ``doc/high-availability-guide``,
 then run the ``mvn`` command in that directory::
 
-    cd doc/ha-guide/
+    cd doc/high-availability-guide/
     mvn clean generate-sources
 
 The generated PDF documentation file is::
 
-    doc/ha-guide/target/docbkx/webhelp/high-availability-guide/high-availability-guide.pdf
+    doc/high-availability-guide/target/docbkx/webhelp/high-availability-guide/high-availability-guide.pdf
 
 The root of the generated HTML documentation is::
 
-    doc/ha-guide/target/docbkx/webhelp/high-availability-guide/index.html
+    doc/high-availability-guide/target/docbkx/webhelp/high-availability-guide/index.html
 
 Testing of changes and building of the manual
 =============================================
