@@ -1,29 +1,14 @@
-OpenStack Manuals
-+++++++++++++++++
+OpenStack High Availability Guide
++++++++++++++++++++++++++++++++++
 
-This repository contains documentation for the OpenStack project.
+This repository contains the OpenStack High Availability Guide.
 
 For more details, see the `OpenStack Documentation wiki page
 <http://wiki.openstack.org/Documentation>`_.
 
-It includes these manuals:
-
- * Admin User Guide
- * Architecture Design Guide
- * Cloud Administrator Guide
- * Command-Line Interface Reference
- * Configuration Reference
- * End User Guide
- * High Availability Guide
- * Installation Guides
- * Virtual Machine Image Guide
-
-In addition to the guides, this repository contains:
-
- * docs.openstack.org: ``www``
-
 Prerequisites
 =============
+
 `Apache Maven <http://maven.apache.org/>`_ must be installed to build the
 documentation.
 
@@ -35,27 +20,30 @@ On Fedora 20 and later::
 
     yum install maven
 
+On openSUSE 13.1 and later::
+
+    zypper ar http://download.opensuse.org/repositories/devel:/tools:/building/openSUSE_13.1/devel:tools:building.repo
+    zypper install maven
+
 Building
 ========
-The different manuals are in subdirectories of the
-``openstack-manuals/doc/`` directory.
 
-For example, the root directory of the *OpenStack User Guide*
-is ``openstack-manuals/doc/user-guide``.
+The root directory of the *OpenStack High Availability Guide*
+is ``doc/ha-guide``.
 
-To build a specific guide, look for a ``pom.xml`` file within a subdirectory,
-then run the ``mvn`` command in that directory. For example::
+To build the guide, move into the directory ``doc/ha-guide``,
+then run the ``mvn`` command in that directory::
 
-    cd openstack-manuals/doc/user-guide/
+    cd doc/ha-guide/
     mvn clean generate-sources
 
 The generated PDF documentation file is::
 
-    openstack-manuals/doc/user-guide/target/docbkx/webhelp/user-guide.pdf
+    doc/ha-guide/target/docbkx/webhelp/high-availability-guide/high-availability-guide.pdf
 
 The root of the generated HTML documentation is::
 
-    openstack-manuals/doc/user-guide/target/docbkx/webhelp/user-guide/content/index.html
+    doc/ha-guide/target/docbkx/webhelp/high-availability-guide/index.html
 
 Testing of changes and building of the manual
 =============================================
@@ -104,5 +92,6 @@ Bugs should be filed on Launchpad, not GitHub:
 
 Installing
 ==========
+
 Refer to http://docs.openstack.org to see where these documents are published
 and to learn more about the OpenStack project.
