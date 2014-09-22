@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="_configure_openstack_services_to_use_rabbitmq">
+  <title>Configure OpenStack services to use RabbitMQ</title>
+  <para>We have to configure the OpenStack components to use at least two
+    RabbitMQ nodes.</para>
+  <para>Do this configuration on all services using RabbitMQ:</para>
+  <itemizedlist>
+    <listitem>
+      <para>RabbitMQ HA cluster host:port pairs:</para>
+      <programlisting language="ini">rabbit_hosts=rabbit1:5672,rabbit2:5672</programlisting>
+    </listitem>
+    <listitem>
+      <para>How frequently to retry connecting with RabbitMQ:</para>
+      <programlisting language="ini">rabbit_retry_interval=1</programlisting>
+    </listitem>
+    <listitem>
+      <para>How long to back-off for between retries when connecting to
+        RabbitMQ:</para>
+      <programlisting language="ini">rabbit_retry_backoff=2</programlisting>
+    </listitem>
+    <listitem>
+      <para>Maximum retries with trying to connect to RabbitMQ (infinite by
+        default):</para>
+      <programlisting language="ini">rabbit_max_retries=0</programlisting>
+    </listitem>
+    <listitem>
+      <para>Use durable queues in RabbitMQ:</para>
+      <programlisting language="ini">rabbit_durable_queues=false</programlisting>
+    </listitem>
+    <listitem>
+      <para>Use HA queues in RabbitMQ (x-ha-policy: all):</para>
+      <programlisting language="ini">rabbit_ha_queues=true</programlisting>
+    </listitem>
+  </itemizedlist>
+
+  <note>
+    <para>If you change the configuration from an old setup which did not use
+      HA queues, you should interrupt the service:</para>
+    <screen><prompt>#</prompt> <userinput>rabbitmqctl stop_app</userinput>
+<prompt>#</prompt> <userinput>rabbitmqctl reset</userinput>
+<prompt>#</prompt> <userinput>rabbitmqctl start_app</userinput></screen>
+  </note>
+  <note>
+    <para>Services currently working with HA queues:</para>
+    <itemizedlist>
+      <listitem>
+        <para>OpenStack Compute</para>
+      </listitem>
+      <listitem>
+        <para>OpenStack Block Storage</para>
+      </listitem>
+      <listitem>
+        <para>OpenStack Networking</para>
+      </listitem>
+      <listitem>
+        <para>Telemetry</para>
+      </listitem>
+    </itemizedlist>
+  </note>
+</section>
