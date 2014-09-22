@@ -4,9 +4,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-09-11 21:20+0000\n"
-"PO-Revision-Date: 2014-09-12 04:13+0000\n"
-"Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
+"POT-Creation-Date: 2014-09-21 09:23+0000\n"
+"PO-Revision-Date: 2014-09-21 00:00+0000\n"
+"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -299,90 +299,75 @@ msgid ""
 "of the more common options for highly available systems."
 msgstr "これらの高可用性アーキテクチャーを実現する、より一般的な方法がいくつかありますが、それらは唯一の方法ではありません。重要なことは、サービスが冗長であり、利用可能であることを確実にすることです。あなたがしたいように達成します。このドキュメントは高可用性システムのより一般的なオプションをいくつか取り扱います。"
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml8(title)
+#: ./doc/high-availability-guide/bk-ha-guide.xml7(title)
 msgid "OpenStack High Availability Guide"
 msgstr "OpenStack 高可用性ガイド"
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml12(firstname)
-msgid "Florian"
-msgstr "Florian"
-
-#: ./doc/high-availability-guide/bk-ha-guide.xml13(surname)
-msgid "Haas"
-msgstr "Haas"
-
-#: ./doc/high-availability-guide/bk-ha-guide.xml15(email)
-msgid "florian@hastexo.com"
-msgstr "florian@hastexo.com"
-
-#: ./doc/high-availability-guide/bk-ha-guide.xml17(orgname)
-msgid "hastexo"
-msgstr "hastexo"
-
-#: ./doc/high-availability-guide/bk-ha-guide.xml21(year)
-msgid "2012"
-msgstr "2012"
-
-#: ./doc/high-availability-guide/bk-ha-guide.xml22(year)
-msgid "2013"
-msgstr "2013"
-
-#: ./doc/high-availability-guide/bk-ha-guide.xml23(year)
-msgid "2014"
-msgstr "2014"
-
-#: ./doc/high-availability-guide/bk-ha-guide.xml24(holder)
+#: ./doc/high-availability-guide/bk-ha-guide.xml15(orgname)
+#: ./doc/high-availability-guide/bk-ha-guide.xml22(holder)
 msgid "OpenStack Contributors"
 msgstr "OpenStack 貢献者"
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml26(releaseinfo)
+#: ./doc/high-availability-guide/bk-ha-guide.xml19(year)
+msgid "2012"
+msgstr "2012"
+
+#: ./doc/high-availability-guide/bk-ha-guide.xml20(year)
+msgid "2013"
+msgstr "2013"
+
+#: ./doc/high-availability-guide/bk-ha-guide.xml21(year)
+msgid "2014"
+msgstr "2014"
+
+#: ./doc/high-availability-guide/bk-ha-guide.xml24(releaseinfo)
 msgid "current"
 msgstr "カレント"
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml27(productname)
+#: ./doc/high-availability-guide/bk-ha-guide.xml25(productname)
 msgid "OpenStack"
 msgstr "OpenStack"
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml31(remark)
+#: ./doc/high-availability-guide/bk-ha-guide.xml29(remark)
 msgid "Copyright details are filled in by the template."
 msgstr "Copyright details are filled in by the template."
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml35(para)
+#: ./doc/high-availability-guide/bk-ha-guide.xml33(para)
 msgid ""
 "This guide describes how to install, configure, and manage OpenStack for "
 "high availability."
 msgstr "このガイドは、高可用な OpenStack をインストール、設定、管理する方法について記載します。"
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml40(date)
+#: ./doc/high-availability-guide/bk-ha-guide.xml38(date)
 msgid "2014-05-16"
 msgstr "2014-05-16"
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml44(para)
+#: ./doc/high-availability-guide/bk-ha-guide.xml42(para)
 msgid "Conversion to Docbook."
 msgstr "DocBook 形式への変換。"
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml50(date)
+#: ./doc/high-availability-guide/bk-ha-guide.xml48(date)
 msgid "2014-04-17"
 msgstr "2014-04-17"
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml54(para)
+#: ./doc/high-availability-guide/bk-ha-guide.xml52(para)
 msgid ""
 "Minor cleanup of typos, otherwise no major revisions for Icehouse release."
 msgstr "誤字脱字の軽微な修正。Icehouse リリース向けの大きな改版はありません。"
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml61(date)
+#: ./doc/high-availability-guide/bk-ha-guide.xml59(date)
 msgid "2012-01-16"
 msgstr "2012-01-16"
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml65(para)
+#: ./doc/high-availability-guide/bk-ha-guide.xml63(para)
 msgid "Organizes guide based on cloud controller and compute nodes."
 msgstr "クラウドコントローラーとコンピュートノードに基づいてガイドを整理しました。"
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml71(date)
+#: ./doc/high-availability-guide/bk-ha-guide.xml69(date)
 msgid "2012-05-24"
 msgstr "2012-05-24"
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml75(para)
+#: ./doc/high-availability-guide/bk-ha-guide.xml73(para)
 msgid "Begin trunk designation."
 msgstr "trunk 指定を始めました。"
 
@@ -692,7 +677,7 @@ msgstr "OpenStack Networking Service はノードをまたがり複数のエー�
 msgid "Highly available Block Storage API"
 msgstr "高可用性 Block Storage API"
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml9(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml8(para)
 msgid ""
 "Making the Block Storage (cinder) API service highly available in active / "
 "passive mode involves"
@@ -702,47 +687,47 @@ msgstr "Block Storage (cinder) API サービスのアクティブ / パッシブ
 msgid "Configure Block Storage to listen on the VIP address,"
 msgstr "Block Storage がその仮想 IP アドレスをリッスンする設定"
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml17(para)
-msgid "managing Block Storage API daemon with the Pacemaker cluster manager,"
-msgstr "Pacemaker クラスターマネージャーを用いた Block Storage API デーモンの管理"
+#: ./doc/high-availability-guide/api/section_cinder_api.xml15(para)
+msgid "Managing Block Storage API daemon with the Pacemaker cluster manager,"
+msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml22(para)
-#: ./doc/high-availability-guide/api/section_glance_api.xml23(para)
-#: ./doc/high-availability-guide/api/section_keystone.xml23(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml19(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml20(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml20(para)
 msgid "Configure OpenStack services to use this IP address."
 msgstr "OpenStack のサービスがこの IP アドレスを使用するよう設定します。"
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml28(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml23(para)
 msgid ""
 "Here is the <link href=\"http://docs.openstack.org/trunk/install-"
 "guide/install/apt/content/ch_cinder.html\">documentation</link> for "
 "installing Block Storage service."
 msgstr "ここに Block Storage のインストールに関する<link href=\"http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_cinder.html\">ドキュメント</link>があります。"
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml34(title)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml28(title)
 msgid "Add Block Storage API resource to Pacemaker"
 msgstr "Block Storage API リソースの Pacemaker への追加"
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml36(para)
-#: ./doc/high-availability-guide/api/section_glance_api.xml35(para)
-#: ./doc/high-availability-guide/api/section_neutron_server.xml35(para)
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml27(para)
-#: ./doc/high-availability-guide/api/section_keystone.xml35(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml29(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml29(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml30(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml25(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml29(para)
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml15(para)
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml19(para)
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml19(para)
 msgid "First of all, you need to download the resource agent to your system:"
 msgstr "まず初めに、リソースエージェントをシステムにダウンロードする必要があります。"
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml40(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml34(para)
 msgid ""
 "You can now add the Pacemaker configuration for Block Storage API resource. "
 "Connect to the Pacemaker cluster with <literal>crm configure</literal>, and "
 "add the following cluster resources:"
 msgstr "Block Storage API リソース用の Pacemaker 設定を追加できます。<literal>crm configure</literal> を用いて Pacemaker クラスターに接続し、以下のクラスターリソースを追加します。"
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml47(para)
-#: ./doc/high-availability-guide/api/section_glance_api.xml45(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml41(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml41(para)
 #: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml37(para)
 #: ./doc/high-availability-guide/controller/section_rabbitmq.xml191(para)
 #: ./doc/high-availability-guide/controller/section_mysql.xml203(para)
@@ -751,13 +736,13 @@ msgstr "Block Storage API リソース用の Pacemaker 設定を追加できま�
 msgid "This configuration creates"
 msgstr "この設定により、次のものが作成されます。"
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml50(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml44(para)
 msgid ""
 "<literal>p_cinder-api</literal>, a resource for manage Block Storage API "
 "service"
 msgstr "<literal>p_cinder-api</literal>, Block Storage API サービスを管理するためのリソース"
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml54(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml48(para)
 msgid ""
 "<literal>crm configure</literal> supports batch input, so you may copy and "
 "paste the above into your live pacemaker configuration, and then make "
@@ -766,7 +751,7 @@ msgid ""
 "resource to match your preferred virtual IP address."
 msgstr "<literal>crm configure</literal> はバッチ入力をサポートします。そのため、現在の pacemaker 設定の中に上をコピー・ペーストし、適宜変更を反映できます。例えば、お好みの仮想 IP アドレスに一致させるために、<literal>crm configure</literal> メニューから <literal>edit p_ip_cinder-api</literal> と入力し、リソースを編集できます。"
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml59(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml53(para)
 msgid ""
 "Once completed, commit your configuration changes by entering "
 "<literal>commit</literal> from the <literal>crm configure</literal> menu. "
@@ -774,30 +759,30 @@ msgid ""
 "resources, on one of your nodes."
 msgstr "完了すると、<literal>crm configure</literal> メニューから <literal>commit</literal> と入力し、設定の変更をコミットします。Pacemaker は Block Storage API サービスおよび依存するリソースを同じノードに起動します。"
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml65(title)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml59(title)
 msgid "Configure Block Storage API service"
 msgstr "Block Storage API サービスの設定"
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml67(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml60(para)
 msgid "Edit <filename>/etc/cinder/cinder.conf</filename>:"
 msgstr "<filename>/etc/cinder/cinder.conf</filename> を編集します。"
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml80(title)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml72(title)
 msgid "Configure OpenStack services to use highly available Block Storage API"
 msgstr "高可用性 Block Storage API を使用するための OpenStack サービスの設定"
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml82(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml74(para)
 msgid ""
 "Your OpenStack services must now point their Block Storage API configuration"
 " to the highly available, virtual cluster IP address — rather than a Block "
 "Storage API server’s physical IP address as you normally would."
 msgstr "OpenStack サービスは、通常どおり Block Storage API サーバーの物理 IP アドレスを指定する代わりに、Block Storage API の設定が高可用性と仮想クラスター IP アドレスを指し示す必要があります。"
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml85(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml78(para)
 msgid "You must create the Block Storage API endpoint with this IP."
 msgstr "この IP を用いて Block Storage API エンドポイントを作成する必要があります。"
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml87(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml80(para)
 msgid ""
 "If you are using both private and public IP, you should create two Virtual "
 "IPs and define your endpoint like this:"
@@ -807,7 +792,7 @@ msgstr "プライベート IP とパブリック IP の両方を使用する場�
 msgid "Configure Pacemaker group"
 msgstr "Pacemaker グループの設定"
 
-#: ./doc/high-availability-guide/api/section_api_pacemaker.xml9(para)
+#: ./doc/high-availability-guide/api/section_api_pacemaker.xml8(para)
 msgid ""
 "Finally, we need to create a service <literal>group</literal> to ensure that"
 " the virtual IP is linked to the API services resources:"
@@ -817,7 +802,7 @@ msgstr "最後に、仮想 IP が API サービスリソースに関連付けら
 msgid "Highly available OpenStack Image API"
 msgstr "高可用性 OpenStack Image API"
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml9(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml8(para)
 msgid ""
 "OpenStack Image Service offers a service for discovering, registering, and "
 "retrieving virtual machine images. To make the OpenStack Image API service "
@@ -828,35 +813,35 @@ msgstr "OpenStack Image Service は仮想マシンイメージの検索、登録
 msgid "Configure OpenStack Image to listen on the VIP address."
 msgstr "OpenStack Image がその仮想 IP アドレスをリッスンするよう設定します。"
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml18(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml16(para)
 msgid "Manage OpenStack Image API daemon with the Pacemaker cluster manager."
 msgstr "Pacemaker クラスターマネージャーを用いた OpenStack Image API デーモンを管理します。"
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml29(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml24(para)
 msgid ""
 "Here is the <link href=\"http://docs.openstack.org/trunk/install-"
 "guide/install/apt/content/ch_glance.html\">documentation</link> for "
 "installing the OpenStack Image API service."
 msgstr "OpenStack Image API サービスのインストールに関する<link href=\"http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_glance.html\">ドキュメント</link>があります。"
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml33(title)
+#: ./doc/high-availability-guide/api/section_glance_api.xml28(title)
 msgid "Add OpenStack Image API resource to Pacemaker"
 msgstr "OpenStack Image API リソースの Pacemaker への追加"
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml39(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml34(para)
 msgid ""
 "You can now add the Pacemaker configuration for OpenStack Image API "
 "resource. Connect to the Pacemaker cluster with <literal>crm "
 "configure</literal>, and add the following cluster resources:"
 msgstr "OpenStack Image API リソース用の Pacemaker 設定を追加できます。<literal>crm configure</literal> を用いて Pacemaker クラスターに接続し、以下のクラスターリソースを追加します。"
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml48(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml44(para)
 msgid ""
 "<literal>p_glance-api</literal>, a resource for managing OpenStack Image API"
 " service"
 msgstr "<literal>p_glance-api</literal>、OpenStack Image API サービスを管理するためのリソース"
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml52(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml48(para)
 msgid ""
 "<literal>crm configure</literal> supports batch input, so you may copy and "
 "paste the above into your live Pacemaker configuration, and then make "
@@ -865,7 +850,7 @@ msgid ""
 "resource to match your preferred virtual IP address."
 msgstr "<literal>crm configure</literal> は、パッチ入力をサポートするため、Pacemaker の設定に上の内容をコピーして貼り付け、必要に応じて変更できます。例えば、<literal>crm configure</literal> メニューから <literal>edit p_ip_glance-api</literal> を入力し、リソースを仮想 IP アドレスと一致させるために編集できます。"
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml57(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml53(para)
 msgid ""
 "Once completed, commit your configuration changes by entering "
 "<literal>commit</literal> from the <literal>crm configure</literal> menu. "
@@ -873,19 +858,19 @@ msgid ""
 " resources, on one of your nodes."
 msgstr "完了すると、<literal>crm configure</literal> メニューから <literal>commit</literal> と入力し、設定の変更をコミットします。Pacemaker は OpenStack Image API サービスおよび依存するリソースを同じノードに起動します。"
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml63(title)
+#: ./doc/high-availability-guide/api/section_glance_api.xml59(title)
 msgid "Configure OpenStack Image Service API"
 msgstr "OpenStack Image Service API の設定"
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml65(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml60(para)
 msgid "Edit <filename>/etc/glance/glance-api.conf</filename>:"
 msgstr "<filename>/etc/glance/glance-api.conf</filename> を編集します。"
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml81(title)
+#: ./doc/high-availability-guide/api/section_glance_api.xml75(title)
 msgid "Configure OpenStack services to use high available OpenStack Image API"
 msgstr "高可用性 OpenStack Image Service API を使用するための OpenStack サービスの設定"
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml83(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml77(para)
 msgid ""
 "Your OpenStack services must now point their OpenStack Image API "
 "configuration to the highly available, virtual cluster IP address — rather "
@@ -893,26 +878,28 @@ msgid ""
 "would."
 msgstr "OpenStack サービスは、通常どおり OpenStack Image API サーバーの物理 IP アドレスを指定する代わりに、OpenStack Image API の設定が高可用性と仮想クラスター IP アドレスを指し示す必要があります。"
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml86(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml81(para)
 msgid ""
 "For OpenStack Compute, for example, if your OpenStack Image API service IP "
-"address is 192.168.42.103 as in the configuration explained here, you would "
-"use the following configuration in your <filename>nova.conf</filename> file:"
+"address is <literal>192.168.42.103</literal> as in the configuration "
+"explained here, you would use the following configuration in your "
+"<filename>nova.conf</filename> file:"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml96(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml90(para)
 msgid ""
 "In versions prior to Juno, this option was called "
 "<literal>glance_api_servers</literal> in the <literal>[DEFAULT]</literal> "
 "section."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml101(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml94(para)
 msgid "You must also create the OpenStack Image API endpoint with this IP."
 msgstr "この IP を用いて OpenStack Image API エンドポイントを作成する必要があります。"
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml104(para)
-#: ./doc/high-availability-guide/api/section_neutron_server.xml86(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml97(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml87(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml91(para)
 msgid ""
 "If you are using both private and public IP addresses, you should create two"
 " Virtual IP addresses and define your endpoint like this:"
@@ -922,7 +909,7 @@ msgstr "プライベート IP とパブリック IP の両方を使用する場�
 msgid "Highly available OpenStack Networking server"
 msgstr "高可用性 OpenStack Networking サーバー"
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml9(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml8(para)
 msgid ""
 "OpenStack Networking is the network connectivity service in OpenStack. "
 "Making the OpenStack Networking Server service highly available in active / "
@@ -933,41 +920,41 @@ msgstr "OpenStack Networking は、OpenStack におけるネットワーク接�
 msgid "Configure OpenStack Networking to listen on the virtual IP address,"
 msgstr "OpenStack Networking が仮想 IP アドレスをリッスンするよう設定します。"
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml18(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml17(para)
 msgid ""
 "Manage the OpenStack Networking API Server daemon with the Pacemaker cluster"
 " manager,"
 msgstr "Pacemaker クラスターマネージャーを用いた OpenStack Networking API Server デーモンの管理"
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml23(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml21(para)
 msgid "Configure OpenStack services to use the virtual IP address."
 msgstr "OpenStack のサービスが仮想 IP アドレスを使用するよう設定します。"
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml29(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml25(para)
 msgid ""
 "Here is the <link href=\"http://docs.openstack.org/trunk/install-"
 "guide/install/apt/content/ch_networking.html\">documentation</link> for "
 "installing OpenStack Networking service."
 msgstr "ここに OpenStack Networking Service をインストールするための<link href=\"http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_networking.html\">ドキュメント</link>があります。"
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml33(title)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml29(title)
 msgid "Add OpenStack Networking Server resource to Pacemaker"
 msgstr "OpenStack Networking Server リソースの Pacemaker への追加"
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml39(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml35(para)
 msgid ""
 "You can now add the Pacemaker configuration for OpenStack Networking Server "
 "resource. Connect to the Pacemaker cluster with <literal>crm "
 "configure</literal>, and add the following cluster resources:"
 msgstr "OpenStack Networking Server リソース用の Pacemaker 設定を追加できます。<literal>crm configure</literal> を用いて Pacemaker クラスターに接続し、以下のクラスターリソースを追加します。"
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml46(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml43(para)
 msgid ""
 "This configuration creates <literal>p_neutron-server</literal>, a resource "
 "for manage OpenStack Networking Server service"
 msgstr "この設定は OpenStack Networking サーバーサービスを管理するためのリソース <literal>p_neutron-server</literal> を作成します。"
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml47(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml45(para)
 msgid ""
 "<literal>crm configure</literal> supports batch input, so you may copy and "
 "paste the above into your live pacemaker configuration, and then make "
@@ -976,7 +963,7 @@ msgid ""
 " resource to match your preferred virtual IP address."
 msgstr "<literal>crm configure</literal> はバッチ入力をサポートします。そのため、現在の pacemaker 設定の中に上をコピー・ペーストし、適宜変更を反映できます。例えば、お好みの仮想 IP アドレスに一致させるために、<literal>crm configure</literal> メニューから <literal>edit p_neutron-server</literal> と入力し、リソースを編集できます。"
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml52(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml51(para)
 msgid ""
 "Once completed, commit your configuration changes by entering "
 "<literal>commit</literal> from the <literal>crm configure</literal> menu. "
@@ -984,21 +971,21 @@ msgid ""
 "dependent resources, on one of your nodes."
 msgstr "完了すると、<literal>crm configure</literal> メニューから <literal>commit</literal> と入力し、設定の変更をコミットします。Pacemaker は OpenStack Networking API サービスおよび依存するリソースを同じノードに起動します。"
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml58(title)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml57(title)
 msgid "Configure OpenStack Networking server"
 msgstr "OpenStack Networking Server の設定"
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml60(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml58(para)
 msgid "Edit <filename>/etc/neutron/neutron.conf</filename>:"
 msgstr "<filename>/etc/neutron/neutron.conf</filename> を編集します。"
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml77(title)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml74(title)
 msgid ""
 "Configure OpenStack services to use highly available OpenStack Networking "
 "server"
 msgstr "高可用性 OpenStack Networking を使用するための OpenStack サービスの設定"
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml79(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml76(para)
 msgid ""
 "Your OpenStack services must now point their OpenStack Networking Server "
 "configuration to the highly available, virtual cluster IP address — rather "
@@ -1006,7 +993,7 @@ msgid ""
 "would."
 msgstr "OpenStack サービスは、通常どおり OpenStack Networking サーバーの物理 IP アドレスを指定する代わりに、OpenStack Networking サーバーの設定が高可用性と仮想クラスター IP アドレスを指し示す必要があります。"
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml82(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml80(para)
 msgid ""
 "For example, you should configure OpenStack Compute for using highly "
 "available OpenStack Networking server in editing "
@@ -1022,21 +1009,21 @@ msgstr "この IP を用いて OpenStack Networking Server エンドポイント
 msgid "Highly available Telemetry central agent"
 msgstr "高可用性 Telemetry 中央エージェント"
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml9(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml8(para)
 msgid ""
 "Telemetry (ceilometer) is the metering and monitoring service in OpenStack. "
 "The Central agent polls for resource utilization statistics for resources "
 "not tied to instances or compute nodes."
 msgstr "Telemetry (ceilometer) は OpenStack のメータリングとモニタリングのサービスです。中央エージェントは、インスタンスやコンピュートノードに結びつけられていないリソースに対して、リソースの利用状況の統計情報を収集します。"
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml13(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml12(para)
 msgid ""
 "Due to limitations of a polling model, a single instance of this agent can "
 "be polling a given list of meters. In this setup, we install this service on"
 " the API nodes also in the active / passive mode."
 msgstr "収集モデルの制限により、このエージェントの単一のインスタンスが指定された一覧の利用状況を収集できます。このセットアップの場合、このサービスもアクティブ / パッシブモードで API ノードにインストールします。"
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml17(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml16(para)
 msgid ""
 "Making the Telemetry central agent service highly available in active / "
 "passive mode involves managing its daemon with the Pacemaker cluster "
@@ -1051,11 +1038,11 @@ msgid ""
 "Telemetry central agent."
 msgstr "Telemetry 中央エージェントをインストールする手順が<link href=\"http://docs.openstack.org/developer/ceilometer/install/manual.html#installing-the-central-agent\">このページ</link>にあります。"
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml25(title)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml24(title)
 msgid "Add the Telemetry central agent resource to Pacemaker"
 msgstr "Telemetry 中央エージェントリソースの Pacemaker への追加"
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml31(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml29(para)
 msgid ""
 "You may then proceed with adding the Pacemaker configuration for the "
 "Telemetry central agent resource. Connect to the Pacemaker cluster with "
@@ -1089,7 +1076,7 @@ msgstr "完了すると、<literal>crm configure</literal> メニューから <l
 msgid "Configure Telemetry central agent service"
 msgstr "Telemetry 中央エージェントサービスの設定"
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml55(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml54(para)
 msgid "Edit <filename>/etc/ceilometer/ceilometer.conf</filename>:"
 msgstr "<filename>/etc/ceilometer/ceilometer.conf</filename> を編集します。"
 
@@ -1097,7 +1084,7 @@ msgstr "<filename>/etc/ceilometer/ceilometer.conf</filename> を編集します�
 msgid "Highly available OpenStack Identity"
 msgstr "高可用性 OpenStack Identity"
 
-#: ./doc/high-availability-guide/api/section_keystone.xml9(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml8(para)
 msgid ""
 "OpenStack Identity is the Identity Service in OpenStack and used by many "
 "services. Making the OpenStack Identity service highly available in active /"
@@ -1108,35 +1095,35 @@ msgstr "OpenStack Identity は OpenStack における認証サービスです。
 msgid "Configure OpenStack Identity to listen on the VIP address,"
 msgstr "OpenStack Identity がその仮想 IP アドレスでリッスンするよう設定します。"
 
-#: ./doc/high-availability-guide/api/section_keystone.xml18(para)
-msgid "managing OpenStack Identity daemon with the Pacemaker cluster manager,"
-msgstr "Pacemaker クラスターマネージャーを用いた OpenStack Identity デーモンの管理"
+#: ./doc/high-availability-guide/api/section_keystone.xml16(para)
+msgid "Managing OpenStack Identity daemon with the Pacemaker cluster manager,"
+msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml29(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml24(para)
 msgid ""
 "Here is the <link href=\"http://docs.openstack.org/trunk/install-"
 "guide/install/apt/content/ch_keystone.html\">documentation</link> for "
 "installing OpenStack Identity service."
 msgstr "ここに OpenStack Identity Service をインストールするための<link href=\"http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_keystone.html\">ドキュメント</link>があります。"
 
-#: ./doc/high-availability-guide/api/section_keystone.xml33(title)
+#: ./doc/high-availability-guide/api/section_keystone.xml28(title)
 msgid "Add OpenStack Identity resource to Pacemaker"
 msgstr "OpenStack Identity リソースの Pacemaker への追加"
 
-#: ./doc/high-availability-guide/api/section_keystone.xml41(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml36(para)
 msgid ""
 "You can now add the Pacemaker configuration for OpenStack Identity resource."
 " Connect to the Pacemaker cluster with <literal>crm configure</literal>, and"
 " add the following cluster resources:"
 msgstr "OpenStack Identity リソース用の Pacemaker 設定を追加できます。<literal>crm configure</literal> を用いて Pacemaker クラスターに接続し、以下のクラスターリソースを追加します。"
 
-#: ./doc/high-availability-guide/api/section_keystone.xml47(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml43(para)
 msgid ""
 "This configuration creates <literal>p_keystone</literal>, a resource for "
 "managing the OpenStack Identity service."
 msgstr "この設定は OpenStack Identity サービスを管理するためのリソース <literal>p_keystone</literal> を作成します。"
 
-#: ./doc/high-availability-guide/api/section_keystone.xml48(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml45(para)
 msgid ""
 "<literal>crm configure</literal> supports batch input, so you may copy and "
 "paste the above into your live pacemaker configuration, and then make "
@@ -1145,7 +1132,7 @@ msgid ""
 "edit the resource to match your preferred virtual IP address."
 msgstr "<literal>crm configure</literal> はバッチ入力をサポートします。そのため、現在の pacemaker 設定の中に上をコピー・ペーストし、適宜変更を反映できます。例えば、お好みの仮想 IP アドレスに一致させるために、<literal>crm configure</literal> メニューから <literal>edit p_ip_keystone</literal> と入力し、リソースを編集できます。"
 
-#: ./doc/high-availability-guide/api/section_keystone.xml53(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml50(para)
 msgid ""
 "Once completed, commit your configuration changes by entering "
 "<literal>commit</literal> from the <literal>crm configure</literal> menu. "
@@ -1153,27 +1140,27 @@ msgid ""
 "resources, on one of your nodes."
 msgstr "完了すると、<literal>crm configure</literal> メニューから <literal>commit</literal> と入力し、設定の変更をコミットします。Pacemaker は OpenStack Identity サービスおよび依存するリソースを同じノードに起動します。"
 
-#: ./doc/high-availability-guide/api/section_keystone.xml59(title)
+#: ./doc/high-availability-guide/api/section_keystone.xml56(title)
 msgid "Configure OpenStack Identity service"
 msgstr "OpenStack Identity Service の設定"
 
-#: ./doc/high-availability-guide/api/section_keystone.xml61(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml57(para)
 msgid ""
 "You need to edit your OpenStack Identity configuration file "
 "(<filename>keystone.conf</filename>) and change the bind parameters:"
 msgstr "OpenStack Identity の設定ファイル (<filename>keystone.conf</filename>) を編集し、バインドのパラメーターを変更する必要があります。"
 
-#: ./doc/high-availability-guide/api/section_keystone.xml62(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml60(para)
 msgid "On Havana:"
 msgstr "Havana の場合:"
 
-#: ./doc/high-availability-guide/api/section_keystone.xml64(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml62(para)
 msgid ""
 "On Icehouse, the <literal>admin_bind_host</literal> option lets you use a "
 "private network for the admin access."
 msgstr "Icehouse の場合、<literal>admin_bind_host</literal> オプションにより管理アクセス用のプライベートネットワークを使用できます。"
 
-#: ./doc/high-availability-guide/api/section_keystone.xml67(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml66(para)
 msgid ""
 "To be sure all data will be highly available, you should be sure that you "
 "store everything in the MySQL database (which is also highly available):"
@@ -1192,25 +1179,19 @@ msgid ""
 "would."
 msgstr "OpenStack サービスは、通常どおり OpenStack Identity サーバーの物理 IP アドレスを指定する代わりに、OpenStack Identity サーバーの設定が高可用性と仮想クラスター IP アドレスを指し示す必要があります。"
 
-#: ./doc/high-availability-guide/api/section_keystone.xml82(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml83(para)
 msgid ""
 "For example with OpenStack Compute, if your OpenStack Identity service IP "
-"address is 192.168.42.103 as in the configuration explained here, you would "
-"use the following line in your API configuration file (<literal>api-"
-"paste.ini</literal>):"
-msgstr "OpenStack Compute を用いた例として、OpenStack Identity Service の IP アドレスがここで説明された設定にあるように 192.168.42.103 ならば、API 設定ファイル (<literal>api-paste.ini</literal>) で以下の行を使用する必要があります。"
+"address is <literal>192.168.42.103</literal> as in the configuration "
+"explained here, you would use the following line in your API configuration "
+"file (<literal>api-paste.ini</literal>):"
+msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml87(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml88(para)
 msgid "You also need to create the OpenStack Identity Endpoint with this IP."
 msgstr "この IP を用いて OpenStack Identity エンドポイントを作成する必要があります。"
 
-#: ./doc/high-availability-guide/api/section_keystone.xml88(para)
-msgid ""
-"NOTE: If you are using both private and public IP addresses, you should "
-"create two Virtual IP addresses and define your endpoint like this:"
-msgstr "注: プライベート IP とパブリック IP の両方を使用する場合、2 つの仮想 IP アドレスを作成し、次のようにエンドポイントを定義すべきです。"
-
-#: ./doc/high-availability-guide/api/section_keystone.xml93(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml98(para)
 msgid ""
 "If you are using the horizon dashboard, you should edit the "
 "<literal>local_settings.py</literal> file:"
@@ -1220,7 +1201,7 @@ msgstr "Dashboard を使用している場合、<literal>local_settings.py</lite
 msgid "Configure the VIP"
 msgstr "仮想 IP の設定"
 
-#: ./doc/high-availability-guide/api/section_api_vip.xml9(para)
+#: ./doc/high-availability-guide/api/section_api_vip.xml8(para)
 msgid ""
 "First, you must select and assign a virtual IP address (VIP) that can freely"
 " float between cluster nodes."
@@ -1229,8 +1210,8 @@ msgstr "まず初めに、クラスターノード間で自由に移動できる
 #: ./doc/high-availability-guide/api/section_api_vip.xml10(para)
 msgid ""
 "This configuration creates <literal>p_ip_api</literal>, a virtual IP address"
-" for use by the API node (192.168.42.103):"
-msgstr "この設定は API ノードにより使用される仮想 IP アドレス (192.168.42.103) <literal>p_ip_api</literal> を作成します。"
+" for use by the API node (<literal>192.168.42.103</literal>):"
+msgstr ""
 
 #: ./doc/high-availability-guide/controller/section_rabbitmq.xml12(title)
 msgid "Highly available RabbitMQ"

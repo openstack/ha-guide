@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-09-09 06:09+0000\n"
+"POT-Creation-Date: 2014-09-22 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -193,87 +193,71 @@ msgstr ""
 msgid "These are some of the more common ways to implement these high availability architectures, but they are by no means the only ways to do it. The important thing is to make sure that your services are redundant, and available; how you achieve that is up to you. This document will cover some of the more common options for highly available systems."
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:8(title)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:7(title)
 msgid "OpenStack High Availability Guide"
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:12(firstname)
-msgid "Florian"
-msgstr ""
-
-#: ./doc/high-availability-guide/bk-ha-guide.xml:13(surname)
-msgid "Haas"
-msgstr ""
-
-#: ./doc/high-availability-guide/bk-ha-guide.xml:15(email)
-msgid "florian@hastexo.com"
-msgstr ""
-
-#: ./doc/high-availability-guide/bk-ha-guide.xml:17(orgname)
-msgid "hastexo"
-msgstr ""
-
-#: ./doc/high-availability-guide/bk-ha-guide.xml:21(year)
-msgid "2012"
-msgstr ""
-
-#: ./doc/high-availability-guide/bk-ha-guide.xml:22(year)
-msgid "2013"
-msgstr ""
-
-#: ./doc/high-availability-guide/bk-ha-guide.xml:23(year)
-msgid "2014"
-msgstr ""
-
-#: ./doc/high-availability-guide/bk-ha-guide.xml:24(holder)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:15(orgname) ./doc/high-availability-guide/bk-ha-guide.xml:22(holder)
 msgid "OpenStack Contributors"
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:26(releaseinfo)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:19(year)
+msgid "2012"
+msgstr ""
+
+#: ./doc/high-availability-guide/bk-ha-guide.xml:20(year)
+msgid "2013"
+msgstr ""
+
+#: ./doc/high-availability-guide/bk-ha-guide.xml:21(year)
+msgid "2014"
+msgstr ""
+
+#: ./doc/high-availability-guide/bk-ha-guide.xml:24(releaseinfo)
 msgid "current"
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:27(productname)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:25(productname)
 msgid "OpenStack"
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:31(remark)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:29(remark)
 msgid "Copyright details are filled in by the template."
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:35(para)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:33(para)
 msgid "This guide describes how to install, configure, and manage OpenStack for high availability."
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:40(date)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:38(date)
 msgid "2014-05-16"
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:44(para)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:42(para)
 msgid "Conversion to Docbook."
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:50(date)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:48(date)
 msgid "2014-04-17"
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:54(para)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:52(para)
 msgid "Minor cleanup of typos, otherwise no major revisions for Icehouse release."
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:61(date)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:59(date)
 msgid "2012-01-16"
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:65(para)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:63(para)
 msgid "Organizes guide based on cloud controller and compute nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:71(date)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:69(date)
 msgid "2012-05-24"
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:75(para)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:73(para)
 msgid "Begin trunk designation."
 msgstr ""
 
@@ -497,7 +481,7 @@ msgstr ""
 msgid "Highly available Block Storage API"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:9(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:8(para)
 msgid "Making the Block Storage (cinder) API service highly available in active / passive mode involves"
 msgstr ""
 
@@ -505,67 +489,67 @@ msgstr ""
 msgid "Configure Block Storage to listen on the VIP address,"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:17(para)
-msgid "managing Block Storage API daemon with the Pacemaker cluster manager,"
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:15(para)
+msgid "Managing Block Storage API daemon with the Pacemaker cluster manager,"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:22(para) ./doc/high-availability-guide/api/section_glance_api.xml:23(para) ./doc/high-availability-guide/api/section_keystone.xml:23(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:19(para) ./doc/high-availability-guide/api/section_glance_api.xml:20(para) ./doc/high-availability-guide/api/section_keystone.xml:20(para)
 msgid "Configure OpenStack services to use this IP address."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:28(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:23(para)
 msgid "Here is the <link href=\"http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_cinder.html\">documentation</link> for installing Block Storage service."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:34(title)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:28(title)
 msgid "Add Block Storage API resource to Pacemaker"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:36(para) ./doc/high-availability-guide/api/section_glance_api.xml:35(para) ./doc/high-availability-guide/api/section_neutron_server.xml:35(para) ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:27(para) ./doc/high-availability-guide/api/section_keystone.xml:35(para) ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml:15(para) ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml:19(para) ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml:19(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:29(para) ./doc/high-availability-guide/api/section_glance_api.xml:29(para) ./doc/high-availability-guide/api/section_neutron_server.xml:30(para) ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:25(para) ./doc/high-availability-guide/api/section_keystone.xml:29(para) ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml:15(para) ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml:19(para) ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml:19(para)
 msgid "First of all, you need to download the resource agent to your system:"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:40(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:34(para)
 msgid "You can now add the Pacemaker configuration for Block Storage API resource. Connect to the Pacemaker cluster with <literal>crm configure</literal>, and add the following cluster resources:"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:47(para) ./doc/high-availability-guide/api/section_glance_api.xml:45(para) ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:37(para) ./doc/high-availability-guide/controller/section_rabbitmq.xml:191(para) ./doc/high-availability-guide/controller/section_mysql.xml:203(para) ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml:26(para) ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml:30(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:41(para) ./doc/high-availability-guide/api/section_glance_api.xml:41(para) ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:37(para) ./doc/high-availability-guide/controller/section_rabbitmq.xml:191(para) ./doc/high-availability-guide/controller/section_mysql.xml:203(para) ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml:26(para) ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml:30(para)
 msgid "This configuration creates"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:50(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:44(para)
 msgid "<literal>p_cinder-api</literal>, a resource for manage Block Storage API service"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:54(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:48(para)
 msgid "<literal>crm configure</literal> supports batch input, so you may copy and paste the above into your live pacemaker configuration, and then make changes as required. For example, you may enter <literal>edit p_ip_cinder-api</literal> from the <literal>crm configure</literal> menu and edit the resource to match your preferred virtual IP address."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:59(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:53(para)
 msgid "Once completed, commit your configuration changes by entering <literal>commit</literal> from the <literal>crm configure</literal> menu. Pacemaker will then start the Block Storage API service, and its dependent resources, on one of your nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:65(title)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:59(title)
 msgid "Configure Block Storage API service"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:67(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:60(para)
 msgid "Edit <filename>/etc/cinder/cinder.conf</filename>:"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:80(title)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:72(title)
 msgid "Configure OpenStack services to use highly available Block Storage API"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:82(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:74(para)
 msgid "Your OpenStack services must now point their Block Storage API configuration to the highly available, virtual cluster IP address — rather than a Block Storage API server’s physical IP address as you normally would."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:85(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:78(para)
 msgid "You must create the Block Storage API endpoint with this IP."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:87(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:80(para)
 msgid "If you are using both private and public IP, you should create two Virtual IPs and define your endpoint like this:"
 msgstr ""
 
@@ -573,7 +557,7 @@ msgstr ""
 msgid "Configure Pacemaker group"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_api_pacemaker.xml:9(para)
+#: ./doc/high-availability-guide/api/section_api_pacemaker.xml:8(para)
 msgid "Finally, we need to create a service <literal>group</literal> to ensure that the virtual IP is linked to the API services resources:"
 msgstr ""
 
@@ -581,7 +565,7 @@ msgstr ""
 msgid "Highly available OpenStack Image API"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml:9(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml:8(para)
 msgid "OpenStack Image Service offers a service for discovering, registering, and retrieving virtual machine images. To make the OpenStack Image API service highly available in active / passive mode, you must:"
 msgstr ""
 
@@ -589,63 +573,63 @@ msgstr ""
 msgid "Configure OpenStack Image to listen on the VIP address."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml:18(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml:16(para)
 msgid "Manage OpenStack Image API daemon with the Pacemaker cluster manager."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml:29(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml:24(para)
 msgid "Here is the <link href=\"http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_glance.html\">documentation</link> for installing the OpenStack Image API service."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml:33(title)
+#: ./doc/high-availability-guide/api/section_glance_api.xml:28(title)
 msgid "Add OpenStack Image API resource to Pacemaker"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml:39(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml:34(para)
 msgid "You can now add the Pacemaker configuration for OpenStack Image API resource. Connect to the Pacemaker cluster with <literal>crm configure</literal>, and add the following cluster resources:"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml:48(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml:44(para)
 msgid "<literal>p_glance-api</literal>, a resource for managing OpenStack Image API service"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml:52(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml:48(para)
 msgid "<literal>crm configure</literal> supports batch input, so you may copy and paste the above into your live Pacemaker configuration, and then make changes as required. For example, you may enter <literal>edit p_ip_glance-api</literal> from the <literal>crm configure</literal> menu and edit the resource to match your preferred virtual IP address."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml:57(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml:53(para)
 msgid "Once completed, commit your configuration changes by entering <literal>commit</literal> from the <literal>crm configure</literal> menu. Pacemaker will then start the OpenStack Image API service, and its dependent resources, on one of your nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml:63(title)
+#: ./doc/high-availability-guide/api/section_glance_api.xml:59(title)
 msgid "Configure OpenStack Image Service API"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml:65(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml:60(para)
 msgid "Edit <filename>/etc/glance/glance-api.conf</filename>:"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml:81(title)
+#: ./doc/high-availability-guide/api/section_glance_api.xml:75(title)
 msgid "Configure OpenStack services to use high available OpenStack Image API"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml:83(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml:77(para)
 msgid "Your OpenStack services must now point their OpenStack Image API configuration to the highly available, virtual cluster IP address — rather than an OpenStack Image API server’s physical IP address as you normally would."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml:86(para)
-msgid "For OpenStack Compute, for example, if your OpenStack Image API service IP address is 192.168.42.103 as in the configuration explained here, you would use the following configuration in your <filename>nova.conf</filename> file:"
+#: ./doc/high-availability-guide/api/section_glance_api.xml:81(para)
+msgid "For OpenStack Compute, for example, if your OpenStack Image API service IP address is <literal>192.168.42.103</literal> as in the configuration explained here, you would use the following configuration in your <filename>nova.conf</filename> file:"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml:96(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml:90(para)
 msgid "In versions prior to Juno, this option was called <literal>glance_api_servers</literal> in the <literal>[DEFAULT]</literal> section."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml:101(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml:94(para)
 msgid "You must also create the OpenStack Image API endpoint with this IP."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_glance_api.xml:104(para) ./doc/high-availability-guide/api/section_neutron_server.xml:86(para)
+#: ./doc/high-availability-guide/api/section_glance_api.xml:97(para) ./doc/high-availability-guide/api/section_neutron_server.xml:87(para) ./doc/high-availability-guide/api/section_keystone.xml:91(para)
 msgid "If you are using both private and public IP addresses, you should create two Virtual IP addresses and define your endpoint like this:"
 msgstr ""
 
@@ -653,7 +637,7 @@ msgstr ""
 msgid "Highly available OpenStack Networking server"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml:9(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml:8(para)
 msgid "OpenStack Networking is the network connectivity service in OpenStack. Making the OpenStack Networking Server service highly available in active / passive mode involves the following tasks:"
 msgstr ""
 
@@ -661,55 +645,55 @@ msgstr ""
 msgid "Configure OpenStack Networking to listen on the virtual IP address,"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml:18(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml:17(para)
 msgid "Manage the OpenStack Networking API Server daemon with the Pacemaker cluster manager,"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml:23(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml:21(para)
 msgid "Configure OpenStack services to use the virtual IP address."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml:29(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml:25(para)
 msgid "Here is the <link href=\"http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_networking.html\">documentation</link> for installing OpenStack Networking service."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml:33(title)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml:29(title)
 msgid "Add OpenStack Networking Server resource to Pacemaker"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml:39(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml:35(para)
 msgid "You can now add the Pacemaker configuration for OpenStack Networking Server resource. Connect to the Pacemaker cluster with <literal>crm configure</literal>, and add the following cluster resources:"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml:46(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml:43(para)
 msgid "This configuration creates <literal>p_neutron-server</literal>, a resource for manage OpenStack Networking Server service"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml:47(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml:45(para)
 msgid "<literal>crm configure</literal> supports batch input, so you may copy and paste the above into your live pacemaker configuration, and then make changes as required. For example, you may enter <literal>edit p_neutron-server</literal> from the <literal>crm configure</literal> menu and edit the resource to match your preferred virtual IP address."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml:52(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml:51(para)
 msgid "Once completed, commit your configuration changes by entering <literal>commit</literal> from the <literal>crm configure</literal> menu. Pacemaker will then start the OpenStack Networking API service, and its dependent resources, on one of your nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml:58(title)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml:57(title)
 msgid "Configure OpenStack Networking server"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml:60(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml:58(para)
 msgid "Edit <filename>/etc/neutron/neutron.conf</filename>:"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml:77(title)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml:74(title)
 msgid "Configure OpenStack services to use highly available OpenStack Networking server"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml:79(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml:76(para)
 msgid "Your OpenStack services must now point their OpenStack Networking Server configuration to the highly available, virtual cluster IP address — rather than an OpenStack Networking server’s physical IP address as you normally would."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_neutron_server.xml:82(para)
+#: ./doc/high-availability-guide/api/section_neutron_server.xml:80(para)
 msgid "For example, you should configure OpenStack Compute for using highly available OpenStack Networking server in editing <literal>nova.conf</literal> file:"
 msgstr ""
 
@@ -721,15 +705,15 @@ msgstr ""
 msgid "Highly available Telemetry central agent"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:9(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:8(para)
 msgid "Telemetry (ceilometer) is the metering and monitoring service in OpenStack. The Central agent polls for resource utilization statistics for resources not tied to instances or compute nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:13(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:12(para)
 msgid "Due to limitations of a polling model, a single instance of this agent can be polling a given list of meters. In this setup, we install this service on the API nodes also in the active / passive mode."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:17(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:16(para)
 msgid "Making the Telemetry central agent service highly available in active / passive mode involves managing its daemon with the Pacemaker cluster manager."
 msgstr ""
 
@@ -737,11 +721,11 @@ msgstr ""
 msgid "You will find at <link href=\"http://docs.openstack.org/developer/ceilometer/install/manual.html#installing-the-central-agent\">this page</link> the process to install the Telemetry central agent."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:25(title)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:24(title)
 msgid "Add the Telemetry central agent resource to Pacemaker"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:31(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:29(para)
 msgid "You may then proceed with adding the Pacemaker configuration for the Telemetry central agent resource. Connect to the Pacemaker cluster with <literal>crm configure</literal>, and add the following cluster resources:"
 msgstr ""
 
@@ -761,7 +745,7 @@ msgstr ""
 msgid "Configure Telemetry central agent service"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:55(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:54(para)
 msgid "Edit <filename>/etc/ceilometer/ceilometer.conf</filename>:"
 msgstr ""
 
@@ -769,7 +753,7 @@ msgstr ""
 msgid "Highly available OpenStack Identity"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml:9(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml:8(para)
 msgid "OpenStack Identity is the Identity Service in OpenStack and used by many services. Making the OpenStack Identity service highly available in active / passive mode involves"
 msgstr ""
 
@@ -777,51 +761,51 @@ msgstr ""
 msgid "Configure OpenStack Identity to listen on the VIP address,"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml:18(para)
-msgid "managing OpenStack Identity daemon with the Pacemaker cluster manager,"
+#: ./doc/high-availability-guide/api/section_keystone.xml:16(para)
+msgid "Managing OpenStack Identity daemon with the Pacemaker cluster manager,"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml:29(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml:24(para)
 msgid "Here is the <link href=\"http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_keystone.html\">documentation</link> for installing OpenStack Identity service."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml:33(title)
+#: ./doc/high-availability-guide/api/section_keystone.xml:28(title)
 msgid "Add OpenStack Identity resource to Pacemaker"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml:41(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml:36(para)
 msgid "You can now add the Pacemaker configuration for OpenStack Identity resource. Connect to the Pacemaker cluster with <literal>crm configure</literal>, and add the following cluster resources:"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml:47(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml:43(para)
 msgid "This configuration creates <literal>p_keystone</literal>, a resource for managing the OpenStack Identity service."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml:48(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml:45(para)
 msgid "<literal>crm configure</literal> supports batch input, so you may copy and paste the above into your live pacemaker configuration, and then make changes as required. For example, you may enter <literal>edit p_ip_keystone</literal> from the <literal>crm configure</literal> menu and edit the resource to match your preferred virtual IP address."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml:53(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml:50(para)
 msgid "Once completed, commit your configuration changes by entering <literal>commit</literal> from the <literal>crm configure</literal> menu. Pacemaker will then start the OpenStack Identity service, and its dependent resources, on one of your nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml:59(title)
+#: ./doc/high-availability-guide/api/section_keystone.xml:56(title)
 msgid "Configure OpenStack Identity service"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml:61(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml:57(para)
 msgid "You need to edit your OpenStack Identity configuration file (<filename>keystone.conf</filename>) and change the bind parameters:"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml:62(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml:60(para)
 msgid "On Havana:"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml:64(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml:62(para)
 msgid "On Icehouse, the <literal>admin_bind_host</literal> option lets you use a private network for the admin access."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml:67(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml:66(para)
 msgid "To be sure all data will be highly available, you should be sure that you store everything in the MySQL database (which is also highly available):"
 msgstr ""
 
@@ -833,19 +817,15 @@ msgstr ""
 msgid "Your OpenStack services must now point their OpenStack Identity configuration to the highly available, virtual cluster IP address — rather than a OpenStack Identity server’s physical IP address as you normally would."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml:82(para)
-msgid "For example with OpenStack Compute, if your OpenStack Identity service IP address is 192.168.42.103 as in the configuration explained here, you would use the following line in your API configuration file (<literal>api-paste.ini</literal>):"
-msgstr ""
-
-#: ./doc/high-availability-guide/api/section_keystone.xml:87(para)
-msgid "You also need to create the OpenStack Identity Endpoint with this IP."
+#: ./doc/high-availability-guide/api/section_keystone.xml:83(para)
+msgid "For example with OpenStack Compute, if your OpenStack Identity service IP address is <literal>192.168.42.103</literal> as in the configuration explained here, you would use the following line in your API configuration file (<literal>api-paste.ini</literal>):"
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_keystone.xml:88(para)
-msgid "NOTE: If you are using both private and public IP addresses, you should create two Virtual IP addresses and define your endpoint like this:"
+msgid "You also need to create the OpenStack Identity Endpoint with this IP."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_keystone.xml:93(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml:98(para)
 msgid "If you are using the horizon dashboard, you should edit the <literal>local_settings.py</literal> file:"
 msgstr ""
 
@@ -853,12 +833,12 @@ msgstr ""
 msgid "Configure the VIP"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_api_vip.xml:9(para)
+#: ./doc/high-availability-guide/api/section_api_vip.xml:8(para)
 msgid "First, you must select and assign a virtual IP address (VIP) that can freely float between cluster nodes."
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_api_vip.xml:10(para)
-msgid "This configuration creates <literal>p_ip_api</literal>, a virtual IP address for use by the API node (192.168.42.103):"
+msgid "This configuration creates <literal>p_ip_api</literal>, a virtual IP address for use by the API node (<literal>192.168.42.103</literal>):"
 msgstr ""
 
 #: ./doc/high-availability-guide/controller/section_rabbitmq.xml:12(title)
