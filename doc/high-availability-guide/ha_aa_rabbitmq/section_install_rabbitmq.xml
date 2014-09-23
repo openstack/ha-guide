@@ -22,7 +22,7 @@
             <title>On Fedora / RHEL</title>
 
           <para>RabbitMQ is packaged on both distros:</para>
-          <screen><prompt>#</prompt> <userinput>yum install erlang</userinput></screen>
+          <screen><prompt>#</prompt> <userinput>yum install rabbitmq-server</userinput></screen>
           <para>
             <link xlink:href="http://www.rabbitmq.com/install-rpm.html">Official manual for installing RabbitMQ on Fedora / RHEL</link>
           </para>
