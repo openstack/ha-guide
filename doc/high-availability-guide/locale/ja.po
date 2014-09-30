@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-09-21 09:23+0000\n"
-"PO-Revision-Date: 2014-09-21 00:00+0000\n"
+"POT-Creation-Date: 2014-09-29 14:30+0000\n"
+"PO-Revision-Date: 2014-09-29 14:30+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -438,7 +438,7 @@ msgstr "すべての OpenStack スケジューラー"
 msgid "Memcached service"
 msgstr "Memcached サービス"
 
-#: ./doc/high-availability-guide/part_active_passive.xml8(title)
+#: ./doc/high-availability-guide/part_active_passive.xml7(title)
 msgid "HA using active/passive"
 msgstr "アクティブ/パッシブを使用した HA"
 
@@ -472,7 +472,7 @@ msgid ""
 "installations, so we’ll cover it here."
 msgstr "データベースの選択は決められたものではありません。必ずしも MySQL を使用する必要がありません。しかしながら、OpenStack のインストール環境ではかなり一般的な選択肢であるため、ここでは MySQL を取り扱います。"
 
-#: ./doc/high-availability-guide/part_active_active.xml8(title)
+#: ./doc/high-availability-guide/part_active_active.xml7(title)
 msgid "HA using active/active"
 msgstr "アクティブ/アクティブを使用した HA"
 
@@ -729,8 +729,8 @@ msgstr "Block Storage API リソース用の Pacemaker 設定を追加できま�
 #: ./doc/high-availability-guide/api/section_cinder_api.xml41(para)
 #: ./doc/high-availability-guide/api/section_glance_api.xml41(para)
 #: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml37(para)
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml191(para)
-#: ./doc/high-availability-guide/controller/section_mysql.xml203(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml170(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml182(para)
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml26(para)
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml30(para)
 msgid "This configuration creates"
@@ -1213,42 +1213,42 @@ msgid ""
 " for use by the API node (<literal>192.168.42.103</literal>):"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml12(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml11(title)
 msgid "Highly available RabbitMQ"
 msgstr "高可用性 RabbitMQ"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml14(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml12(para)
 msgid ""
 "RabbitMQ is the default AMQP server used by many OpenStack services. Making "
 "the RabbitMQ service highly available involves:"
 msgstr "RabbitMQ が多くの OpenStack サービスにより使用される標準の AMQP サーバーです。RabbitMQ サービスを高可用性にすることは、次のことが関連します。"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml18(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml16(para)
 msgid "configuring a DRBD device for use by RabbitMQ,"
 msgstr "RabbitMQ により使用するための DRBD デバイスを設定します。"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml23(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml19(para)
 msgid ""
 "configuring RabbitMQ to use a data directory residing on that DRBD device,"
 msgstr "RabbitMQ が DRBD デバイスにあるデータディレクトリを使用するよう設定します。"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml29(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml23(para)
 msgid ""
 "selecting and assigning a virtual IP address (VIP) that can freely float "
 "between cluster nodes,"
 msgstr "クラスターノード間で自由に移動できる仮想 IP アドレス (VIP) を選択して割り当てます。"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml35(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml27(para)
 msgid "configuring RabbitMQ to listen on that IP address,"
 msgstr "RabbitMQ がその IP アドレスでリッスンするよう設定します。"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml40(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml30(para)
 msgid ""
 "managing all resources, including the RabbitMQ daemon itself, with the "
 "Pacemaker cluster manager."
 msgstr "RabbitMQ デーモン自身を含む、すべてのリソースを Pacemaker クラスターマネージャーで管理します。"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml47(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml35(para)
 msgid ""
 "There is an alternative method of configuring RabbitMQ for high "
 "availability. That approach, known as <link "
@@ -1261,78 +1261,75 @@ msgid ""
 "mirrored queues mature."
 msgstr "RabbitMQ を高可用性に設定する別の方法があります。この方法は、<link href=\"http://www.rabbitmq.com/ha.html\">アクティブ・アクティブのキューのミラー</link>として知られ、RabbitMQ 開発者に好まれているものです。しかしながら、OpenStack クラスターにおける理想的な一貫性と信頼性よりは劣るものです。そのため、執筆時点では、Pacemaker/DRBD による方法が OpenStack 環境に対する推奨事項として残されています。これは RabbitMQ のアクティブ・アクティブのキューのミラーが成熟すると、近い将来に変更される可能性もあります。"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml59(title)
-#: ./doc/high-availability-guide/controller/section_mysql.xml56(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml46(title)
+#: ./doc/high-availability-guide/controller/section_mysql.xml44(title)
 msgid "Configure DRBD"
 msgstr "DRBD の設定"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml61(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml47(para)
 msgid ""
 "The Pacemaker based RabbitMQ server requires a DRBD resource from which it "
-"mounts the <literal>/var/lib/rabbitmq</literal> directory. In this example, "
-"the DRBD resource is simply named <literal>rabbitmq</literal>:"
-msgstr "Pacemaker ベースの RabbitMQ サーバーは <literal>/var/lib/rabbitmq</literal> ディレクトリをマウントする DRBD リソースが必要です。この例では、DRBD リソースは単に <literal>rabbitmq</literal> という名前になっています。"
+"mounts the <filename>/var/lib/rabbitmq</filename> directory. In this "
+"example, the DRBD resource is simply named <literal>rabbitmq</literal>:"
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml66(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml52(title)
 msgid ""
 "<literal>rabbitmq</literal> DRBD resource configuration "
 "(<filename>/etc/drbd.d/rabbitmq.res</filename>)"
 msgstr "<literal>rabbitmq</literal> DRBD リソース設定 (<filename>/etc/drbd.d/rabbitmq.res</filename>)"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml82(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml68(para)
 msgid ""
-"This resource uses an underlying local disk (in DRBD terminology, a "
-"<emphasis>backing device</emphasis>) named "
-"<literal>/dev/data/rabbitmq</literal> on both cluster nodes, "
-"<literal>node1</literal> and <literal>node2</literal>. Normally, this would "
-"be an LVM Logical Volume specifically set aside for this purpose. The DRBD "
-"<literal>meta-disk</literal> is <literal>internal</literal>, meaning DRBD-"
-"specific metadata is being stored at the end of the <literal>disk</literal> "
-"device itself. The device is configured to communicate between IPv4 "
-"addresses 10.0.42.100 and 10.0.42.254, using TCP port 7701. Once enabled, it"
-" will map to a local DRBD block device with the device minor number 1, that "
-"is, <literal>/dev/drbd1</literal>."
-msgstr "このリソースは、両方のクラスターノード <literal>node1</literal> と <literal>node2</literal> において、<literal>/dev/data/rabbitmq</literal> という名前のバックエンドのローカルディスク (DRBD の用語で <emphasis>backing device</emphasis>) を使用します。通常、これはこの目的のために特別に設定された LVM 論理ボリュームでしょう。DRBD <literal>meta-disk</literal> は <literal>internal</literal> です。これは DRBD 固有のメタデータが <literal>disk</literal> デバイス自身の最後に保存されることを意味します。このデバイスは IPv4 アドレス 10.0.42.100 と 10.0.42.254 の間で TCP ポート 7701 を使用して通信するよう設定されます。一度有効化されると、デバイスマイナー番号 1 を持つローカル DRBD ブロックデバイス、つまり <literal>/dev/drbd1</literal> にマップされます。"
+"This resource uses an underlying local disk (in DRBD terminology, a backing "
+"device) named <filename>/dev/data/rabbitmq</filename> on both cluster nodes,"
+" <literal>node1</literal> and <literal>node2</literal>. Normally, this would"
+" be an LVM Logical Volume specifically set aside for this purpose. The DRBD "
+"meta-disk is internal, meaning DRBD-specific metadata is being stored at the"
+" end of the disk device itself. The device is configured to communicate "
+"between IPv4 addresses <literal>10.0.42.100</literal> and "
+"<literal>10.0.42.254</literal>, using TCP port 7701. Once enabled, it will "
+"map to a local DRBD block device with the device minor number 1, that is, "
+"<filename>/dev/drbd1</filename>."
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml91(para)
-#: ./doc/high-availability-guide/controller/section_mysql.xml88(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml79(para)
 msgid ""
 "Enabling a DRBD resource is explained in detail in <link "
 "href=\"http://www.drbd.org/users-guide-8.3/s-first-time-up.html\">the DRBD "
-"User’s Guide</link>. In brief, the proper sequence of commands is this:"
-msgstr "DRBD リソースを有効化する方法は <link href=\"http://www.drbd.org/users-guide-8.3/s-first-time-up.html\">DRBD ユーザーガイド</link> に詳細に説明されています。要約すると、正しいコマンドの流れはこのとおりです。"
+"User's Guide</link>. In brief, the proper sequence of commands is this:"
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml99(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml87(para)
 msgid ""
 "Initializes DRBD metadata and writes the initial set of metadata to "
-"<literal>/dev/data/rabbitmq</literal>. Must be completed on both nodes."
-msgstr "DRBD メタデータを初期化し、メタデータの初期セットを <literal>/dev/data/rabbitmq</literal> に書き込みます。両方のノードで完了する必要があります。"
+"<filename>/dev/data/rabbitmq</filename>. Must be completed on both nodes."
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml105(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml92(para)
 msgid ""
-"Creates the <literal>/dev/drbd1</literal> device node, "
-"<emphasis>attaches</emphasis> the DRBD device to its backing store, and "
-"<emphasis>connects</emphasis> the DRBD node to its peer. Must be completed "
-"on both nodes."
-msgstr "<literal>/dev/drbd1</literal> デバイスノードを作成し、DRBD デバイスをそのバックエンドに<emphasis>接続</emphasis>し、DRBD ノードを同期先に<emphasis>接続</emphasis>します。両方のノードで完了する必要があります。"
+"Creates the <filename>/dev/drbd1</filename> device node, attaches the DRBD "
+"device to its backing store, and connects the DRBD node to its peer. Must be"
+" completed on both nodes."
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml112(para)
-#: ./doc/high-availability-guide/controller/section_mysql.xml109(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml97(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml95(para)
 msgid ""
 "Kicks off the initial device synchronization, and puts the device into the "
 "<literal>primary</literal> (readable and writable) role. See <link "
-"href=\"http://www.drbd.org/users-guide-8.3/ch-admin.html#s-roles\">Resource "
-"roles</link> (from the DRBD User’s Guide) for a more detailed description of"
-" the primary and secondary roles in DRBD. Must be completed <emphasis>on one"
-" node only,</emphasis> namely the one where you are about to continue with "
-"creating your filesystem."
-msgstr "初期デバイス同期を開始し、デバイスを <literal>プライマリ</literal> (読み書き可能) ロールにします。DRBD のプライマリロールとセカンダリロールの詳細は (DRBD User’s Guide の) <link href=\"http://www.drbd.org/users-guide-8.3/ch-admin.html#s-roles\">Resource roles</link> を参照してください。必ず<emphasis>一つのノードのみで</emphasis>実行する必要があります。つまり、ファイルシステムを作成しようとしているノードのみです。"
+"href=\"http://www.drbd.org/users-guide-8.3/ch-admin.html#s-roles\"> Resource"
+" roles</link> (from the DRBD User's Guide) for a more detailed description "
+"of the primary and secondary roles in DRBD. Must be completed on one node "
+"only, namely the one where you are about to continue with creating your "
+"filesystem."
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml126(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml108(title)
 msgid "Create a file system"
 msgstr "ファイルシステムの作成"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml128(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml109(para)
 msgid ""
 "Once the DRBD resource is running and in the primary role (and potentially "
 "still in the process of running the initial device synchronization), you may"
@@ -1340,108 +1337,107 @@ msgid ""
 "the recommended filesystem:"
 msgstr "DRBD リソースが実行中になり、プライマリロールになると (まだ初期デバイス同期が実行中かもしれません)、RabbitMQ データのファイルシステムの作成を進められます。XFS が一般的に推奨されるファイルシステムです。"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml133(para)
-#: ./doc/high-availability-guide/controller/section_mysql.xml130(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml114(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml113(para)
 msgid ""
 "You may also use the alternate device path for the DRBD device, which may be"
 " easier to remember as it includes the self-explanatory resource name:"
 msgstr "DRBD デバイスに対する代替デバイスパスを使用することもできます。これは自己説明的なリソース名を含むため、より覚えやすいでしょう。"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml137(para)
-#: ./doc/high-availability-guide/controller/section_mysql.xml134(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml118(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml117(para)
 msgid ""
 "Once completed, you may safely return the device to the secondary role. Any "
 "ongoing device synchronization will continue in the background:"
 msgstr "一度完了すると、デバイスを安全にセカンダリロールに戻せます。すべての動作中のデバイス同期はバックエンドで継続されます。"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml144(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml124(title)
 msgid "Prepare RabbitMQ for Pacemaker high availability"
 msgstr "Pacemaker 高可用性のための RabbitMQ の準備"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml146(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml125(para)
 msgid ""
 "In order for Pacemaker monitoring to function properly, you must ensure that"
-" RabbitMQ’s <literal>.erlang.cookie</literal> files are identical on all "
+" RabbitMQ's <filename>.erlang.cookie</filename> files are identical on all "
 "nodes, regardless of whether DRBD is mounted there or not. The simplest way "
-"of doing so is to take an existing <literal>.erlang.cookie</literal> from "
+"of doing so is to take an existing <filename>.erlang.cookie</filename> from "
 "one of your nodes, copying it to the RabbitMQ data directory on the other "
 "node, and also copying it to the DRBD-backed filesystem."
-msgstr "Pacemaker の監視を正しく機能させるために、DRBD がマウントされているかどうかに関わらず、RabbitMQ の <literal>.erlang.cookie</literal> ファイルをすべてのノードで必ず同じにする必要があります。そうする最も簡単な方法は、どこかのノードから既存の <literal>.erlang.cookie</literal> を取得し、他のノードの RabbitMQ データディレクトリおよび DRBD のバックエンドファイルシステムにコピーすることです。"
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml159(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml138(title)
 msgid "Add RabbitMQ resources to Pacemaker"
 msgstr "RabbitMQ リソースの Pacemaker への追加"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml161(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml139(para)
 msgid ""
 "You may now proceed with adding the Pacemaker configuration for RabbitMQ "
-"resources. Connect to the Pacemaker cluster with <literal>crm "
-"configure</literal>, and add the following cluster resources:"
-msgstr "OpenStack RabbitMQ リソース用の Pacemaker 設定を追加して、次に進むことができます。<literal>crm configure</literal> を用いて Pacemaker クラスターに接続し、以下のクラスターリソースを追加します。"
+"resources. Connect to the Pacemaker cluster with <placeholder-1/>, and add "
+"the following cluster resources:"
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml194(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml173(para)
 msgid ""
 "<literal>p_ip_rabbitmq</literal>, a virtual IP address for use by RabbitMQ "
-"(192.168.42.100),"
-msgstr "<literal>p_ip_rabbitmq</literal>, RabbitMQ により使用される仮想 IP アドレス (192.168.42.100),"
+"(<literal>192.168.42.100</literal>),"
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml199(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml177(para)
 msgid ""
 "<literal>p_fs_rabbitmq</literal>, a Pacemaker managed filesystem mounted to "
-"<literal>/var/lib/rabbitmq</literal> on whatever node currently runs the "
+"<filename>/var/lib/rabbitmq</filename> on whatever node currently runs the "
 "RabbitMQ service,"
-msgstr "<literal>p_fs_rabbitmq</literal>, 現在 RabbitMQ サービスを実行している、すべてのノードにおいて <literal>/var/lib/rabbitmq</literal> にマウントされている、Pacemaker が管理しているファイルシステム。"
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml205(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml182(para)
 msgid ""
-"<literal>ms_drbd_rabbitmq</literal>, the <emphasis>master/slave "
-"set</emphasis> managing the <literal>rabbitmq</literal> DRBD resource,"
-msgstr "<literal>ms_drbd_rabbitmq</literal>, <literal>rabbitmq</literal> DRBD リソースを管理している<emphasis>マスター/スレーブの組</emphasis>。"
+"<literal>ms_drbd_rabbitmq</literal>, the master/slave set managing the "
+"<literal>rabbitmq</literal> DRBD resource,"
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml210(para)
-#: ./doc/high-availability-guide/controller/section_mysql.xml222(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml186(para)
 msgid ""
-"a service <literal>group</literal> and <literal>order</literal> and "
-"<literal>colocation</literal> constraints to ensure resources are started on"
-" the correct nodes, and in the correct sequence."
-msgstr "リソースが適切なノードにおいて、適切な順序で起動されることを確実にする、サービスの <literal>group</literal>, <literal>order</literal> および <literal>colocation</literal> 制約。"
+"a service group and order and colocation constraints to ensure resources are"
+" started on the correct nodes, and in the correct sequence."
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml216(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml191(para)
 msgid ""
-"<literal>crm configure</literal> supports batch input, so you may copy and "
-"paste the above into your live pacemaker configuration, and then make "
-"changes as required. For example, you may enter <literal>edit "
-"p_ip_rabbitmq</literal> from the <literal>crm configure</literal> menu and "
-"edit the resource to match your preferred virtual IP address."
-msgstr "<literal>crm configure</literal> はバッチ入力をサポートします。そのため、現在の pacemaker 設定の中に上をコピー・ペーストし、適宜変更を反映できます。例えば、お好みの仮想 IP アドレスに一致させるために、<literal>crm configure</literal> メニューから <literal>edit p_ip_rabbitmq</literal> と入力し、リソースを編集できます。"
+"<placeholder-1/> supports batch input, so you may copy and paste the above "
+"into your live pacemaker configuration, and then make changes as required. "
+"For example, you may enter <literal>edit p_ip_rabbitmq</literal> from the "
+"<placeholder-2/> menu and edit the resource to match your preferred virtual "
+"IP address."
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml221(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml197(para)
 msgid ""
 "Once completed, commit your configuration changes by entering "
-"<literal>commit</literal> from the <literal>crm configure</literal> menu. "
-"Pacemaker will then start the RabbitMQ service, and its dependent resources,"
-" on one of your nodes."
-msgstr "完了すると、<literal>crm configure</literal> メニューから <literal>commit</literal> と入力し、設定の変更をコミットします。Pacemaker は RabbitMQ サービスおよび依存するリソースを同じノードに起動します。"
+"<literal>commit</literal> from the <placeholder-1/> menu. Pacemaker will "
+"then start the RabbitMQ service, and its dependent resources, on one of your"
+" nodes."
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml227(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml203(title)
 msgid "Configure OpenStack services for highly available RabbitMQ"
 msgstr "高可用性 RabbitMQ のための OpenStack サービスの設定"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml229(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml204(para)
 msgid ""
 "Your OpenStack services must now point their RabbitMQ configuration to the "
-"highly available, virtual cluster IP addressrather than a RabbitMQ server"
-msgstr "OpenStack サービスは、通常どおり RabbitMQ サーバー代わりに、RabbitMQ の設定が高可用性な仮想クラスター IP アドレスを指し示す必要があります。"
+"highly available, virtual cluster IP addressrather than a RabbitMQ server's "
+"physical IP address as you normally would."
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml232(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml208(para)
 msgid ""
 "For OpenStack Image, for example, if your RabbitMQ service IP address is "
-"192.168.42.100 as in the configuration explained here, you would use the "
-"following line in your OpenStack Image API configuration file (<filename"
-">glance-api.conf</filename>):"
-msgstr "OpenStack Image の例として、RabbitMQ サーバーの IP アドレスがここで説明された設定にあるように 192.168.42.100 ならば、OpenStack Image API 設定ファイル (<filename>glance-api.conf</filename>) で以下の行を使用する必要があります。"
+"<literal>192.168.42.100</literal> as in the configuration explained here, "
+"you would use the following line in your OpenStack Image API configuration "
+"file (<filename>glance-api.conf</filename>):"
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml237(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml214(para)
 msgid ""
 "No other changes are necessary to your OpenStack configuration. If the node "
 "currently hosting your RabbitMQ experiences a problem necessitating service "
@@ -1450,41 +1446,41 @@ msgid ""
 "continue to run normally."
 msgstr "OpenStack の設定に他の変更は必要ありません。現在 RabbitMQ を稼働しているノードが、サービスのフェイルオーバーを必要とする問題に遭遇した場合、ネットワークの中断と通常どおりの動作継続により、OpenStack のサービスは MySQL の短時間の中断に遭遇するかもしれません。"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml12(title)
+#: ./doc/high-availability-guide/controller/section_mysql.xml11(title)
 msgid "Highly available MySQL"
 msgstr "高可用性 MySQL"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml14(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml12(para)
 msgid ""
 "MySQL is the default database server used by many OpenStack services. Making"
 " the MySQL service highly available involves"
 msgstr "MySQL は多くの OpenStack サービスにより使用される標準のデータベースサーバーです。MySQL サービスを高可用性にするには、次のことが関係します。"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml18(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml16(para)
 msgid "Configure a DRBD device for use by MySQL,"
 msgstr "MySQL により使用するための DRBD デバイスの設定,"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml23(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml19(para)
 msgid "Configure MySQL to use a data directory residing on that DRBD device,"
 msgstr "MySQL がこの DRBD デバイスにあるデータディレクトリを使用するよう設定します。"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml29(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml23(para)
 msgid ""
 "Select and assign a virtual IP address (VIP) that can freely float between "
 "cluster nodes,"
 msgstr "クラスターノード間を自由に移動できる仮想 IP (VIP) を選択し、割り当てます。"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml35(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml27(para)
 msgid "Configure MySQL to listen on that IP address,"
 msgstr "その IP アドレスをリッスンするよう MySQL を設定します。"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml40(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml30(para)
 msgid ""
 "Manage all resources, including the MySQL daemon itself, with the Pacemaker "
 "cluster manager."
 msgstr "Pacemaker クラスターマネージャーを用いた、MySQL デーモン自身を含む、すべてのリソースの管理"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml47(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml36(para)
 msgid ""
 "<link href=\"http://galeracluster.com/\">MySQL/Galera</link> is an "
 "alternative method of configuring MySQL for high availability. It is likely "
@@ -1494,53 +1490,58 @@ msgid ""
 "environments."
 msgstr "<link href=\"http://galeracluster.com/\">MySQL/Galera</link> は、MySQL を高可用性に設定する別の方法です。これが十分に成熟すれば、MySQL の高可用性を実現する推奨方式になるでしょう。しかしながら執筆時点では、Pacemaker/DRBD ベースの方法が OpenStack 環境向けの推奨になります。"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml58(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml45(para)
 msgid ""
 "The Pacemaker based MySQL server requires a DRBD resource from which it "
 "mounts the <literal>/var/lib/mysql</literal> directory. In this example, the"
 " DRBD resource is simply named <literal>mysql</literal>:"
 msgstr "Pacemaker ベースの MySQL サーバーは <literal>/var/lib/mysql</literal> ディレクトリをマウントする DRBD リソースが必要です。この例では、DRBD リソースが単に <literal>mysql</literal> という名前になっています。"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml63(title)
+#: ./doc/high-availability-guide/controller/section_mysql.xml49(title)
 msgid ""
 "<literal>mysql</literal> DRBD resource configuration "
 "(<filename>/etc/drbd.d/mysql.res</filename>)"
 msgstr "<literal>mysql</literal> DRBD リソース設定 (<filename>/etc/drbd.d/mysql.res</filename>)"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml79(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml65(para)
 msgid ""
-"This resource uses an underlying local disk (in DRBD terminology, a "
-"<emphasis>backing device</emphasis>) named "
-"<literal>/dev/data/mysql</literal> on both cluster nodes, "
+"This resource uses an underlying local disk (in DRBD terminology, a backing "
+"device) named <filename>/dev/data/mysql</filename> on both cluster nodes, "
 "<literal>node1</literal> and <literal>node2</literal>. Normally, this would "
 "be an LVM Logical Volume specifically set aside for this purpose. The DRBD "
-"<literal>meta-disk</literal> is <literal>internal</literal>, meaning DRBD-"
-"specific metadata is being stored at the end of the <literal>disk</literal> "
-"device itself. The device is configured to communicate between IPv4 "
-"addresses 10.0.42.100 and 10.0.42.254, using TCP port 7700. Once enabled, it"
-" will map to a local DRBD block device with the device minor number 0, that "
-"is, <filename>/dev/drbd0</filename>."
-msgstr "このリソースは、両方のクラスターノード <literal>node1</literal> と <literal>node2</literal> において、<literal>/dev/data/mysql</literal> という名前のバックエンドのローカルディスク (DRBD の用語で <emphasis>backing device</emphasis>) を使用します。通常、これはこの目的のために特別に設定された LVM 論理ボリュームでしょう。DRBD <literal>meta-disk</literal> は <literal>internal</literal> です。これは DRBD 固有のメタデータが <literal>disk</literal> デバイス自身の最後に保存されることを意味します。このデバイスは IPv4 アドレス 10.0.42.100 と 10.0.42.254 の間で TCP ポート 7700 を使用して通信するよう設定されます。一度有効化されると、デバイスマイナー番号 0 を持つローカル DRBD ブロックデバイス、つまり <filename>/dev/drbd0</filename> にマップされます。"
+"meta-disk is internal, meaning DRBD-specific metadata is being stored at the"
+" end of the disk device itself. The device is configured to communicate "
+"between IPv4 addresses <literal>10.0.42.100</literal> and "
+"<literal>10.0.42.254</literal>, using TCP port 7700. Once enabled, it will "
+"map to a local DRBD block device with the device minor number 0, that is, "
+"<filename>/dev/drbd0</filename>."
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml96(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml75(para)
+msgid ""
+"Enabling a DRBD resource is explained in detail in <link "
+"href=\"http://www.drbd.org/users-guide-8.3/s-first-time-up.html\"> the DRBD "
+"User's Guide</link>. In brief, the proper sequence of commands is this:"
+msgstr ""
+
+#: ./doc/high-availability-guide/controller/section_mysql.xml84(para)
 msgid ""
 "Initializes DRBD metadata and writes the initial set of metadata to "
 "<literal>/dev/data/mysql</literal>. Must be completed on both nodes."
 msgstr "DRBD メタデータを初期化し、メタデータの初期セットを <literal>/dev/data/mysql</literal> に書き込みます。両方のノードで完了する必要があります。"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml102(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml89(para)
 msgid ""
-"Creates the <literal>/dev/drbd0</literal> device node, "
-"<emphasis>attaches</emphasis> the DRBD device to its backing store, and "
-"<emphasis>connects</emphasis> the DRBD node to its peer. Must be completed "
-"on both nodes."
-msgstr "<literal>/dev/drbd0</literal> デバイスノードを作成し、DRBD デバイスをそのバックエンドに<emphasis>接続</emphasis>し、DRBD ノードを同期先に<emphasis>接続</emphasis>します。両方のノードで完了する必要があります。"
+"Creates the <literal>/dev/drbd0</literal> device node, attaches the DRBD "
+"device to its backing store, and connects the DRBD node to its peer. Must be"
+" completed on both nodes."
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml123(title)
+#: ./doc/high-availability-guide/controller/section_mysql.xml106(title)
 msgid "Creating a file system"
 msgstr "ファイルシステムの作成"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml125(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml107(para)
 msgid ""
 "Once the DRBD resource is running and in the primary role (and potentially "
 "still in the process of running the initial device synchronization), you may"
@@ -1549,103 +1550,111 @@ msgid ""
 "performance:"
 msgstr "DRBD リソースが実行中になり、プライマリーロール (初期デバイス同期の処理中かもしれません) になると、MySQL データ用のファイルシステムを作成できます。ジャーナリング、効果的な割り当て、高性能のため、XFS が一般的に推奨されます。"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml141(title)
+#: ./doc/high-availability-guide/controller/section_mysql.xml123(title)
 msgid "Prepare MySQL for Pacemaker high availability"
 msgstr "Pacemaker 高可用性のための MySQL の準備"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml143(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml124(para)
 msgid ""
 "In order for Pacemaker monitoring to function properly, you must ensure that"
-" MySQL’s database files reside on the DRBD device. If you already have an "
+" MySQL's database files reside on the DRBD device. If you already have an "
 "existing MySQL database, the simplest approach is to just move the contents "
-"of the existing <literal>/var/lib/mysql</literal> directory into the newly "
-"created filesystem on the DRBD device."
-msgstr "Pacemaker の監視を正しく機能させるために、MySQL のデータベースファイルを必ず DRBD デバイスに置く必要があります。既存の MySQL データベースがあれば、最も簡単な方法は、既存の <literal>/var/lib/mysql</literal> ディレクトリの中身を、DRBD デバイスに新しく作成したファイルシステムにそのまま移動することです。"
+"of the existing <filename>/var/lib/mysql</filename> directory into the newly"
+" created filesystem on the DRBD device."
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml149(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml130(para)
 msgid ""
 "You must complete the next step while the MySQL database server is shut "
 "down."
 msgstr "MySQL データベースサーバーがシャットダウンしている間に、次の手順を完了する必要があります。"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml155(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml136(para)
 msgid ""
 "For a new MySQL installation with no existing data, you may also run the "
-"<literal>mysql_install_db</literal> command:"
-msgstr "既存のデータが無い新しい MySQL インストール環境の場合、<literal>mysql_install_db</literal> コマンドを実行する必要があるかもしれません。"
+"<placeholder-1/> command:"
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml160(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml141(para)
 msgid ""
 "Regardless of the approach, the steps outlined here must be completed on "
 "only one cluster node."
 msgstr "その方法に関わらず、ここに概要が示された手順は一つだけのクラスターノードで完了する必要があります。"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml165(title)
+#: ./doc/high-availability-guide/controller/section_mysql.xml145(title)
 msgid "Add MySQL resources to Pacemaker"
 msgstr "MySQL リソースの Pacemaker への追加"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml167(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml146(para)
 msgid ""
 "You can now add the Pacemaker configuration for MySQL resources. Connect to "
-"the Pacemaker cluster with <literal>crm configure</literal>, and add the "
-"following cluster resources:"
-msgstr "これで MySQL リソース用の Pacemaker 設定を追加できます。<literal>crm configure</literal> を用いて Pacemaker クラスターに接続し、以下のクラスターリソースを追加します。"
+"the Pacemaker cluster with <placeholder-1/>, and add the following cluster "
+"resources:"
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml206(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml185(para)
 msgid ""
 "<literal>p_ip_mysql</literal>, a virtual IP address for use by MySQL "
-"(192.168.42.101),"
-msgstr "<literal>p_ip_mysql</literal>, MySQL により使用される仮想 IP アドレス (192.168.42.101),"
+"(<literal>192.168.42.101</literal>),"
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml211(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml189(para)
 msgid ""
 "<literal>p_fs_mysql</literal>, a Pacemaker managed filesystem mounted to "
-"<literal>/var/lib/mysql</literal> on whatever node currently runs the MySQL "
-"service,"
-msgstr "<literal>p_fs_mysql</literal>, 現在 MySQL サービスを実行している、すべてのノードにおいて <literal>/var/lib/mysql</literal> にマウントされている、Pacemaker が管理しているファイルシステム。"
+"<filename>/var/lib/mysql</filename> on whatever node currently runs the "
+"MySQL service,"
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml217(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml194(para)
 msgid ""
-"<literal>ms_drbd_mysql</literal>, the <emphasis>master/slave set</emphasis> "
-"managing the <literal>mysql</literal> DRBD resource,"
-msgstr "<literal>ms_drbd_mysql</literal>, <literal>mysql</literal> DRBD リソースを管理している<emphasis>マスター/スレーブの組</emphasis>。"
+"<literal>ms_drbd_mysql</literal>, the master/slave set managing the "
+"<literal>mysql</literal> DRBD resource,"
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml228(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml198(para)
 msgid ""
-"<literal>crm configure</literal> supports batch input, so you may copy and "
-"paste the above into your live pacemaker configuration, and then make "
-"changes as required. For example, you may enter <literal>edit "
-"p_ip_mysql</literal> from the <literal>crm configure</literal> menu and edit"
-" the resource to match your preferred virtual IP address."
-msgstr "<literal>crm configure</literal> はバッチ入力をサポートします。そのため、現在の pacemaker 設定の中に上をコピー・ペーストし、適宜変更を反映できます。例えば、お好みの仮想 IP アドレスに一致させるために、<literal>crm configure</literal> メニューから <literal>edit p_ip_mysql</literal> と入力し、リソースを編集できます。"
+"a service <literal>group</literal> and <literal>order</literal> and "
+"<literal>colocation</literal> constraints to ensure resources are started on"
+" the correct nodes, and in the correct sequence."
+msgstr "リソースが適切なノードにおいて、適切な順序で起動されることを確実にする、サービスの <literal>group</literal>, <literal>order</literal> および <literal>colocation</literal> 制約。"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml233(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml203(para)
+msgid ""
+"<placeholder-1/> supports batch input, so you may copy and paste the above "
+"into your live pacemaker configuration, and then make changes as required. "
+"For example, you may enter <literal>edit p_ip_mysql</literal> from the "
+"<placeholder-2/> menu and edit the resource to match your preferred virtual "
+"IP address."
+msgstr ""
+
+#: ./doc/high-availability-guide/controller/section_mysql.xml208(para)
 msgid ""
 "Once completed, commit your configuration changes by entering "
-"<literal>commit</literal> from the <literal>crm configure</literal> menu. "
-"Pacemaker will then start the MySQL service, and its dependent resources, on"
-" one of your nodes."
-msgstr "完了すると、<literal>crm configure</literal> メニューから <literal>commit</literal> と入力し、設定の変更をコミットします。Pacemaker は MySQL サービスおよび依存するリソースを同じノードに起動します。"
+"<literal>commit</literal> from the <placeholder-1/> menu. Pacemaker will "
+"then start the MySQL service, and its dependent resources, on one of your "
+"nodes."
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml239(title)
+#: ./doc/high-availability-guide/controller/section_mysql.xml214(title)
 msgid "Configure OpenStack services for highly available MySQL"
 msgstr "高可用性 MySQL のための OpenStack サービスの設定"
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml241(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml215(para)
 msgid ""
 "Your OpenStack services must now point their MySQL configuration to the "
-"highly available, virtual cluster IP addressrather than a MySQL server"
-msgstr "OpenStack サービスは、MySQL サーバーの代わりに、MySQL の設定が高可用性と仮想クラスター IP アドレスを指し示す必要があります。"
+"highly available, virtual cluster IP addressrather than a MySQL server's "
+"physical IP address as you normally would."
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml244(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml218(para)
 msgid ""
 "For OpenStack Image, for example, if your MySQL service IP address is "
-"192.168.42.101 as in the configuration explained here, you would use the "
-"following line in your OpenStack Image registry configuration file "
-"(<filename>glance-registry.conf</filename>):"
-msgstr "OpenStack Image の例として、MySQL サーバーの IP アドレスがここで説明された設定にあるように 192.168.42.101 ならば、OpenStack Image レジストリ設定ファイル (<filename>glance-registry.conf</filename>) で以下の行を使用する必要があります。"
+"<literal>192.168.42.101</literal> as in the configuration explained here, "
+"you would use the following line in your OpenStack Image registry "
+"configuration file (<filename>glance-registry.conf</filename>):"
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml249(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml223(para)
 msgid ""
 "No other changes are necessary to your OpenStack configuration. If the node "
 "currently hosting your database experiences a problem necessitating service "

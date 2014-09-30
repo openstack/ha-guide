@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-09-22 06:00+0000\n"
+"POT-Creation-Date: 2014-09-30 06:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -313,7 +313,7 @@ msgstr ""
 msgid "Memcached service"
 msgstr ""
 
-#: ./doc/high-availability-guide/part_active_passive.xml:8(title)
+#: ./doc/high-availability-guide/part_active_passive.xml:7(title)
 msgid "HA using active/passive"
 msgstr ""
 
@@ -337,7 +337,7 @@ msgstr ""
 msgid "The choice of database isn’t a foregone conclusion; you’re not required to use MySQL. It is, however, a fairly common choice in OpenStack installations, so we’ll cover it here."
 msgstr ""
 
-#: ./doc/high-availability-guide/part_active_active.xml:8(title)
+#: ./doc/high-availability-guide/part_active_active.xml:7(title)
 msgid "HA using active/active"
 msgstr ""
 
@@ -513,7 +513,7 @@ msgstr ""
 msgid "You can now add the Pacemaker configuration for Block Storage API resource. Connect to the Pacemaker cluster with <literal>crm configure</literal>, and add the following cluster resources:"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:41(para) ./doc/high-availability-guide/api/section_glance_api.xml:41(para) ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:37(para) ./doc/high-availability-guide/controller/section_rabbitmq.xml:191(para) ./doc/high-availability-guide/controller/section_mysql.xml:203(para) ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml:26(para) ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml:30(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:41(para) ./doc/high-availability-guide/api/section_glance_api.xml:41(para) ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:37(para) ./doc/high-availability-guide/controller/section_rabbitmq.xml:170(para) ./doc/high-availability-guide/controller/section_mysql.xml:182(para) ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml:26(para) ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml:30(para)
 msgid "This configuration creates"
 msgstr ""
 
@@ -841,263 +841,271 @@ msgstr ""
 msgid "This configuration creates <literal>p_ip_api</literal>, a virtual IP address for use by the API node (<literal>192.168.42.103</literal>):"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:12(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:11(title)
 msgid "Highly available RabbitMQ"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:14(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:12(para)
 msgid "RabbitMQ is the default AMQP server used by many OpenStack services. Making the RabbitMQ service highly available involves:"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:18(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:16(para)
 msgid "configuring a DRBD device for use by RabbitMQ,"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:23(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:19(para)
 msgid "configuring RabbitMQ to use a data directory residing on that DRBD device,"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:29(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:23(para)
 msgid "selecting and assigning a virtual IP address (VIP) that can freely float between cluster nodes,"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:35(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:27(para)
 msgid "configuring RabbitMQ to listen on that IP address,"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:40(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:30(para)
 msgid "managing all resources, including the RabbitMQ daemon itself, with the Pacemaker cluster manager."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:47(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:35(para)
 msgid "There is an alternative method of configuring RabbitMQ for high availability. That approach, known as <link href=\"http://www.rabbitmq.com/ha.html\">active-active mirrored queues</link>, happens to be the one preferred by the RabbitMQ developershowever it has shown less than ideal consistency and reliability in OpenStack clusters. Thus, at the time of writing, the Pacemaker/DRBD based approach remains the recommended one for OpenStack environments, although this may change in the near future as RabbitMQ active-active mirrored queues mature."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:59(title) ./doc/high-availability-guide/controller/section_mysql.xml:56(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:46(title) ./doc/high-availability-guide/controller/section_mysql.xml:44(title)
 msgid "Configure DRBD"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:61(para)
-msgid "The Pacemaker based RabbitMQ server requires a DRBD resource from which it mounts the <literal>/var/lib/rabbitmq</literal> directory. In this example, the DRBD resource is simply named <literal>rabbitmq</literal>:"
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:47(para)
+msgid "The Pacemaker based RabbitMQ server requires a DRBD resource from which it mounts the <filename>/var/lib/rabbitmq</filename> directory. In this example, the DRBD resource is simply named <literal>rabbitmq</literal>:"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:66(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:52(title)
 msgid "<literal>rabbitmq</literal> DRBD resource configuration (<filename>/etc/drbd.d/rabbitmq.res</filename>)"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:82(para)
-msgid "This resource uses an underlying local disk (in DRBD terminology, a <emphasis>backing device</emphasis>) named <literal>/dev/data/rabbitmq</literal> on both cluster nodes, <literal>node1</literal> and <literal>node2</literal>. Normally, this would be an LVM Logical Volume specifically set aside for this purpose. The DRBD <literal>meta-disk</literal> is <literal>internal</literal>, meaning DRBD-specific metadata is being stored at the end of the <literal>disk</literal> device itself. The device is configured to communicate between IPv4 addresses 10.0.42.100 and 10.0.42.254, using TCP port 7701. Once enabled, it will map to a local DRBD block device with the device minor number 1, that is, <literal>/dev/drbd1</literal>."
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:68(para)
+msgid "This resource uses an underlying local disk (in DRBD terminology, a backing device) named <filename>/dev/data/rabbitmq</filename> on both cluster nodes, <literal>node1</literal> and <literal>node2</literal>. Normally, this would be an LVM Logical Volume specifically set aside for this purpose. The DRBD meta-disk is internal, meaning DRBD-specific metadata is being stored at the end of the disk device itself. The device is configured to communicate between IPv4 addresses <literal>10.0.42.100</literal> and <literal>10.0.42.254</literal>, using TCP port 7701. Once enabled, it will map to a local DRBD block device with the device minor number 1, that is, <filename>/dev/drbd1</filename>."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:91(para) ./doc/high-availability-guide/controller/section_mysql.xml:88(para)
-msgid "Enabling a DRBD resource is explained in detail in <link href=\"http://www.drbd.org/users-guide-8.3/s-first-time-up.html\">the DRBD User’s Guide</link>. In brief, the proper sequence of commands is this:"
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:79(para)
+msgid "Enabling a DRBD resource is explained in detail in <link href=\"http://www.drbd.org/users-guide-8.3/s-first-time-up.html\">the DRBD User's Guide</link>. In brief, the proper sequence of commands is this:"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:99(para)
-msgid "Initializes DRBD metadata and writes the initial set of metadata to <literal>/dev/data/rabbitmq</literal>. Must be completed on both nodes."
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:87(para)
+msgid "Initializes DRBD metadata and writes the initial set of metadata to <filename>/dev/data/rabbitmq</filename>. Must be completed on both nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:105(para)
-msgid "Creates the <literal>/dev/drbd1</literal> device node, <emphasis>attaches</emphasis> the DRBD device to its backing store, and <emphasis>connects</emphasis> the DRBD node to its peer. Must be completed on both nodes."
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:92(para)
+msgid "Creates the <filename>/dev/drbd1</filename> device node, attaches the DRBD device to its backing store, and connects the DRBD node to its peer. Must be completed on both nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:112(para) ./doc/high-availability-guide/controller/section_mysql.xml:109(para)
-msgid "Kicks off the initial device synchronization, and puts the device into the <literal>primary</literal> (readable and writable) role. See <link href=\"http://www.drbd.org/users-guide-8.3/ch-admin.html#s-roles\">Resource roles</link> (from the DRBD User’s Guide) for a more detailed description of the primary and secondary roles in DRBD. Must be completed <emphasis>on one node only,</emphasis> namely the one where you are about to continue with creating your filesystem."
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:97(para) ./doc/high-availability-guide/controller/section_mysql.xml:95(para)
+msgid "Kicks off the initial device synchronization, and puts the device into the <literal>primary</literal> (readable and writable) role. See <link href=\"http://www.drbd.org/users-guide-8.3/ch-admin.html#s-roles\"> Resource roles</link> (from the DRBD User's Guide) for a more detailed description of the primary and secondary roles in DRBD. Must be completed on one node only, namely the one where you are about to continue with creating your filesystem."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:126(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:108(title)
 msgid "Create a file system"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:128(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:109(para)
 msgid "Once the DRBD resource is running and in the primary role (and potentially still in the process of running the initial device synchronization), you may proceed with creating the filesystem for RabbitMQ data. XFS is generally the recommended filesystem:"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:133(para) ./doc/high-availability-guide/controller/section_mysql.xml:130(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:114(para) ./doc/high-availability-guide/controller/section_mysql.xml:113(para)
 msgid "You may also use the alternate device path for the DRBD device, which may be easier to remember as it includes the self-explanatory resource name:"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:137(para) ./doc/high-availability-guide/controller/section_mysql.xml:134(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:118(para) ./doc/high-availability-guide/controller/section_mysql.xml:117(para)
 msgid "Once completed, you may safely return the device to the secondary role. Any ongoing device synchronization will continue in the background:"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:144(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:124(title)
 msgid "Prepare RabbitMQ for Pacemaker high availability"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:146(para)
-msgid "In order for Pacemaker monitoring to function properly, you must ensure that RabbitMQ’s <literal>.erlang.cookie</literal> files are identical on all nodes, regardless of whether DRBD is mounted there or not. The simplest way of doing so is to take an existing <literal>.erlang.cookie</literal> from one of your nodes, copying it to the RabbitMQ data directory on the other node, and also copying it to the DRBD-backed filesystem."
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:125(para)
+msgid "In order for Pacemaker monitoring to function properly, you must ensure that RabbitMQ's <filename>.erlang.cookie</filename> files are identical on all nodes, regardless of whether DRBD is mounted there or not. The simplest way of doing so is to take an existing <filename>.erlang.cookie</filename> from one of your nodes, copying it to the RabbitMQ data directory on the other node, and also copying it to the DRBD-backed filesystem."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:159(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:138(title)
 msgid "Add RabbitMQ resources to Pacemaker"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:161(para)
-msgid "You may now proceed with adding the Pacemaker configuration for RabbitMQ resources. Connect to the Pacemaker cluster with <literal>crm configure</literal>, and add the following cluster resources:"
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:139(para)
+msgid "You may now proceed with adding the Pacemaker configuration for RabbitMQ resources. Connect to the Pacemaker cluster with <placeholder-1/>, and add the following cluster resources:"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:194(para)
-msgid "<literal>p_ip_rabbitmq</literal>, a virtual IP address for use by RabbitMQ (192.168.42.100),"
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:173(para)
+msgid "<literal>p_ip_rabbitmq</literal>, a virtual IP address for use by RabbitMQ (<literal>192.168.42.100</literal>),"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:199(para)
-msgid "<literal>p_fs_rabbitmq</literal>, a Pacemaker managed filesystem mounted to <literal>/var/lib/rabbitmq</literal> on whatever node currently runs the RabbitMQ service,"
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:177(para)
+msgid "<literal>p_fs_rabbitmq</literal>, a Pacemaker managed filesystem mounted to <filename>/var/lib/rabbitmq</filename> on whatever node currently runs the RabbitMQ service,"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:205(para)
-msgid "<literal>ms_drbd_rabbitmq</literal>, the <emphasis>master/slave set</emphasis> managing the <literal>rabbitmq</literal> DRBD resource,"
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:182(para)
+msgid "<literal>ms_drbd_rabbitmq</literal>, the master/slave set managing the <literal>rabbitmq</literal> DRBD resource,"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:210(para) ./doc/high-availability-guide/controller/section_mysql.xml:222(para)
-msgid "a service <literal>group</literal> and <literal>order</literal> and <literal>colocation</literal> constraints to ensure resources are started on the correct nodes, and in the correct sequence."
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:186(para)
+msgid "a service group and order and colocation constraints to ensure resources are started on the correct nodes, and in the correct sequence."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:216(para)
-msgid "<literal>crm configure</literal> supports batch input, so you may copy and paste the above into your live pacemaker configuration, and then make changes as required. For example, you may enter <literal>edit p_ip_rabbitmq</literal> from the <literal>crm configure</literal> menu and edit the resource to match your preferred virtual IP address."
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:191(para)
+msgid "<placeholder-1/> supports batch input, so you may copy and paste the above into your live pacemaker configuration, and then make changes as required. For example, you may enter <literal>edit p_ip_rabbitmq</literal> from the <placeholder-2/> menu and edit the resource to match your preferred virtual IP address."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:221(para)
-msgid "Once completed, commit your configuration changes by entering <literal>commit</literal> from the <literal>crm configure</literal> menu. Pacemaker will then start the RabbitMQ service, and its dependent resources, on one of your nodes."
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:197(para)
+msgid "Once completed, commit your configuration changes by entering <literal>commit</literal> from the <placeholder-1/> menu. Pacemaker will then start the RabbitMQ service, and its dependent resources, on one of your nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:227(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:203(title)
 msgid "Configure OpenStack services for highly available RabbitMQ"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:229(para)
-msgid "Your OpenStack services must now point their RabbitMQ configuration to the highly available, virtual cluster IP addressrather than a RabbitMQ server"
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:204(para)
+msgid "Your OpenStack services must now point their RabbitMQ configuration to the highly available, virtual cluster IP addressrather than a RabbitMQ server's physical IP address as you normally would."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:232(para)
-msgid "For OpenStack Image, for example, if your RabbitMQ service IP address is 192.168.42.100 as in the configuration explained here, you would use the following line in your OpenStack Image API configuration file (<filename>glance-api.conf</filename>):"
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:208(para)
+msgid "For OpenStack Image, for example, if your RabbitMQ service IP address is <literal>192.168.42.100</literal> as in the configuration explained here, you would use the following line in your OpenStack Image API configuration file (<filename>glance-api.conf</filename>):"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:237(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml:214(para)
 msgid "No other changes are necessary to your OpenStack configuration. If the node currently hosting your RabbitMQ experiences a problem necessitating service failover, your OpenStack services may experience a brief RabbitMQ interruption, as they would in the event of a network hiccup, and then continue to run normally."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:12(title)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:11(title)
 msgid "Highly available MySQL"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:14(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:12(para)
 msgid "MySQL is the default database server used by many OpenStack services. Making the MySQL service highly available involves"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:18(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:16(para)
 msgid "Configure a DRBD device for use by MySQL,"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:23(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:19(para)
 msgid "Configure MySQL to use a data directory residing on that DRBD device,"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:29(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:23(para)
 msgid "Select and assign a virtual IP address (VIP) that can freely float between cluster nodes,"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:35(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:27(para)
 msgid "Configure MySQL to listen on that IP address,"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:40(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:30(para)
 msgid "Manage all resources, including the MySQL daemon itself, with the Pacemaker cluster manager."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:47(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:36(para)
 msgid "<link href=\"http://galeracluster.com/\">MySQL/Galera</link> is an alternative method of configuring MySQL for high availability. It is likely to become the preferred method of achieving MySQL high availability once it has sufficiently matured. At the time of writing, however, the Pacemaker/DRBD based approach remains the recommended one for OpenStack environments."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:58(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:45(para)
 msgid "The Pacemaker based MySQL server requires a DRBD resource from which it mounts the <literal>/var/lib/mysql</literal> directory. In this example, the DRBD resource is simply named <literal>mysql</literal>:"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:63(title)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:49(title)
 msgid "<literal>mysql</literal> DRBD resource configuration (<filename>/etc/drbd.d/mysql.res</filename>)"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:79(para)
-msgid "This resource uses an underlying local disk (in DRBD terminology, a <emphasis>backing device</emphasis>) named <literal>/dev/data/mysql</literal> on both cluster nodes, <literal>node1</literal> and <literal>node2</literal>. Normally, this would be an LVM Logical Volume specifically set aside for this purpose. The DRBD <literal>meta-disk</literal> is <literal>internal</literal>, meaning DRBD-specific metadata is being stored at the end of the <literal>disk</literal> device itself. The device is configured to communicate between IPv4 addresses 10.0.42.100 and 10.0.42.254, using TCP port 7700. Once enabled, it will map to a local DRBD block device with the device minor number 0, that is, <filename>/dev/drbd0</filename>."
+#: ./doc/high-availability-guide/controller/section_mysql.xml:65(para)
+msgid "This resource uses an underlying local disk (in DRBD terminology, a backing device) named <filename>/dev/data/mysql</filename> on both cluster nodes, <literal>node1</literal> and <literal>node2</literal>. Normally, this would be an LVM Logical Volume specifically set aside for this purpose. The DRBD meta-disk is internal, meaning DRBD-specific metadata is being stored at the end of the disk device itself. The device is configured to communicate between IPv4 addresses <literal>10.0.42.100</literal> and <literal>10.0.42.254</literal>, using TCP port 7700. Once enabled, it will map to a local DRBD block device with the device minor number 0, that is, <filename>/dev/drbd0</filename>."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:96(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:75(para)
+msgid "Enabling a DRBD resource is explained in detail in <link href=\"http://www.drbd.org/users-guide-8.3/s-first-time-up.html\"> the DRBD User's Guide</link>. In brief, the proper sequence of commands is this:"
+msgstr ""
+
+#: ./doc/high-availability-guide/controller/section_mysql.xml:84(para)
 msgid "Initializes DRBD metadata and writes the initial set of metadata to <literal>/dev/data/mysql</literal>. Must be completed on both nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:102(para)
-msgid "Creates the <literal>/dev/drbd0</literal> device node, <emphasis>attaches</emphasis> the DRBD device to its backing store, and <emphasis>connects</emphasis> the DRBD node to its peer. Must be completed on both nodes."
+#: ./doc/high-availability-guide/controller/section_mysql.xml:89(para)
+msgid "Creates the <literal>/dev/drbd0</literal> device node, attaches the DRBD device to its backing store, and connects the DRBD node to its peer. Must be completed on both nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:123(title)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:106(title)
 msgid "Creating a file system"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:125(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:107(para)
 msgid "Once the DRBD resource is running and in the primary role (and potentially still in the process of running the initial device synchronization), you may proceed with creating the filesystem for MySQL data. XFS is the generally recommended filesystem due to its journaling, efficient allocation, and performance:"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:141(title)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:123(title)
 msgid "Prepare MySQL for Pacemaker high availability"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:143(para)
-msgid "In order for Pacemaker monitoring to function properly, you must ensure that MySQL’s database files reside on the DRBD device. If you already have an existing MySQL database, the simplest approach is to just move the contents of the existing <literal>/var/lib/mysql</literal> directory into the newly created filesystem on the DRBD device."
+#: ./doc/high-availability-guide/controller/section_mysql.xml:124(para)
+msgid "In order for Pacemaker monitoring to function properly, you must ensure that MySQL's database files reside on the DRBD device. If you already have an existing MySQL database, the simplest approach is to just move the contents of the existing <filename>/var/lib/mysql</filename> directory into the newly created filesystem on the DRBD device."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:149(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:130(para)
 msgid "You must complete the next step while the MySQL database server is shut down."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:155(para)
-msgid "For a new MySQL installation with no existing data, you may also run the <literal>mysql_install_db</literal> command:"
+#: ./doc/high-availability-guide/controller/section_mysql.xml:136(para)
+msgid "For a new MySQL installation with no existing data, you may also run the <placeholder-1/> command:"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:160(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:141(para)
 msgid "Regardless of the approach, the steps outlined here must be completed on only one cluster node."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:165(title)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:145(title)
 msgid "Add MySQL resources to Pacemaker"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:167(para)
-msgid "You can now add the Pacemaker configuration for MySQL resources. Connect to the Pacemaker cluster with <literal>crm configure</literal>, and add the following cluster resources:"
+#: ./doc/high-availability-guide/controller/section_mysql.xml:146(para)
+msgid "You can now add the Pacemaker configuration for MySQL resources. Connect to the Pacemaker cluster with <placeholder-1/>, and add the following cluster resources:"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:206(para)
-msgid "<literal>p_ip_mysql</literal>, a virtual IP address for use by MySQL (192.168.42.101),"
+#: ./doc/high-availability-guide/controller/section_mysql.xml:185(para)
+msgid "<literal>p_ip_mysql</literal>, a virtual IP address for use by MySQL (<literal>192.168.42.101</literal>),"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:211(para)
-msgid "<literal>p_fs_mysql</literal>, a Pacemaker managed filesystem mounted to <literal>/var/lib/mysql</literal> on whatever node currently runs the MySQL service,"
+#: ./doc/high-availability-guide/controller/section_mysql.xml:189(para)
+msgid "<literal>p_fs_mysql</literal>, a Pacemaker managed filesystem mounted to <filename>/var/lib/mysql</filename> on whatever node currently runs the MySQL service,"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:217(para)
-msgid "<literal>ms_drbd_mysql</literal>, the <emphasis>master/slave set</emphasis> managing the <literal>mysql</literal> DRBD resource,"
+#: ./doc/high-availability-guide/controller/section_mysql.xml:194(para)
+msgid "<literal>ms_drbd_mysql</literal>, the master/slave set managing the <literal>mysql</literal> DRBD resource,"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:228(para)
-msgid "<literal>crm configure</literal> supports batch input, so you may copy and paste the above into your live pacemaker configuration, and then make changes as required. For example, you may enter <literal>edit p_ip_mysql</literal> from the <literal>crm configure</literal> menu and edit the resource to match your preferred virtual IP address."
+#: ./doc/high-availability-guide/controller/section_mysql.xml:198(para)
+msgid "a service <literal>group</literal> and <literal>order</literal> and <literal>colocation</literal> constraints to ensure resources are started on the correct nodes, and in the correct sequence."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:233(para)
-msgid "Once completed, commit your configuration changes by entering <literal>commit</literal> from the <literal>crm configure</literal> menu. Pacemaker will then start the MySQL service, and its dependent resources, on one of your nodes."
+#: ./doc/high-availability-guide/controller/section_mysql.xml:203(para)
+msgid "<placeholder-1/> supports batch input, so you may copy and paste the above into your live pacemaker configuration, and then make changes as required. For example, you may enter <literal>edit p_ip_mysql</literal> from the <placeholder-2/> menu and edit the resource to match your preferred virtual IP address."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:239(title)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:208(para)
+msgid "Once completed, commit your configuration changes by entering <literal>commit</literal> from the <placeholder-1/> menu. Pacemaker will then start the MySQL service, and its dependent resources, on one of your nodes."
+msgstr ""
+
+#: ./doc/high-availability-guide/controller/section_mysql.xml:214(title)
 msgid "Configure OpenStack services for highly available MySQL"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:241(para)
-msgid "Your OpenStack services must now point their MySQL configuration to the highly available, virtual cluster IP addressrather than a MySQL server"
+#: ./doc/high-availability-guide/controller/section_mysql.xml:215(para)
+msgid "Your OpenStack services must now point their MySQL configuration to the highly available, virtual cluster IP addressrather than a MySQL server's physical IP address as you normally would."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:244(para)
-msgid "For OpenStack Image, for example, if your MySQL service IP address is 192.168.42.101 as in the configuration explained here, you would use the following line in your OpenStack Image registry configuration file (<filename>glance-registry.conf</filename>):"
+#: ./doc/high-availability-guide/controller/section_mysql.xml:218(para)
+msgid "For OpenStack Image, for example, if your MySQL service IP address is <literal>192.168.42.101</literal> as in the configuration explained here, you would use the following line in your OpenStack Image registry configuration file (<filename>glance-registry.conf</filename>):"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_mysql.xml:249(para)
+#: ./doc/high-availability-guide/controller/section_mysql.xml:223(para)
 msgid "No other changes are necessary to your OpenStack configuration. If the node currently hosting your database experiences a problem necessitating service failover, your OpenStack services may experience a brief MySQL interruption, as they would in the event of a network hiccup, and then continue to run normally."
 msgstr ""
 
