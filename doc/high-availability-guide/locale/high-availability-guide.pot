@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-09-30 06:37+0000\n"
+"POT-Creation-Date: 2014-10-01 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,20 +49,20 @@ msgstr ""
 msgid "The neutron L2 agent does not need to be highly available. It has to be installed on each Data Forwarding Node and controls the virtual networking drivers as Open vSwitch or Linux Bridge. One L2 agent runs per node and controls its virtual interfaces. That’s why it cannot be distributed and highly available."
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_pacemaker.xml:8(title)
+#: ./doc/high-availability-guide/ch_pacemaker.xml:7(title)
 msgid "The Pacemaker cluster stack"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_pacemaker.xml:10(para)
+#: ./doc/high-availability-guide/ch_pacemaker.xml:8(para)
 msgid "OpenStack infrastructure high availability relies on the <link href=\"http://www.clusterlabs.org\">Pacemaker</link> cluster stack, the state-of-the-art high availability and load balancing stack for the Linux platform. Pacemaker is storage and application-agnostic, and is in no way specific to OpenStack."
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_pacemaker.xml:15(para)
+#: ./doc/high-availability-guide/ch_pacemaker.xml:13(para)
 msgid "Pacemaker relies on the <link href=\"http://www.corosync.org\">Corosync</link> messaging layer for reliable cluster communications. Corosync implements the Totem single-ring ordering and membership protocol. It also provides UDP and InfiniBand based messaging, quorum, and cluster membership to Pacemaker."
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_pacemaker.xml:20(para)
-msgid "Pacemaker interacts with applications through <emphasis>resource agents</emphasis> (RAs), of which it supports over 70 natively. Pacemaker can also easily use third-party RAs. An OpenStack high-availability configuration uses existing native Pacemaker RAs (such as those managing MySQL databases or virtual IP addresses), existing third-party RAs (such as for RabbitMQ), and native OpenStack RAs (such as those managing the OpenStack Identity and Image Services)."
+#: ./doc/high-availability-guide/ch_pacemaker.xml:19(para)
+msgid "Pacemaker interacts with applications through resource agents (RAs), of which it supports over 70 natively. Pacemaker can also easily use third-party RAs. An OpenStack high-availability configuration uses existing native Pacemaker RAs (such as those managing MySQL databases or virtual IP addresses), existing third-party RAs (such as for RabbitMQ), and native OpenStack RAs (such as those managing the OpenStack Identity and Image Services)."
 msgstr ""
 
 #: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml:8(title)
@@ -1205,115 +1205,115 @@ msgstr ""
 msgid "Please refer to the RabbitMQ section for configuring these services with multiple messaging servers."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml:6(title)
+#: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml:7(title)
 msgid "Start Pacemaker"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml:7(para)
-msgid "Once the Corosync services have been started and you have established that the cluster is communicating properly, it is safe to start <literal>pacemakerd</literal>, the Pacemaker master control process:"
+#: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml:8(para)
+msgid "Once the Corosync services have been started and you have established that the cluster is communicating properly, it is safe to start <systemitem class=\"service\">pacemakerd</systemitem>, the Pacemaker master control process:"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml:12(para)
-msgid "<literal>/etc/init.d/pacemaker start</literal> (LSB)"
+#: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml:14(para) ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:14(para)
+msgid "<placeholder-1/> (LSB)"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml:16(para)
-msgid "<literal>service pacemaker start</literal> (LSB, alternate)"
+#: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml:19(para) ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:19(para)
+msgid "<placeholder-1/> (LSB, alternate)"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml:20(para)
-msgid "<literal>start pacemaker</literal> (upstart)"
+#: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml:24(para) ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:24(para)
+msgid "<placeholder-1/> (upstart)"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml:24(para)
-msgid "<literal>systemctl start pacemaker</literal> (systemd)"
+#: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml:29(para) ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:29(para)
+msgid "<placeholder-1/> (systemd)"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml:28(para)
-msgid "Once Pacemaker services have started, Pacemaker will create a default empty cluster configuration with no resources. You may observe Pacemaker’s status with the <literal>crm_mon</literal> utility:"
+#: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml:34(para)
+msgid "Once Pacemaker services have started, Pacemaker will create a default empty cluster configuration with no resources. You may observe Pacemaker's status with the <placeholder-1/> utility:"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:6(title)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:7(title)
 msgid "Set up Corosync"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:7(para)
-msgid "Besides installing the <literal>corosync</literal> package, you must also create a configuration file, stored in <filename>/etc/corosync/corosync.conf</filename>. Most distributions ship an example configuration file (<filename>corosync.conf.example</filename>) as part of the documentation bundled with the <literal>corosync</literal> package. An example Corosync configuration file is shown below:"
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:8(para)
+msgid "Besides installing the <package>corosync</package> package, you must also create a configuration file, stored in <filename>/etc/corosync/corosync.conf</filename>. Most distributions ship an example configuration file (<filename>corosync.conf.example</filename>) as part of the documentation bundled with the <package>corosync</package> package. An example Corosync configuration file is shown below:"
 msgstr ""
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:15(title)
 msgid "Corosync configuration file (<filename>corosync.conf</filename>)"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:89(para)
-msgid "The <literal>token</literal> value specifies the time, in milliseconds, during which the Corosync token is expected to be transmitted around the ring. When this timeout expires, the token is declared lost, and after <literal>token_retransmits_before_loss_const</literal> lost tokens the non-responding <emphasis>processor</emphasis> (cluster node) is declared dead. In other words, <literal>token</literal> × <literal>token_retransmits_before_loss_const</literal> is the maximum time a node is allowed to not respond to cluster messages before being considered dead. The default for <literal>token</literal> is 1000 (1 second), with 4 allowed retransmits. These defaults are intended to minimize failover times, but can cause frequent \"false alarms\" and unintended failovers in case of short network interruptions. The values used here are safer, albeit with slightly extended failover times."
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:87(para)
+msgid "The <option>token</option> value specifies the time, in milliseconds, during which the Corosync token is expected to be transmitted around the ring. When this timeout expires, the token is declared lost, and after <option>token_retransmits_before_loss_const</option> lost tokens the non-responding processor (cluster node) is declared dead. In other words, <option>token</option> × <option>token_retransmits_before_loss_const</option> is the maximum time a node is allowed to not respond to cluster messages before being considered dead. The default for <option>token</option> is 1000 (1 second), with 4 allowed retransmits. These defaults are intended to minimize failover times, but can cause frequent \"false alarms\" and unintended failovers in case of short network interruptions. The values used here are safer, albeit with slightly extended failover times."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:105(para)
-msgid "With <literal>secauth</literal> enabled, Corosync nodes mutually authenticate using a 128-byte shared secret stored in <literal>/etc/corosync/authkey</literal>, which may be generated with the <literal>corosync-keygen</literal> utility. When using <literal>secauth</literal>, cluster communications are also encrypted."
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:103(para)
+msgid "With <option>secauth</option> enabled, Corosync nodes mutually authenticate using a 128-byte shared secret stored in <filename>/etc/corosync/authkey</filename>, which may be generated with the <placeholder-1/> utility. When using <option>secauth</option>, cluster communications are also encrypted."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:113(para)
-msgid "In Corosync configurations using redundant networking (with more than one <literal>interface</literal>), you must select a Redundant Ring Protocol (RRP) mode other than <literal>none</literal>. <literal>active</literal> is the recommended RRP mode."
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:111(para)
+msgid "In Corosync configurations using redundant networking (with more than one <option>interface</option>), you must select a Redundant Ring Protocol (RRP) mode other than <literal>none</literal>. <literal>active</literal> is the recommended RRP mode."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:120(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:117(para)
 msgid "There are several things to note about the recommended interface configuration:"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:126(para)
-msgid "The <literal>ringnumber</literal> must differ between all configured interfaces, starting with 0."
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:121(para)
+msgid "The <option>ringnumber</option> must differ between all configured interfaces, starting with 0."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:132(para)
-msgid "The <literal>bindnetaddr</literal> is the <emphasis>network</emphasis> address of the interfaces to bind to. The example uses two network addresses of <literal>/24</literal> IPv4 subnets."
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:125(para)
+msgid "The <option>bindnetaddr</option> is the network address of the interfaces to bind to. The example uses two network addresses of <literal>/24</literal> IPv4 subnets."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:130(para)
+msgid "Multicast groups (<option>mcastaddr</option>) must not be reused across cluster boundaries. In other words, no two distinct clusters should ever use the same multicast group. Be sure to select multicast addresses compliant with <link href=\"http://www.ietf.org/rfc/rfc2365.txt\">RFC 2365, \"Administratively Scoped IP Multicast\"</link>."
 msgstr ""
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:138(para)
-msgid "Multicast groups (<literal>mcastaddr</literal>) <emphasis>must not</emphasis> be reused across cluster boundaries. In other words, no two distinct clusters should ever use the same multicast group. Be sure to select multicast addresses compliant with <link href=\"http://www.ietf.org/rfc/rfc2365.txt\">RFC 2365, \"Administratively Scoped IP Multicast\"</link>."
+msgid "For firewall configurations, note that Corosync communicates over UDP only, and uses <literal>mcastport</literal> (for receives) and <literal>mcastport - 1</literal> (for sends)."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:147(para)
-msgid "For firewall configurations, note that Corosync communicates over UDP only, and uses <literal>mcastport</literal> (for receives) and <literal>mcastport</literal>-1 (for sends)."
-msgstr ""
-
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:156(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:145(para)
 msgid "The <literal>service</literal> declaration for the <literal>pacemaker</literal> service may be placed in the <filename>corosync.conf</filename> file directly, or in its own separate file, <filename>/etc/corosync/service.d/pacemaker</filename>."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:163(para)
-msgid "Once created, the <filename>corosync.conf</filename> file (and the <filename>authkey</filename> file if the <literal>secauth</literal> option is enabled) must be synchronized across all cluster nodes."
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:152(para)
+msgid "Once created, the <filename>corosync.conf</filename> file (and the <filename>authkey</filename> file if the <option>secauth</option> option is enabled) must be synchronized across all cluster nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:6(title)
+#: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:7(title)
 msgid "Install packages"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:7(para)
+#: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:8(para)
 msgid "On any host that is meant to be part of a Pacemaker cluster, you must first establish cluster communications through the Corosync messaging layer. This involves installing the following packages (and their dependencies, which your package manager will normally install automatically):"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:14(para)
-msgid "<literal>pacemaker</literal> (Note that the crm shell should be downloaded separately.)"
+#: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:15(para)
+msgid "<package>pacemaker</package> (Note that the crm shell should be downloaded separately.)"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:19(literal)
+#: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:20(package)
 msgid "crmsh"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:24(literal)
+#: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:25(package)
 msgid "corosync"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:29(literal)
+#: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:30(package)
 msgid "cluster-glue"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:33(para)
-msgid "<literal>fence-agents</literal> (Fedora only; all other distributions use fencing agents from <literal>cluster-glue</literal>)"
+#: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:34(para)
+msgid "<package>fence-agents</package> (Fedora only; all other distributions use fencing agents from <package>cluster-glue</package>)"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:39(literal)
+#: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:40(package)
 msgid "resource-agents"
 msgstr ""
 
@@ -1321,24 +1321,24 @@ msgstr ""
 msgid "Set basic cluster properties"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_basic_cluster_properties.xml:9(para)
-msgid "Once your Pacemaker cluster is set up, it is recommended to set a few basic cluster properties. To do so, start the <literal>crm</literal> shell and change into the configuration menu by entering <literal>configure</literal>. Alternatively, you may jump straight into the Pacemaker configuration menu by typing <literal>crm configure</literal> directly from a shell prompt."
+#: ./doc/high-availability-guide/pacemaker/section_set_basic_cluster_properties.xml:8(para)
+msgid "Once your Pacemaker cluster is set up, it is recommended to set a few basic cluster properties. To do so, start the <placeholder-1/> shell and change into the configuration menu by entering <literal>configure</literal>. Alternatively, you may jump straight into the Pacemaker configuration menu by typing <placeholder-2/> directly from a shell prompt."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_basic_cluster_properties.xml:15(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_basic_cluster_properties.xml:14(para)
 msgid "Then, set the following properties:"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_basic_cluster_properties.xml:23(para)
-msgid "Setting <literal>no-quorum-policy=\"ignore\"</literal> is required in 2-node Pacemaker clusters for the following reason: if quorum enforcement is enabled, and one of the two nodes fails, then the remaining node can not establish a <emphasis>majority</emphasis> of quorum votes necessary to run services, and thus it is unable to take over any resources. In this case, the appropriate workaround is to ignore loss of quorum in the cluster. This should only <emphasis>only</emphasis> be done in 2-node clusters: do not set this property in Pacemaker clusters with more than two nodes. Note that a two-node cluster with this setting exposes a risk of split-brain because either half of the cluster, or both, are able to become active in the event that both nodes remain online but lose communication with one another. The preferred configuration is 3 or more nodes per cluster."
+#: ./doc/high-availability-guide/pacemaker/section_set_basic_cluster_properties.xml:22(para)
+msgid "Setting <option>no-quorum-policy=\"ignore\"</option> is required in 2-node Pacemaker clusters for the following reason: if quorum enforcement is enabled, and one of the two nodes fails, then the remaining node can not establish a majority of quorum votes necessary to run services, and thus it is unable to take over any resources. In this case, the appropriate workaround is to ignore loss of quorum in the cluster. This should only only be done in 2-node clusters: do not set this property in Pacemaker clusters with more than two nodes. Note that a two-node cluster with this setting exposes a risk of split-brain because either half of the cluster, or both, are able to become active in the event that both nodes remain online but lose communication with one another. The preferred configuration is 3 or more nodes per cluster."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_basic_cluster_properties.xml:34(para)
-msgid "Setting <literal>pe-warn-series-max</literal>, <literal>pe-input-series-max</literal> and <literal>pe-error-series-max</literal> to 1000 instructs Pacemaker to keep a longer history of the inputs processed, and errors and warnings generated, by its Policy Engine. This history is typically useful in case cluster troubleshooting becomes necessary."
+#: ./doc/high-availability-guide/pacemaker/section_set_basic_cluster_properties.xml:37(para)
+msgid "Setting <option>pe-warn-series-max</option>, <option>pe-input-series-max</option> and <option>pe-error-series-max</option> to 1000 instructs Pacemaker to keep a longer history of the inputs processed, and errors and warnings generated, by its Policy Engine. This history is typically useful in case cluster troubleshooting becomes necessary."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_basic_cluster_properties.xml:43(para)
-msgid "Pacemaker uses an event-driven approach to cluster state processing. However, certain Pacemaker actions occur at a configurable interval, <literal>cluster-recheck-interval</literal>, which defaults to 15 minutes. It is usually prudent to reduce this to a shorter interval, such as 5 or 3 minutes."
+#: ./doc/high-availability-guide/pacemaker/section_set_basic_cluster_properties.xml:45(para)
+msgid "Pacemaker uses an event-driven approach to cluster state processing. However, certain Pacemaker actions occur at a configurable interval, <option>cluster-recheck-interval</option>, which defaults to 15 minutes. It is usually prudent to reduce this to a shorter interval, such as 5 or 3 minutes."
 msgstr ""
 
 #: ./doc/high-availability-guide/pacemaker/section_set_basic_cluster_properties.xml:52(para)
@@ -1349,39 +1349,23 @@ msgstr ""
 msgid "Starting Corosync"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:9(para)
-msgid "Corosync is started as a regular system service. Depending on your distribution, it may ship with an LSB init script, an upstart job, or a systemd unit file. Either way, the service is usually named <literal>corosync</literal>:"
+#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:8(para)
+msgid "Corosync is started as a regular system service. Depending on your distribution, it may ship with an LSB init script, an upstart job, or a systemd unit file. Either way, the service is usually named <systemitem class=\"service\">corosync</systemitem>:"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:15(para)
-msgid "<literal>/etc/init.d/corosync start</literal> (LSB)"
-msgstr ""
-
-#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:19(para)
-msgid "<literal>service corosync start</literal> (LSB, alternate)"
-msgstr ""
-
-#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:23(para)
-msgid "<literal>start corosync</literal> (upstart)"
-msgstr ""
-
-#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:27(para)
-msgid "<literal>systemctl start corosync</literal> (systemd)"
-msgstr ""
-
-#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:31(para)
+#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:34(para)
 msgid "You can now check the Corosync connectivity with two tools."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:32(para)
-msgid "The <literal>corosync-cfgtool</literal> utility, when invoked with the <literal>-s</literal> option, gives a summary of the health of the communication rings:"
+#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:35(para)
+msgid "The <placeholder-1/> utility, when invoked with the <option>-s</option> option, gives a summary of the health of the communication rings:"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:43(para)
-msgid "The <literal>corosync-objctl</literal> utility can be used to dump the Corosync cluster member list:"
+#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:47(para)
+msgid "The <placeholder-1/> utility can be used to dump the Corosync cluster member list:"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:52(para)
+#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:56(para)
 msgid "You should see a <literal>status=joined</literal> entry for each of your constituent cluster nodes."
 msgstr ""
 
