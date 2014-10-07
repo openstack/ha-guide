@@ -25,4 +25,12 @@
       Official manual for installing RabbitMQ on Fedora / RHEL</link>
     </para>
   </section>
+  <section xml:id="_on_opensuse_sles">
+    <title>On openSUSE</title>
+    <screen><prompt>#</prompt> <userinput>zypper install rabbitmq-server</userinput></screen>
+    <para>
+      <link xlink:href="http://www.rabbitmq.com/install-rpm.html">
+      Official manual for installing RabbitMQ on openSUSE</link>
+    </para>
+  </section>
 </section>
