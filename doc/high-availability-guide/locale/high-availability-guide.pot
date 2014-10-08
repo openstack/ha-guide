@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-10-01 06:00+0000\n"
+"POT-Creation-Date: 2014-10-08 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,36 +17,36 @@ msgstr ""
 msgid "The cloud controller runs on the management network and must talk to all other services."
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_network.xml:8(title)
+#: ./doc/high-availability-guide/ch_ha_aa_network.xml:7(title)
 msgid "OpenStack network nodes"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_network.xml:10(para)
+#: ./doc/high-availability-guide/ch_ha_aa_network.xml:8(para)
 msgid "OpenStack network nodes contain:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_network.xml:13(para)
-msgid "neutron DHCP agent"
+#: ./doc/high-availability-guide/ch_ha_aa_network.xml:11(para)
+msgid "Neutron DHCP agent"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_network.xml:18(para)
-msgid "neutron L2 agent"
+#: ./doc/high-availability-guide/ch_ha_aa_network.xml:14(para)
+msgid "Neutron L2 agent"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_network.xml:23(para)
+#: ./doc/high-availability-guide/ch_ha_aa_network.xml:17(para)
 msgid "Neutron L3 agent"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_network.xml:28(para)
-msgid "neutron metadata agent"
+#: ./doc/high-availability-guide/ch_ha_aa_network.xml:20(para)
+msgid "Neutron metadata agent"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_network.xml:33(para)
-msgid "neutron lbaas agent"
+#: ./doc/high-availability-guide/ch_ha_aa_network.xml:23(para)
+msgid "Neutron LBaaS agent"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_network.xml:39(para)
-msgid "The neutron L2 agent does not need to be highly available. It has to be installed on each Data Forwarding Node and controls the virtual networking drivers as Open vSwitch or Linux Bridge. One L2 agent runs per node and controls its virtual interfaces. That’s why it cannot be distributed and highly available."
+#: ./doc/high-availability-guide/ch_ha_aa_network.xml:27(para)
+msgid "The neutron L2 agent does not need to be highly available. It has to be installed on each data forwarding node and controls the virtual networking drivers as Open vSwitch or Linux Bridge. One L2 agent runs per node and controls its virtual interfaces. That's why it cannot be distributed and highly available."
 msgstr ""
 
 #: ./doc/high-availability-guide/ch_pacemaker.xml:7(title)
@@ -65,23 +65,23 @@ msgstr ""
 msgid "Pacemaker interacts with applications through resource agents (RAs), of which it supports over 70 natively. Pacemaker can also easily use third-party RAs. An OpenStack high-availability configuration uses existing native Pacemaker RAs (such as those managing MySQL databases or virtual IP addresses), existing third-party RAs (such as for RabbitMQ), and native OpenStack RAs (such as those managing the OpenStack Identity and Image Services)."
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml:8(title)
+#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml:7(title)
 msgid "RabbitMQ"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml:10(para)
+#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml:8(para)
 msgid "RabbitMQ is the default AMQP server used by many OpenStack services. Making the RabbitMQ service highly available involves the following steps:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml:14(para) ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:7(title)
+#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml:13(para) ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:7(title)
 msgid "Install RabbitMQ"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml:19(para)
+#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml:16(para)
 msgid "Configure RabbitMQ for HA queues"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml:24(para)
+#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml:19(para)
 msgid "Configure OpenStack services to use Rabbit HA queues"
 msgstr ""
 
@@ -293,24 +293,24 @@ msgstr ""
 msgid "After each change of this file, you should restart HAProxy."
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml:8(title)
+#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml:7(title)
 msgid "OpenStack controller nodes"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml:10(para)
+#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml:8(para)
 msgid "OpenStack controller nodes contain:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml:13(para)
+#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml:11(para)
 msgid "All OpenStack API services"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml:18(para)
+#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml:14(para)
 msgid "All OpenStack schedulers"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml:23(para)
-msgid "Memcached service"
+#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml:17(para)
+msgid "<application>Memcached</application> service"
 msgstr ""
 
 #: ./doc/high-availability-guide/part_active_passive.xml:7(title)
@@ -325,156 +325,144 @@ msgstr ""
 msgid "The API node exposes OpenStack API endpoints onto external network (Internet). It must talk to the cloud controller on the management network."
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_db.xml:8(title)
+#: ./doc/high-availability-guide/ch_ha_aa_db.xml:7(title)
 msgid "Database"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_db.xml:10(para)
-msgid "The first step is installing the database that sits at the heart of the cluster. When we talk about High Availability, we talk about several databases (for redundancy) and a means to keep them synchronized. In this case, we must choose the MySQL database, along with Galera for synchronous multi-master replication."
+#: ./doc/high-availability-guide/ch_ha_aa_db.xml:8(para)
+msgid "The first step is installing the database that sits at the heart of the cluster. When we talk about High Availability, we talk about several databases (for redundancy) and a means to keep them synchronized. In this case, we must choose the <application>MySQL</application> database, along with <application>Galera</application> for synchronous multi-master replication."
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_db.xml:14(para)
-msgid "The choice of database isn’t a foregone conclusion; you’re not required to use MySQL. It is, however, a fairly common choice in OpenStack installations, so we’ll cover it here."
+#: ./doc/high-availability-guide/ch_ha_aa_db.xml:15(para)
+msgid "The choice of database isn't a foregone conclusion; you're not required to use <application>MySQL</application>. It is, however, a fairly common choice in OpenStack installations, so we'll cover it here."
+msgstr ""
+
+#: ./doc/high-availability-guide/ch_ha_aa_db.xml:21(para)
+msgid "MySQL with Galera is by no means the only way to achieve database HA. MariaDB (<link href=\"https://mariadb.org/\">https://mariadb.org/</link>) and Percona (<link href=\"http://www.percona.com/\">http://www.percona.com/</link>) also work with Galera. You also have the option to use PostgreSQL, which has its own replication, or another database HA option."
 msgstr ""
 
 #: ./doc/high-availability-guide/part_active_active.xml:7(title)
 msgid "HA using active/active"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_galera_monitoring.xml:7(title)
-msgid "Galera monitoring scripts"
-msgstr ""
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_galera_monitoring.xml:9(para)
-msgid "(Coming soon)"
-msgstr ""
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:7(title)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:7(title)
 msgid "MySQL with Galera"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:9(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:8(para)
 msgid "Rather than starting with a vanilla version of MySQL, and then adding Galera, you will want to install a version of MySQL patched for wsrep (Write Set REPlication) from <link href=\"https://launchpad.net/codership-mysql/0.7\">https://launchpad.net/codership-mysql/0.7</link>. The wsrep API is suitable for configuring MySQL High Availability in OpenStack because it supports synchronous replication."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:14(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:13(para)
 msgid "Note that the installation requirements call for careful attention. Read the guide <link href=\"https://launchpadlibrarian.net/66669857/README-wsrep\">https://launchpadlibrarian.net/66669857/README-wsrep</link> to ensure you follow all the required steps."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:19(title)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:17(title)
 msgid "Installing Galera through a MySQL version patched for wsrep:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:22(para)
-msgid "Download Galera from <link href=\"https://launchpad.net/galera/+download\">https://launchpad.net/galera/+download</link>, and install the *.rpms or *.debs, which takes care of any dependencies that your system doesn’t already have installed."
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:19(para)
+msgid "Download Galera from <link href=\"https://launchpad.net/galera/+download\">https://launchpad.net/galera/+download</link>, and install the *.rpms or *.debs, which takes care of any dependencies that your system doesn't already have installed."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:29(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:25(para)
 msgid "Adjust the configuration:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:32(para)
-msgid "In the system-wide <filename>my.conf</filename> file, make sure mysqld isn’t bound to 127.0.0.1, and that <filename>/etc/mysql/conf.d/</filename> is included. Typically you can find this file at <filename>/etc/my.cnf</filename>:"
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:26(para)
+msgid "In the system-wide <filename>my.conf</filename> file, make sure <systemitem class=\"service\">mysqld</systemitem> isn't bound to <literal>127.0.0.1</literal>, and that <filename>/etc/mysql/conf.d/</filename> is included. Typically you can find this file at <filename>/etc/my.cnf</filename>:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:40(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:36(para)
 msgid "When adding a new node, you must configure it with a MySQL account that can access the other nodes. The new node must be able to request a state snapshot from one of the existing nodes:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:45(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:41(para)
 msgid "Specify your MySQL account information in <filename>/etc/mysql/conf.d/wsrep.cnf</filename>:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:51(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:47(para)
 msgid "Connect as root and grant privileges to that user:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:57(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:51(para)
 msgid "Remove user accounts with empty user names because they cause problems:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:63(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:56(para)
 msgid "Set up certain mandatory configuration options within MySQL itself. These include:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:74(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:65(para)
 msgid "Check that the nodes can access each other through the firewall. Depending on your environment, this might mean adjusting iptables, as in:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:84(para)
-msgid "This might also mean configuring any NAT firewall between nodes to allow direct connections. You might need to disable SELinux, or configure it to allow mysqld to listen to sockets at unprivileged ports."
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:74(para)
+msgid "This might also mean configuring any NAT firewall between nodes to allow direct connections. You might need to disable SELinux, or configure it to allow <systemitem class=\"service\">mysqld</systemitem> to listen to sockets at unprivileged ports."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:89(para)
-msgid "Now you’re ready to create the cluster."
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:80(para)
+msgid "Now you're ready to create the cluster."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:92(title)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:82(title)
 msgid "Create the cluster"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:94(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:83(para)
 msgid "In creating a cluster, you first start a single instance, which creates the cluster. The rest of the MySQL instances then connect to that cluster:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:99(title)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:87(title)
 msgid "An example of creating the cluster:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:102(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:89(para)
 msgid "Start on the first node having IP address <literal>10.0.0.10</literal> by executing the command:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:110(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:96(para)
 msgid "Connect to that cluster on the rest of the nodes by referencing the address of that node, as in:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:117(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:101(para)
 msgid "You also have the option to set the <literal>wsrep_cluster_address</literal> in the <filename>/etc/mysql/conf.d/wsrep.cnf</filename> file, or within the client itself. (In fact, for some systems, such as MariaDB or Percona, this may be your only option.)"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:123(title)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:106(title)
 msgid "An example of checking the status of the cluster."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:126(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:108(para)
 msgid "Open the MySQL client and check the status of the various parameters:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml:133(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:114(para)
 msgid "You should see a status that looks something like this:"
-msgstr ""
-
-#: ./doc/high-availability-guide/ha_aa_db/section_other_ways_to_provide_a_highly_available_database.xml:7(title)
-msgid "Other ways to provide a highly available database"
-msgstr ""
-
-#: ./doc/high-availability-guide/ha_aa_db/section_other_ways_to_provide_a_highly_available_database.xml:9(para)
-msgid "MySQL with Galera is by no means the only way to achieve database HA. MariaDB (<link href=\"https://mariadb.org/\">https://mariadb.org/</link>) and Percona (<link href=\"http://www.percona.com/\">http://www.percona.com/</link>) also work with Galera. You also have the option to use PostgreSQL, which has its own replication, or another database HA option."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml:7(title)
 msgid "Run neutron L3 agent"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml:9(para)
-msgid "The neutron L3 agent is scalable, due to the scheduler that allows distribution of virtual routers across multiple nodes. There is no native feature to make these routers highly available. At this time, the active/passive solution exists to run the Neutron L3 agent in failover mode with Pacemaker. See the active/passive section of this guide."
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml:8(para)
+msgid "The neutron L3 agent is scalable, due to the scheduler that allows distribution of virtual routers across multiple nodes. There is no native feature to make these routers highly available. At this time, the active/passive solution exists to run the Neutron L3 agent in failover mode with <application>Pacemaker</application>. See the <link linkend=\"ha-using-active-passive\">active/passive section</link> of this guide."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_metadata_agent.xml:7(title)
 msgid "Run neutron metadata agent"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_metadata_agent.xml:9(para)
-msgid "There is no native feature to make this service highly available. At this time, the Active / Passive solution exists to run the neutron metadata agent in failover mode with Pacemaker. See the Active / Passive section of this guide."
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_metadata_agent.xml:8(para)
+msgid "There is no native feature to make this service highly available. At this time, the Active / Passive solution exists to run the neutron metadata agent in failover mode with <application>Pacemaker</application>. See the <link linkend=\"ha-using-active-passive\">active/passive section</link> of this guide."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_dhcp_agent.xml:7(title)
 msgid "Run neutron DHCP agent"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_dhcp_agent.xml:9(para)
-msgid "OpenStack Networking service has a scheduler that lets you run multiple agents across nodes. Also, the DHCP agent can be natively highly available. For details, see <link href=\"http://docs.openstack.org/trunk/config-reference/content/app_demo_multi_dhcp_agents.html\">OpenStack Configuration Reference</link>."
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_dhcp_agent.xml:8(para)
+msgid "OpenStack Networking service has a scheduler that lets you run multiple agents across nodes. Also, the DHCP agent can be natively highly available. For details, see the <link href=\"http://docs.openstack.org/trunk/config-reference/content/app_demo_multi_dhcp_agents.html\"> OpenStack Configuration Reference</link>."
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml:7(title)
@@ -1113,96 +1101,88 @@ msgstr ""
 msgid "Memcached"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:9(para)
-msgid "Most OpenStack services use an application to offer persistence and store ephemeral data (like tokens). Memcached is one of them and can scale-out easily without any specific tricks required."
-msgstr ""
-
-#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:11(para)
-msgid "To install and configure it, read the <link href=\"http://code.google.com/p/memcached/wiki/NewStart\">official documentation</link>."
+#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:8(para)
+msgid "Most OpenStack services use an application to offer persistence and store ephemeral data like tokens. <application>Memcached</application> is one of them and can scale-out easily without any specific tricks required."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:12(para)
-msgid "Memory caching is managed by oslo-incubator, so the way to use multiple memcached servers is the same for all projects."
-msgstr ""
-
-#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:13(para)
-msgid "Example with two hosts:"
+msgid "To install and configure it, read the <link href=\"http://code.google.com/p/memcached/wiki/NewStart\"> official documentation</link>."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:15(para)
-msgid "By default, controller1 handles the caching service but if the host goes down, controller2 does the job. For more information about memcached installation, see the OpenStack Cloud Administrator Guide."
+msgid "Memory caching is managed by oslo-incubator, so the way to use multiple memcached servers is the same for all projects."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:17(para)
+msgid "Example configuration with two hosts:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:19(para)
+msgid "By default, <literal>controller1</literal> handles the caching service but if the host goes down, <literal>controller2</literal> does the job. For more information about <application>Memcached</application> installation, see the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/\"> OpenStack Cloud Administrator Guide</link>."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:7(title)
 msgid "Run OpenStack API and schedulers"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:11(title)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:9(title)
 msgid "API services"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:13(para)
-msgid "All OpenStack projects have an API service for controlling all the resources in the Cloud. In active/active mode, the most common setup is to scale-out these services on at least two nodes and use load balancing and virtual IP (with HAProxy &amp; Keepalived in this setup)."
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:10(para)
+msgid "All OpenStack projects have an API service for controlling all the resources in the Cloud. In active/active mode, the most common setup is to scale-out these services on at least two nodes and use load balancing and a virtual IP address (with <application>HAProxy</application> and <application>Keepalived</application> in this setup)."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:17(emphasis)
-msgid "Configure API OpenStack services"
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:15(para)
+msgid "To use highly available and scalable API services, we need to ensure that:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:19(para)
-msgid "To configure our Cloud using Highly available and scalable API services, we need to ensure that:"
+msgid "You use virtual IP addresses when configuring OpenStack Identity endpoints."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:22(para)
-msgid "You use virtual IPs when configuring OpenStack Identity endpoints."
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:24(para)
+msgid "All OpenStack configuration files should refer to virtual IP addresses."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:27(para)
-msgid "All OpenStack configuration files should refer to virtual IPs."
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:29(para)
+msgid "The monitor check is quite simple since it just establishes a TCP connection to the API port. Comparing to the active/passive mode using <application>Corosync</application> and resources agents, we don't check if the service is actually running. That's why all OpenStack API services should be monitored by another tool, for example <application>Nagios</application>."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:33(emphasis)
-msgid "In case of failure"
-msgstr ""
-
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:35(para)
-msgid "The monitor check is quite simple since it just establishes a TCP connection to the API port. Comparing to the active/passive mode using Corosync &amp; Resources Agents, we don’t check if the service is actually running. That’s why all OpenStack API should be monitored by another tool, for example Nagios, with the goal to detect failures in the Cloud Framework infrastructure."
-msgstr ""
-
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:42(title)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:38(title)
 msgid "Schedulers"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:44(para)
-msgid "OpenStack schedulers are used to determine how to dispatch compute, network and volume requests. The most common setup is to use RabbitMQ as messaging system already documented in this guide. Those services are connected to the messaging backend and can scale-out:"
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:39(para)
+msgid "OpenStack schedulers are used to determine how to dispatch compute, network and volume requests. The most common setup is to use RabbitMQ as messaging system. Those services are connected to the messaging backend and can scale-out:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:49(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:45(systemitem)
 msgid "nova-scheduler"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:54(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:48(systemitem)
 msgid "nova-conductor"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:59(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:51(systemitem)
 msgid "cinder-scheduler"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:64(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:54(systemitem)
 msgid "neutron-server"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:69(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:57(systemitem)
 msgid "ceilometer-collector"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:74(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:60(systemitem)
 msgid "heat-engine"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:79(para)
-msgid "Please refer to the RabbitMQ section for configuring these services with multiple messaging servers."
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:63(para)
+msgid "Please refer to the <link linkend=\"s-rabbitmq\">RabbitMQ section</link> for configuring these services with multiple messaging servers."
 msgstr ""
 
 #: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml:7(title)
@@ -1369,95 +1349,119 @@ msgstr ""
 msgid "You should see a <literal>status=joined</literal> entry for each of your constituent cluster nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml:7(title)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml:7(title)
 msgid "Configure OpenStack services to use RabbitMQ"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml:9(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml:8(para)
 msgid "We have to configure the OpenStack components to use at least two RabbitMQ nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml:10(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml:10(para)
 msgid "Do this configuration on all services using RabbitMQ:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml:11(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml:13(para)
 msgid "RabbitMQ HA cluster host:port pairs:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml:13(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml:17(para)
 msgid "How frequently to retry connecting with RabbitMQ:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml:15(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml:21(para)
 msgid "How long to back-off for between retries when connecting to RabbitMQ:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml:17(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml:26(para)
 msgid "Maximum retries with trying to connect to RabbitMQ (infinite by default):"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml:19(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml:31(para)
 msgid "Use durable queues in RabbitMQ:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml:21(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml:35(para)
 msgid "Use HA queues in RabbitMQ (x-ha-policy: all):"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml:23(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml:41(para)
 msgid "If you change the configuration from an old setup which did not use HA queues, you should interrupt the service:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml:27(para)
-msgid "Services currently working with HA queues: OpenStack Compute, OpenStack Block Storage, OpenStack Networking, Telemetry."
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml:48(para)
+msgid "Services currently working with HA queues:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:9(para)
-msgid "This setup has been tested with RabbitMQ 2.7.1."
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml:51(para)
+msgid "OpenStack Compute"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:12(title)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml:54(para)
+msgid "OpenStack Block Storage"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml:57(para)
+msgid "OpenStack Networking"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml:60(para)
+msgid "Telemetry"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:8(para)
+msgid "This setup has been tested with RabbitMQ <literal>2.7.1</literal>."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:11(title)
 msgid "On Ubuntu / Debian"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:14(para) ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:24(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:12(para) ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:21(para)
 msgid "RabbitMQ is packaged on both distros:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:17(link)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:15(link)
 msgid "Official manual for installing RabbitMQ on Ubuntu / Debian"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:22(title)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:20(title)
 msgid "On Fedora / RHEL"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:27(link)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:24(link)
 msgid "Official manual for installing RabbitMQ on Fedora / RHEL"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:29(title)
+msgid "On openSUSE"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:32(link)
+msgid "Official manual for installing RabbitMQ on openSUSE"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:7(title)
 msgid "Configure RabbitMQ"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:9(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:8(para)
 msgid "Here we are building a cluster of RabbitMQ nodes to construct a RabbitMQ broker. Mirrored queues in RabbitMQ improve the availability of service since it will be resilient to failures. We have to consider that while exchanges and bindings will survive the loss of individual nodes, queues and their messages will not because a queue and its contents is located on one node. If we lose this node, we also lose the queue."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:14(para)
-msgid "We consider that we run (at least) two RabbitMQ servers. To build a broker, we need to ensure that all nodes have the same Erlang cookie file. To do so, stop RabbitMQ everywhere and copy the cookie from rabbit1 server to other server(s):"
+msgid "We consider that we run (at least) two RabbitMQ servers. To build a broker, we need to ensure that all nodes have the same Erlang cookie file. To do so, stop RabbitMQ everywhere and copy the cookie from <literal>rabbit1</literal> serverto other server(s):"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:19(para)
-msgid "Then, start RabbitMQ on nodes. If RabbitMQ fails to start, you can’t continue to the next step."
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:20(para)
+msgid "Then, start RabbitMQ on nodes. If RabbitMQ fails to start, you can't continue to the next step."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:21(para)
-msgid "Now, we are building the HA cluster. From rabbit2, run these commands:"
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:22(para)
+msgid "Now, we are building the HA cluster. From <literal>rabbit2</literal>, run these commands:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:25(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:27(para)
 msgid "To verify the cluster status:"
 msgstr ""
 
@@ -1465,15 +1469,11 @@ msgstr ""
 msgid "If the cluster is working, you can now proceed to creating users and passwords for queues."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:33(emphasis)
-msgid "Note for RabbitMQ version 3"
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:34(para)
+msgid "On RabbitMQ version 3 queue mirroring is no longer controlled by the <literal>x-ha-policy</literal> argument when declaring a queue. OpenStack can continue to declare this argument, but it won't cause queues to be mirrored. We need to make sure that all queues (except those with auto-generated names) are mirrored across all running nodes:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:35(para)
-msgid "Queue mirroring is no longer controlled by the <emphasis>x-ha-policy</emphasis> argument when declaring a queue. OpenStack can continue to declare this argument, but it won’t cause queues to be mirrored. We need to make sure that all queues (except those with auto-generated names) are mirrored across all running nodes:"
-msgstr ""
-
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:40(link)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:43(link)
 msgid "More information about High availability in RabbitMQ"
 msgstr ""
 

@@ -4,9 +4,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-09-30 15:01+0000\n"
-"PO-Revision-Date: 2014-09-30 14:57+0000\n"
-"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
+"POT-Creation-Date: 2014-10-07 20:20+0000\n"
+"PO-Revision-Date: 2014-10-08 01:27+0000\n"
+"Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,42 +24,42 @@ msgid ""
 "other services."
 msgstr "クラウドコントローラーは、管理ネットワークで動作し、他のすべてのサービスと通信できる必要があります。"
 
-#: ./doc/high-availability-guide/ch_ha_aa_network.xml8(title)
+#: ./doc/high-availability-guide/ch_ha_aa_network.xml7(title)
 msgid "OpenStack network nodes"
 msgstr "OpenStack ネットワークノード"
 
-#: ./doc/high-availability-guide/ch_ha_aa_network.xml10(para)
+#: ./doc/high-availability-guide/ch_ha_aa_network.xml8(para)
 msgid "OpenStack network nodes contain:"
 msgstr "OpenStack ネットワークノードは次のものを含みます。"
 
-#: ./doc/high-availability-guide/ch_ha_aa_network.xml13(para)
-msgid "neutron DHCP agent"
+#: ./doc/high-availability-guide/ch_ha_aa_network.xml11(para)
+msgid "Neutron DHCP agent"
 msgstr "Neutron DHCP エージェント"
 
-#: ./doc/high-availability-guide/ch_ha_aa_network.xml18(para)
-msgid "neutron L2 agent"
-msgstr "neutron L2 エージェント"
+#: ./doc/high-availability-guide/ch_ha_aa_network.xml14(para)
+msgid "Neutron L2 agent"
+msgstr "Neutron L2 エージェント"
 
-#: ./doc/high-availability-guide/ch_ha_aa_network.xml23(para)
+#: ./doc/high-availability-guide/ch_ha_aa_network.xml17(para)
 msgid "Neutron L3 agent"
 msgstr "neutron L3 エージェント"
 
-#: ./doc/high-availability-guide/ch_ha_aa_network.xml28(para)
-msgid "neutron metadata agent"
-msgstr "neutron メタデータエージェント"
+#: ./doc/high-availability-guide/ch_ha_aa_network.xml20(para)
+msgid "Neutron metadata agent"
+msgstr "Neutron メタデータエージェント"
 
-#: ./doc/high-availability-guide/ch_ha_aa_network.xml33(para)
-msgid "neutron lbaas agent"
-msgstr "neutron LBaaS エージェント"
+#: ./doc/high-availability-guide/ch_ha_aa_network.xml23(para)
+msgid "Neutron LBaaS agent"
+msgstr "Neutron LBaaS エージェント"
 
-#: ./doc/high-availability-guide/ch_ha_aa_network.xml39(para)
+#: ./doc/high-availability-guide/ch_ha_aa_network.xml27(para)
 msgid ""
 "The neutron L2 agent does not need to be highly available. It has to be "
-"installed on each Data Forwarding Node and controls the virtual networking "
+"installed on each data forwarding node and controls the virtual networking "
 "drivers as Open vSwitch or Linux Bridge. One L2 agent runs per node and "
-"controls its virtual interfaces. That’s why it cannot be distributed and "
+"controls its virtual interfaces. That's why it cannot be distributed and "
 "highly available."
-msgstr "neutron L2 エージェントは高可用性にする必要がありません。各データ転送ノードにインストールされる必要があります。また、Open vSwitch または Linux Bridge として仮想ネットワークドライバーを制御します。1 つの L2 エージェントをノードごとに実行し、その仮想インターフェースを制御します。これが分散できず、高可用性にできない理由です。"
+msgstr ""
 
 #: ./doc/high-availability-guide/ch_pacemaker.xml7(title)
 msgid "The Pacemaker cluster stack"
@@ -94,26 +94,26 @@ msgid ""
 "Services)."
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml8(title)
+#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml7(title)
 msgid "RabbitMQ"
 msgstr "RabbitMQ"
 
-#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml10(para)
+#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml8(para)
 msgid ""
 "RabbitMQ is the default AMQP server used by many OpenStack services. Making "
 "the RabbitMQ service highly available involves the following steps:"
 msgstr "RabbitMQ が多くの OpenStack サービスにより使用される標準の AMQP サーバーです。RabbitMQ サービスを高可用性にすることは、以下の手順が関連します。"
 
-#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml14(para)
+#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml13(para)
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml7(title)
 msgid "Install RabbitMQ"
 msgstr "RabbitMQ のインストール"
 
-#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml19(para)
+#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml16(para)
 msgid "Configure RabbitMQ for HA queues"
 msgstr "高可用性 キュー用の RabbitMQ の設定"
 
-#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml24(para)
+#: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml19(para)
 msgid "Configure OpenStack services to use Rabbit HA queues"
 msgstr "RabbitMQ HA キューを使用するための OpenStack サービスの設定"
 
@@ -418,25 +418,25 @@ msgstr "これは HAProxy 設定ファイルの例です。"
 msgid "After each change of this file, you should restart HAProxy."
 msgstr "このファイルの変更後、HAProxy を再起動すべきです。"
 
-#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml8(title)
+#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml7(title)
 msgid "OpenStack controller nodes"
 msgstr "OpenStack コントローラーノード"
 
-#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml10(para)
+#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml8(para)
 msgid "OpenStack controller nodes contain:"
 msgstr "OpenStack コントローラーノードは次のものを含みます。"
 
-#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml13(para)
+#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml11(para)
 msgid "All OpenStack API services"
 msgstr "すべての OpenStack API サービス"
 
-#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml18(para)
+#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml14(para)
 msgid "All OpenStack schedulers"
 msgstr "すべての OpenStack スケジューラー"
 
-#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml23(para)
-msgid "Memcached service"
-msgstr "Memcached サービス"
+#: ./doc/high-availability-guide/ch_ha_aa_controllers.xml17(para)
+msgid "<application>Memcached</application> service"
+msgstr ""
 
 #: ./doc/high-availability-guide/part_active_passive.xml7(title)
 msgid "HA using active/passive"
@@ -452,180 +452,28 @@ msgid ""
 "(Internet). It must talk to the cloud controller on the management network."
 msgstr "API ノードは外部ネットワーク (インターネット) にある OpenStack API エンドポイントにさらされています。管理ネットワークでクラウドコントローラーと通信する必要があります。"
 
-#: ./doc/high-availability-guide/ch_ha_aa_db.xml8(title)
+#: ./doc/high-availability-guide/ch_ha_aa_db.xml7(title)
 msgid "Database"
 msgstr "データベース"
 
-#: ./doc/high-availability-guide/ch_ha_aa_db.xml10(para)
+#: ./doc/high-availability-guide/ch_ha_aa_db.xml8(para)
 msgid ""
 "The first step is installing the database that sits at the heart of the "
 "cluster. When we talk about High Availability, we talk about several "
 "databases (for redundancy) and a means to keep them synchronized. In this "
-"case, we must choose the MySQL database, along with Galera for synchronous "
-"multi-master replication."
-msgstr "最初の手順は、クラスターの中心にあるデータベースをインストールすることです。私たちが高可用性について議論するとき、複数の (冗長性のための) データベースとそれらを同期させる方法について議論しています。この場合、MySQL データベースを、マルチマスターレプリケーション同期のために Galera と一緒に使用する必要があります。"
+"case, we must choose the <application>MySQL</application> database, along "
+"with <application>Galera</application> for synchronous multi-master "
+"replication."
+msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_db.xml14(para)
+#: ./doc/high-availability-guide/ch_ha_aa_db.xml15(para)
 msgid ""
-"The choice of database isn’t a foregone conclusion; you’re not required to "
-"use MySQL. It is, however, a fairly common choice in OpenStack "
-"installations, so we’ll cover it here."
-msgstr "データベースの選択は決められたものではありません。必ずしも MySQL を使用する必要がありません。しかしながら、OpenStack のインストール環境ではかなり一般的な選択肢であるため、ここでは MySQL を取り扱います。"
+"The choice of database isn't a foregone conclusion; you're not required to "
+"use <application>MySQL</application>. It is, however, a fairly common choice"
+" in OpenStack installations, so we'll cover it here."
+msgstr ""
 
-#: ./doc/high-availability-guide/part_active_active.xml7(title)
-msgid "HA using active/active"
-msgstr "アクティブ/アクティブを使用した HA"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_galera_monitoring.xml7(title)
-msgid "Galera monitoring scripts"
-msgstr "Galera 監視スクリプト"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_galera_monitoring.xml9(para)
-msgid "(Coming soon)"
-msgstr "(近日公開)"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml7(title)
-msgid "MySQL with Galera"
-msgstr "Galera を用いた MySQL"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml9(para)
-msgid ""
-"Rather than starting with a vanilla version of MySQL, and then adding "
-"Galera, you will want to install a version of MySQL patched for wsrep (Write"
-" Set REPlication) from <link href=\"https://launchpad.net/codership-"
-"mysql/0.7\">https://launchpad.net/codership-mysql/0.7</link>. The wsrep API "
-"is suitable for configuring MySQL High Availability in OpenStack because it "
-"supports synchronous replication."
-msgstr "MySQL の派生バージョンから始めるよりは、<link href=\"https://launchpad.net/codership-mysql/0.7\">https://launchpad.net/codership-mysql/0.7</link> にある wsrep (Write Set REPlication) のパッチを適用したバージョンの MySQL をインストールするとよいでしょう。wsrep API は、同期レプリケーションをサポートするので、OpenStack で高可用性 MySQL を設定するのに適しています。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml14(para)
-msgid ""
-"Note that the installation requirements call for careful attention. Read the"
-" guide <link href=\"https://launchpadlibrarian.net/66669857/README-"
-"wsrep\">https://launchpadlibrarian.net/66669857/README-wsrep</link> to "
-"ensure you follow all the required steps."
-msgstr "インストール要件は注意を要することに気をつけてください。すべての必要な手順を確実に満たすために、<link href=\"https://launchpadlibrarian.net/66669857/README-wsrep\">https://launchpadlibrarian.net/66669857/README-wsrep</link> のガイドを参照してください。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml19(title)
-msgid "Installing Galera through a MySQL version patched for wsrep:"
-msgstr "wsrep 用パッチ適用済み MySQL バージョンの Galera をインストールします。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml22(para)
-msgid ""
-"Download Galera from <link "
-"href=\"https://launchpad.net/galera/+download\">https://launchpad.net/galera/+download</link>,"
-" and install the *.rpms or *.debs, which takes care of any dependencies that"
-" your system doesn’t already have installed."
-msgstr "Galera を <link href=\"https://launchpad.net/galera/+download\">https://launchpad.net/galera/+download</link> からダウンロードします。そして、システムにまだインストールされていない依存パッケージに注意しながら、*.rpms または *.debs をインストールします。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml29(para)
-msgid "Adjust the configuration:"
-msgstr "設定を調整します。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml32(para)
-msgid ""
-"In the system-wide <filename>my.conf</filename> file, make sure mysqld isn’t"
-" bound to 127.0.0.1, and that <filename>/etc/mysql/conf.d/</filename> is "
-"included. Typically you can find this file at "
-"<filename>/etc/my.cnf</filename>:"
-msgstr "システム全体の <filename>my.conf</filename> ファイルで、mysqld が 127.0.0.1 に制限されておらず、<filename>/etc/mysql/conf.d/</filename> がインクルードされることを確認します。このファイルは一般的に <filename>/etc/my.cnf</filename> にあります。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml40(para)
-msgid ""
-"When adding a new node, you must configure it with a MySQL account that can "
-"access the other nodes. The new node must be able to request a state "
-"snapshot from one of the existing nodes:"
-msgstr "新しいノードを追加するとき、他のノードにアクセスできる MySQL アカウントを用いて設定する必要があります。新しいノードは、既存のノードのどれかから、状態に関するスナップショットを実行できるようにするためです。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml45(para)
-msgid ""
-"Specify your MySQL account information in "
-"<filename>/etc/mysql/conf.d/wsrep.cnf</filename>:"
-msgstr "<filename>/etc/mysql/conf.d/wsrep.cnf</filename> に MySQL アカウント情報を指定します。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml51(para)
-msgid "Connect as root and grant privileges to that user:"
-msgstr "root として接続し、そのユーザーに権限を与えます。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml57(para)
-msgid ""
-"Remove user accounts with empty user names because they cause problems:"
-msgstr "また、問題を引き起こす可能性があるので、空のユーザー名を用いてユーザーアカウントを削除します。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml63(para)
-msgid ""
-"Set up certain mandatory configuration options within MySQL itself. These "
-"include:"
-msgstr "MySQL 自身の中で特定の必須設定オプションを設定します。これらには次のものがあります。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml74(para)
-msgid ""
-"Check that the nodes can access each other through the firewall. Depending "
-"on your environment, this might mean adjusting iptables, as in:"
-msgstr "最後に、ノードがファイアウォール越しにお互いにアクセスできることを確認します。お使いの環境によっては、次のような iptables の調整を意味するかもしれません。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml84(para)
-msgid ""
-"This might also mean configuring any NAT firewall between nodes to allow "
-"direct connections. You might need to disable SELinux, or configure it to "
-"allow mysqld to listen to sockets at unprivileged ports."
-msgstr "直接通信を許可するためにノード間の NAT ファイアウォールを設定することを意味するかもしれません。SELinux を無効化する必要があるかもしれません。または、mysqld が非特権ポートでソケットをリッスンできるよう設定する必要があるかもしれません。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml89(para)
-msgid "Now you’re ready to create the cluster."
-msgstr "これでクラスターを作成する準備ができました。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml92(title)
-msgid "Create the cluster"
-msgstr "クラスターの作成"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml94(para)
-msgid ""
-"In creating a cluster, you first start a single instance, which creates the "
-"cluster. The rest of the MySQL instances then connect to that cluster:"
-msgstr "クラスターを作成するとき、クラスターを作成する、単独のインスタンスをまず起動します。MySQL インスタンスの残りはそのクラスターに接続します。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml99(title)
-msgid "An example of creating the cluster:"
-msgstr "クラスター作成の例:"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml102(para)
-msgid ""
-"Start on the first node having IP address <literal>10.0.0.10</literal> by "
-"executing the command:"
-msgstr "IP アドレス <literal>10.0.0.10</literal> の最初のノードで起動するため、以下のコマンドを実行します。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml110(para)
-msgid ""
-"Connect to that cluster on the rest of the nodes by referencing the address "
-"of that node, as in:"
-msgstr "次のとおり、そのノードを参照することにより、残りのノードからそのクラスターに接続します。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml117(para)
-msgid ""
-"You also have the option to set the <literal>wsrep_cluster_address</literal>"
-" in the <filename>/etc/mysql/conf.d/wsrep.cnf</filename> file, or within the"
-" client itself. (In fact, for some systems, such as MariaDB or Percona, this"
-" may be your only option.)"
-msgstr "<filename>/etc/mysql/conf.d/wsrep.cnf</filename> ファイル、またはクライアント自身の中に <literal>wsrep_cluster_address</literal> を設定できます。(実際、MariaDB や Percona のようないくつかのシステムは、これが唯一の選択肢になるでしょう。) "
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml123(title)
-msgid "An example of checking the status of the cluster."
-msgstr "クラスターの状態の確認例。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml126(para)
-msgid "Open the MySQL client and check the status of the various parameters:"
-msgstr "MySQL クライアントを開き、さまざまなパラメーターの状態を確認します。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_ha_aa_db_mysql_galera.xml133(para)
-msgid "You should see a status that looks something like this:"
-msgstr "このように見える状態を確認すべきです。"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_other_ways_to_provide_a_highly_available_database.xml7(title)
-msgid "Other ways to provide a highly available database"
-msgstr "高可用性データベースを提供する別の方法"
-
-#: ./doc/high-availability-guide/ha_aa_db/section_other_ways_to_provide_a_highly_available_database.xml9(para)
+#: ./doc/high-availability-guide/ch_ha_aa_db.xml21(para)
 msgid ""
 "MySQL with Galera is by no means the only way to achieve database HA. "
 "MariaDB (<link href=\"https://mariadb.org/\">https://mariadb.org/</link>) "
@@ -635,43 +483,188 @@ msgid ""
 "replication, or another database HA option."
 msgstr "MySQL/Galera は、データベースを高可用化する唯一の方法ではありません。MariaDB (<link href=\"https://mariadb.org/\">https://mariadb.org/</link>) や Percona (<link href=\"http://www.percona.com/\">http://www.percona.com/</link>) も Galera と一緒に動作します。PostgreSQL を使用することもできます。独自のレプリケーション機能や他のデータベース高可用化の方法があります。"
 
+#: ./doc/high-availability-guide/part_active_active.xml7(title)
+msgid "HA using active/active"
+msgstr "アクティブ/アクティブを使用した HA"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml7(title)
+msgid "MySQL with Galera"
+msgstr "Galera を用いた MySQL"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml8(para)
+msgid ""
+"Rather than starting with a vanilla version of MySQL, and then adding "
+"Galera, you will want to install a version of MySQL patched for wsrep (Write"
+" Set REPlication) from <link href=\"https://launchpad.net/codership-"
+"mysql/0.7\">https://launchpad.net/codership-mysql/0.7</link>. The wsrep API "
+"is suitable for configuring MySQL High Availability in OpenStack because it "
+"supports synchronous replication."
+msgstr "MySQL の派生バージョンから始めるよりは、<link href=\"https://launchpad.net/codership-mysql/0.7\">https://launchpad.net/codership-mysql/0.7</link> にある wsrep (Write Set REPlication) のパッチを適用したバージョンの MySQL をインストールするとよいでしょう。wsrep API は、同期レプリケーションをサポートするので、OpenStack で高可用性 MySQL を設定するのに適しています。"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml13(para)
+msgid ""
+"Note that the installation requirements call for careful attention. Read the"
+" guide <link href=\"https://launchpadlibrarian.net/66669857/README-"
+"wsrep\">https://launchpadlibrarian.net/66669857/README-wsrep</link> to "
+"ensure you follow all the required steps."
+msgstr "インストール要件は注意を要することに気をつけてください。すべての必要な手順を確実に満たすために、<link href=\"https://launchpadlibrarian.net/66669857/README-wsrep\">https://launchpadlibrarian.net/66669857/README-wsrep</link> のガイドを参照してください。"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml17(title)
+msgid "Installing Galera through a MySQL version patched for wsrep:"
+msgstr "wsrep 用パッチ適用済み MySQL バージョンの Galera をインストールします。"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml19(para)
+msgid ""
+"Download Galera from <link "
+"href=\"https://launchpad.net/galera/+download\">https://launchpad.net/galera/+download</link>,"
+" and install the *.rpms or *.debs, which takes care of any dependencies that"
+" your system doesn't already have installed."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml25(para)
+msgid "Adjust the configuration:"
+msgstr "設定を調整します。"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml26(para)
+msgid ""
+"In the system-wide <filename>my.conf</filename> file, make sure <systemitem "
+"class=\"service\">mysqld</systemitem> isn't bound to "
+"<literal>127.0.0.1</literal>, and that "
+"<filename>/etc/mysql/conf.d/</filename> is included. Typically you can find "
+"this file at <filename>/etc/my.cnf</filename>:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml36(para)
+msgid ""
+"When adding a new node, you must configure it with a MySQL account that can "
+"access the other nodes. The new node must be able to request a state "
+"snapshot from one of the existing nodes:"
+msgstr "新しいノードを追加するとき、他のノードにアクセスできる MySQL アカウントを用いて設定する必要があります。新しいノードは、既存のノードのどれかから、状態に関するスナップショットを実行できるようにするためです。"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml41(para)
+msgid ""
+"Specify your MySQL account information in "
+"<filename>/etc/mysql/conf.d/wsrep.cnf</filename>:"
+msgstr "<filename>/etc/mysql/conf.d/wsrep.cnf</filename> に MySQL アカウント情報を指定します。"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml47(para)
+msgid "Connect as root and grant privileges to that user:"
+msgstr "root として接続し、そのユーザーに権限を与えます。"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml51(para)
+msgid ""
+"Remove user accounts with empty user names because they cause problems:"
+msgstr "また、問題を引き起こす可能性があるので、空のユーザー名を用いてユーザーアカウントを削除します。"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml56(para)
+msgid ""
+"Set up certain mandatory configuration options within MySQL itself. These "
+"include:"
+msgstr "MySQL 自身の中で特定の必須設定オプションを設定します。これらには次のものがあります。"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml65(para)
+msgid ""
+"Check that the nodes can access each other through the firewall. Depending "
+"on your environment, this might mean adjusting iptables, as in:"
+msgstr "最後に、ノードがファイアウォール越しにお互いにアクセスできることを確認します。お使いの環境によっては、次のような iptables の調整を意味するかもしれません。"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml74(para)
+msgid ""
+"This might also mean configuring any NAT firewall between nodes to allow "
+"direct connections. You might need to disable SELinux, or configure it to "
+"allow <systemitem class=\"service\">mysqld</systemitem> to listen to sockets"
+" at unprivileged ports."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml80(para)
+msgid "Now you're ready to create the cluster."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml82(title)
+msgid "Create the cluster"
+msgstr "クラスターの作成"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml83(para)
+msgid ""
+"In creating a cluster, you first start a single instance, which creates the "
+"cluster. The rest of the MySQL instances then connect to that cluster:"
+msgstr "クラスターを作成するとき、クラスターを作成する、単独のインスタンスをまず起動します。MySQL インスタンスの残りはそのクラスターに接続します。"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml87(title)
+msgid "An example of creating the cluster:"
+msgstr "クラスター作成の例:"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml89(para)
+msgid ""
+"Start on the first node having IP address <literal>10.0.0.10</literal> by "
+"executing the command:"
+msgstr "IP アドレス <literal>10.0.0.10</literal> の最初のノードで起動するため、以下のコマンドを実行します。"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml96(para)
+msgid ""
+"Connect to that cluster on the rest of the nodes by referencing the address "
+"of that node, as in:"
+msgstr "次のとおり、そのノードを参照することにより、残りのノードからそのクラスターに接続します。"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml101(para)
+msgid ""
+"You also have the option to set the <literal>wsrep_cluster_address</literal>"
+" in the <filename>/etc/mysql/conf.d/wsrep.cnf</filename> file, or within the"
+" client itself. (In fact, for some systems, such as MariaDB or Percona, this"
+" may be your only option.)"
+msgstr "<filename>/etc/mysql/conf.d/wsrep.cnf</filename> ファイル、またはクライアント自身の中に <literal>wsrep_cluster_address</literal> を設定できます。(実際、MariaDB や Percona のようないくつかのシステムは、これが唯一の選択肢になるでしょう。) "
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml106(title)
+msgid "An example of checking the status of the cluster."
+msgstr "クラスターの状態の確認例。"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml108(para)
+msgid "Open the MySQL client and check the status of the various parameters:"
+msgstr "MySQL クライアントを開き、さまざまなパラメーターの状態を確認します。"
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml114(para)
+msgid "You should see a status that looks something like this:"
+msgstr "このように見える状態を確認すべきです。"
+
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml7(title)
 msgid "Run neutron L3 agent"
 msgstr "Neutron L3 エージェントの実行"
 
-#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml9(para)
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml8(para)
 msgid ""
 "The neutron L3 agent is scalable, due to the scheduler that allows "
 "distribution of virtual routers across multiple nodes. There is no native "
 "feature to make these routers highly available. At this time, the "
 "active/passive solution exists to run the Neutron L3 agent in failover mode "
-"with Pacemaker. See the active/passive section of this guide."
+"with <application>Pacemaker</application>. See the <link linkend=\"ha-using-"
+"active-passive\">active/passive section</link> of this guide."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_metadata_agent.xml7(title)
 msgid "Run neutron metadata agent"
 msgstr "Neutron メタデータエージェントの実行"
 
-#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_metadata_agent.xml9(para)
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_metadata_agent.xml8(para)
 msgid ""
 "There is no native feature to make this service highly available. At this "
 "time, the Active / Passive solution exists to run the neutron metadata agent"
-" in failover mode with Pacemaker. See the Active / Passive section of this "
+" in failover mode with <application>Pacemaker</application>. See the <link "
+"linkend=\"ha-using-active-passive\">active/passive section</link> of this "
 "guide."
-msgstr "このサービスを高可用性にする独自の機能はありません。今のところ、Pacemaker のフェイルオーバーモードで Neutron メタデータエージェントを実行させる、アクティブ / パッシブのソリューションがあります。このガイドのアクティブ / パッシブのセクションを参照ください。"
+msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_dhcp_agent.xml7(title)
 msgid "Run neutron DHCP agent"
 msgstr "Neutron DHCP エージェントの実行"
 
-#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_dhcp_agent.xml9(para)
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_dhcp_agent.xml8(para)
 msgid ""
 "OpenStack Networking service has a scheduler that lets you run multiple "
 "agents across nodes. Also, the DHCP agent can be natively highly available. "
-"For details, see <link href=\"http://docs.openstack.org/trunk/config-"
-"reference/content/app_demo_multi_dhcp_agents.html\">OpenStack Configuration "
-"Reference</link>."
-msgstr "OpenStack Networking Service はノードをまたがり複数のエージェントを実行できるスケジューラーがあります。また、DHCP エージェントはネイティブで高可用性にできます。詳細は <link href=\"http://docs.openstack.org/trunk/config-reference/content/app_demo_multi_dhcp_agents.html\">OpenStack 設定リファレンス</link>を参照してください。"
+"For details, see the <link href=\"http://docs.openstack.org/trunk/config-"
+"reference/content/app_demo_multi_dhcp_agents.html\"> OpenStack Configuration"
+" Reference</link>."
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml7(title)
 msgid "Highly available Block Storage API"
@@ -1667,125 +1660,121 @@ msgstr "OpenStack の設定に他の変更は必要ありません。現在デ�
 msgid "Memcached"
 msgstr "Memcached"
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml9(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml8(para)
 msgid ""
 "Most OpenStack services use an application to offer persistence and store "
-"ephemeral data (like tokens). Memcached is one of them and can scale-out "
-"easily without any specific tricks required."
+"ephemeral data like tokens. <application>Memcached</application> is one of "
+"them and can scale-out easily without any specific tricks required."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml11(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml12(para)
 msgid ""
 "To install and configure it, read the <link "
-"href=\"http://code.google.com/p/memcached/wiki/NewStart\">official "
+"href=\"http://code.google.com/p/memcached/wiki/NewStart\"> official "
 "documentation</link>."
-msgstr "インストールおよび設定するために、<link href=\"http://code.google.com/p/memcached/wiki/NewStart\">公式ドキュメント</link>を参照します。"
+msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml12(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml15(para)
 msgid ""
 "Memory caching is managed by oslo-incubator, so the way to use multiple "
 "memcached servers is the same for all projects."
 msgstr "メモリーキャッシュは oslo-incubator により管理されています。そのため、複数の memcached サーバーを使用する方法が、すべてのプロジェクトで同じになります。"
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml13(para)
-msgid "Example with two hosts:"
-msgstr "2 つのホストを用いた例:"
+#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml17(para)
+msgid "Example configuration with two hosts:"
+msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml15(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml19(para)
 msgid ""
-"By default, controller1 handles the caching service but if the host goes "
-"down, controller2 does the job. For more information about memcached "
-"installation, see the OpenStack Cloud Administrator Guide."
-msgstr "デフォルトで、controller1 がキャッシュサービスを処理します。しかし、このホストが停止すると、controller2 がこのジョブを実行します。memcached のインストールに関する詳細は OpenStack クラウド管理者ガイドを参照してください。"
+"By default, <literal>controller1</literal> handles the caching service but "
+"if the host goes down, <literal>controller2</literal> does the job. For more"
+" information about <application>Memcached</application> installation, see "
+"the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/\"> "
+"OpenStack Cloud Administrator Guide</link>."
+msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml7(title)
 msgid "Run OpenStack API and schedulers"
 msgstr "OpenStack API &amp; スケジューラーの実行"
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml11(title)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml9(title)
 msgid "API services"
 msgstr "API サービス"
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml13(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml10(para)
 msgid ""
 "All OpenStack projects have an API service for controlling all the resources"
 " in the Cloud. In active/active mode, the most common setup is to scale-out "
-"these services on at least two nodes and use load balancing and virtual IP "
-"(with HAProxy &amp; Keepalived in this setup)."
+"these services on at least two nodes and use load balancing and a virtual IP"
+" address (with <application>HAProxy</application> and "
+"<application>Keepalived</application> in this setup)."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml17(emphasis)
-msgid "Configure API OpenStack services"
-msgstr "OpenStack サービスの API の設定"
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml15(para)
+msgid ""
+"To use highly available and scalable API services, we need to ensure that:"
+msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml19(para)
 msgid ""
-"To configure our Cloud using Highly available and scalable API services, we "
-"need to ensure that:"
-msgstr "私たちのクラウド環境が高可用性かつスケーラブルな API サービスを使用するよう設定するために、以下の事項を確認する必要があります。"
-
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml22(para)
-msgid "You use virtual IPs when configuring OpenStack Identity endpoints."
-msgstr "OpenStack Identity のエンドポイントを設定するとき、仮想 IP を使用します。"
-
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml27(para)
-msgid "All OpenStack configuration files should refer to virtual IPs."
-msgstr "すべての OpenStack 設定ファイルが仮想 IP を参照すべきです。"
-
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml33(emphasis)
-msgid "In case of failure"
-msgstr "失敗の場合"
-
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml35(para)
-msgid ""
-"The monitor check is quite simple since it just establishes a TCP connection"
-" to the API port. Comparing to the active/passive mode using Corosync &amp; "
-"Resources Agents, we don’t check if the service is actually running. That’s "
-"why all OpenStack API should be monitored by another tool, for example "
-"Nagios, with the goal to detect failures in the Cloud Framework "
-"infrastructure."
+"You use virtual IP addresses when configuring OpenStack Identity endpoints."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml42(title)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml24(para)
+msgid ""
+"All OpenStack configuration files should refer to virtual IP addresses."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml29(para)
+msgid ""
+"The monitor check is quite simple since it just establishes a TCP connection"
+" to the API port. Comparing to the active/passive mode using "
+"<application>Corosync</application> and resources agents, we don't check if "
+"the service is actually running. That's why all OpenStack API services "
+"should be monitored by another tool, for example "
+"<application>Nagios</application>."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml38(title)
 msgid "Schedulers"
 msgstr "スケジューラー"
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml44(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml39(para)
 msgid ""
 "OpenStack schedulers are used to determine how to dispatch compute, network "
 "and volume requests. The most common setup is to use RabbitMQ as messaging "
-"system already documented in this guide. Those services are connected to the"
-" messaging backend and can scale-out:"
-msgstr "OpenStack スケジューラーは、コンピュート、ネットワーク、ボリュームのリクエストをどのようにディスパッチするかを決めるために使用されます。最も一般的なセットアップ環境は、このガイドにドキュメント化されたメッセージングシステムとして RabbitMQ を使用することです。これらのサービスはメッセージングのバックエンドに接続され、スケールアウトできます。"
+"system. Those services are connected to the messaging backend and can scale-"
+"out:"
+msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml49(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml45(systemitem)
 msgid "nova-scheduler"
 msgstr "nova-scheduler"
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml54(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml48(systemitem)
 msgid "nova-conductor"
 msgstr "nova-conductor"
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml59(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml51(systemitem)
 msgid "cinder-scheduler"
 msgstr "cinder-scheduler"
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml64(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml54(systemitem)
 msgid "neutron-server"
 msgstr "neutron-server"
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml69(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml57(systemitem)
 msgid "ceilometer-collector"
 msgstr "ceilometer-collector"
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml74(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml60(systemitem)
 msgid "heat-engine"
 msgstr "heat-engine"
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml79(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml63(para)
 msgid ""
-"Please refer to the RabbitMQ section for configuring these services with "
-"multiple messaging servers."
+"Please refer to the <link linkend=\"s-rabbitmq\">RabbitMQ section</link> for"
+" configuring these services with multiple messaging servers."
 msgstr ""
 
 #: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml7(title)
@@ -1803,22 +1792,22 @@ msgstr ""
 #: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml14(para)
 #: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml14(para)
 msgid "<placeholder-1/> (LSB)"
-msgstr ""
+msgstr "<placeholder-1/> (LSB)"
 
 #: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml19(para)
 #: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml19(para)
 msgid "<placeholder-1/> (LSB, alternate)"
-msgstr ""
+msgstr "<placeholder-1/> (LSB, alternate)"
 
 #: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml24(para)
 #: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml24(para)
 msgid "<placeholder-1/> (upstart)"
-msgstr ""
+msgstr "<placeholder-1/> (upstart)"
 
 #: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml29(para)
 #: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml29(para)
 msgid "<placeholder-1/> (systemd)"
-msgstr ""
+msgstr "<placeholder-1/> (systemd)"
 
 #: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml34(para)
 msgid ""
@@ -2060,87 +2049,109 @@ msgid ""
 "constituent cluster nodes."
 msgstr "組み込まれているそれぞれのクラスターノードの項目が <literal>status=joined</literal> になっていることが確認できるはずです。"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml7(title)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml7(title)
 msgid "Configure OpenStack services to use RabbitMQ"
 msgstr "RabbitMQ を使用するための OpenStack サービスの設定"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml9(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml8(para)
 msgid ""
 "We have to configure the OpenStack components to use at least two RabbitMQ "
 "nodes."
 msgstr "2 つ以上の RabbitMQ ノードを使用するよう、OpenStack のコンポーネントを設定する必要があります。"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml10(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml10(para)
 msgid "Do this configuration on all services using RabbitMQ:"
 msgstr "RabbitMQ を使用するすべてのサービスでこの設定を行います。"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml11(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml13(para)
 msgid "RabbitMQ HA cluster host:port pairs:"
 msgstr "RabbitMQ HA クラスターの host:port の組:"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml13(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml17(para)
 msgid "How frequently to retry connecting with RabbitMQ:"
 msgstr "RabbitMQ と再接続する頻度:"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml15(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml21(para)
 msgid "How long to back-off for between retries when connecting to RabbitMQ:"
 msgstr "RabbitMQ に接続するとき再試行するまでにバックオフする間隔:"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml17(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml26(para)
 msgid ""
 "Maximum retries with trying to connect to RabbitMQ (infinite by default):"
 msgstr "RabbitMQ に接続を試行する最大回数 (デフォルトで無制限):"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml19(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml31(para)
 msgid "Use durable queues in RabbitMQ:"
 msgstr "RabbitMQ での永続キューの使用:"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml21(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml35(para)
 msgid "Use HA queues in RabbitMQ (x-ha-policy: all):"
 msgstr "RabbitMQ における HA キューの使用 (x-ha-policy: all):"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml23(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml41(para)
 msgid ""
 "If you change the configuration from an old setup which did not use HA "
 "queues, you should interrupt the service:"
 msgstr "HA キューを使用していない古いセットアップから設定を変更した場合、サービスを中断しなければいけません。"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_user_rabbitmq.xml27(para)
-msgid ""
-"Services currently working with HA queues: OpenStack Compute, OpenStack "
-"Block Storage, OpenStack Networking, Telemetry."
-msgstr "次のサービスはいま HA キューで動作しています。OpenStack Compute、OpenStack Cinder、OpenStack Networking、Telemetry。"
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml48(para)
+msgid "Services currently working with HA queues:"
+msgstr "現在、サービスは HA キューを用いて動作しています。"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml9(para)
-msgid "This setup has been tested with RabbitMQ 2.7.1."
-msgstr "このセットアップは RabbitMQ 2.7.1 を用いてテストしました。"
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml51(para)
+msgid "OpenStack Compute"
+msgstr "OpenStack Compute"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml12(title)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml54(para)
+msgid "OpenStack Block Storage"
+msgstr "OpenStack Block Storage"
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml57(para)
+msgid "OpenStack Networking"
+msgstr "OpenStack Networking"
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml60(para)
+msgid "Telemetry"
+msgstr "Telemetry"
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml8(para)
+msgid "This setup has been tested with RabbitMQ <literal>2.7.1</literal>."
+msgstr "このセットアップは、RabbitMQ <literal>2.7.1</literal> を用いてテストされています。"
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml11(title)
 msgid "On Ubuntu / Debian"
 msgstr "Ubuntu / Debian の場合"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml14(para)
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml24(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml12(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml21(para)
 msgid "RabbitMQ is packaged on both distros:"
 msgstr "RabbitMQ がどちらもパッケージ化されています。"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml17(link)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml15(link)
 msgid "Official manual for installing RabbitMQ on Ubuntu / Debian"
 msgstr "Ubuntu / Debian に RabbitMQ をインストールする方法の公式マニュアル"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml22(title)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml20(title)
 msgid "On Fedora / RHEL"
 msgstr "Fedora / RHEL の場合"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml27(link)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml24(link)
 msgid "Official manual for installing RabbitMQ on Fedora / RHEL"
 msgstr "Fedora / RHEL に RabbitMQ をインストールする方法の公式マニュアル"
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml29(title)
+msgid "On openSUSE"
+msgstr "openSUSE の場合"
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml32(link)
+msgid "Official manual for installing RabbitMQ on openSUSE"
+msgstr "openSUSE の RabbitMQ インストールに関する公式マニュアル"
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml7(title)
 msgid "Configure RabbitMQ"
 msgstr "RabbitMQ の設定"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml9(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml8(para)
 msgid ""
 "Here we are building a cluster of RabbitMQ nodes to construct a RabbitMQ "
 "broker. Mirrored queues in RabbitMQ improve the availability of service "
@@ -2154,21 +2165,23 @@ msgstr "これから RabbitMQ ブローカーを構築するために RabbitMQ �
 msgid ""
 "We consider that we run (at least) two RabbitMQ servers. To build a broker, "
 "we need to ensure that all nodes have the same Erlang cookie file. To do so,"
-" stop RabbitMQ everywhere and copy the cookie from rabbit1 server to other "
-"server(s):"
-msgstr "(少なくとも) 2 つの RabbitMQ サーバーを実行することを検討します。ブローカーを構築するために、すべてのノードが必ず同じ Erlang クッキーファイルを持つ必要があります。そうするために、全サーバーの RabbitMQ を停止し、rabbit1 サーバーのクッキーを他のサーバーにコピーします。"
+" stop RabbitMQ everywhere and copy the cookie from "
+"<literal>rabbit1</literal> serverto other server(s):"
+msgstr "(少なくとも) 2 つの RabbitMQ サーバーを実行することを検討します。ブローカーを構築するために、すべてのノードが必ず同じ Erlang クッキーファイルを持つ必要があります。そうするために、全サーバーの RabbitMQ を停止し、<literal>rabbit1</literal> サーバーのクッキーを他のサーバーにコピーします。"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml19(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml20(para)
 msgid ""
-"Then, start RabbitMQ on nodes. If RabbitMQ fails to start, you can’t "
+"Then, start RabbitMQ on nodes. If RabbitMQ fails to start, you can't "
 "continue to the next step."
-msgstr "そして、ノードで RabbitMQ を起動します。RabbitMQ の起動に失敗した場合、次の手順に進めません。"
+msgstr "次に、ノードで RabbitMQ を起動します。RabbitMQ が起動に失敗すると、次の手順に進めません。"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml21(para)
-msgid "Now, we are building the HA cluster. From rabbit2, run these commands:"
-msgstr "これで、HA クラスターの構築ができました。rabbit2 からこれらのコマンドを実行します。"
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml22(para)
+msgid ""
+"Now, we are building the HA cluster. From <literal>rabbit2</literal>, run "
+"these commands:"
+msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml25(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml27(para)
 msgid "To verify the cluster status:"
 msgstr "クラスターの状態を確認する方法:"
 
@@ -2178,20 +2191,16 @@ msgid ""
 "passwords for queues."
 msgstr "クラスターが動作していれば、キュー用のユーザーとパスワードを作成する手順に進めます。"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml33(emphasis)
-msgid "Note for RabbitMQ version 3"
-msgstr "RabbitMQ バージョン 3 の注意事項"
-
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml35(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml34(para)
 msgid ""
-"Queue mirroring is no longer controlled by the <emphasis>x-ha-"
-"policy</emphasis> argument when declaring a queue. OpenStack can continue to"
-" declare this argument, but it won’t cause queues to be mirrored. We need to"
-" make sure that all queues (except those with auto-generated names) are "
-"mirrored across all running nodes:"
-msgstr "キューの宣言時、キューミラーが <emphasis>x-ha-policy</emphasis> 引数により制御されなくなりました。OpenStack がこの引数を宣言し続けますが、キューはミラーされません。すべてのキュー (自動生成された名前を除いて) が実行中の全ノードにわたり確実にミラーされる必要があります。"
+"On RabbitMQ version 3 queue mirroring is no longer controlled by the "
+"<literal>x-ha-policy</literal> argument when declaring a queue. OpenStack "
+"can continue to declare this argument, but it won't cause queues to be "
+"mirrored. We need to make sure that all queues (except those with auto-"
+"generated names) are mirrored across all running nodes:"
+msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml40(link)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml43(link)
 msgid "More information about High availability in RabbitMQ"
 msgstr "RabbitMQ の高可用性に関する詳細"
 
