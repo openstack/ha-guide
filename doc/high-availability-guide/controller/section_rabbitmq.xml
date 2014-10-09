@@ -32,15 +32,10 @@
     </listitem>
   </itemizedlist>
   <note>
-    <para>There is an alternative method of configuring RabbitMQ for high
-      availability. That approach, known as
-      <link xlink:href="http://www.rabbitmq.com/ha.html">active-active mirrored queues</link>,
-      happens to be the one preferred by the RabbitMQ developers&mdash;however
-      it has shown less than ideal consistency and reliability in OpenStack
-      clusters. Thus, at the time of writing, the Pacemaker/DRBD based
-      approach remains the recommended one for OpenStack environments,
-      although this may change in the near future as RabbitMQ active-active
-      mirrored queues mature.</para>
+    <para><link xlink:href="http://www.rabbitmq.com/ha.html">Active-active mirrored queues</link>
+      is another method for configuring RabbitMQ versions 3.3.0 and later
+      for high availability. You can also manage a RabbitMQ cluster with
+      active-active mirrored queues using the Pacemaker cluster manager.</para>
   </note>
   <section xml:id="_configure_drbd_2">
     <title>Configure DRBD</title>
