@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-10-07 20:20+0000\n"
-"PO-Revision-Date: 2014-10-08 01:27+0000\n"
+"POT-Creation-Date: 2014-10-08 06:54+0000\n"
+"PO-Revision-Date: 2014-10-11 06:40+0000\n"
 "Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -436,7 +436,7 @@ msgstr "すべての OpenStack スケジューラー"
 
 #: ./doc/high-availability-guide/ch_ha_aa_controllers.xml17(para)
 msgid "<application>Memcached</application> service"
-msgstr ""
+msgstr "<application>Memcached</application> サービス"
 
 #: ./doc/high-availability-guide/part_active_passive.xml7(title)
 msgid "HA using active/passive"
@@ -1672,7 +1672,7 @@ msgid ""
 "To install and configure it, read the <link "
 "href=\"http://code.google.com/p/memcached/wiki/NewStart\"> official "
 "documentation</link>."
-msgstr ""
+msgstr "<link href=\"http://code.google.com/p/memcached/wiki/NewStart\">公式ドキュメント</link>を参照して、インストールし、設定します。"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml15(para)
 msgid ""
