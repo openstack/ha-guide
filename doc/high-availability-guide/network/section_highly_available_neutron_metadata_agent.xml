@@ -21,7 +21,7 @@ neutron metadata agent resource. Connect to the Pacemaker cluster with <literal>
 configure</literal>, and add the following cluster resources:</para>
           <programlisting>primitive p_neutron-metadata-agent ocf:openstack:neutron-metadata-agent \
     params config="/etc/neutron/neutron.conf" \
-    plugin_config="/etc/neutron/metadata_agent.ini" \
+    agent_config="/etc/neutron/metadata_agent.ini" \
     op monitor interval="30s" timeout="30s"</programlisting>
           <para>This configuration creates</para>
           <itemizedlist>
