@@ -4,9 +4,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-10-08 06:54+0000\n"
-"PO-Revision-Date: 2014-10-11 06:40+0000\n"
-"Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
+"POT-Creation-Date: 2014-10-13 13:01+0000\n"
+"PO-Revision-Date: 2014-10-13 13:01+0000\n"
+"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -117,26 +117,31 @@ msgstr "高可用性 キュー用の RabbitMQ の設定"
 msgid "Configure OpenStack services to use Rabbit HA queues"
 msgstr "RabbitMQ HA キューを使用するための OpenStack サービスの設定"
 
-#: ./doc/high-availability-guide/ch_intro.xml8(title)
+#: ./doc/high-availability-guide/ch_intro.xml7(title)
 msgid "Introduction to OpenStack High Availability"
 msgstr "OpenStack 高可用性の概要"
 
-#: ./doc/high-availability-guide/ch_intro.xml10(para)
+#: ./doc/high-availability-guide/ch_intro.xml8(para)
 msgid "High Availability systems seek to minimize two things:"
 msgstr "高可用性システムは以下の二つを最小化しようとします。"
 
-#: ./doc/high-availability-guide/ch_intro.xml13(para)
+#: ./doc/high-availability-guide/ch_intro.xml11(term)
+msgid "System downtime"
+msgstr ""
+
+#: ./doc/high-availability-guide/ch_intro.xml12(para)
 msgid ""
-"<emphasis role=\"strong\">System downtime</emphasis> — occurs when a "
-"<emphasis>user-facing</emphasis> service is unavailable beyond a specified "
-"maximum amount of time."
+"Occurs when a user-facing service is unavailable beyond a specified maximum "
+"amount of time."
+msgstr ""
+
+#: ./doc/high-availability-guide/ch_intro.xml16(term)
+msgid "Data loss"
 msgstr ""
 
 #: ./doc/high-availability-guide/ch_intro.xml17(para)
-msgid ""
-"<emphasis role=\"strong\">Data loss</emphasis> — accidental deletion or "
-"destruction of data."
-msgstr "<emphasis role=\"strong\">データ損失</emphasis> — データの不慮の削除や破損。"
+msgid "Accidental deletion or destruction of data."
+msgstr ""
 
 #: ./doc/high-availability-guide/ch_intro.xml21(para)
 msgid ""
@@ -146,7 +151,7 @@ msgid ""
 "deteriorates into a series of consequential failures."
 msgstr "多くの高可用性システムは、単一障害事象のみにおいて、システム停止やデータ損失に対する保護を保証します。しかしながら、単一障害が一連の障害を悪化させていく、段階的な障害に対しても保護されることが期待されます。"
 
-#: ./doc/high-availability-guide/ch_intro.xml22(para)
+#: ./doc/high-availability-guide/ch_intro.xml25(para)
 msgid ""
 "A crucial aspect of high availability is the elimination of single points of"
 " failure (SPOFs). A SPOF is an individual piece of equipment or software "
@@ -154,19 +159,19 @@ msgid ""
 "eliminate SPOFs, check that mechanisms exist for redundancy of:"
 msgstr "高可用性の重要な側面は、単一障害点 (SPOF) を減らすことです。SPOF は、障害が発生した場合にシステム停止やデータ損失を引き起こす、設備やソフトウェアの個々の部品です。SPOF を削減するために、以下の冗長性に対するメカニズムを確認します。"
 
-#: ./doc/high-availability-guide/ch_intro.xml25(para)
+#: ./doc/high-availability-guide/ch_intro.xml32(para)
 msgid "Network components, such as switches and routers"
 msgstr "スイッチやルーターなどのネットワークの構成要素"
 
-#: ./doc/high-availability-guide/ch_intro.xml30(para)
+#: ./doc/high-availability-guide/ch_intro.xml35(para)
 msgid "Applications and automatic service migration"
 msgstr "アプリケーションおよびサービスの自動的なマイグレーション"
 
-#: ./doc/high-availability-guide/ch_intro.xml35(para)
+#: ./doc/high-availability-guide/ch_intro.xml38(para)
 msgid "Storage components"
 msgstr "ストレージ構成要素"
 
-#: ./doc/high-availability-guide/ch_intro.xml40(para)
+#: ./doc/high-availability-guide/ch_intro.xml41(para)
 msgid "Facility services such as power, air conditioning, and fire protection"
 msgstr "電源、空調、防火などに関する設備"
 
@@ -177,7 +182,7 @@ msgid ""
 "protect data over maintaining availability."
 msgstr "多くの高可用性システムは、複数の独立した (不連続な) 障害が発生すると停止します。この場合、多くのシステムは可用性の維持よりデータの保護を優先します。"
 
-#: ./doc/high-availability-guide/ch_intro.xml46(para)
+#: ./doc/high-availability-guide/ch_intro.xml48(para)
 msgid ""
 "High-availability systems typically achieve an uptime percentage of 99.99% "
 "or more, which roughly equates to less than an hour of cumulative downtime "
@@ -186,56 +191,59 @@ msgid ""
 "significantly less."
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_intro.xml47(para)
+#: ./doc/high-availability-guide/ch_intro.xml53(para)
 msgid ""
 "OpenStack currently meets such availability requirements for its own "
 "infrastructure services, meaning that an uptime of 99.99% is feasible for "
-"the OpenStack infrastructure proper. However, OpenStack "
-"<emphasis>does</emphasis><emphasis>not</emphasis> guarantee 99.99% "
-"availability for individual guest instances."
-msgstr "OpenStack は、自身のインフラストラクチャーサービスに対して、現在そのような要件を満たしています。99.99% の稼働時間が OpenStack インフラストラクチャーに対して完全に実現するという意味です。しかしながら、OpenStack は個々のゲストインスタンスに対して 99.99% の可用性を保証<emphasis>していません</emphasis>。"
+"the OpenStack infrastructure proper. However, OpenStack does not guarantee "
+"99.99% availability for individual guest instances."
+msgstr ""
 
-#: ./doc/high-availability-guide/ch_intro.xml48(para)
+#: ./doc/high-availability-guide/ch_intro.xml57(para)
 msgid ""
 "Preventing single points of failure can depend on whether or not a service "
 "is stateless."
 msgstr "単一障害点を無くすことは、サービスがステートレスであるかどうかに依存する可能性があります。"
 
-#: ./doc/high-availability-guide/ch_intro.xml51(title)
+#: ./doc/high-availability-guide/ch_intro.xml60(title)
 msgid "Stateless vs. Stateful services"
 msgstr "ステートレスサービスとステートフルサービス"
 
-#: ./doc/high-availability-guide/ch_intro.xml53(para)
+#: ./doc/high-availability-guide/ch_intro.xml61(para)
 msgid ""
 "A stateless service is one that provides a response after your request, and "
 "then requires no further attention. To make a stateless service highly "
 "available, you need to provide redundant instances and load balance them. "
-"OpenStack services that are stateless include nova-api, nova-conductor, "
-"glance-api, keystone-api, neutron-api and nova-scheduler."
-msgstr "ステートレスなサービスは、リクエストの後に応答を返すもので、その後の注意をする必要がないものです。ステートレスなサービスを高可用性にするには、冗長なインスタンスとそれらの負荷分散を提供する必要があります。ステートレスな OpenStack サービスは、nova-api、nova-conductor、glance-api、keystone-api、neutron-api、nova-scheduler があります。"
+"OpenStack services that are stateless include <systemitem class=\"service"
+"\">nova-api</systemitem>, <systemitem class=\"service\">nova-"
+"conductor</systemitem>, <systemitem class=\"service\">glance-"
+"api</systemitem>, <systemitem class=\"service\">keystone-api</systemitem>, "
+"<systemitem class=\"service\">neutron-api</systemitem> and <systemitem "
+"class=\"service\">nova-scheduler</systemitem>."
+msgstr ""
 
-#: ./doc/high-availability-guide/ch_intro.xml54(para)
+#: ./doc/high-availability-guide/ch_intro.xml71(para)
 msgid ""
 "A stateful service is one where subsequent requests to the service depend on"
 " the results of the first request. Stateful services are more difficult to "
 "manage because a single action typically involves more than one request, so "
 "simply providing additional instances and load balancing will not solve the "
 "problem. For example, if the Horizon user interface reset itself every time "
-"you went to a new page, it wouldn’t be very useful. OpenStack services that "
+"you went to a new page, it wouldn't be very useful. OpenStack services that "
 "are stateful include the OpenStack database and message queue."
-msgstr "ステートフルサービスは、最初のサービスリクエストの結果に基づいて、後続のものがサービスにリクエストします。ステートフルサービスは管理することがより難しいです。その理由は、単一のアクションが複数のリクエストに関係するため、単に追加インスタンスと負荷分散を提供しても問題が解決しないからです。例えば、Horizon ユーザーインターフェースが新しいページに移動するたびにリセットすると、かなり使い勝手が悪くなります。ステートフルな OpenStack サービスに OpenStack データベースとメッセージキューがあります。"
+msgstr ""
 
-#: ./doc/high-availability-guide/ch_intro.xml55(para)
+#: ./doc/high-availability-guide/ch_intro.xml79(para)
 msgid ""
 "Making stateful services highly available can depend on whether you choose "
 "an active/passive or active/active configuration."
 msgstr "ステートフルサービスの高可用性は、アクティブ / パッシブとアクティブ / アクティブのどちらの設定を選択するかに依存する可能性があります。"
 
-#: ./doc/high-availability-guide/ch_intro.xml59(title)
+#: ./doc/high-availability-guide/ch_intro.xml83(title)
 msgid "Active/Passive"
 msgstr "アクティブ/パッシブ"
 
-#: ./doc/high-availability-guide/ch_intro.xml61(para)
+#: ./doc/high-availability-guide/ch_intro.xml84(para)
 msgid ""
 "In an active/passive configuration, systems are set up to bring additional "
 "resources online to replace those that have failed. For example, OpenStack "
@@ -244,7 +252,7 @@ msgid ""
 "fails."
 msgstr "アクティブ / パッシブの設定の場合、システムは故障したリソースを置き換えるために、オンラインで追加リソースをセットアップします。例えば、メインのデータベースが故障したときにオンラインになる災害対策データベースを維持する限り、OpenStack はメインのデータベースに書き込みます。"
 
-#: ./doc/high-availability-guide/ch_intro.xml62(para)
+#: ./doc/high-availability-guide/ch_intro.xml89(para)
 msgid ""
 "Typically, an active/passive installation for a stateless service would "
 "maintain a redundant instance that can be brought online when required. "
@@ -252,7 +260,7 @@ msgid ""
 "service with minimal reconfiguration required."
 msgstr "一般的に、ステートレスサービスのアクティブ/パッシブ構成のインストールは、必要に応じてオンラインにできる冗長なインスタンスを動作させます。リクエストは、必要最小限の再設定でサービスを動作させられる、仮想 IP アドレスを使用して処理されます。"
 
-#: ./doc/high-availability-guide/ch_intro.xml63(para)
+#: ./doc/high-availability-guide/ch_intro.xml94(para)
 msgid ""
 "A typical active/passive installation for a stateful service maintains a "
 "replacement resource that can be brought online when required. A separate "
@@ -260,11 +268,11 @@ msgid ""
 "bringing the backup online as necessary."
 msgstr "一般的にステートレスサービスをアクティブ / パッシブにインストールすると、必要に応じてオンラインにできる置換リソースを維持します。 独立したアプリケーション (Pacemaker や Corosync など) がこれらのサービスを監視し、必要に応じてバックアップ側をオンラインにします。"
 
-#: ./doc/high-availability-guide/ch_intro.xml67(title)
+#: ./doc/high-availability-guide/ch_intro.xml100(title)
 msgid "Active/Active"
 msgstr "アクティブ/アクティブ"
 
-#: ./doc/high-availability-guide/ch_intro.xml69(para)
+#: ./doc/high-availability-guide/ch_intro.xml101(para)
 msgid ""
 "In an active/active configuration, systems also use a backup but will manage"
 " both the main and redundant systems concurrently. This way, if there is a "
@@ -273,14 +281,14 @@ msgid ""
 " online."
 msgstr "アクティブ / アクティブの設定の場合、システムはバックアップ側も使用しますが、メインと冗長システムを同時に管理します。このように、ユーザーが気が付かない障害が発生した場合、バックアップシステムはすでにオンラインであり、メインシステムが復旧され、オンラインになるまでの間は負荷が高くなります。"
 
-#: ./doc/high-availability-guide/ch_intro.xml70(para)
+#: ./doc/high-availability-guide/ch_intro.xml106(para)
 msgid ""
 "Typically, an active/active installation for a stateless service would "
 "maintain a redundant instance, and requests are load balanced using a "
 "virtual IP address and a load balancer such as HAProxy."
 msgstr "一般的にステートレスサービスをアクティブ / アクティブにインストールすると、冗長なインスタンスを維持することになります。リクエストは HAProxy のような仮想 IP アドレスとロードバランサーを使用して負荷分散されます。"
 
-#: ./doc/high-availability-guide/ch_intro.xml71(para)
+#: ./doc/high-availability-guide/ch_intro.xml109(para)
 msgid ""
 "A typical active/active installation for a stateful service would include "
 "redundant services with all instances having an identical state. For "
@@ -290,7 +298,7 @@ msgid ""
 "that operational systems always handle the request."
 msgstr "一般的にステートレスサービスをアクティブ / アクティブにインストールすることは、すべてのインスタンスが同じ状態を持つ冗長なサービスになることを含みます。例えば、あるインスタンスのデータベースの更新は、他のすべてのインスタンスも更新されます。このように、あるインスタンスへのリクエストは、他へのリクエストと同じです。ロードバランサーがこれらのシステムのトラフィックを管理し、利用可能なシステムが常にリクエストを確実に処理します。"
 
-#: ./doc/high-availability-guide/ch_intro.xml72(para)
+#: ./doc/high-availability-guide/ch_intro.xml116(para)
 msgid ""
 "These are some of the more common ways to implement these high availability "
 "architectures, but they are by no means the only ways to do it. The "
