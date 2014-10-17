@@ -5,8 +5,6 @@
   version="5.0"
   xml:id="_install_rabbitmq">
   <title>Install RabbitMQ</title>
-  <para>This setup has been tested with RabbitMQ
-    <literal>2.7.1</literal>.</para>
   <section xml:id="_on_ubuntu_debian">
     <title>On Ubuntu / Debian</title>
     <para>RabbitMQ is packaged on both distros:</para>
