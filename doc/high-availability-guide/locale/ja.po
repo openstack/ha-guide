@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-10-13 13:01+0000\n"
-"PO-Revision-Date: 2014-10-13 13:01+0000\n"
+"POT-Creation-Date: 2014-10-17 13:08+0000\n"
+"PO-Revision-Date: 2014-10-17 09:12+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -730,7 +730,7 @@ msgstr "Block Storage API リソース用の Pacemaker 設定を追加できま�
 #: ./doc/high-availability-guide/api/section_cinder_api.xml41(para)
 #: ./doc/high-availability-guide/api/section_glance_api.xml41(para)
 #: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml37(para)
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml170(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml165(para)
 #: ./doc/high-availability-guide/controller/section_mysql.xml182(para)
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml26(para)
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml30(para)
@@ -1251,36 +1251,31 @@ msgstr "RabbitMQ デーモン自身を含む、すべてのリソースを Pacem
 
 #: ./doc/high-availability-guide/controller/section_rabbitmq.xml35(para)
 msgid ""
-"There is an alternative method of configuring RabbitMQ for high "
-"availability. That approach, known as <link "
-"href=\"http://www.rabbitmq.com/ha.html\">active-active mirrored "
-"queues</link>, happens to be the one preferred by the RabbitMQ "
-"developershowever it has shown less than ideal consistency and reliability "
-"in OpenStack clusters. Thus, at the time of writing, the Pacemaker/DRBD "
-"based approach remains the recommended one for OpenStack environments, "
-"although this may change in the near future as RabbitMQ active-active "
-"mirrored queues mature."
-msgstr "RabbitMQ を高可用性に設定する別の方法があります。この方法は、<link href=\"http://www.rabbitmq.com/ha.html\">アクティブ・アクティブのキューのミラー</link>として知られ、RabbitMQ 開発者に好まれているものです。しかしながら、OpenStack クラスターにおける理想的な一貫性と信頼性よりは劣るものです。そのため、執筆時点では、Pacemaker/DRBD による方法が OpenStack 環境に対する推奨事項として残されています。これは RabbitMQ のアクティブ・アクティブのキューのミラーが成熟すると、近い将来に変更される可能性もあります。"
+"<link href=\"http://www.rabbitmq.com/ha.html\">Active-active mirrored "
+"queues</link> is another method for configuring RabbitMQ versions 3.3.0 and "
+"later for high availability. You can also manage a RabbitMQ cluster with "
+"active-active mirrored queues using the Pacemaker cluster manager."
+msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml46(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml41(title)
 #: ./doc/high-availability-guide/controller/section_mysql.xml44(title)
 msgid "Configure DRBD"
 msgstr "DRBD の設定"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml47(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml42(para)
 msgid ""
 "The Pacemaker based RabbitMQ server requires a DRBD resource from which it "
 "mounts the <filename>/var/lib/rabbitmq</filename> directory. In this "
 "example, the DRBD resource is simply named <literal>rabbitmq</literal>:"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml52(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml47(title)
 msgid ""
 "<literal>rabbitmq</literal> DRBD resource configuration "
 "(<filename>/etc/drbd.d/rabbitmq.res</filename>)"
 msgstr "<literal>rabbitmq</literal> DRBD リソース設定 (<filename>/etc/drbd.d/rabbitmq.res</filename>)"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml68(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml63(para)
 msgid ""
 "This resource uses an underlying local disk (in DRBD terminology, a backing "
 "device) named <filename>/dev/data/rabbitmq</filename> on both cluster nodes,"
@@ -1294,27 +1289,27 @@ msgid ""
 "<filename>/dev/drbd1</filename>."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml79(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml74(para)
 msgid ""
 "Enabling a DRBD resource is explained in detail in <link "
 "href=\"http://www.drbd.org/users-guide-8.3/s-first-time-up.html\">the DRBD "
 "User's Guide</link>. In brief, the proper sequence of commands is this:"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml87(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml82(para)
 msgid ""
 "Initializes DRBD metadata and writes the initial set of metadata to "
 "<filename>/dev/data/rabbitmq</filename>. Must be completed on both nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml92(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml87(para)
 msgid ""
 "Creates the <filename>/dev/drbd1</filename> device node, attaches the DRBD "
 "device to its backing store, and connects the DRBD node to its peer. Must be"
 " completed on both nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml97(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml92(para)
 #: ./doc/high-availability-guide/controller/section_mysql.xml95(para)
 msgid ""
 "Kicks off the initial device synchronization, and puts the device into the "
@@ -1326,11 +1321,11 @@ msgid ""
 "filesystem."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml108(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml103(title)
 msgid "Create a file system"
 msgstr "ファイルシステムの作成"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml109(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml104(para)
 msgid ""
 "Once the DRBD resource is running and in the primary role (and potentially "
 "still in the process of running the initial device synchronization), you may"
@@ -1338,25 +1333,25 @@ msgid ""
 "the recommended filesystem:"
 msgstr "DRBD リソースが実行中になり、プライマリロールになると (まだ初期デバイス同期が実行中かもしれません)、RabbitMQ データのファイルシステムの作成を進められます。XFS が一般的に推奨されるファイルシステムです。"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml114(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml109(para)
 #: ./doc/high-availability-guide/controller/section_mysql.xml113(para)
 msgid ""
 "You may also use the alternate device path for the DRBD device, which may be"
 " easier to remember as it includes the self-explanatory resource name:"
 msgstr "DRBD デバイスに対する代替デバイスパスを使用することもできます。これは自己説明的なリソース名を含むため、より覚えやすいでしょう。"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml118(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml113(para)
 #: ./doc/high-availability-guide/controller/section_mysql.xml117(para)
 msgid ""
 "Once completed, you may safely return the device to the secondary role. Any "
 "ongoing device synchronization will continue in the background:"
 msgstr "一度完了すると、デバイスを安全にセカンダリロールに戻せます。すべての動作中のデバイス同期はバックエンドで継続されます。"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml124(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml119(title)
 msgid "Prepare RabbitMQ for Pacemaker high availability"
 msgstr "Pacemaker 高可用性のための RabbitMQ の準備"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml125(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml120(para)
 msgid ""
 "In order for Pacemaker monitoring to function properly, you must ensure that"
 " RabbitMQ's <filename>.erlang.cookie</filename> files are identical on all "
@@ -1366,43 +1361,43 @@ msgid ""
 "node, and also copying it to the DRBD-backed filesystem."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml138(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml133(title)
 msgid "Add RabbitMQ resources to Pacemaker"
 msgstr "RabbitMQ リソースの Pacemaker への追加"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml139(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml134(para)
 msgid ""
 "You may now proceed with adding the Pacemaker configuration for RabbitMQ "
 "resources. Connect to the Pacemaker cluster with <placeholder-1/>, and add "
 "the following cluster resources:"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml173(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml168(para)
 msgid ""
 "<literal>p_ip_rabbitmq</literal>, a virtual IP address for use by RabbitMQ "
 "(<literal>192.168.42.100</literal>),"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml177(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml172(para)
 msgid ""
 "<literal>p_fs_rabbitmq</literal>, a Pacemaker managed filesystem mounted to "
 "<filename>/var/lib/rabbitmq</filename> on whatever node currently runs the "
 "RabbitMQ service,"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml182(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml177(para)
 msgid ""
 "<literal>ms_drbd_rabbitmq</literal>, the master/slave set managing the "
 "<literal>rabbitmq</literal> DRBD resource,"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml186(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml181(para)
 msgid ""
 "a service group and order and colocation constraints to ensure resources are"
 " started on the correct nodes, and in the correct sequence."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml191(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml186(para)
 msgid ""
 "<placeholder-1/> supports batch input, so you may copy and paste the above "
 "into your live pacemaker configuration, and then make changes as required. "
@@ -1411,7 +1406,7 @@ msgid ""
 "IP address."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml197(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml192(para)
 msgid ""
 "Once completed, commit your configuration changes by entering "
 "<literal>commit</literal> from the <placeholder-1/> menu. Pacemaker will "
@@ -1419,18 +1414,18 @@ msgid ""
 " nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml203(title)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml198(title)
 msgid "Configure OpenStack services for highly available RabbitMQ"
 msgstr "高可用性 RabbitMQ のための OpenStack サービスの設定"
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml204(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml199(para)
 msgid ""
 "Your OpenStack services must now point their RabbitMQ configuration to the "
 "highly available, virtual cluster IP addressrather than a RabbitMQ server's "
 "physical IP address as you normally would."
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml208(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml203(para)
 msgid ""
 "For OpenStack Image, for example, if your RabbitMQ service IP address is "
 "<literal>192.168.42.100</literal> as in the configuration explained here, "
@@ -1438,7 +1433,7 @@ msgid ""
 "file (<filename>glance-api.conf</filename>):"
 msgstr ""
 
-#: ./doc/high-availability-guide/controller/section_rabbitmq.xml214(para)
+#: ./doc/high-availability-guide/controller/section_rabbitmq.xml209(para)
 msgid ""
 "No other changes are necessary to your OpenStack configuration. If the node "
 "currently hosting your RabbitMQ experiences a problem necessitating service "
