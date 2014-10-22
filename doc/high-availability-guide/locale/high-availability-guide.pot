@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-10-18 06:00+0000\n"
+"POT-Creation-Date: 2014-10-22 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -238,34 +238,42 @@ msgid "This guide describes how to install, configure, and manage OpenStack for 
 msgstr ""
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml:38(date)
-msgid "2014-05-16"
+msgid "2014-10-17"
 msgstr ""
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml:42(para)
+msgid "This guide has gone through editorial changes to follow the OpenStack documentation conventions. Various smaller issues have been fixed."
+msgstr ""
+
+#: ./doc/high-availability-guide/bk-ha-guide.xml:51(date)
+msgid "2014-05-16"
+msgstr ""
+
+#: ./doc/high-availability-guide/bk-ha-guide.xml:55(para)
 msgid "Conversion to Docbook."
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:48(date)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:61(date)
 msgid "2014-04-17"
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:52(para)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:65(para)
 msgid "Minor cleanup of typos, otherwise no major revisions for Icehouse release."
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:59(date)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:72(date)
 msgid "2012-01-16"
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:63(para)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:76(para)
 msgid "Organizes guide based on cloud controller and compute nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:69(date)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:82(date)
 msgid "2012-05-24"
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:73(para)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:86(para)
 msgid "Begin trunk designation."
 msgstr ""
 
@@ -1417,35 +1425,31 @@ msgstr ""
 msgid "Telemetry"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:8(para)
-msgid "This setup has been tested with RabbitMQ <literal>2.7.1</literal>."
-msgstr ""
-
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:11(title)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:9(title)
 msgid "On Ubuntu / Debian"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:12(para) ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:21(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:10(para) ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:19(para)
 msgid "RabbitMQ is packaged on both distros:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:15(link)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:13(link)
 msgid "Official manual for installing RabbitMQ on Ubuntu / Debian"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:20(title)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:18(title)
 msgid "On Fedora / RHEL"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:24(link)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:22(link)
 msgid "Official manual for installing RabbitMQ on Fedora / RHEL"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:29(title)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:27(title)
 msgid "On openSUSE"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:32(link)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:30(link)
 msgid "Official manual for installing RabbitMQ on openSUSE"
 msgstr ""
 
@@ -1454,35 +1458,55 @@ msgid "Configure RabbitMQ"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:8(para)
-msgid "Here we are building a cluster of RabbitMQ nodes to construct a RabbitMQ broker. Mirrored queues in RabbitMQ improve the availability of service since it will be resilient to failures. We have to consider that while exchanges and bindings will survive the loss of individual nodes, queues and their messages will not because a queue and its contents is located on one node. If we lose this node, we also lose the queue."
+msgid "We are building a cluster of RabbitMQ nodes to construct a RabbitMQ broker, a logical grouping of several Erlang nodes."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:10(para)
+msgid "We have to consider that while exchanges and bindings will survive the loss of individual nodes, queues and their messages will not because a queue and its contents is located on one node. If we lose this node, we also lose the queue."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:14(para)
-msgid "We consider that we run (at least) two RabbitMQ servers. To build a broker, we need to ensure that all nodes have the same Erlang cookie file. To do so, stop RabbitMQ everywhere and copy the cookie from <literal>rabbit1</literal> serverto other server(s):"
+msgid "Mirrored queues in RabbitMQ improve the availability of service since it will be resilient to failures."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:16(para)
+msgid "We consider that we run (at least) two RabbitMQ servers and we call the nodes <literal>rabbit1</literal> and <literal>rabbit2</literal>. To build a broker, we need to ensure that all nodes have the same Erlang cookie file."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:20(para)
-msgid "Then, start RabbitMQ on nodes. If RabbitMQ fails to start, you can't continue to the next step."
+msgid "To do so, stop RabbitMQ everywhere and copy the cookie from the first node to the other node(s):"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:22(para)
-msgid "Now, we are building the HA cluster. From <literal>rabbit2</literal>, run these commands:"
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:23(replaceable) ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:30(replaceable) ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:31(replaceable) ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:32(replaceable) ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:37(replaceable) ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:41(replaceable) ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:45(replaceable) ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:46(replaceable) ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:46(replaceable)
+msgid "NODE"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:27(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:24(para)
+msgid "On the target nodes ensure the correct owner, group, and permissions of the <filename>.erlang.cookie</filename> file."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:28(para)
+msgid "Start RabbitMQ on all nodes and verify the nodes are running."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:35(para)
+msgid "Run the following commands on all nodes except the first one."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:43(para)
 msgid "To verify the cluster status:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:31(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:47(para)
 msgid "If the cluster is working, you can now proceed to creating users and passwords for queues."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:34(para)
-msgid "On RabbitMQ version 3 queue mirroring is no longer controlled by the <literal>x-ha-policy</literal> argument when declaring a queue. OpenStack can continue to declare this argument, but it won't cause queues to be mirrored. We need to make sure that all queues (except those with auto-generated names) are mirrored across all running nodes:"
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:49(para)
+msgid "To ensure that all queues, except those with auto-generated names, are mirrored across all running nodes it is necessary to set the policy key <literal>ha-mode</literal> to <literal>all</literal>. Run the following command on one of the nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:43(link)
-msgid "More information about High availability in RabbitMQ"
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:55(para)
+msgid "More information about <link href=\"http://www.rabbitmq.com/ha.html\"> highly available queues</link> and <link href=\"https://www.rabbitmq.com/clustering.html\"> clustering</link> can be found in the official RabbitMQ documentation."
 msgstr ""
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml:6(title)
