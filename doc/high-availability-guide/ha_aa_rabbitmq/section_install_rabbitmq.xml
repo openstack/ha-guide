@@ -6,31 +6,41 @@
   xml:id="_install_rabbitmq">
   <title>Install RabbitMQ</title>
   <section xml:id="_on_ubuntu_debian">
-    <title>On Ubuntu / Debian</title>
+    <title>On Ubuntu and Debian</title>
     <para>RabbitMQ is packaged on both distros:</para>
     <screen><prompt>#</prompt> <userinput>apt-get install rabbitmq-server rabbitmq-plugins</userinput></screen>
-    <para>
-      <link xlink:href="http://www.rabbitmq.com/install-debian.html">
-      Official manual for installing RabbitMQ on Ubuntu / Debian</link>
-    </para>
+    <note>
+      <para>
+        <link xlink:href="http://www.rabbitmq.com/install-debian.html">
+        Official manual for installing RabbitMQ on Ubuntu and Debian</link>
+      </para>
+    </note>
   </section>
   <section xml:id="_on_fedora_rhel">
-    <title>On Fedora / RHEL</title>
+    <title>On Fedora and RHEL</title>
     <para>RabbitMQ is packaged on both distros:</para>
     <screen><prompt>#</prompt> <userinput>yum install rabbitmq-server</userinput></screen>
-    <para>
-      <link xlink:href="http://www.rabbitmq.com/install-rpm.html">
-      Official manual for installing RabbitMQ on Fedora / RHEL</link>
-    </para>
+    <note>
+      <para>
+        <link xlink:href="http://www.rabbitmq.com/install-rpm.html">
+        Official manual for installing RabbitMQ on Fedora and RHEL</link>
+      </para>
+    </note>
   </section>
   <section xml:id="_on_opensuse_sles">
-    <title>On openSUSE/ SLES</title>
+    <title>On openSUSE and SLES</title>
     <procedure>
       <title>On openSUSE:</title>
       <step>
         <screen><prompt>#</prompt> <userinput>zypper install rabbitmq-server</userinput></screen>
       </step>
     </procedure>
+    <note>
+      <para>
+        <link xlink:href="http://www.rabbitmq.com/install-rpm.html">
+        Official manual for installing RabbitMQ on openSUSE</link>
+      </para>
+    </note>
     <para>
       <link xlink:href="http://www.rabbitmq.com/install-rpm.html">
       Official manual for installing RabbitMQ on openSUSE</link>
