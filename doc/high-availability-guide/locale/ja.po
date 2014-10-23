@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-10-22 04:21+0000\n"
-"PO-Revision-Date: 2014-10-22 04:21+0000\n"
+"POT-Creation-Date: 2014-10-22 06:46+0000\n"
+"PO-Revision-Date: 2014-10-22 17:12+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -2128,33 +2128,48 @@ msgid "Telemetry"
 msgstr "Telemetry"
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml9(title)
-msgid "On Ubuntu / Debian"
-msgstr "Ubuntu / Debian の場合"
+msgid "On Ubuntu and Debian"
+msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml10(para)
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml19(para)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml21(para)
 msgid "RabbitMQ is packaged on both distros:"
 msgstr "RabbitMQ がどちらもパッケージ化されています。"
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml13(link)
-msgid "Official manual for installing RabbitMQ on Ubuntu / Debian"
-msgstr "Ubuntu / Debian に RabbitMQ をインストールする方法の公式マニュアル"
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml14(link)
+msgid "Official manual for installing RabbitMQ on Ubuntu and Debian"
+msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml18(title)
-msgid "On Fedora / RHEL"
-msgstr "Fedora / RHEL の場合"
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml20(title)
+msgid "On Fedora and RHEL"
+msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml22(link)
-msgid "Official manual for installing RabbitMQ on Fedora / RHEL"
-msgstr "Fedora / RHEL に RabbitMQ をインストールする方法の公式マニュアル"
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml25(link)
+msgid "Official manual for installing RabbitMQ on Fedora and RHEL"
+msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml27(title)
-msgid "On openSUSE"
-msgstr "openSUSE の場合"
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml31(title)
+msgid "On openSUSE and SLES"
+msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml30(link)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml33(title)
+msgid "On openSUSE:"
+msgstr "openSUSE の場合:"
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml40(link)
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml45(link)
 msgid "Official manual for installing RabbitMQ on openSUSE"
 msgstr "openSUSE の RabbitMQ インストールに関する公式マニュアル"
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml49(title)
+msgid "On SLES:"
+msgstr "SLES の場合:"
+
+#: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml53(para)
+msgid ""
+"The packages are signed by GPG key 893A90DAD85F9316. You should verify the "
+"fingerprint of the imported GPG key before using it."
+msgstr "パッケージは GPG キー 893A90DAD85F9316 を用いて署名されています。使用する前にインポートした GPG キーのフィンガープリントを検証すべきです。"
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml7(title)
 msgid "Configure RabbitMQ"
@@ -2203,7 +2218,7 @@ msgstr ""
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml46(replaceable)
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml46(replaceable)
 msgid "NODE"
-msgstr ""
+msgstr "NODE"
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml24(para)
 msgid ""
