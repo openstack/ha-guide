@@ -4,9 +4,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-10-22 06:46+0000\n"
-"PO-Revision-Date: 2014-10-22 17:12+0000\n"
-"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
+"POT-Creation-Date: 2014-10-23 06:28+0000\n"
+"PO-Revision-Date: 2014-10-25 04:10+0000\n"
+"Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2129,7 +2129,7 @@ msgstr "Telemetry"
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml9(title)
 msgid "On Ubuntu and Debian"
-msgstr ""
+msgstr "Ubuntu / Debian の場合"
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml10(para)
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml21(para)
@@ -2150,7 +2150,7 @@ msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml31(title)
 msgid "On openSUSE and SLES"
-msgstr ""
+msgstr "openSUSE / SLES の場合"
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml33(title)
 msgid "On openSUSE:"
@@ -2228,11 +2228,11 @@ msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml28(para)
 msgid "Start RabbitMQ on all nodes and verify the nodes are running."
-msgstr ""
+msgstr "すべてのノードで RabbitMQ を起動し、ノードが実行中であることを確認します。"
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml35(para)
 msgid "Run the following commands on all nodes except the first one."
-msgstr ""
+msgstr "最初のノード以外のすべてのノードで、以下のコマンドを実行します。"
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml43(para)
 msgid "To verify the cluster status:"
@@ -2258,7 +2258,7 @@ msgid ""
 "highly available queues</link> and <link "
 "href=\"https://www.rabbitmq.com/clustering.html\"> clustering</link> can be "
 "found in the official RabbitMQ documentation."
-msgstr ""
+msgstr "<link href=\"http://www.rabbitmq.com/ha.html\">高可用性キュー</link>および<link href=\"https://www.rabbitmq.com/clustering.html\">クラスタリング</link>に関する詳細は、RabbitMQ の公式ドキュメントにあります。"
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml6(title)
 msgid "Highly available neutron metadata agent"
