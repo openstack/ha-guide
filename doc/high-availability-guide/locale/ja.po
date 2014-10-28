@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-10-23 06:28+0000\n"
-"PO-Revision-Date: 2014-10-25 04:10+0000\n"
+"POT-Creation-Date: 2014-10-27 16:23+0000\n"
+"PO-Revision-Date: 2014-10-28 01:50+0000\n"
 "Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -59,7 +59,7 @@ msgid ""
 "drivers as Open vSwitch or Linux Bridge. One L2 agent runs per node and "
 "controls its virtual interfaces. That's why it cannot be distributed and "
 "highly available."
-msgstr ""
+msgstr "neutron L2 エージェントは、高可用化する必要がありません。各データ転送ノードにインストールする必要があります。仮想ネットワークドライバーとして Open vSwitch や Linux Bridge を制御します。L2 エージェントは、ノードごとに 1 つ動作し、その仮想インターフェースを制御します。そのため、分散できず、高可用化できません。"
 
 #: ./doc/high-availability-guide/ch_pacemaker.xml7(title)
 msgid "The Pacemaker cluster stack"
@@ -141,7 +141,7 @@ msgstr "データ損失"
 
 #: ./doc/high-availability-guide/ch_intro.xml17(para)
 msgid "Accidental deletion or destruction of data."
-msgstr ""
+msgstr "意図しないデータの削除や破損。"
 
 #: ./doc/high-availability-guide/ch_intro.xml21(para)
 msgid ""
