@@ -147,6 +147,11 @@ logging {
         <filename>corosync.conf</filename> file directly, or in its own
         separate file,
         <filename>/etc/corosync/service.d/pacemaker</filename>.</para>
+      <note>
+        <para>If you are using Corosync version 2 on Ubuntu 14.04, remove
+          or comment out lines under the service stanza, which enables
+          Pacemaker to start up.</para>
+      </note>
     </callout>
   </calloutlist>
   <para>Once created, the <filename>corosync.conf</filename> file (and the
