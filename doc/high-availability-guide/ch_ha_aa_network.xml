@@ -33,4 +33,5 @@
   <xi:include href="ha_aa_network/section_run_neutron_dhcp_agent.xml"/>
   <xi:include href="ha_aa_network/section_run_neutron_l3_agent.xml"/>
   <xi:include href="ha_aa_network/section_run_neutron_metadata_agent.xml"/>
+  <xi:include href="ha_aa_network/section_run_neutron_lbaas_agent.xml"/>
 </chapter>
