@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-10-23 06:00+0000\n"
+"POT-Creation-Date: 2014-11-21 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -479,6 +479,14 @@ msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_dhcp_agent.xml:8(para)
 msgid "OpenStack Networking service has a scheduler that lets you run multiple agents across nodes. Also, the DHCP agent can be natively highly available. For details, see the <link href=\"http://docs.openstack.org/trunk/config-reference/content/app_demo_multi_dhcp_agents.html\"> OpenStack Configuration Reference</link>."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_lbaas_agent.xml:7(title)
+msgid "Run neutron LBaaS agent"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_lbaas_agent.xml:8(para)
+msgid "Currently there's no native feature to make the LBaaS agent highly available using the default plugin HAProxy. A common way to make HAProxy highly available is to use VRRP (Virtual Router Redundancy Protocol), unfortunately this is not yet implemented in the LBaaS HAProxy plugin."
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml:7(title)
