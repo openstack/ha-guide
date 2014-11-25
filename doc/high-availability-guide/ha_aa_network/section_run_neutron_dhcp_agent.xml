@@ -5,9 +5,12 @@
   version="5.0"
   xml:id="_run_neutron_dhcp_agent">
   <title>Run neutron DHCP agent</title>
-  <para>OpenStack Networking service has a scheduler that lets you run
-    multiple agents across nodes. Also, the DHCP agent can be natively
-    highly available. For details, see the
-    <link xlink:href="http://docs.openstack.org/trunk/config-reference/content/app_demo_multi_dhcp_agents.html">
-    OpenStack Configuration Reference</link>.</para>
+  <para>The OpenStack Networking service has a scheduler that lets you
+    run multiple agents across nodes. Also, the DHCP agent can be
+    natively highly available.
+    You can configure the number of DHCP agents per network using the
+    parameter <option>dhcp_agents_per_network</option> in
+    <filename>neutron.conf</filename>.
+    By default this is equal to 1. To achieve highly availability
+    assign more than one DHCP agent per network.</para>
 </section>
