@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-11-27 21:27+0000\n"
-"PO-Revision-Date: 2014-11-27 21:27+0000\n"
+"POT-Creation-Date: 2014-11-28 08:54+0000\n"
+"PO-Revision-Date: 2014-11-28 07:45+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -682,11 +682,12 @@ msgstr "Neutron DHCP エージェントの実行"
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_dhcp_agent.xml8(para)
 msgid ""
-"OpenStack Networking service has a scheduler that lets you run multiple "
+"The OpenStack Networking service has a scheduler that lets you run multiple "
 "agents across nodes. Also, the DHCP agent can be natively highly available. "
-"For details, see the <link href=\"http://docs.openstack.org/trunk/config-"
-"reference/content/app_demo_multi_dhcp_agents.html\"> OpenStack Configuration"
-" Reference</link>."
+"You can configure the number of DHCP agents per network using the parameter "
+"<option>dhcp_agents_per_network</option> in "
+"<filename>neutron.conf</filename>. By default this is equal to 1. To achieve"
+" highly availability assign more than one DHCP agent per network."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_lbaas_agent.xml7(title)
