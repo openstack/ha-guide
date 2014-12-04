@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-28 06:00+0000\n"
+"POT-Creation-Date: 2014-12-04 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1285,7 +1285,11 @@ msgstr ""
 msgid "The <literal>service</literal> declaration for the <literal>pacemaker</literal> service may be placed in the <filename>corosync.conf</filename> file directly, or in its own separate file, <filename>/etc/corosync/service.d/pacemaker</filename>."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:152(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:151(para)
+msgid "If you are using Corosync version 2 on Ubuntu 14.04, remove or comment out lines under the service stanza, which enables Pacemaker to start up."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:157(para)
 msgid "Once created, the <filename>corosync.conf</filename> file (and the <filename>authkey</filename> file if the <option>secauth</option> option is enabled) must be synchronized across all cluster nodes."
 msgstr ""
 

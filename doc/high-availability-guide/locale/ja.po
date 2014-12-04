@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-11-28 08:54+0000\n"
-"PO-Revision-Date: 2014-11-28 07:45+0000\n"
+"POT-Creation-Date: 2014-12-03 07:51+0000\n"
+"PO-Revision-Date: 2014-12-03 07:51+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -1942,7 +1942,13 @@ msgid ""
 "file, <filename>/etc/corosync/service.d/pacemaker</filename>."
 msgstr "<literal>pacemaker</literal> サービスに関する <literal>service</literal> 宣言は、<filename>corosync.conf</filename> ファイルに直接置かれるか、別のファイル <filename>/etc/corosync/service.d/pacemaker</filename> に置かれるかもしれません。"
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml152(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml151(para)
+msgid ""
+"If you are using Corosync version 2 on Ubuntu 14.04, remove or comment out "
+"lines under the service stanza, which enables Pacemaker to start up."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml157(para)
 msgid ""
 "Once created, the <filename>corosync.conf</filename> file (and the "
 "<filename>authkey</filename> file if the <option>secauth</option> option is "
