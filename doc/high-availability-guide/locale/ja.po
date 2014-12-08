@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-12-03 07:51+0000\n"
-"PO-Revision-Date: 2014-12-03 07:51+0000\n"
-"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
+"POT-Creation-Date: 2014-12-05 08:47+0000\n"
+"PO-Revision-Date: 2014-12-08 01:01+0000\n"
+"Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2162,7 +2162,7 @@ msgstr "RabbitMQ がどちらもパッケージ化されています。"
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml14(link)
 msgid "Official manual for installing RabbitMQ on Ubuntu and Debian"
-msgstr ""
+msgstr "Ubuntu と Debian の RabbitMQ インストールに関する公式マニュアル"
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml20(title)
 msgid "On Fedora and RHEL"
@@ -2170,7 +2170,7 @@ msgstr "Fedora と RHEL 上では"
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml25(link)
 msgid "Official manual for installing RabbitMQ on Fedora and RHEL"
-msgstr ""
+msgstr "Fedora と RHEL の RabbitMQ インストールに関する公式マニュアル"
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml31(title)
 msgid "On openSUSE and SLES"
