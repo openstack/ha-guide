@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-01-01 17:48+0000\n"
-"PO-Revision-Date: 2015-01-01 18:13+0000\n"
+"POT-Creation-Date: 2015-01-06 09:54+0000\n"
+"PO-Revision-Date: 2015-01-06 09:54+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -2342,9 +2342,9 @@ msgstr "Neutron L3 エージェントは、プロジェクトのネットワー�
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml13(para)
 msgid ""
 "Here is the <link href=\"http://docs.openstack.org/trunk/config-"
-"reference/content/section_adv_cfg_l3_agent.html\">documentation</link> for "
-"installing neutron L3 agent."
-msgstr "ここに Neutron L3 エージェントをインストールするための<link href=\"http://docs.openstack.org/trunk/config-reference/content/section_adv_cfg_l3_agent.html\">ドキュメント</link>があります。"
+"reference/content/networking-options-l3_agent.html\">documentation</link> "
+"for installing neutron L3 agent."
+msgstr ""
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml17(title)
 msgid "Add neutron L3 agent resource to Pacemaker"
@@ -2402,9 +2402,9 @@ msgstr "Neutron DHCP エージェントは (デフォルトで) dnsmasq を用�
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml13(para)
 msgid ""
 "Here is the <link href=\"http://docs.openstack.org/trunk/config-"
-"reference/content/section_adv_cfg_dhcp_agent.html\">documentation</link> for"
-" installing neutron DHCP agent."
-msgstr "ここに Neutron DHCP エージェントをインストールするための<link href=\"http://docs.openstack.org/trunk/config-reference/content/section_adv_cfg_dhcp_agent.html\">ドキュメント</link>があります。"
+"reference/content/networking-options-dhcp.html\">documentation</link> for "
+"installing neutron DHCP agent."
+msgstr ""
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml17(title)
 msgid "Add neutron DHCP agent resource to Pacemaker"

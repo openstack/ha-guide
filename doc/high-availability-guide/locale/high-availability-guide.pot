@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-01-02 06:01+0000\n"
+"POT-Creation-Date: 2015-01-07 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1574,7 +1574,7 @@ msgid "The neutron L3 agent provides L3/NAT forwarding to ensure external networ
 msgstr ""
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml:13(para)
-msgid "Here is the <link href=\"http://docs.openstack.org/trunk/config-reference/content/section_adv_cfg_l3_agent.html\">documentation</link> for installing neutron L3 agent."
+msgid "Here is the <link href=\"http://docs.openstack.org/trunk/config-reference/content/networking-options-l3_agent.html\">documentation</link> for installing neutron L3 agent."
 msgstr ""
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml:17(title)
@@ -1614,7 +1614,7 @@ msgid "Neutron DHCP agent distributes IP addresses to the VMs with dnsmasq (by d
 msgstr ""
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml:13(para)
-msgid "Here is the <link href=\"http://docs.openstack.org/trunk/config-reference/content/section_adv_cfg_dhcp_agent.html\">documentation</link> for installing neutron DHCP agent."
+msgid "Here is the <link href=\"http://docs.openstack.org/trunk/config-reference/content/networking-options-dhcp.html\">documentation</link> for installing neutron DHCP agent."
 msgstr ""
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml:17(title)
