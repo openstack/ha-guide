@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-01-07 12:21+0000\n"
-"PO-Revision-Date: 2015-01-19 16:31+0000\n"
+"POT-Creation-Date: 2015-01-23 07:02+0000\n"
+"PO-Revision-Date: 2015-01-24 07:54+0000\n"
 "Last-Translator: zhaochao <zhaochao1984@gmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -27,31 +27,31 @@ msgstr "OpenStack 控制服务运行在管理网络上，可以和其它任何 O
 
 #: ./doc/high-availability-guide/ch_ha_aa_network.xml7(title)
 msgid "OpenStack network nodes"
-msgstr ""
+msgstr "OpenStack 网络节点服务器"
 
 #: ./doc/high-availability-guide/ch_ha_aa_network.xml8(para)
 msgid "OpenStack network nodes contain:"
-msgstr ""
+msgstr "OpenStack 网络节点运行以下服务："
 
 #: ./doc/high-availability-guide/ch_ha_aa_network.xml11(para)
 msgid "Neutron DHCP agent"
-msgstr ""
+msgstr "Neutron DHCP 代理服务"
 
 #: ./doc/high-availability-guide/ch_ha_aa_network.xml14(para)
 msgid "Neutron L2 agent"
-msgstr ""
+msgstr "Neutron L2 代理服务"
 
 #: ./doc/high-availability-guide/ch_ha_aa_network.xml17(para)
 msgid "Neutron L3 agent"
-msgstr ""
+msgstr "Neutron L3 代理服务"
 
 #: ./doc/high-availability-guide/ch_ha_aa_network.xml20(para)
 msgid "Neutron metadata agent"
-msgstr ""
+msgstr "Neutron 元数据代理服务"
 
 #: ./doc/high-availability-guide/ch_ha_aa_network.xml23(para)
 msgid "Neutron LBaaS agent"
-msgstr ""
+msgstr "Neutron LBaas 代理服务"
 
 #: ./doc/high-availability-guide/ch_ha_aa_network.xml27(para)
 msgid ""
@@ -60,7 +60,7 @@ msgid ""
 "drivers as Open vSwitch or Linux Bridge. One L2 agent runs per node and "
 "controls its virtual interfaces. That's why it cannot be distributed and "
 "highly available."
-msgstr ""
+msgstr "Neutron L2 代理服务不需要实现高可用。在所有提供数据转发的服务器上都要安装 Neutron L2 代理程序，对诸如 Open vSwitch 、Linux Bridge 等虚拟网络驱动进行管理。每台节点服务器各运行一个 L2 代理程序，负责管理该节点上的虚拟网络接口。这也是 Neutron L2 代理服务无法实现多节点分布以及高可用的原因。"
 
 #: ./doc/high-availability-guide/ch_pacemaker.xml7(title)
 msgid "The Pacemaker cluster stack"
@@ -345,25 +345,25 @@ msgstr "版权信息来自于模板"
 msgid ""
 "This guide describes how to install, configure, and manage OpenStack for "
 "high availability."
-msgstr ""
+msgstr "本手册将对如何实现 OpenStack 各服务的高可用进行说明。"
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml38(date)
 msgid "2014-10-17"
-msgstr ""
+msgstr "2014-10-17"
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml42(para)
 msgid ""
 "This guide has gone through editorial changes to follow the OpenStack "
 "documentation conventions. Various smaller issues have been fixed."
-msgstr ""
+msgstr "本手册根据 OpenStack 文档规范进行了修订，改正了不少细微的错误。"
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml51(date)
 msgid "2014-05-16"
-msgstr ""
+msgstr "2014-05-16"
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml55(para)
 msgid "Conversion to Docbook."
-msgstr ""
+msgstr "转换为 Dockbook 格式。"
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml61(date)
 msgid "2014-04-17"
@@ -372,7 +372,7 @@ msgstr "2014-04-17"
 #: ./doc/high-availability-guide/bk-ha-guide.xml65(para)
 msgid ""
 "Minor cleanup of typos, otherwise no major revisions for Icehouse release."
-msgstr ""
+msgstr "清理一些拼写错误，相对于 Icehouse 版本没有大的改动。"
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml72(date)
 msgid "2012-01-16"
@@ -651,7 +651,7 @@ msgstr "可以获取类似下面输出结果的集群状态："
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml7(title)
 msgid "Run neutron L3 agent"
-msgstr ""
+msgstr "运行 neutron L3 代理服务"
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml8(para)
 msgid ""
@@ -661,11 +661,11 @@ msgid ""
 "active/passive solution exists to run the Neutron L3 agent in failover mode "
 "with <application>Pacemaker</application>. See the <link linkend=\"ha-using-"
 "active-passive\">active/passive section</link> of this guide."
-msgstr ""
+msgstr "Neutron L3 代理服务是可扩展的，因为调度程序允许将虚拟路由器分布在多台节点服务器上。但是 L3 代理服务自身是不支持高可用的。目前针对 Neutron L3 代理服务只有主/从模式的高可用方案通过 <application>Pacemaker</application> 可以实现失效切换。参阅本手册的 <link linkend=\"ha-using-active-passive\">主/从模式高可用架构部分</link>。"
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_metadata_agent.xml7(title)
 msgid "Run neutron metadata agent"
-msgstr ""
+msgstr "运行 neutron 元数据代理服务"
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_metadata_agent.xml8(para)
 msgid ""
@@ -674,11 +674,11 @@ msgid ""
 " in failover mode with <application>Pacemaker</application>. See the <link "
 "linkend=\"ha-using-active-passive\">active/passive section</link> of this "
 "guide."
-msgstr ""
+msgstr "Neutron 元数据代理服务自身是不支持高可用的。目前针对 Neutron L3 代理服务只有主/从模式的高可用方案通过 <application>Pacemaker</application> 可以实现失效切换。参阅本手册的 <link linkend=\"ha-using-active-passive\">主/从模式高可用架构部分</link>。"
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_dhcp_agent.xml7(title)
 msgid "Run neutron DHCP agent"
-msgstr ""
+msgstr "运行 neutron DHCP 代理服务"
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_dhcp_agent.xml8(para)
 msgid ""
@@ -688,11 +688,11 @@ msgid ""
 "<placeholder-1/> in <filename>neutron.conf</filename>. By default this is "
 "equal to 1. To achieve highly availability assign more than one DHCP agent "
 "per network."
-msgstr ""
+msgstr "OpenStack 网络服务拥有一个调度程序，所有可以在多个节点同时运行各种代理程序。同样，DHCP 代理服务自身就是支持高可用的。每个网络使用多少 DHCP 代理程序是可以通过配置文件 <filename>neutron.conf</filename> 中的 <placeholder-1/> 进行配置的。默认值是 1 ，要实现 DHCP 代理服务的高可用，应为每个网络设置多个 DHCP 代理程序。"
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_lbaas_agent.xml7(title)
 msgid "Run neutron LBaaS agent"
-msgstr ""
+msgstr "运行 neutron LBaas 代理服务"
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_lbaas_agent.xml8(para)
 msgid ""
@@ -700,7 +700,7 @@ msgid ""
 " using the default plugin HAProxy. A common way to make HAProxy highly "
 "available is to use VRRP (Virtual Router Redundancy Protocol), unfortunately"
 " this is not yet implemented in the LBaaS HAProxy plugin."
-msgstr ""
+msgstr "目前 Neutron LBaaS 代理服务是无法通过其自带的 HAProxy 插件 实现高可用的。实现 HAProxy 高可用常见的方案是使用 VRRP （Virtual Router Redundancy Protocol ，虚拟路由冗余协议），不过 LBaaS HAProxy 插件目前还不支持该协议。"
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml7(title)
 msgid "Highly available Block Storage API"
@@ -1696,24 +1696,24 @@ msgid ""
 "Most OpenStack services use an application to offer persistence and store "
 "ephemeral data like tokens. <application>Memcached</application> is one of "
 "them and can scale-out easily without any specific tricks required."
-msgstr ""
+msgstr "大部分 OpenStack 服务都会使用另外一个应用程序来提供持久化存储并存储类似认证令牌的附加数据。<application>Memcached</application> 是其中一种，而且无需特殊配置就可以分布式地运行在多个节点服务器上。"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml12(para)
 msgid ""
 "To install and configure it, read the <link "
 "href=\"http://code.google.com/p/memcached/wiki/NewStart\"> official "
 "documentation</link>."
-msgstr ""
+msgstr "<application>Memcached</application> 的安装和配置，请参阅 <link href=\"http://code.google.com/p/memcached/wiki/NewStart\"> 官方文档</link>。"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml15(para)
 msgid ""
 "Memory caching is managed by oslo-incubator, so the way to use multiple "
 "memcached servers is the same for all projects."
-msgstr ""
+msgstr "基于内存的缓存统一由 oslo-incubator 管理，因此对 OpenStack 服务来说，使用多个 memcached 服务节点作为后端的方法完全相同。"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml17(para)
 msgid "Example configuration with two hosts:"
-msgstr ""
+msgstr "使用 2 个 memcached 节点的配置示例："
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml19(para)
 msgid ""
@@ -1722,7 +1722,7 @@ msgid ""
 " information about <application>Memcached</application> installation, see "
 "the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/\"> "
 "OpenStack Cloud Administrator Guide</link>."
-msgstr ""
+msgstr "默认情况下，服务器 <literal>controller1</literal> 处理所有缓存，一旦它无法工作，服务器 <literal>controller2</literal> 会自动接管。更多关于 <application>Memcached</application> 布署的信息请参阅  <link href=\"http://docs.openstack.org/admin-guide-cloud/content/\"> OpenStack 云计算平台管理员手册</link>。"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml7(title)
 msgid "Run OpenStack API and schedulers"
@@ -1739,22 +1739,22 @@ msgid ""
 "these services on at least two nodes and use load balancing and a virtual IP"
 " address (with <application>HAProxy</application> and "
 "<application>Keepalived</application> in this setup)."
-msgstr ""
+msgstr "所有的 OpenStack 组件都包含一个 API 服务，这些 API 服务负责管理整个云平台的各个资源。在主/主模式的 HA 架构中，通常的方案是让所有这些 API 服务分布到两台以上的服务器节点上，通过负载构衡和虚拟 IP 地址对外提供服务（示例中使用 <application>HAProxy</application> 和 <application>Keepalived</application> ）。"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml15(para)
 msgid ""
 "To use highly available and scalable API services, we need to ensure that:"
-msgstr ""
+msgstr "要实现高可用和可扩展的 API 服务，需要保证："
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml19(para)
 msgid ""
 "You use virtual IP addresses when configuring OpenStack Identity endpoints."
-msgstr ""
+msgstr "为 OpenStack 身份认证中的服务端点配置虚拟 IP 地址。"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml24(para)
 msgid ""
 "All OpenStack configuration files should refer to virtual IP addresses."
-msgstr ""
+msgstr "所有 OpenStack 组件的配置中也相应使用虚拟 IP 地址。"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml29(para)
 msgid ""
@@ -1764,11 +1764,11 @@ msgid ""
 "the service is actually running. That's why all OpenStack API services "
 "should be monitored by another tool, for example "
 "<application>Nagios</application>."
-msgstr ""
+msgstr "监控方法比较简单，只是向 API 服务绑定的端口发起一个 TCP 连接。和主/从模式的高可用方案使用 <application>Corosync</application> 和资源代理脚本不同，这种监控方法不会检查这些服务是否在运行。因此所有的 OpenStack API 服务还需要通过工具作进一步的监控，比如 <application>Nagios</application> 。"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml38(title)
 msgid "Schedulers"
-msgstr ""
+msgstr "调度程序"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml39(para)
 msgid ""
@@ -1776,7 +1776,7 @@ msgid ""
 "and volume requests. The most common setup is to use RabbitMQ as messaging "
 "system. Those services are connected to the messaging backend and can scale-"
 "out:"
-msgstr ""
+msgstr "OpenStack 调度程序决定如何分派对计算资源、网络资源、存储卷源的请求。一般情况下都会使用 RabbitMQ 作为消息队列服务。以下服务使用消息队列作为后端，可以分布在多个节点服务器上运行："
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml45(systemitem)
 msgid "nova-scheduler"
@@ -1784,29 +1784,29 @@ msgstr "nova-scheduler"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml48(systemitem)
 msgid "nova-conductor"
-msgstr ""
+msgstr "nova-conductor"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml51(systemitem)
 msgid "cinder-scheduler"
-msgstr ""
+msgstr "cinder-scheduler"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml54(systemitem)
 msgid "neutron-server"
-msgstr ""
+msgstr "neutron-server"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml57(systemitem)
 msgid "ceilometer-collector"
-msgstr ""
+msgstr "ceilometer-collector"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml60(systemitem)
 msgid "heat-engine"
-msgstr ""
+msgstr "heat-engine"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml63(para)
 msgid ""
 "Please refer to the <link linkend=\"s-rabbitmq\">RabbitMQ section</link> for"
 " configuring these services with multiple messaging servers."
-msgstr ""
+msgstr "请参阅  <link linkend=\"s-rabbitmq\">RabbitMQ 部分</link> 将 OpenStack 各组件配置为可同时使用多个消息队列服务器。"
 
 #: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml7(title)
 msgid "Start Pacemaker"
