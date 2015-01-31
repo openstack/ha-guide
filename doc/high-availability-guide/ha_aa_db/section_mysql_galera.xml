@@ -7,7 +7,7 @@
   <title>MySQL with Galera</title>
   <para>Rather than starting with a vanilla version of MySQL, and then adding
     Galera, you will want to install a version of MySQL patched for wsrep
-    (Write Set REPlication) from <link xlink:href="https://launchpad.net/codership-mysql/0.7">https://launchpad.net/codership-mysql/0.7</link>.
+    (Write Set REPlication) from <link xlink:href="https://launchpad.net/codership-mysql">https://launchpad.net/codership-mysql</link>.
     The wsrep API is suitable for configuring MySQL High Availability in
     OpenStack because it supports synchronous replication.</para>
   <para>Note that the installation requirements call for careful attention. Read
