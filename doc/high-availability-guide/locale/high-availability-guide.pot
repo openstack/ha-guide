@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-01-07 06:00+0000\n"
+"POT-Creation-Date: 2015-02-01 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -366,7 +366,7 @@ msgid "MySQL with Galera"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:8(para)
-msgid "Rather than starting with a vanilla version of MySQL, and then adding Galera, you will want to install a version of MySQL patched for wsrep (Write Set REPlication) from <link href=\"https://launchpad.net/codership-mysql/0.7\">https://launchpad.net/codership-mysql/0.7</link>. The wsrep API is suitable for configuring MySQL High Availability in OpenStack because it supports synchronous replication."
+msgid "Rather than starting with a vanilla version of MySQL, and then adding Galera, you will want to install a version of MySQL patched for wsrep (Write Set REPlication) from <link href=\"https://launchpad.net/codership-mysql\">https://launchpad.net/codership-mysql</link>. The wsrep API is suitable for configuring MySQL High Availability in OpenStack because it supports synchronous replication."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:13(para)
