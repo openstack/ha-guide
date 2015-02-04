@@ -13,6 +13,8 @@
   <para>Note that the installation requirements call for careful attention. Read
     the guide <link xlink:href="https://launchpadlibrarian.net/66669857/README-wsrep">https://launchpadlibrarian.net/66669857/README-wsrep</link>
     to ensure you follow all the required steps.</para>
+  <para>And for any additional information about Galera, you can access this guide:
+    <link xlink:href="http://galeracluster.com/documentation-webpages/gettingstarted.html">http://galeracluster.com/documentation-webpages/gettingstarted.html</link></para>
   <orderedlist numeration="arabic" inheritnum="ignore" continuation="restarts">
     <title>Installing Galera through a MySQL version patched for wsrep:</title>
     <listitem>
