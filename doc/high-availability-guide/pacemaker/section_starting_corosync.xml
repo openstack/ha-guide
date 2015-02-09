@@ -55,4 +55,8 @@ runtime.totem.pg.mrp.srp.983895584.join_count=1
 runtime.totem.pg.mrp.srp.983895584.status=joined</computeroutput></screen>
   <para>You should see a <literal>status=joined</literal> entry for each of
     your constituent cluster nodes.</para>
+  <note>
+    <para>If you are using Corosync version 2, use the <command>corosync-cmapctl</command> utility
+      as it is a direct replacement for <command>corosync-objctl</command>.</para>
+  </note>
 </section>
