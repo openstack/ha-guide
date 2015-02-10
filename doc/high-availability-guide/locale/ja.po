@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-01-31 13:19+0000\n"
-"PO-Revision-Date: 2015-01-31 13:19+0000\n"
+"POT-Creation-Date: 2015-02-09 19:27+0000\n"
+"PO-Revision-Date: 2015-02-09 19:27+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -2079,6 +2079,12 @@ msgid ""
 "You should see a <literal>status=joined</literal> entry for each of your "
 "constituent cluster nodes."
 msgstr "組み込まれているそれぞれのクラスターノードの項目が <literal>status=joined</literal> になっていることが確認できるはずです。"
+
+#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml59(para)
+msgid ""
+"If you are using Corosync version 2, use the <placeholder-1/> utility as it "
+"is a direct replacement for <placeholder-2/>."
+msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml7(title)
 msgid "Configure OpenStack services to use RabbitMQ"

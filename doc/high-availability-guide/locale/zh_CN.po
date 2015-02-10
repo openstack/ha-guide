@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-02-03 14:26+0000\n"
-"PO-Revision-Date: 2015-02-02 11:00+0000\n"
-"Last-Translator: 秋林 <chenqioulin_1983@163.com>\n"
+"POT-Creation-Date: 2015-02-09 19:27+0000\n"
+"PO-Revision-Date: 2015-02-10 03:20+0000\n"
+"Last-Translator: zhaochao <zhaochao1984@gmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2080,6 +2080,12 @@ msgid ""
 "You should see a <literal>status=joined</literal> entry for each of your "
 "constituent cluster nodes."
 msgstr "status=joined标示着每一个集群节点成员。"
+
+#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml59(para)
+msgid ""
+"If you are using Corosync version 2, use the <placeholder-1/> utility as it "
+"is a direct replacement for <placeholder-2/>."
+msgstr "如果使用 Corosync v2 版本，请使用 <placeholder-2/> 命令的替代命令 <placeholder-1/>  。"
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml7(title)
 msgid "Configure OpenStack services to use RabbitMQ"

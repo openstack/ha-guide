@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-01 06:00+0000\n"
+"POT-Creation-Date: 2015-02-10 06:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1375,6 +1375,10 @@ msgstr ""
 
 #: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:56(para)
 msgid "You should see a <literal>status=joined</literal> entry for each of your constituent cluster nodes."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_starting_corosync.xml:59(para)
+msgid "If you are using Corosync version 2, use the <placeholder-1/> utility as it is a direct replacement for <placeholder-2/>."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_openstack_services_to_use_rabbitmq.xml:7(title)
