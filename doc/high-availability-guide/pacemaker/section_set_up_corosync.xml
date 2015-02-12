@@ -7,8 +7,12 @@
   <title>Set up Corosync</title>
   <para>Besides installing the <package>corosync</package> package, you must
     also create a configuration file, stored in
-    <filename>/etc/corosync/corosync.conf</filename>. Most distributions ship
-    an example configuration file (<filename>corosync.conf.example</filename>)
+    <filename>/etc/corosync/corosync.conf</filename>. Corosync can be configured
+    to work with either multicast or unicast IP addresses.
+  </para>
+  <section xml:id="_set_up_corosync_multicast">
+  <title>Set up Corosync with multicast</title>
+  <para>Most distributions ship an example configuration file (<filename>corosync.conf.example</filename>)
     as part of the documentation bundled with the <package>corosync</package>
     package. An example Corosync configuration file is shown below:</para>
   <formalpara>
@@ -157,4 +161,79 @@ logging {
   <para>Once created, the <filename>corosync.conf</filename> file (and the
     <filename>authkey</filename> file if the <option>secauth</option> option
     is enabled) must be synchronized across all cluster nodes.</para>
+  </section>
+  <section xml:id="_set_up_corosync_unicast">
+  <title>Set up Corosync with unicast</title>
+  <para>Some environments may not support multicast. For such cases,
+    Corosync should be configured for unicast.
+    An example fragment of Corosync configuration file is shown below:</para>
+  <formalpara>
+    <title>Corosync configuration file fragment (<filename>corosync.conf</filename>)</title>
+    <para>
+      <programlisting language="ini">totem {
+        #...
+        interface {
+                ringnumber: 0
+                bindnetaddr: 192.168.42.0
+                broadcast: yes <co xml:id="CO1-6"/>
+                mcastport: 5405
+        }
+        interface {
+                ringnumber: 1
+                bindnetaddr: 10.0.42.0
+                broadcast: yes
+                mcastport: 5405
+        }
+        transport: updu <co xml:id="CO1-7"/>
+}
+
+nodelist { <co xml:id="CO1-8"/>
+        node {
+                ring0_addr: 192.168.42.1
+                ring1_addr: 10.0.42.1
+                nodeid: 1
+        }
+        node {
+                ring0_addr: 192.168.42.2
+                ring1_addr: 10.0.42.2
+                nodeid: 2
+        }
+}
+#...</programlisting>
+    </para>
+  </formalpara>
+  <calloutlist>
+    <callout arearefs="CO1-6">
+      <para>If the <option>broadcast</option> is set to yes, the broadcast address
+        is used for communication. If this option is set, <option>mcastaddr</option>
+        should not be set.</para>
+    </callout>
+    <callout arearefs="CO1-7">
+      <para>The <option>transport</option> directive controls the transport mechanism used.
+        To avoid the use of multicast entirely, a unicast transport parameter <option>udpu</option> should
+        be specified. This requires specifying the list of members in <option>nodelist</option>
+        directive; this could potentially make up the membership before deployment.
+        The default is <option>udp</option>. The transport type can also be set to <option>udpu</option> or <option>iba</option>.</para>
+    </callout>
+    <callout arearefs="CO1-8">
+       <para>Within the <option>nodelist</option> directive, it is possible to specify specific
+         information about nodes in cluster. Directive can contain only the <option>node</option>
+         sub-directive, which specifies every node that should be a member of the membership,
+         and where non-default options are needed. Every node must have at least the <option>ring0_addr</option>
+         field filled.</para>
+      <note>
+        <para>For UDPU, every node that should be a member of the membership must
+         be specified.</para>
+      </note>
+      <para>Possible options are:</para>
+      <para>The <option>ringX_addr</option> specifies IP address of one of the nodes.
+        X is ring number.</para>
+      <para>The <option>nodeid</option> configuration option is optional when using IPv4 and required
+        when using IPv6. This is a 32-bit value specifying the node identifier delivered to the
+        cluster membership  service. If this is not specified with IPv4, the node id will be
+        determined from the 32-bit IP address the system to which the system is bound with ring
+        identifier of 0. The node identifier value of zero is reserved and should not be used.</para>
+    </callout>
+  </calloutlist>
+  </section>
 </section>
