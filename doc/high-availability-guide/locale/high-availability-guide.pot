@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-10 06:06+0000\n"
+"POT-Creation-Date: 2015-02-13 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -373,87 +373,91 @@ msgstr ""
 msgid "Note that the installation requirements call for careful attention. Read the guide <link href=\"https://launchpadlibrarian.net/66669857/README-wsrep\">https://launchpadlibrarian.net/66669857/README-wsrep</link> to ensure you follow all the required steps."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:17(title)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:16(para)
+msgid "And for any additional information about Galera, you can access this guide: <link href=\"http://galeracluster.com/documentation-webpages/gettingstarted.html\">http://galeracluster.com/documentation-webpages/gettingstarted.html</link>"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:19(title)
 msgid "Installing Galera through a MySQL version patched for wsrep:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:19(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:21(para)
 msgid "Download Galera from <link href=\"https://launchpad.net/galera/+download\">https://launchpad.net/galera/+download</link>, and install the *.rpms or *.debs, which takes care of any dependencies that your system doesn't already have installed."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:25(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:27(para)
 msgid "Adjust the configuration:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:26(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:28(para)
 msgid "In the system-wide <filename>my.conf</filename> file, make sure <systemitem class=\"service\">mysqld</systemitem> isn't bound to <literal>127.0.0.1</literal>, and that <filename>/etc/mysql/conf.d/</filename> is included. Typically you can find this file at <filename>/etc/my.cnf</filename>:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:36(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:38(para)
 msgid "When adding a new node, you must configure it with a MySQL account that can access the other nodes. The new node must be able to request a state snapshot from one of the existing nodes:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:41(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:43(para)
 msgid "Specify your MySQL account information in <filename>/etc/mysql/conf.d/wsrep.cnf</filename>:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:47(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:49(para)
 msgid "Connect as root and grant privileges to that user:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:51(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:53(para)
 msgid "Remove user accounts with empty user names because they cause problems:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:56(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:58(para)
 msgid "Set up certain mandatory configuration options within MySQL itself. These include:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:65(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:67(para)
 msgid "Check that the nodes can access each other through the firewall. Depending on your environment, this might mean adjusting iptables, as in:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:74(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:76(para)
 msgid "This might also mean configuring any NAT firewall between nodes to allow direct connections. You might need to disable SELinux, or configure it to allow <systemitem class=\"service\">mysqld</systemitem> to listen to sockets at unprivileged ports."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:80(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:82(para)
 msgid "Now you're ready to create the cluster."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:82(title)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:84(title)
 msgid "Create the cluster"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:83(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:85(para)
 msgid "In creating a cluster, you first start a single instance, which creates the cluster. The rest of the MySQL instances then connect to that cluster:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:87(title)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:89(title)
 msgid "An example of creating the cluster:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:89(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:91(para)
 msgid "Start on the first node having IP address <literal>10.0.0.10</literal> by executing the command:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:96(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:98(para)
 msgid "Connect to that cluster on the rest of the nodes by referencing the address of that node, as in:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:101(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:103(para)
 msgid "You also have the option to set the <literal>wsrep_cluster_address</literal> in the <filename>/etc/mysql/conf.d/wsrep.cnf</filename> file, or within the client itself. (In fact, for some systems, such as MariaDB or Percona, this may be your only option.)"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:106(title)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:108(title)
 msgid "An example of checking the status of the cluster."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:108(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:110(para)
 msgid "Open the MySQL client and check the status of the various parameters:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:114(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:116(para)
 msgid "You should see a status that looks something like this:"
 msgstr ""
 
@@ -1242,55 +1246,103 @@ msgid "Set up Corosync"
 msgstr ""
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:8(para)
-msgid "Besides installing the <package>corosync</package> package, you must also create a configuration file, stored in <filename>/etc/corosync/corosync.conf</filename>. Most distributions ship an example configuration file (<filename>corosync.conf.example</filename>) as part of the documentation bundled with the <package>corosync</package> package. An example Corosync configuration file is shown below:"
+msgid "Besides installing the <package>corosync</package> package, you must also create a configuration file, stored in <filename>/etc/corosync/corosync.conf</filename>. Corosync can be configured to work with either multicast or unicast IP addresses."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:15(title)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:14(title)
+msgid "Set up Corosync with multicast"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:15(para)
+msgid "Most distributions ship an example configuration file (<filename>corosync.conf.example</filename>) as part of the documentation bundled with the <package>corosync</package> package. An example Corosync configuration file is shown below:"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:19(title)
 msgid "Corosync configuration file (<filename>corosync.conf</filename>)"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:87(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:91(para)
 msgid "The <placeholder-1/> value specifies the time, in milliseconds, during which the Corosync token is expected to be transmitted around the ring. When this timeout expires, the token is declared lost, and after <placeholder-2/> lost tokens the non-responding processor (cluster node) is declared dead. In other words, <placeholder-3/> × <placeholder-4/> is the maximum time a node is allowed to not respond to cluster messages before being considered dead. The default for <placeholder-5/> is 1000 (1 second), with 4 allowed retransmits. These defaults are intended to minimize failover times, but can cause frequent \"false alarms\" and unintended failovers in case of short network interruptions. The values used here are safer, albeit with slightly extended failover times."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:103(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:107(para)
 msgid "With <placeholder-1/> enabled, Corosync nodes mutually authenticate using a 128-byte shared secret stored in <filename>/etc/corosync/authkey</filename>, which may be generated with the <placeholder-2/> utility. When using <placeholder-3/>, cluster communications are also encrypted."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:111(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:115(para)
 msgid "In Corosync configurations using redundant networking (with more than one <placeholder-1/>), you must select a Redundant Ring Protocol (RRP) mode other than <literal>none</literal>. <literal>active</literal> is the recommended RRP mode."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:117(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:121(para)
 msgid "There are several things to note about the recommended interface configuration:"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:121(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:125(para)
 msgid "The <placeholder-1/> must differ between all configured interfaces, starting with 0."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:125(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:129(para)
 msgid "The <placeholder-1/> is the network address of the interfaces to bind to. The example uses two network addresses of <literal>/24</literal> IPv4 subnets."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:130(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:134(para)
 msgid "Multicast groups (<placeholder-1/>) must not be reused across cluster boundaries. In other words, no two distinct clusters should ever use the same multicast group. Be sure to select multicast addresses compliant with <link href=\"http://www.ietf.org/rfc/rfc2365.txt\">RFC 2365, \"Administratively Scoped IP Multicast\"</link>."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:138(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:142(para)
 msgid "For firewall configurations, note that Corosync communicates over UDP only, and uses <literal>mcastport</literal> (for receives) and <literal>mcastport - 1</literal> (for sends)."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:145(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:149(para)
 msgid "The <literal>service</literal> declaration for the <literal>pacemaker</literal> service may be placed in the <filename>corosync.conf</filename> file directly, or in its own separate file, <filename>/etc/corosync/service.d/pacemaker</filename>."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:151(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:155(para)
 msgid "If you are using Corosync version 2 on Ubuntu 14.04, remove or comment out lines under the service stanza, which enables Pacemaker to start up."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:157(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:161(para)
 msgid "Once created, the <filename>corosync.conf</filename> file (and the <filename>authkey</filename> file if the <placeholder-1/> option is enabled) must be synchronized across all cluster nodes."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:166(title)
+msgid "Set up Corosync with unicast"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:167(para)
+msgid "Some environments may not support multicast. For such cases, Corosync should be configured for unicast. An example fragment of Corosync configuration file is shown below:"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:171(title)
+msgid "Corosync configuration file fragment (<filename>corosync.conf</filename>)"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:207(para)
+msgid "If the <placeholder-1/> is set to yes, the broadcast address is used for communication. If this option is set, <placeholder-2/> should not be set."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:212(para)
+msgid "The <placeholder-1/> directive controls the transport mechanism used. To avoid the use of multicast entirely, a unicast transport parameter <placeholder-2/> should be specified. This requires specifying the list of members in <placeholder-3/> directive; this could potentially make up the membership before deployment. The default is <placeholder-4/>. The transport type can also be set to <placeholder-5/> or <placeholder-6/>."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:219(para)
+msgid "Within the <placeholder-1/> directive, it is possible to specify specific information about nodes in cluster. Directive can contain only the <placeholder-2/> sub-directive, which specifies every node that should be a member of the membership, and where non-default options are needed. Every node must have at least the <placeholder-3/> field filled."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:225(para)
+msgid "For UDPU, every node that should be a member of the membership must be specified."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:228(para)
+msgid "Possible options are:"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:229(para)
+msgid "The <placeholder-1/> specifies IP address of one of the nodes. X is ring number."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:231(para)
+msgid "The <placeholder-1/> configuration option is optional when using IPv4 and required when using IPv6. This is a 32-bit value specifying the node identifier delivered to the cluster membership service. If this is not specified with IPv4, the node id will be determined from the 32-bit IP address the system to which the system is bound with ring identifier of 0. The node identifier value of zero is reserved and should not be used."
 msgstr ""
 
 #: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:7(title)

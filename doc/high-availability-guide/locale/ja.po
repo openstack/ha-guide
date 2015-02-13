@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-02-09 19:27+0000\n"
-"PO-Revision-Date: 2015-02-09 19:27+0000\n"
+"POT-Creation-Date: 2015-02-12 19:45+0000\n"
+"PO-Revision-Date: 2015-02-12 19:45+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -532,11 +532,19 @@ msgid ""
 "ensure you follow all the required steps."
 msgstr "インストール要件は注意を要することに気をつけてください。すべての必要な手順を確実に満たすために、<link href=\"https://launchpadlibrarian.net/66669857/README-wsrep\">https://launchpadlibrarian.net/66669857/README-wsrep</link> のガイドを参照してください。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml17(title)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml16(para)
+msgid ""
+"And for any additional information about Galera, you can access this guide: "
+"<link href=\"http://galeracluster.com/documentation-"
+"webpages/gettingstarted.html\">http://galeracluster.com/documentation-"
+"webpages/gettingstarted.html</link>"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml19(title)
 msgid "Installing Galera through a MySQL version patched for wsrep:"
 msgstr "wsrep 用パッチ適用済み MySQL バージョンの Galera をインストールします。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml19(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml21(para)
 msgid ""
 "Download Galera from <link "
 "href=\"https://launchpad.net/galera/+download\">https://launchpad.net/galera/+download</link>,"
@@ -544,11 +552,11 @@ msgid ""
 " your system doesn't already have installed."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml25(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml27(para)
 msgid "Adjust the configuration:"
 msgstr "設定を調整します。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml26(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml28(para)
 msgid ""
 "In the system-wide <filename>my.conf</filename> file, make sure <systemitem "
 "class=\"service\">mysqld</systemitem> isn't bound to "
@@ -557,41 +565,41 @@ msgid ""
 "this file at <filename>/etc/my.cnf</filename>:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml36(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml38(para)
 msgid ""
 "When adding a new node, you must configure it with a MySQL account that can "
 "access the other nodes. The new node must be able to request a state "
 "snapshot from one of the existing nodes:"
 msgstr "新しいノードを追加するとき、他のノードにアクセスできる MySQL アカウントを用いて設定する必要があります。新しいノードは、既存のノードのどれかから、状態に関するスナップショットを実行できるようにするためです。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml41(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml43(para)
 msgid ""
 "Specify your MySQL account information in "
 "<filename>/etc/mysql/conf.d/wsrep.cnf</filename>:"
 msgstr "<filename>/etc/mysql/conf.d/wsrep.cnf</filename> に MySQL アカウント情報を指定します。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml47(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml49(para)
 msgid "Connect as root and grant privileges to that user:"
 msgstr "root として接続し、そのユーザーに権限を与えます。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml51(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml53(para)
 msgid ""
 "Remove user accounts with empty user names because they cause problems:"
 msgstr "また、問題を引き起こす可能性があるので、空のユーザー名を用いてユーザーアカウントを削除します。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml56(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml58(para)
 msgid ""
 "Set up certain mandatory configuration options within MySQL itself. These "
 "include:"
 msgstr "MySQL 自身の中で特定の必須設定オプションを設定します。これらには次のものがあります。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml65(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml67(para)
 msgid ""
 "Check that the nodes can access each other through the firewall. Depending "
 "on your environment, this might mean adjusting iptables, as in:"
 msgstr "最後に、ノードがファイアウォール越しにお互いにアクセスできることを確認します。お使いの環境によっては、次のような iptables の調整を意味するかもしれません。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml74(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml76(para)
 msgid ""
 "This might also mean configuring any NAT firewall between nodes to allow "
 "direct connections. You might need to disable SELinux, or configure it to "
@@ -599,37 +607,37 @@ msgid ""
 " at unprivileged ports."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml80(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml82(para)
 msgid "Now you're ready to create the cluster."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml82(title)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml84(title)
 msgid "Create the cluster"
 msgstr "クラスターの作成"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml83(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml85(para)
 msgid ""
 "In creating a cluster, you first start a single instance, which creates the "
 "cluster. The rest of the MySQL instances then connect to that cluster:"
 msgstr "クラスターを作成するとき、クラスターを作成する、単独のインスタンスをまず起動します。MySQL インスタンスの残りはそのクラスターに接続します。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml87(title)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml89(title)
 msgid "An example of creating the cluster:"
 msgstr "クラスター作成の例:"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml89(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml91(para)
 msgid ""
 "Start on the first node having IP address <literal>10.0.0.10</literal> by "
 "executing the command:"
 msgstr "IP アドレス <literal>10.0.0.10</literal> の最初のノードで起動するため、以下のコマンドを実行します。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml96(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml98(para)
 msgid ""
 "Connect to that cluster on the rest of the nodes by referencing the address "
 "of that node, as in:"
 msgstr "次のとおり、そのノードを参照することにより、残りのノードからそのクラスターに接続します。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml101(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml103(para)
 msgid ""
 "You also have the option to set the <literal>wsrep_cluster_address</literal>"
 " in the <filename>/etc/mysql/conf.d/wsrep.cnf</filename> file, or within the"
@@ -637,15 +645,15 @@ msgid ""
 " may be your only option.)"
 msgstr "<filename>/etc/mysql/conf.d/wsrep.cnf</filename> ファイル、またはクライアント自身の中に <literal>wsrep_cluster_address</literal> を設定できます。(実際、MariaDB や Percona のようないくつかのシステムは、これが唯一の選択肢になるでしょう。) "
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml106(title)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml108(title)
 msgid "An example of checking the status of the cluster."
 msgstr "クラスターの状態の確認例。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml108(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml110(para)
 msgid "Open the MySQL client and check the status of the various parameters:"
 msgstr "MySQL クライアントを開き、さまざまなパラメーターの状態を確認します。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml114(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml116(para)
 msgid "You should see a status that looks something like this:"
 msgstr "このように見える状態を確認すべきです。"
 
@@ -1855,17 +1863,27 @@ msgstr "Corosync のセットアップ"
 msgid ""
 "Besides installing the <package>corosync</package> package, you must also "
 "create a configuration file, stored in "
-"<filename>/etc/corosync/corosync.conf</filename>. Most distributions ship an"
-" example configuration file (<filename>corosync.conf.example</filename>) as "
-"part of the documentation bundled with the <package>corosync</package> "
-"package. An example Corosync configuration file is shown below:"
+"<filename>/etc/corosync/corosync.conf</filename>. Corosync can be configured"
+" to work with either multicast or unicast IP addresses."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml15(title)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml14(title)
+msgid "Set up Corosync with multicast"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml15(para)
+msgid ""
+"Most distributions ship an example configuration file "
+"(<filename>corosync.conf.example</filename>) as part of the documentation "
+"bundled with the <package>corosync</package> package. An example Corosync "
+"configuration file is shown below:"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml19(title)
 msgid "Corosync configuration file (<filename>corosync.conf</filename>)"
 msgstr "Corosync 設定ファイル (<filename>corosync.conf</filename>)"
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml87(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml91(para)
 msgid ""
 "The <placeholder-1/> value specifies the time, in milliseconds, during which"
 " the Corosync token is expected to be transmitted around the ring. When this"
@@ -1880,7 +1898,7 @@ msgid ""
 "extended failover times."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml103(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml107(para)
 msgid ""
 "With <placeholder-1/> enabled, Corosync nodes mutually authenticate using a "
 "128-byte shared secret stored in <filename>/etc/corosync/authkey</filename>,"
@@ -1888,7 +1906,7 @@ msgid ""
 "<placeholder-3/>, cluster communications are also encrypted."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml111(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml115(para)
 msgid ""
 "In Corosync configurations using redundant networking (with more than one "
 "<placeholder-1/>), you must select a Redundant Ring Protocol (RRP) mode "
@@ -1896,26 +1914,26 @@ msgid ""
 "recommended RRP mode."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml117(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml121(para)
 msgid ""
 "There are several things to note about the recommended interface "
 "configuration:"
 msgstr "インターフェースの推奨設定に関する注意事項がいくつかあります。"
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml121(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml125(para)
 msgid ""
 "The <placeholder-1/> must differ between all configured interfaces, starting"
 " with 0."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml125(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml129(para)
 msgid ""
 "The <placeholder-1/> is the network address of the interfaces to bind to. "
 "The example uses two network addresses of <literal>/24</literal> IPv4 "
 "subnets."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml130(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml134(para)
 msgid ""
 "Multicast groups (<placeholder-1/>) must not be reused across cluster "
 "boundaries. In other words, no two distinct clusters should ever use the "
@@ -1924,14 +1942,14 @@ msgid ""
 "\"Administratively Scoped IP Multicast\"</link>."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml138(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml142(para)
 msgid ""
 "For firewall configurations, note that Corosync communicates over UDP only, "
 "and uses <literal>mcastport</literal> (for receives) and <literal>mcastport "
 "- 1</literal> (for sends)."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml145(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml149(para)
 msgid ""
 "The <literal>service</literal> declaration for the "
 "<literal>pacemaker</literal> service may be placed in the "
@@ -1939,17 +1957,84 @@ msgid ""
 "file, <filename>/etc/corosync/service.d/pacemaker</filename>."
 msgstr "<literal>pacemaker</literal> サービスに関する <literal>service</literal> 宣言は、<filename>corosync.conf</filename> ファイルに直接置かれるか、別のファイル <filename>/etc/corosync/service.d/pacemaker</filename> に置かれるかもしれません。"
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml151(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml155(para)
 msgid ""
 "If you are using Corosync version 2 on Ubuntu 14.04, remove or comment out "
 "lines under the service stanza, which enables Pacemaker to start up."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml157(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml161(para)
 msgid ""
 "Once created, the <filename>corosync.conf</filename> file (and the "
 "<filename>authkey</filename> file if the <placeholder-1/> option is enabled)"
 " must be synchronized across all cluster nodes."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml166(title)
+msgid "Set up Corosync with unicast"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml167(para)
+msgid ""
+"Some environments may not support multicast. For such cases, Corosync should"
+" be configured for unicast. An example fragment of Corosync configuration "
+"file is shown below:"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml171(title)
+msgid ""
+"Corosync configuration file fragment (<filename>corosync.conf</filename>)"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml207(para)
+msgid ""
+"If the <placeholder-1/> is set to yes, the broadcast address is used for "
+"communication. If this option is set, <placeholder-2/> should not be set."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml212(para)
+msgid ""
+"The <placeholder-1/> directive controls the transport mechanism used. To "
+"avoid the use of multicast entirely, a unicast transport parameter "
+"<placeholder-2/> should be specified. This requires specifying the list of "
+"members in <placeholder-3/> directive; this could potentially make up the "
+"membership before deployment. The default is <placeholder-4/>. The transport"
+" type can also be set to <placeholder-5/> or <placeholder-6/>."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml219(para)
+msgid ""
+"Within the <placeholder-1/> directive, it is possible to specify specific "
+"information about nodes in cluster. Directive can contain only the "
+"<placeholder-2/> sub-directive, which specifies every node that should be a "
+"member of the membership, and where non-default options are needed. Every "
+"node must have at least the <placeholder-3/> field filled."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml225(para)
+msgid ""
+"For UDPU, every node that should be a member of the membership must be "
+"specified."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml228(para)
+msgid "Possible options are:"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml229(para)
+msgid ""
+"The <placeholder-1/> specifies IP address of one of the nodes. X is ring "
+"number."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml231(para)
+msgid ""
+"The <placeholder-1/> configuration option is optional when using IPv4 and "
+"required when using IPv6. This is a 32-bit value specifying the node "
+"identifier delivered to the cluster membership service. If this is not "
+"specified with IPv4, the node id will be determined from the 32-bit IP "
+"address the system to which the system is bound with ring identifier of 0. "
+"The node identifier value of zero is reserved and should not be used."
 msgstr ""
 
 #: ./doc/high-availability-guide/pacemaker/section_install_packages.xml7(title)
