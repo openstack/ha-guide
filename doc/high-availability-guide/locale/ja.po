@@ -1,13 +1,13 @@
 # 
 # Translators:
 # Kuo(Kyohei MORIYAMA) <>, 2014
-# Tomoyuki KATO <tomo@dream.daynight.jp>, 2013-2014
+# Tomoyuki KATO <tomo@dream.daynight.jp>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-02-12 19:45+0000\n"
-"PO-Revision-Date: 2015-02-12 19:45+0000\n"
-"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
+"POT-Creation-Date: 2015-02-13 09:41+0000\n"
+"PO-Revision-Date: 2015-02-17 04:30+0000\n"
+"Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -124,7 +124,7 @@ msgstr "OpenStack 高可用性の概要"
 
 #: ./doc/high-availability-guide/ch_intro.xml8(para)
 msgid "High Availability systems seek to minimize two things:"
-msgstr "高可用性システムは以下の二つを最小化しようとします。"
+msgstr "高可用性システムは、以下の 2 つの最小化を目指しています。"
 
 #: ./doc/high-availability-guide/ch_intro.xml11(term)
 msgid "System downtime"
@@ -134,7 +134,7 @@ msgstr "システム停止時間"
 msgid ""
 "Occurs when a user-facing service is unavailable beyond a specified maximum "
 "amount of time."
-msgstr ""
+msgstr "指定された最大時間を超えて、ユーザーサービスが利用不可能になること。"
 
 #: ./doc/high-availability-guide/ch_intro.xml16(term)
 msgid "Data loss"
@@ -190,7 +190,7 @@ msgid ""
 "per year. In order to achieve this, high availability systems should keep "
 "recovery times after a failure to about one to two minutes, sometimes "
 "significantly less."
-msgstr ""
+msgstr "高可用性システムは、一般的に 99.99% 以上の稼働率を達成します。おそよ年間 1 時間未満の停止時間になります。高可用性システムは、これを実現するために、障害発生後の復旧時間を 1 ～ 2 分以内に、ときにはさらに短く抑えるべきです。"
 
 #: ./doc/high-availability-guide/ch_intro.xml53(para)
 msgid ""
@@ -198,7 +198,7 @@ msgid ""
 "infrastructure services, meaning that an uptime of 99.99% is feasible for "
 "the OpenStack infrastructure proper. However, OpenStack does not guarantee "
 "99.99% availability for individual guest instances."
-msgstr ""
+msgstr "OpenStack 自体のインフラストラクチャーは、現在その可用性要件を満たせます。つまり、適切な OpenStack インフラストラクチャーの 99.99% の稼働率が実現可能です。しかしながら、OpenStack は個々のゲストインスタンスの可用性 99.99% を保証できません。"
 
 #: ./doc/high-availability-guide/ch_intro.xml57(para)
 msgid ""
@@ -345,7 +345,7 @@ msgstr "Copyright details are filled in by the template."
 msgid ""
 "This guide describes how to install, configure, and manage OpenStack for "
 "high availability."
-msgstr "このガイドは、高可用な OpenStack をインストール、設定、管理する方法について記載します。"
+msgstr "このガイドは OpenStack を高可用にインストール、設定、管理する方法について記載します。"
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml38(date)
 msgid "2014-10-17"
@@ -355,7 +355,7 @@ msgstr ""
 msgid ""
 "This guide has gone through editorial changes to follow the OpenStack "
 "documentation conventions. Various smaller issues have been fixed."
-msgstr ""
+msgstr "OpenStack のドキュメント規則に合わせて編集しました。軽微な問題を修正しました。"
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml51(date)
 msgid "2014-05-16"
@@ -363,7 +363,7 @@ msgstr "2014-05-16"
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml55(para)
 msgid "Conversion to Docbook."
-msgstr "DocBook 形式への変換。"
+msgstr "DocBook 形式に変換しました。"
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml61(date)
 msgid "2014-04-17"
@@ -372,7 +372,7 @@ msgstr "2014-04-17"
 #: ./doc/high-availability-guide/bk-ha-guide.xml65(para)
 msgid ""
 "Minor cleanup of typos, otherwise no major revisions for Icehouse release."
-msgstr "誤字脱字の軽微な修正。Icehouse リリース向けの大きな改版はありません。"
+msgstr "誤字・脱字などの軽微な修正。Icehouse リリース向けの大きな改版はありません。"
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml72(date)
 msgid "2012-01-16"
@@ -388,7 +388,7 @@ msgstr "2012-05-24"
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml86(para)
 msgid "Begin trunk designation."
-msgstr "trunk 指定を始めました。"
+msgstr "trunk 指定を開始しました。"
 
 #: ./doc/high-availability-guide/ch_network.xml8(title)
 msgid "Network controller cluster stack"
@@ -700,7 +700,7 @@ msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_lbaas_agent.xml7(title)
 msgid "Run neutron LBaaS agent"
-msgstr ""
+msgstr "neutron LBaaS エージェントの実行"
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_lbaas_agent.xml8(para)
 msgid ""
