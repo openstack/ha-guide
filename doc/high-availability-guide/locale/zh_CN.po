@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-02-12 19:45+0000\n"
-"PO-Revision-Date: 2015-02-12 19:45+0000\n"
-"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
+"POT-Creation-Date: 2015-02-28 08:36+0000\n"
+"PO-Revision-Date: 2015-02-27 21:31+0000\n"
+"Last-Translator: zhaochao <zhaochao1984@gmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -539,7 +539,7 @@ msgid ""
 "<link href=\"http://galeracluster.com/documentation-"
 "webpages/gettingstarted.html\">http://galeracluster.com/documentation-"
 "webpages/gettingstarted.html</link>"
-msgstr ""
+msgstr "更多关于 Galera 的信息，请参阅：<link href=\"http://galeracluster.com/documentation-webpages/gettingstarted.html\">http://galeracluster.com/documentation-webpages/gettingstarted.html</link>"
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml19(title)
 msgid "Installing Galera through a MySQL version patched for wsrep:"
@@ -1866,11 +1866,11 @@ msgid ""
 "create a configuration file, stored in "
 "<filename>/etc/corosync/corosync.conf</filename>. Corosync can be configured"
 " to work with either multicast or unicast IP addresses."
-msgstr ""
+msgstr "除了安装 <package>corosync</package> 之外，还需要创建一个配置文件 <filename>/etc/corosync/corosync.conf</filename> 。Corosync 可以使用组播或者单播 IP 地址进行集群心跳通信。"
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml14(title)
 msgid "Set up Corosync with multicast"
-msgstr ""
+msgstr "配置 Corosync 使用组播"
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml15(para)
 msgid ""
@@ -1878,7 +1878,7 @@ msgid ""
 "(<filename>corosync.conf.example</filename>) as part of the documentation "
 "bundled with the <package>corosync</package> package. An example Corosync "
 "configuration file is shown below:"
-msgstr ""
+msgstr "大多数 Linux 发行版都会中在 <package>corosync</package> 软件包中附带一份配置示例（ <filename>corosync.conf.example</filename> ），大致内容如下："
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml19(title)
 msgid "Corosync configuration file (<filename>corosync.conf</filename>)"
@@ -1973,25 +1973,25 @@ msgstr "<filename>corosync.conf</filename> （以及 <filename>authkey</filename
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml166(title)
 msgid "Set up Corosync with unicast"
-msgstr ""
+msgstr "配置 Corosync 使用单播"
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml167(para)
 msgid ""
 "Some environments may not support multicast. For such cases, Corosync should"
 " be configured for unicast. An example fragment of Corosync configuration "
 "file is shown below:"
-msgstr ""
+msgstr "某些环境中可能不支持组播。这时应该配置 Corosync 使用单播，下面是使用单播的 Corosync 配置文件的一部分："
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml171(title)
 msgid ""
 "Corosync configuration file fragment (<filename>corosync.conf</filename>)"
-msgstr ""
+msgstr "Corosync 配置文件片断：\n（ <filename>corosync.conf</filename> ）"
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml207(para)
 msgid ""
 "If the <placeholder-1/> is set to yes, the broadcast address is used for "
 "communication. If this option is set, <placeholder-2/> should not be set."
-msgstr ""
+msgstr "如果将 <placeholder-1/>  设置为 yes ，集群心跳将通过广播实现。设置该参数时，不能设置 <placeholder-2/> 。"
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml212(para)
 msgid ""
@@ -2001,7 +2001,7 @@ msgid ""
 "members in <placeholder-3/> directive; this could potentially make up the "
 "membership before deployment. The default is <placeholder-4/>. The transport"
 " type can also be set to <placeholder-5/> or <placeholder-6/>."
-msgstr ""
+msgstr "<placeholder-1/> 配置项决定集群通信方式。要完全禁用组播，应该配置单播传输参数 <placeholder-2/> 。这要求将所有的节点服务器信息写入 <placeholder-3/> ，也就是需要在配署 HA 集群之前确定节点组成。配认配置是 <placeholder-4/> 。通信方式类型还支持 <placeholder-5/> 和 <placeholder-6/> 。"
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml219(para)
 msgid ""
@@ -2010,23 +2010,23 @@ msgid ""
 "<placeholder-2/> sub-directive, which specifies every node that should be a "
 "member of the membership, and where non-default options are needed. Every "
 "node must have at least the <placeholder-3/> field filled."
-msgstr ""
+msgstr "在 <placeholder-1/> 之下可以为某一节点设置只与该节点相关的信息，这些设置项只能包含在 <placeholder-2/> 之中，即只能对属于集群的节点服务器进行设置，而且只应包括那些与默认设置不同的参数。每台服务器都必须配置 <placeholder-3/> 。"
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml225(para)
 msgid ""
 "For UDPU, every node that should be a member of the membership must be "
 "specified."
-msgstr ""
+msgstr "对于 UDPU ，每台节点服务器都需要配置所属的传输组。"
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml228(para)
 msgid "Possible options are:"
-msgstr ""
+msgstr "可用的节点服务器配置项有："
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml229(para)
 msgid ""
 "The <placeholder-1/> specifies IP address of one of the nodes. X is ring "
 "number."
-msgstr ""
+msgstr "<placeholder-1/> 对应该节点服务器用于集群通信的 IP 地址，其中 X 对应集群通信环路序号。"
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml231(para)
 msgid ""
@@ -2036,7 +2036,7 @@ msgid ""
 "specified with IPv4, the node id will be determined from the 32-bit IP "
 "address the system to which the system is bound with ring identifier of 0. "
 "The node identifier value of zero is reserved and should not be used."
-msgstr ""
+msgstr "<placeholder-1/> 在使用 IPv4 的网络环境中是可选配置，但在 IPv6 的网络环境中则必须进行配置。它是一个 32 位的数字，用于在整个集群中标识一台节点服务器。在 IPv4 网络环境中如果不进行配置，节点 ID 将根据 ring0 对应的 IP 地址自动生成。节点 ID 0 是保留值，不能在配置文件中使用。"
 
 #: ./doc/high-availability-guide/pacemaker/section_install_packages.xml7(title)
 msgid "Install packages"
