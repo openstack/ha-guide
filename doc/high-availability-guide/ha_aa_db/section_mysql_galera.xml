@@ -18,50 +18,73 @@
   <orderedlist numeration="arabic" inheritnum="ignore" continuation="restarts">
     <title>Installing Galera through a MySQL version patched for wsrep:</title>
     <listitem>
-      <para>Download Galera from
-      <link xlink:href="https://launchpad.net/galera/+download">https://launchpad.net/galera/+download</link>,
-      and install the *.rpms or *.debs, which takes care of any dependencies
-      that your system doesn't already have installed.</para>
+        <para>
+Setup the repository for Ubuntu 14.04 "trusty" (most recent).
+Install the software properties, the key and the repository.
+        </para>
+<programlisting language="ini">sudo apt-get install software-properties-common
+sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
+sudo add-apt-repository 'deb http://ams2.mirrors.digitalocean.com/mariadb/repo/5.5/ubuntu trusty main'
+</programlisting>
+
+   <note>
+     <para>
+You can change the mirror to one near you on:
+      <link xlink:href="https://downloads.mariadb.org/mariadb/repositories/">downloads.mariadb.org</link>
+     </para>
+   </note>
+   </listitem>
+   <listitem>
+        <para>
+Update your system and install the required packages:
+    <programlisting language="ini">sudo apt-get update
+sudo apt-get install mariadb-galera-server galera</programlisting>
+        </para>
+      <warning>
+        <para>
+If you have mariaDB already installed you need to re-apply all the permissions from the installation guide. It will purge all privileges!
+        </para>
+      </warning>
     </listitem>
     <listitem>
-      <para>Adjust the configuration:</para>
-      <para>In the system-wide <filename>my.conf</filename> file, make sure
-        <systemitem class="service">mysqld</systemitem> isn't bound to
-        <literal>127.0.0.1</literal>, and that <filename>/etc/mysql/conf.d/</filename>
-        is included. Typically you can find this file at
-        <filename>/etc/my.cnf</filename>:</para>
-      <programlisting language="ini">[mysqld]
-...
-!includedir /etc/mysql/conf.d/
-...
-#bind-address = 127.0.0.1</programlisting>
-      <para>When adding a new node, you must configure it with a MySQL account
-        that can access the other nodes. The new node must be able to request
-        a state snapshot from one of the existing nodes:</para>
-    </listitem>
-    <listitem>
-      <para>Specify your MySQL account information in
-        <filename>/etc/mysql/conf.d/wsrep.cnf</filename>:
-      </para>
-      <programlisting language="ini">wsrep_sst_auth=wsrep_sst:wspass</programlisting>
-    </listitem>
-    <listitem>
-      <para>Connect as root and grant privileges to that user:</para>
-      <screen><prompt>$</prompt> <userinput>mysql -e "SET wsrep_on=OFF; GRANT ALL ON *.* TO wsrep_sst@'%' IDENTIFIED BY 'wspass'";</userinput></screen>
-    </listitem>
-    <listitem>
-      <para>Remove user accounts with empty user names because they cause
-        problems:</para>
-      <screen><prompt>$</prompt> <userinput>mysql -e "SET wsrep_on=OFF; DELETE FROM mysql.user WHERE user='';"</userinput></screen>
-    </listitem>
-    <listitem>
-      <para>Set up certain mandatory configuration options within MySQL itself.
-        These include:</para>
-      <programlisting language="ini">query_cache_size=0
+    <para>Adjust the configuration:</para>
+        <para>In the <filename>/etc/mysql/my.conf</filename> file, make the following changes:</para>
+    <programlisting language="ini">query_cache_size=0
 binlog_format=ROW
 default_storage_engine=innodb
 innodb_autoinc_lock_mode=2
 innodb_doublewrite=1</programlisting>
+    </listitem>
+    <listitem>
+        <para>
+            Create the <filename>/etc/mysql/conf.d/wsrep.cnf</filename> file.
+        </para>
+
+        <para>Paste the following lines in this file:</para>
+        <programlisting language="ini">[mysqld]
+wsrep_provider=/usr/lib/galera/libgalera_smm.so
+wsrep_cluster_name="Openstack"
+wsrep_sst_auth=wsrep_sst:wspass
+wsrep_cluster_address="gcomm://<replaceable>PRIMARY_NODE_IP</replaceable>,<replaceable>SECONDARY_NODE_IP</replaceable>"
+wsrep_sst_method=rsync
+wsrep_node_address="<replaceable>PRIMARY_NODE_IP</replaceable>"
+wsrep_node_name="<replaceable>NODE_NAME</replaceable>"
+        </programlisting>
+        <para>
+            Replace <replaceable>PRIMARY_NODE_IP</replaceable> and
+            <replaceable>SECONDARY_NODE_IP</replaceable> with the IP addresses
+            of your primary and secondary servers.
+        </para>
+        <para>
+            Replace <replaceable>PRIMARY_NODE_IP</replaceable> with the hostname of the server. This is set for logging.
+        </para>
+        <para>Copy this file to all other databases servers and change the value of <literal>wsrep_cluster_address</literal> and <literal>wsrep_node_name</literal> accordingly.</para>
+    </listitem>
+    <listitem>
+        <para>Start mysql as root and execute the following queries:</para>
+        <screen><prompt>$</prompt> <userinput>SET wsrep_on=OFF; GRANT ALL ON *.* TO wsrep_sst@'%' IDENTIFIED BY 'wspass';</userinput></screen>
+        <para>Remove user accounts with empty user names because they cause problems:</para>
+        <screen><prompt>$</prompt> <userinput>SET wsrep_on=OFF; DELETE FROM mysql.user WHERE user='';</userinput></screen>
     </listitem>
     <listitem>
       <para>Check that the nodes can access each other through the firewall.
@@ -79,84 +102,103 @@ innodb_doublewrite=1</programlisting>
         to listen to sockets at unprivileged ports.</para>
     </listitem>
   </orderedlist>
-  <para>Now you're ready to create the cluster.</para>
-  <section xml:id="_create_the_cluster">
-    <title>Create the cluster</title>
-    <para>In creating a cluster, you first start a single instance, which
-      creates the cluster. The rest of the MySQL instances then connect to
-      that cluster:</para>
-    <orderedlist numeration="arabic" inheritnum="ignore" continuation="restarts">
-      <title>An example of creating the cluster:</title>
-      <listitem>
-        <para>Start on the first node having IP address <literal>10.0.0.10</literal>
-          by executing the command:</para>
-      </listitem>
-    </orderedlist>
-    <screen><prompt>#</prompt> <userinput>service mysql start wsrep_cluster_address=gcomm://</userinput></screen>
-    <orderedlist numeration="arabic" inheritnum="ignore" continuation="restarts">
-      <listitem>
-        <para>Connect to that cluster on the rest of the nodes by referencing
-          the address of that node, as in:</para>
-      </listitem>
-    </orderedlist>
-    <screen><prompt>#</prompt> <userinput>service mysql start wsrep_cluster_address=gcomm://10.0.0.10</userinput></screen>
-    <para>You also have the option to set the <literal>wsrep_cluster_address</literal>
-      in the <filename>/etc/mysql/conf.d/wsrep.cnf</filename> file, or within
-      the client itself. (In fact, for some systems, such as MariaDB or Percona,
-      this may be your only option.)</para>
-    <orderedlist numeration="arabic" inheritnum="ignore" continuation="restarts">
-      <title>An example of checking the status of the cluster.</title>
-      <listitem>
-        <para>Open the MySQL client and check the status of the various
-          parameters:</para>
-      </listitem>
-    </orderedlist>
-    <screen><prompt>mysql&gt;</prompt> <userinput>SET GLOBAL wsrep_cluster_address='&lt;cluster address string&gt;';</userinput>
-<prompt>mysql&gt;</prompt> <userinput>SHOW STATUS LIKE 'wsrep%';</userinput></screen>
-    <para>You should see a status that looks something like this:</para>
-    <screen><prompt>mysql&gt;</prompt> <userinput>show status like 'wsrep%';</userinput>
-<computeroutput>+----------------------------+--------------------------------------+
-| Variable_name              | Value                                |
-+----------------------------+--------------------------------------+
-| wsrep_local_state_uuid     | 111fc28b-1b05-11e1-0800-e00ec5a7c930 |
-| wsrep_protocol_version     | 1                                    |
-| wsrep_last_committed       | 0                                    |
-| wsrep_replicated           | 0                                    |
-| wsrep_replicated_bytes     | 0                                    |
-| wsrep_received             | 2                                    |
-| wsrep_received_bytes       | 134                                  |
-| wsrep_local_commits        | 0                                    |
-| wsrep_local_cert_failures  | 0                                    |
-| wsrep_local_bf_aborts      | 0                                    |
-| wsrep_local_replays        | 0                                    |
-| wsrep_local_send_queue     | 0                                    |
-| wsrep_local_send_queue_avg | 0.000000                             |
-| wsrep_local_recv_queue     | 0                                    |
-| wsrep_local_recv_queue_avg | 0.000000                             |
-| wsrep_flow_control_paused  | 0.000000                             |
-| wsrep_flow_control_sent    | 0                                    |
-| wsrep_flow_control_recv    | 0                                    |
-| wsrep_cert_deps_distance   | 0.000000                             |
-| wsrep_apply_oooe           | 0.000000                             |
-| wsrep_apply_oool           | 0.000000                             |
-| wsrep_apply_window         | 0.000000                             |
-| wsrep_commit_oooe          | 0.000000                             |
-| wsrep_commit_oool          | 0.000000                             |
-| wsrep_commit_window        | 0.000000                             |
-| wsrep_local_state          | 4                                    |
-| wsrep_local_state_comment  | Synced (6)                           |
-| wsrep_cert_index_size      | 0                                    |
-| wsrep_cluster_conf_id      | 1                                    |
-| wsrep_cluster_size         | 1                                    |
-| wsrep_cluster_state_uuid   | 111fc28b-1b05-11e1-0800-e00ec5a7c930 |
-| wsrep_cluster_status       | Primary                              |
-| wsrep_connected            | ON                                   |
-| wsrep_local_index          | 0                                    |
-| wsrep_provider_name        | Galera                               |
-| wsrep_provider_vendor      | Codership Oy                         |
-| wsrep_provider_version     | 21.1.0(r86)                          |
-| wsrep_ready                | ON                                   |
-+----------------------------+--------------------------------------+
-38 rows in set (0.01 sec)</computeroutput></screen>
-  </section>
+
+  <para>
+For the next step create a back-up file of the <filename>debian.cnf</filename> file in <filename>/etc/mysql</filename> on all database servers.
+Should something go wrong just copy the backup file back.
+  </para>
+    <screen>
+        <prompt>#</prompt> <userinput>cp debian.cnf debian.cnf.old</userinput>
+    </screen>
+    <para>
+    Make sure you have SSH root access on the other servers. From the primary database server, copy the <filename>debian.cnf</filename> to all other servers.
+    </para>
+    <screen>
+        <prompt>#</prompt> <userinput>scp /etc/mysql/debian.cnf root@IP-address:/etc/mysql</userinput>
+    </screen>
+    <para>After the copy make sure that all files are the same, you can do this by using the following command:</para>
+    <screen>
+        <prompt>#</prompt> <userinput>md5sum debian.cnf</userinput>
+    </screen>
+  <para>From the <filename>debian.cnf</filename> get the database password:</para>
+    <screen>
+        <prompt>#</prompt> <userinput>cat /etc/mysql/debian.cnf</userinput>
+    </screen>
+  <para>The result will look like this:</para>
+  <screen><computeroutput>[client]
+host = localhost
+user = debian-sys-maint
+password = FiKiOY1Lw8Sq46If
+socket = /var/run/mysqld/mysqld.sock
+[mysql_upgrade]
+host = localhost
+user = debian-sys-maint
+password = FiKiOY1Lw8Sq46If
+socket = /var/run/mysqld/mysqld.sock
+basedir = /usr
+</computeroutput></screen>
+<para>
+Run the following query on every server except the primary node. This will make sure that you can restart the database again.
+Do not forget to add the password from the <filename>debian.cnf</filename>.
+</para>
+    <screen><prompt>mysql&gt;</prompt> <userinput>GRANT SHUTDOWN ON *.* TO ‘debian-sys-maint’@’localhost' IDENTIFIED BY '&lt;debian.cnf password&gt;';</userinput>
+<prompt>mysql&gt;</prompt><userinput>GRANT SELECT ON `mysql`.`user` TO ‘debian-sys-maint’@’localhost' IDENTIFIED BY '&lt;debian.cnf password&gt;';</userinput></screen>
+    <para>Stop all the mysql servers and start the first server with the following command</para>
+    <screen><prompt>#</prompt> <userinput>service mysql start --wsrep-new-cluster</userinput></screen>
+<para>All other nodes can now be started using:</para>
+    <screen><prompt>#</prompt> <userinput>service mysql start</userinput></screen>
+<para>Verify the wsrep replication by logging in as root under mysql and running the following command:</para>
+<screen><prompt>mysql&gt;</prompt><userinput>SHOW STATUS LIKE ‘wsrep%’;</userinput>
+<computeroutput>+------------------------------+--------------------------------------+
+| Variable_name                | Value                                |
++------------------------------+--------------------------------------+
+| wsrep_local_state_uuid       | d6a51a3a-b378-11e4-924b-23b6ec126a13 |
+| wsrep_protocol_version       | 5                                    |
+| wsrep_last_committed         | 202                                  |
+| wsrep_replicated             | 201                                  |
+| wsrep_replicated_bytes       | 89579                                |
+| wsrep_repl_keys              | 865                                  |
+| wsrep_repl_keys_bytes        | 11543                                |
+| wsrep_repl_data_bytes        | 65172                                |
+| wsrep_repl_other_bytes       | 0                                    |
+| wsrep_received               | 8                                    |
+| wsrep_received_bytes         | 853                                  |
+| wsrep_local_commits          | 201                                  |
+| wsrep_local_cert_failures    | 0                                    |
+| wsrep_local_replays          | 0                                    |
+| wsrep_local_send_queue       | 0                                    |
+| wsrep_local_send_queue_avg   | 0.000000                             |
+| wsrep_local_recv_queue       | 0                                    |
+| wsrep_local_recv_queue_avg   | 0.000000                             |
+| wsrep_local_cached_downto    | 1                                    |
+| wsrep_flow_control_paused_ns | 0                                    |
+| wsrep_flow_control_paused    | 0.000000                             |
+| wsrep_flow_control_sent      | 0                                    |
+| wsrep_flow_control_recv      | 0                                    |
+| wsrep_cert_deps_distance     | 1.029703                             |
+| wsrep_apply_oooe             | 0.024752                             |
+| wsrep_apply_oool             | 0.000000                             |
+| wsrep_apply_window           | 1.024752                             |
+| wsrep_commit_oooe            | 0.000000                             |
+| wsrep_commit_oool            | 0.000000                             |
+| wsrep_commit_window          | 1.000000                             |
+| wsrep_local_state            | 4                                    |
+| wsrep_local_state_comment    | Synced                               |
+| wsrep_cert_index_size        | 18                                   |
+| wsrep_causal_reads           | 0                                    |
+| wsrep_cert_interval          | 0.024752                             |
+| wsrep_incoming_addresses     | &lt;first IP&gt;:3306,&lt;second IP&gt;:3306     |
+| wsrep_cluster_conf_id        | 2                                    |
+| wsrep_cluster_size           | 2                                    |
+| wsrep_cluster_state_uuid     | d6a51a3a-b378-11e4-924b-23b6ec126a13 |
+| wsrep_cluster_status         | Primary                              |
+| wsrep_connected              | ON                                   |
+| wsrep_local_bf_aborts        | 0                                    |
+| wsrep_local_index            | 1                                    |
+| wsrep_provider_name          | Galera                               |
+| wsrep_provider_vendor        | Codership Oy &lt;info@codership.com&gt;    |
+| wsrep_provider_version       | 25.3.5-wheezy(rXXXX)                 |
+| wsrep_ready                  | ON                                   |
+| wsrep_thread_count           | 2                                    |
++------------------------------+--------------------------------------+</computeroutput></screen>
 </section>
