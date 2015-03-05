@@ -184,7 +184,7 @@ logging {
                 broadcast: yes
                 mcastport: 5405
         }
-        transport: updu <co xml:id="CO1-7"/>
+        transport: udpu <co xml:id="CO1-7"/>
 }
 
 nodelist { <co xml:id="CO1-8"/>
