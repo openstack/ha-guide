@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-13 06:00+0000\n"
+"POT-Creation-Date: 2015-03-05 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -382,83 +382,111 @@ msgid "Installing Galera through a MySQL version patched for wsrep:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:21(para)
-msgid "Download Galera from <link href=\"https://launchpad.net/galera/+download\">https://launchpad.net/galera/+download</link>, and install the *.rpms or *.debs, which takes care of any dependencies that your system doesn't already have installed."
+msgid "Setup the repository for Ubuntu 14.04 \"trusty\" (most recent). Install the software properties, the key and the repository."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:27(para)
-msgid "Adjust the configuration:"
-msgstr ""
-
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:28(para)
-msgid "In the system-wide <filename>my.conf</filename> file, make sure <systemitem class=\"service\">mysqld</systemitem> isn't bound to <literal>127.0.0.1</literal>, and that <filename>/etc/mysql/conf.d/</filename> is included. Typically you can find this file at <filename>/etc/my.cnf</filename>:"
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:31(para)
+msgid "You can change the mirror to one near you on: <link href=\"https://downloads.mariadb.org/mariadb/repositories/\">downloads.mariadb.org</link>"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:38(para)
-msgid "When adding a new node, you must configure it with a MySQL account that can access the other nodes. The new node must be able to request a state snapshot from one of the existing nodes:"
+msgid "Update your system and install the required packages: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:43(para)
-msgid "Specify your MySQL account information in <filename>/etc/mysql/conf.d/wsrep.cnf</filename>:"
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:44(para)
+msgid "If you have mariaDB already installed you need to re-apply all the permissions from the installation guide. It will purge all privileges!"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:49(para)
-msgid "Connect as root and grant privileges to that user:"
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:50(para)
+msgid "Adjust the configuration:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:53(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:51(para)
+msgid "In the <filename>/etc/mysql/my.conf</filename> file, make the following changes:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:59(para)
+msgid "Create the <filename>/etc/mysql/conf.d/wsrep.cnf</filename> file."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:63(para)
+msgid "Paste the following lines in this file:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:68(replaceable) ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:70(replaceable)
+msgid "PRIMARY_NODE_IP"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:68(replaceable)
+msgid "SECONDARY_NODE_IP"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:71(replaceable)
+msgid "NODE_NAME"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:73(para)
+msgid "Replace <replaceable>PRIMARY_NODE_IP</replaceable> and <replaceable>SECONDARY_NODE_IP</replaceable> with the IP addresses of your primary and secondary servers."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:78(para)
+msgid "Replace <replaceable>PRIMARY_NODE_IP</replaceable> with the hostname of the server. This is set for logging."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:81(para)
+msgid "Copy this file to all other databases servers and change the value of <literal>wsrep_cluster_address</literal> and <literal>wsrep_node_name</literal> accordingly."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:84(para)
+msgid "Start mysql as root and execute the following queries:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:86(para)
 msgid "Remove user accounts with empty user names because they cause problems:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:58(para)
-msgid "Set up certain mandatory configuration options within MySQL itself. These include:"
-msgstr ""
-
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:67(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:90(para)
 msgid "Check that the nodes can access each other through the firewall. Depending on your environment, this might mean adjusting iptables, as in:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:76(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:99(para)
 msgid "This might also mean configuring any NAT firewall between nodes to allow direct connections. You might need to disable SELinux, or configure it to allow <systemitem class=\"service\">mysqld</systemitem> to listen to sockets at unprivileged ports."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:82(para)
-msgid "Now you're ready to create the cluster."
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:106(para)
+msgid "For the next step create a back-up file of the <filename>debian.cnf</filename> file in <filename>/etc/mysql</filename> on all database servers. Should something go wrong just copy the backup file back."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:84(title)
-msgid "Create the cluster"
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:113(para)
+msgid "Make sure you have SSH root access on the other servers. From the primary database server, copy the <filename>debian.cnf</filename> to all other servers."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:85(para)
-msgid "In creating a cluster, you first start a single instance, which creates the cluster. The rest of the MySQL instances then connect to that cluster:"
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:119(para)
+msgid "After the copy make sure that all files are the same, you can do this by using the following command:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:89(title)
-msgid "An example of creating the cluster:"
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:123(para)
+msgid "From the <filename>debian.cnf</filename> get the database password:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:91(para)
-msgid "Start on the first node having IP address <literal>10.0.0.10</literal> by executing the command:"
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:127(para)
+msgid "The result will look like this:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:98(para)
-msgid "Connect to that cluster on the rest of the nodes by referencing the address of that node, as in:"
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:140(para)
+msgid "Run the following query on every server except the primary node. This will make sure that you can restart the database again. Do not forget to add the password from the <filename>debian.cnf</filename>."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:103(para)
-msgid "You also have the option to set the <literal>wsrep_cluster_address</literal> in the <filename>/etc/mysql/conf.d/wsrep.cnf</filename> file, or within the client itself. (In fact, for some systems, such as MariaDB or Percona, this may be your only option.)"
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:146(para)
+msgid "Stop all the mysql servers and start the first server with the following command"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:108(title)
-msgid "An example of checking the status of the cluster."
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:148(para)
+msgid "All other nodes can now be started using:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:110(para)
-msgid "Open the MySQL client and check the status of the various parameters:"
-msgstr ""
-
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:116(para)
-msgid "You should see a status that looks something like this:"
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:150(para)
+msgid "Verify the wsrep replication by logging in as root under mysql and running the following command:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml:7(title)
