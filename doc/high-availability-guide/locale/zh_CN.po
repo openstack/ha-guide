@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-03-05 05:31+0000\n"
-"PO-Revision-Date: 2015-03-05 05:31+0000\n"
+"POT-Creation-Date: 2015-03-06 18:52+0000\n"
+"PO-Revision-Date: 2015-03-05 20:49+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -500,12 +500,13 @@ msgstr "<application>MySQL</application> 并不是唯一的选择，以它作为
 #: ./doc/high-availability-guide/ch_ha_aa_db.xml21(para)
 msgid ""
 "MySQL with Galera is by no means the only way to achieve database HA. "
-"MariaDB (<link href=\"https://mariadb.org/\">https://mariadb.org/</link>) "
-"and Percona (<link "
+"MariaDB Galera Cluster (<link "
+"href=\"https://mariadb.org/\">https://mariadb.org/</link>) and Percona "
+"XtraDB Cluster (<link "
 "href=\"http://www.percona.com/\">http://www.percona.com/</link>) also work "
 "with Galera. You also have the option to use PostgreSQL, which has its own "
 "replication, or another database HA option."
-msgstr "同样，MySQL + Galera 也并非唯一一种实现数据库高可用的方案。MariaDB (<link href=\"https://mariadb.org/\">https://mariadb.org/</link>) 和 Percona (<link href=\"http://www.percona.com/\">http://www.percona.com/</link>) 都可以和 Galera 一起配合使用。另外 OpenStack 也支持 PostgreSQL，PostgreSQL 有自己相应的数据镜像和高可用方案。"
+msgstr ""
 
 #: ./doc/high-availability-guide/part_active_active.xml7(title)
 msgid "HA using active/active"

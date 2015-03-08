@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-03-05 06:00+0000\n"
+"POT-Creation-Date: 2015-03-08 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -354,7 +354,7 @@ msgid "The choice of database isn't a foregone conclusion; you're not required t
 msgstr ""
 
 #: ./doc/high-availability-guide/ch_ha_aa_db.xml:21(para)
-msgid "MySQL with Galera is by no means the only way to achieve database HA. MariaDB (<link href=\"https://mariadb.org/\">https://mariadb.org/</link>) and Percona (<link href=\"http://www.percona.com/\">http://www.percona.com/</link>) also work with Galera. You also have the option to use PostgreSQL, which has its own replication, or another database HA option."
+msgid "MySQL with Galera is by no means the only way to achieve database HA. MariaDB Galera Cluster (<link href=\"https://mariadb.org/\">https://mariadb.org/</link>) and Percona XtraDB Cluster (<link href=\"http://www.percona.com/\">http://www.percona.com/</link>) also work with Galera. You also have the option to use PostgreSQL, which has its own replication, or another database HA option."
 msgstr ""
 
 #: ./doc/high-availability-guide/part_active_active.xml:7(title)
