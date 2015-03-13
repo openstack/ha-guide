@@ -124,7 +124,7 @@
       <filename>.erlang.cookie</filename> from one of your nodes, copying
       it to the RabbitMQ data directory on the other node, and also
       copying it to the DRBD-backed filesystem.</para>
-    <screen><prompt>#</prompt> <userinput>scp -a /var/lib/rabbitmq/.erlang.cookie node2:/var/lib/rabbitmq/</userinput>
+    <screen><prompt>#</prompt> <userinput>scp -p /var/lib/rabbitmq/.erlang.cookie node2:/var/lib/rabbitmq/</userinput>
 <prompt>#</prompt> <userinput>mount /dev/drbd/by-res/rabbitmq /mnt</userinput>
 <prompt>#</prompt> <userinput>cp -a /var/lib/rabbitmq/.erlang.cookie /mnt</userinput>
 <prompt>#</prompt> <userinput>umount /mnt</userinput></screen>
