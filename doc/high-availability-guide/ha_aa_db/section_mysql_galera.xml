@@ -22,10 +22,9 @@
 Setup the repository for Ubuntu 14.04 "trusty" (most recent).
 Install the software properties, the key and the repository.
         </para>
-<programlisting language="ini">sudo apt-get install software-properties-common
-sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
-sudo add-apt-repository 'deb http://ams2.mirrors.digitalocean.com/mariadb/repo/5.5/ubuntu trusty main'
-</programlisting>
+        <screen><prompt>#</prompt> <userinput>apt-get install software-properties-common</userinput>
+<prompt>#</prompt> <userinput>apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb94</userinput>
+<prompt>#</prompt> <userinput>add-apt-repository 'deb http://ams2.mirrors.digitalocean.com/mariadb/repo/5.5/ubuntu trusty main'</userinput></screen>
 
    <note>
      <para>
@@ -37,8 +36,8 @@ You can change the mirror to one near you on:
    <listitem>
         <para>
 Update your system and install the required packages:
-    <programlisting language="ini">sudo apt-get update
-sudo apt-get install mariadb-galera-server galera</programlisting>
+<screen><prompt>#</prompt> <userinput>apt-get update</userinput>
+<prompt>#</prompt> <userinput>apt-get install mariadb-galera-server galera</userinput></screen>
         </para>
       <warning>
         <para>
@@ -82,20 +81,20 @@ wsrep_node_name="<replaceable>NODE_NAME</replaceable>"
     </listitem>
     <listitem>
         <para>Start mysql as root and execute the following queries:</para>
-        <screen><prompt>$</prompt> <userinput>SET wsrep_on=OFF; GRANT ALL ON *.* TO wsrep_sst@'%' IDENTIFIED BY 'wspass';</userinput></screen>
+        <screen><prompt>mysql&gt;</prompt> <userinput>SET wsrep_on=OFF; GRANT ALL ON *.* TO wsrep_sst@'%' IDENTIFIED BY 'wspass';</userinput></screen>
         <para>Remove user accounts with empty user names because they cause problems:</para>
-        <screen><prompt>$</prompt> <userinput>SET wsrep_on=OFF; DELETE FROM mysql.user WHERE user='';</userinput></screen>
+        <screen><prompt>mysql&gt;</prompt> <userinput>SET wsrep_on=OFF; DELETE FROM mysql.user WHERE user='';</userinput></screen>
     </listitem>
     <listitem>
       <para>Check that the nodes can access each other through the firewall.
         Depending on your environment, this might mean adjusting iptables, as
         in:</para>
       <screen><prompt>#</prompt> <userinput>iptables --insert RH-Firewall-1-INPUT 1 --proto tcp \
---source &lt;my IP&gt;/24 --destination &lt;my IP&gt;/32 --dport 3306 \
--j ACCEPT</userinput>
+  --source &lt;my IP&gt;/24 --destination &lt;my IP&gt;/32 --dport 3306 \
+  -j ACCEPT</userinput>
 <prompt>#</prompt> <userinput>iptables --insert RH-Firewall-1-INPUT 1 --proto tcp \
---source &lt;my IP&gt;/24 --destination &lt;my IP&gt;/32 --dport 4567 \
--j ACCEPT</userinput></screen>
+  --source &lt;my IP&gt;/24 --destination &lt;my IP&gt;/32 --dport 4567 \
+  -j ACCEPT</userinput></screen>
       <para>This might also mean configuring any NAT firewall between nodes to
         allow direct connections. You might need to disable SELinux, or
         configure it to allow <systemitem class="service">mysqld</systemitem>
@@ -107,23 +106,15 @@ wsrep_node_name="<replaceable>NODE_NAME</replaceable>"
 For the next step create a back-up file of the <filename>debian.cnf</filename> file in <filename>/etc/mysql</filename> on all database servers.
 Should something go wrong just copy the backup file back.
   </para>
-    <screen>
-        <prompt>#</prompt> <userinput>cp debian.cnf debian.cnf.old</userinput>
-    </screen>
+    <screen><prompt>#</prompt> <userinput>cp debian.cnf debian.cnf.old</userinput></screen>
     <para>
     Make sure you have SSH root access on the other servers. From the primary database server, copy the <filename>debian.cnf</filename> to all other servers.
     </para>
-    <screen>
-        <prompt>#</prompt> <userinput>scp /etc/mysql/debian.cnf root@IP-address:/etc/mysql</userinput>
-    </screen>
+    <screen><prompt>#</prompt> <userinput>scp /etc/mysql/debian.cnf root@IP-address:/etc/mysql</userinput></screen>
     <para>After the copy make sure that all files are the same, you can do this by using the following command:</para>
-    <screen>
-        <prompt>#</prompt> <userinput>md5sum debian.cnf</userinput>
-    </screen>
+    <screen><prompt>#</prompt> <userinput>md5sum debian.cnf</userinput></screen>
   <para>From the <filename>debian.cnf</filename> get the database password:</para>
-    <screen>
-        <prompt>#</prompt> <userinput>cat /etc/mysql/debian.cnf</userinput>
-    </screen>
+    <screen><prompt>#</prompt> <userinput>cat /etc/mysql/debian.cnf</userinput></screen>
   <para>The result will look like this:</para>
   <screen><computeroutput>[client]
 host = localhost
@@ -142,13 +133,13 @@ Run the following query on every server except the primary node. This will make 
 Do not forget to add the password from the <filename>debian.cnf</filename>.
 </para>
     <screen><prompt>mysql&gt;</prompt> <userinput>GRANT SHUTDOWN ON *.* TO ‘debian-sys-maint’@’localhost' IDENTIFIED BY '&lt;debian.cnf password&gt;';</userinput>
-<prompt>mysql&gt;</prompt><userinput>GRANT SELECT ON `mysql`.`user` TO ‘debian-sys-maint’@’localhost' IDENTIFIED BY '&lt;debian.cnf password&gt;';</userinput></screen>
+<prompt>mysql&gt;</prompt> <userinput>GRANT SELECT ON `mysql`.`user` TO ‘debian-sys-maint’@’localhost' IDENTIFIED BY '&lt;debian.cnf password&gt;';</userinput></screen>
     <para>Stop all the mysql servers and start the first server with the following command</para>
     <screen><prompt>#</prompt> <userinput>service mysql start --wsrep-new-cluster</userinput></screen>
 <para>All other nodes can now be started using:</para>
     <screen><prompt>#</prompt> <userinput>service mysql start</userinput></screen>
 <para>Verify the wsrep replication by logging in as root under mysql and running the following command:</para>
-<screen><prompt>mysql&gt;</prompt><userinput>SHOW STATUS LIKE ‘wsrep%’;</userinput>
+<screen><prompt>mysql&gt;</prompt> <userinput>SHOW STATUS LIKE ‘wsrep%’;</userinput>
 <computeroutput>+------------------------------+--------------------------------------+
 | Variable_name                | Value                                |
 +------------------------------+--------------------------------------+
