@@ -10,8 +10,9 @@
     statistics for resources not tied to instances or compute nodes.</para>
   <note>
     <para>Due to limitations of a polling model, a single instance of this agent
-      can be polling a given list of meters. In this setup, we install this service
-      on the API nodes also in the active / passive mode.</para>
+      can be polling a given list of meters, unless workload partitioning has
+      been configured for multiple central agents. In this setup, we install
+      this service on the API nodes also in the active / passive mode.</para>
   </note>
   <para>Making the Telemetry central agent service highly available in
     active / passive mode involves managing its daemon with the Pacemaker
