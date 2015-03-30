@@ -134,7 +134,7 @@ Do not forget to add the password from the <filename>debian.cnf</filename>.
 </para>
     <screen><prompt>mysql&gt;</prompt> <userinput>GRANT SHUTDOWN ON *.* TO ‘debian-sys-maint’@’localhost' IDENTIFIED BY '&lt;debian.cnf password&gt;';</userinput>
 <prompt>mysql&gt;</prompt> <userinput>GRANT SELECT ON `mysql`.`user` TO ‘debian-sys-maint’@’localhost' IDENTIFIED BY '&lt;debian.cnf password&gt;';</userinput></screen>
-    <para>Stop all the mysql servers and start the first server with the following command</para>
+    <para>Stop all the mysql servers and start the first server with the following command:</para>
     <screen><prompt>#</prompt> <userinput>service mysql start --wsrep-new-cluster</userinput></screen>
 <para>All other nodes can now be started using:</para>
     <screen><prompt>#</prompt> <userinput>service mysql start</userinput></screen>
