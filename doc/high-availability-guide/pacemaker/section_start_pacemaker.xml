@@ -31,7 +31,7 @@
       </para>
     </listitem>
   </itemizedlist>
-  <para>Once Pacemaker services have started, Pacemaker will create a default
+  <para>Once the Pacemaker services have started, Pacemaker will create a default
     empty cluster configuration with no resources. You may observe
     Pacemaker's status with the <command>crm_mon</command> utility:</para>
   <screen><computeroutput>============
