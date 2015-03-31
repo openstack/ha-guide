@@ -5,7 +5,7 @@
   version="5.0"
   xml:id="_set_up_corosync">
   <title>Set up Corosync</title>
-  <para>Besides installing the <package>corosync</package> package, you must
+  <para>Besides installing the <package>Corosync</package> package, you must
     also create a configuration file, stored in
     <filename>/etc/corosync/corosync.conf</filename>. Corosync can be configured
     to work with either multicast or unicast IP addresses.
@@ -13,7 +13,7 @@
   <section xml:id="_set_up_corosync_multicast">
   <title>Set up Corosync with multicast</title>
   <para>Most distributions ship an example configuration file (<filename>corosync.conf.example</filename>)
-    as part of the documentation bundled with the <package>corosync</package>
+    as part of the documentation bundled with the <package>Corosync</package>
     package. An example Corosync configuration file is shown below:</para>
   <formalpara>
     <title>Corosync configuration file (<filename>corosync.conf</filename>)</title>
