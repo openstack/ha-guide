@@ -166,7 +166,7 @@ logging {
   <title>Set up Corosync with unicast</title>
   <para>Some environments may not support multicast. For such cases,
     Corosync should be configured for unicast.
-    An example fragment of Corosync configuration file is shown below:</para>
+    An example fragment of the Corosync configuration file is shown below:</para>
   <formalpara>
     <title>Corosync configuration file fragment (<filename>corosync.conf</filename>)</title>
     <para>
