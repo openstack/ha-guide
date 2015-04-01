@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-03-13 08:33+0000\n"
-"PO-Revision-Date: 2015-03-16 04:19+0000\n"
-"Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
+"POT-Creation-Date: 2015-03-31 17:07+0000\n"
+"PO-Revision-Date: 2015-03-31 16:51+0000\n"
+"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -551,89 +551,89 @@ msgid ""
 "software properties, the key and the repository."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml31(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml30(para)
 msgid ""
 "You can change the mirror to one near you on: <link "
 "href=\"https://downloads.mariadb.org/mariadb/repositories/\">downloads.mariadb.org</link>"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml38(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml37(para)
 msgid "Update your system and install the required packages: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml44(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml43(para)
 msgid ""
 "If you have mariaDB already installed you need to re-apply all the "
 "permissions from the installation guide. It will purge all privileges!"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml50(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml49(para)
 msgid "Adjust the configuration:"
 msgstr "設定を調整します。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml51(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml50(para)
 msgid ""
 "In the <filename>/etc/mysql/my.conf</filename> file, make the following "
 "changes:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml59(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml58(para)
 msgid "Create the <filename>/etc/mysql/conf.d/wsrep.cnf</filename> file."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml63(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml62(para)
 msgid "Paste the following lines in this file:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml68(replaceable)
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml70(replaceable)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml67(replaceable)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml69(replaceable)
 msgid "PRIMARY_NODE_IP"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml68(replaceable)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml67(replaceable)
 msgid "SECONDARY_NODE_IP"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml71(replaceable)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml70(replaceable)
 msgid "NODE_NAME"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml73(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml72(para)
 msgid ""
 "Replace <replaceable>PRIMARY_NODE_IP</replaceable> and "
 "<replaceable>SECONDARY_NODE_IP</replaceable> with the IP addresses of your "
 "primary and secondary servers."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml78(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml77(para)
 msgid ""
 "Replace <replaceable>PRIMARY_NODE_IP</replaceable> with the hostname of the "
 "server. This is set for logging."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml81(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml80(para)
 msgid ""
 "Copy this file to all other databases servers and change the value of "
 "<literal>wsrep_cluster_address</literal> and "
 "<literal>wsrep_node_name</literal> accordingly."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml84(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml83(para)
 msgid "Start mysql as root and execute the following queries:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml86(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml85(para)
 msgid ""
 "Remove user accounts with empty user names because they cause problems:"
 msgstr "また、問題を引き起こす可能性があるので、空のユーザー名を用いてユーザーアカウントを削除します。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml90(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml89(para)
 msgid ""
 "Check that the nodes can access each other through the firewall. Depending "
 "on your environment, this might mean adjusting iptables, as in:"
 msgstr "最後に、ノードがファイアウォール越しにお互いにアクセスできることを確認します。お使いの環境によっては、次のような iptables の調整を意味するかもしれません。"
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml99(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml98(para)
 msgid ""
 "This might also mean configuring any NAT firewall between nodes to allow "
 "direct connections. You might need to disable SELinux, or configure it to "
@@ -641,7 +641,7 @@ msgid ""
 " at unprivileged ports."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml106(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml105(para)
 msgid ""
 "For the next step create a back-up file of the "
 "<filename>debian.cnf</filename> file in <filename>/etc/mysql</filename> on "
@@ -649,45 +649,45 @@ msgid ""
 "back."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml113(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml110(para)
 msgid ""
 "Make sure you have SSH root access on the other servers. From the primary "
 "database server, copy the <filename>debian.cnf</filename> to all other "
 "servers."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml119(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml114(para)
 msgid ""
 "After the copy make sure that all files are the same, you can do this by "
 "using the following command:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml123(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml116(para)
 msgid "From the <filename>debian.cnf</filename> get the database password:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml127(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml118(para)
 msgid "The result will look like this:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml140(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml131(para)
 msgid ""
 "Run the following query on every server except the primary node. This will "
 "make sure that you can restart the database again. Do not forget to add the "
 "password from the <filename>debian.cnf</filename>."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml146(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml137(para)
 msgid ""
 "Stop all the mysql servers and start the first server with the following "
-"command"
+"command:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml148(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml139(para)
 msgid "All other nodes can now be started using:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml150(para)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml141(para)
 msgid ""
 "Verify the wsrep replication by logging in as root under mysql and running "
 "the following command:"
@@ -1886,9 +1886,9 @@ msgstr "<placeholder-1/> (systemd)"
 
 #: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml34(para)
 msgid ""
-"Once Pacemaker services have started, Pacemaker will create a default empty "
-"cluster configuration with no resources. You may observe Pacemaker's status "
-"with the <placeholder-1/> utility:"
+"Once the Pacemaker services have started, Pacemaker will create a default "
+"empty cluster configuration with no resources. You may observe Pacemaker's "
+"status with the <placeholder-1/> utility:"
 msgstr ""
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml7(title)
@@ -1897,7 +1897,7 @@ msgstr "Corosync のセットアップ"
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml8(para)
 msgid ""
-"Besides installing the <package>corosync</package> package, you must also "
+"Besides installing the <package>Corosync</package> package, you must also "
 "create a configuration file, stored in "
 "<filename>/etc/corosync/corosync.conf</filename>. Corosync can be configured"
 " to work with either multicast or unicast IP addresses."
@@ -1911,7 +1911,7 @@ msgstr ""
 msgid ""
 "Most distributions ship an example configuration file "
 "(<filename>corosync.conf.example</filename>) as part of the documentation "
-"bundled with the <package>corosync</package> package. An example Corosync "
+"bundled with the <package>Corosync</package> package. An example Corosync "
 "configuration file is shown below:"
 msgstr ""
 
@@ -2013,8 +2013,8 @@ msgstr ""
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml167(para)
 msgid ""
 "Some environments may not support multicast. For such cases, Corosync should"
-" be configured for unicast. An example fragment of Corosync configuration "
-"file is shown below:"
+" be configured for unicast. An example fragment of the Corosync "
+"configuration file is shown below:"
 msgstr ""
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml171(title)
