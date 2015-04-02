@@ -37,7 +37,7 @@ op monitor interval="30s" timeout="30s"</programlisting>
     <para>This configuration creates</para>
     <itemizedlist>
       <listitem>
-        <para><literal>p_ceilometer-agent-central</literal>, a resource for manage
+        <para><literal>p_ceilometer-agent-central</literal>, a resource for managing the
           Ceilometer Central Agent service</para>
       </listitem>
     </itemizedlist>
