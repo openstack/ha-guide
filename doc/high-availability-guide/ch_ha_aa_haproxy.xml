@@ -14,7 +14,7 @@ realistic with today’s hardware.</para>
       <para>For installing HAProxy on your nodes, you should consider its <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://haproxy.1wt.eu/#docs">official documentation</link>.
 Also, you have to consider that this service should not be a single point of failure, so you need at least two
 nodes running HAProxy.</para>
-      <para>Here is an example for HAProxy configuration file:</para>
+      <para>Here is an example of the HAProxy configuration file:</para>
       <programlisting>global
   chroot  /var/lib/haproxy
   daemon
