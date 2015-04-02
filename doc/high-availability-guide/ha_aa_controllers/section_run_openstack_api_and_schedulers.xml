@@ -28,7 +28,7 @@
     <note>
       <para>The monitor check is quite simple since it just establishes a TCP
         connection to the API port. Comparing to the active/passive mode using
-        <application>Corosync</application> and resources agents,
+        <application>Corosync</application> and resource agents,
         we don't check if the service is actually running. That's why all
         OpenStack API services should be monitored by another tool, for example
         <application>Nagios</application>.</para>
@@ -37,7 +37,7 @@
   <section xml:id="_schedulers">
     <title>Schedulers</title>
     <para>OpenStack schedulers are used to determine how to dispatch compute,
-      network and volume requests. The most common setup is to use RabbitMQ as
+      network, and volume requests. The most common setup is to use RabbitMQ as a
       messaging system. Those services are connected to the messaging backend
       and can scale-out:</para>
     <itemizedlist>
