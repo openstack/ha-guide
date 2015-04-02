@@ -29,7 +29,7 @@
     </listitem>
     <listitem>
       <para>Use durable queues in RabbitMQ:</para>
-      <programlisting language="ini">rabbit_durable_queues=false</programlisting>
+      <programlisting language="ini">rabbit_durable_queues=true</programlisting>
     </listitem>
     <listitem>
       <para>Use HA queues in RabbitMQ (x-ha-policy: all):</para>
