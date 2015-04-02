@@ -10,25 +10,25 @@
   xml:id="s-mysql">
   <title>Highly available MySQL</title>
   <para>MySQL is the default database server used by many OpenStack
-    services. Making the MySQL service highly available involves</para>
+    services. Making the MySQL service highly available involves:</para>
   <itemizedlist>
     <listitem>
-      <para>Configure a DRBD device for use by MySQL,</para>
+      <para>Configuring a DRBD device for use by MySQL</para>
     </listitem>
     <listitem>
-      <para>Configure MySQL to use a data directory residing on that DRBD
-        device,</para>
+      <para>Configuring MySQL to use a data directory residing on that DRBD
+        device</para>
     </listitem>
     <listitem>
-      <para>Select and assign a virtual IP address (VIP) that can freely
-        float between cluster nodes,</para>
+      <para>Selecting and assigning a virtual IP address (VIP) that can freely
+        float between cluster nodes</para>
     </listitem>
     <listitem>
-      <para>Configure MySQL to listen on that IP address,</para>
+      <para>Configuring MySQL to listen on that IP address</para>
     </listitem>
     <listitem>
-      <para>Manage all resources, including the MySQL daemon itself, with
-        the Pacemaker cluster manager.
+      <para>Managing all resources, including the MySQL daemon itself, with
+        the Pacemaker cluster manager
       </para>
     </listitem>
   </itemizedlist>
@@ -107,7 +107,7 @@
     <para>Once the DRBD resource is running and in the primary role (and
       potentially still in the process of running the initial device
       synchronization), you may proceed with creating the filesystem for
-      MySQL data. XFS is the generally recommended filesystem due to its
+      MySQL data. XFS is generally the recommended filesystem due to its
       journaling, efficient allocation, and performance:</para>
     <screen><prompt>#</prompt> <userinput>mkfs -t xfs /dev/drbd0</userinput></screen>
     <para>You may also use the alternate device path for the DRBD device, which
