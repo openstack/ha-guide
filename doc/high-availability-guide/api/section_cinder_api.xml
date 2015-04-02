@@ -6,17 +6,17 @@
   xml:id="s-cinder-api">
   <title>Highly available Block Storage API</title>
   <para>Making the Block Storage (cinder) API service highly available in
-    active / passive mode involves</para>
+    active / passive mode involves:</para>
   <itemizedlist>
     <listitem>
-      <para>Configure Block Storage to listen on the VIP address,</para>
+      <para>Configuring Block Storage to listen on the VIP address</para>
     </listitem>
     <listitem>
       <para>Managing Block Storage API daemon with the Pacemaker cluster
-        manager,</para>
+        manager</para>
     </listitem>
     <listitem>
-      <para>Configure OpenStack services to use this IP address.</para>
+      <para>Configuring OpenStack services to use this IP address</para>
     </listitem>
   </itemizedlist>
   <note>
