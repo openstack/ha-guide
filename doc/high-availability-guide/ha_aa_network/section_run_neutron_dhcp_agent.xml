@@ -11,6 +11,6 @@
     You can configure the number of DHCP agents per network using the
     parameter <option>dhcp_agents_per_network</option> in
     <filename>neutron.conf</filename>.
-    By default this is equal to 1. To achieve highly availability
+    By default this is equal to 1. To achieve high availability
     assign more than one DHCP agent per network.</para>
 </section>
