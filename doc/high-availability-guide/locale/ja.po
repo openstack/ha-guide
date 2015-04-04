@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-03-31 17:07+0000\n"
-"PO-Revision-Date: 2015-03-31 16:51+0000\n"
+"POT-Creation-Date: 2015-04-03 10:04+0000\n"
+"PO-Revision-Date: 2015-04-03 17:44+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -434,8 +434,8 @@ msgid ""
 msgstr "HAProxy をインストールするために、<link href=\"http://haproxy.1wt.eu/#docs\">公式ドキュメント</link>を参考にすべきです。また、このサービスが単一障害点にならないように考慮する必要があります。そのため、HAProxy を実行するノードが少なくとも 2 つ必要です。"
 
 #: ./doc/high-availability-guide/ch_ha_aa_haproxy.xml17(para)
-msgid "Here is an example for HAProxy configuration file:"
-msgstr "これは HAProxy 設定ファイルの例です。"
+msgid "Here is an example of the HAProxy configuration file:"
+msgstr ""
 
 #: ./doc/high-availability-guide/ch_ha_aa_haproxy.xml157(para)
 msgid "After each change of this file, you should restart HAProxy."
@@ -730,8 +730,8 @@ msgid ""
 "agents across nodes. Also, the DHCP agent can be natively highly available. "
 "You can configure the number of DHCP agents per network using the parameter "
 "<placeholder-1/> in <filename>neutron.conf</filename>. By default this is "
-"equal to 1. To achieve highly availability assign more than one DHCP agent "
-"per network."
+"equal to 1. To achieve high availability assign more than one DHCP agent per"
+" network."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_lbaas_agent.xml7(title)
@@ -753,22 +753,20 @@ msgstr "高可用性 Block Storage API"
 #: ./doc/high-availability-guide/api/section_cinder_api.xml8(para)
 msgid ""
 "Making the Block Storage (cinder) API service highly available in active / "
-"passive mode involves"
-msgstr "Block Storage (cinder) API サービスのアクティブ / パッシブモードでの高可用化"
+"passive mode involves:"
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml12(para)
-msgid "Configure Block Storage to listen on the VIP address,"
-msgstr "Block Storage がその仮想 IP アドレスをリッスンする設定"
+msgid "Configuring Block Storage to listen on the VIP address"
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml15(para)
-msgid "Managing Block Storage API daemon with the Pacemaker cluster manager,"
+msgid "Managing Block Storage API daemon with the Pacemaker cluster manager"
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml19(para)
-#: ./doc/high-availability-guide/api/section_glance_api.xml20(para)
-#: ./doc/high-availability-guide/api/section_keystone.xml20(para)
-msgid "Configure OpenStack services to use this IP address."
-msgstr "OpenStack のサービスがこの IP アドレスを使用するよう設定します。"
+msgid "Configuring OpenStack services to use this IP address"
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml23(para)
 msgid ""
@@ -889,6 +887,11 @@ msgstr "OpenStack Image がその仮想 IP アドレスをリッスンするよ�
 #: ./doc/high-availability-guide/api/section_glance_api.xml16(para)
 msgid "Manage OpenStack Image API daemon with the Pacemaker cluster manager."
 msgstr "Pacemaker クラスターマネージャーを用いた OpenStack Image API デーモンを管理します。"
+
+#: ./doc/high-availability-guide/api/section_glance_api.xml20(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml20(para)
+msgid "Configure OpenStack services to use this IP address."
+msgstr "OpenStack のサービスがこの IP アドレスを使用するよう設定します。"
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml24(para)
 msgid ""
@@ -1124,9 +1127,9 @@ msgstr "Telemetry 中央エージェントリソース用の Pacemaker 設定を
 
 #: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml40(para)
 msgid ""
-"<literal>p_ceilometer-agent-central</literal>, a resource for manage "
+"<literal>p_ceilometer-agent-central</literal>, a resource for managing the "
 "Ceilometer Central Agent service"
-msgstr "<literal>p_ceilometer-agent-central</literal>, Ceilometer 中央エージェントサービスを管理するためのリソース。"
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml44(para)
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml37(para)
@@ -1521,32 +1524,32 @@ msgstr "高可用性 MySQL"
 #: ./doc/high-availability-guide/controller/section_mysql.xml12(para)
 msgid ""
 "MySQL is the default database server used by many OpenStack services. Making"
-" the MySQL service highly available involves"
-msgstr "MySQL は多くの OpenStack サービスにより使用される標準のデータベースサーバーです。MySQL サービスを高可用性にするには、次のことが関係します。"
+" the MySQL service highly available involves:"
+msgstr ""
 
 #: ./doc/high-availability-guide/controller/section_mysql.xml16(para)
-msgid "Configure a DRBD device for use by MySQL,"
-msgstr "MySQL により使用するための DRBD デバイスの設定,"
+msgid "Configuring a DRBD device for use by MySQL"
+msgstr ""
 
 #: ./doc/high-availability-guide/controller/section_mysql.xml19(para)
-msgid "Configure MySQL to use a data directory residing on that DRBD device,"
-msgstr "MySQL がこの DRBD デバイスにあるデータディレクトリを使用するよう設定します。"
+msgid "Configuring MySQL to use a data directory residing on that DRBD device"
+msgstr ""
 
 #: ./doc/high-availability-guide/controller/section_mysql.xml23(para)
 msgid ""
-"Select and assign a virtual IP address (VIP) that can freely float between "
-"cluster nodes,"
-msgstr "クラスターノード間を自由に移動できる仮想 IP (VIP) を選択し、割り当てます。"
+"Selecting and assigning a virtual IP address (VIP) that can freely float "
+"between cluster nodes"
+msgstr ""
 
 #: ./doc/high-availability-guide/controller/section_mysql.xml27(para)
-msgid "Configure MySQL to listen on that IP address,"
-msgstr "その IP アドレスをリッスンするよう MySQL を設定します。"
+msgid "Configuring MySQL to listen on that IP address"
+msgstr ""
 
 #: ./doc/high-availability-guide/controller/section_mysql.xml30(para)
 msgid ""
-"Manage all resources, including the MySQL daemon itself, with the Pacemaker "
-"cluster manager."
-msgstr "Pacemaker クラスターマネージャーを用いた、MySQL デーモン自身を含む、すべてのリソースの管理"
+"Managing all resources, including the MySQL daemon itself, with the "
+"Pacemaker cluster manager"
+msgstr ""
 
 #: ./doc/high-availability-guide/controller/section_mysql.xml36(para)
 msgid ""
@@ -1613,10 +1616,10 @@ msgstr "ファイルシステムの作成"
 msgid ""
 "Once the DRBD resource is running and in the primary role (and potentially "
 "still in the process of running the initial device synchronization), you may"
-" proceed with creating the filesystem for MySQL data. XFS is the generally "
+" proceed with creating the filesystem for MySQL data. XFS is generally the "
 "recommended filesystem due to its journaling, efficient allocation, and "
 "performance:"
-msgstr "DRBD リソースが実行中になり、プライマリーロール (初期デバイス同期の処理中かもしれません) になると、MySQL データ用のファイルシステムを作成できます。ジャーナリング、効果的な割り当て、高性能のため、XFS が一般的に推奨されます。"
+msgstr ""
 
 #: ./doc/high-availability-guide/controller/section_mysql.xml123(title)
 msgid "Prepare MySQL for Pacemaker high availability"

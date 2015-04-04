@@ -1,13 +1,14 @@
 # 
 # Translators:
+# Alfred <alfredhuang211@qq.com>, 2015
 # zhaochao <zhaochao1984@gmail.com>, 2015
 # 秋林 <chenqioulin_1983@163.com>, 2015
 # 颜海峰 <yanheven@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-03-31 17:07+0000\n"
-"PO-Revision-Date: 2015-03-31 16:51+0000\n"
+"POT-Creation-Date: 2015-04-03 10:04+0000\n"
+"PO-Revision-Date: 2015-04-03 17:44+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -435,7 +436,7 @@ msgid ""
 msgstr "HAProxy 的安装，请参阅项目<link href=\"http://haproxy.1wt.eu/#docs\">官方文档</link>。别外，为了避免 HAProxy 本身成为整个系统的单点故障，最少应配置 2 台 HAProxy 节点服务器。"
 
 #: ./doc/high-availability-guide/ch_ha_aa_haproxy.xml17(para)
-msgid "Here is an example for HAProxy configuration file:"
+msgid "Here is an example of the HAProxy configuration file:"
 msgstr "下面是 HAProxy 配置文件的示例："
 
 #: ./doc/high-availability-guide/ch_ha_aa_haproxy.xml157(para)
@@ -506,7 +507,7 @@ msgid ""
 "href=\"http://www.percona.com/\">http://www.percona.com/</link>) also work "
 "with Galera. You also have the option to use PostgreSQL, which has its own "
 "replication, or another database HA option."
-msgstr ""
+msgstr "同样，MySQL + Galera 也并非唯一一种实现数据库高可用的方案。MariaDB Galera 集群(<link href=\"https://mariadb.org/\">https://mariadb.org/</link>) 和 Percona XtraDB 集群(<link href=\"http://www.percona.com/\">http://www.percona.com/</link>) 都可以和 Galera 一起配置使用。另外 OpenStack 也支持 PostgreSQL，PostgreSQL 有自己相应的数据镜像和高可用方案。"
 
 #: ./doc/high-availability-guide/part_active_active.xml7(title)
 msgid "HA using active/active"
@@ -550,23 +551,23 @@ msgstr "为已经加上 wresp 补丁的 MySQL 数据库安装 Galera ："
 msgid ""
 "Setup the repository for Ubuntu 14.04 \"trusty\" (most recent). Install the "
 "software properties, the key and the repository."
-msgstr ""
+msgstr "为 Ubuntu 14.04 \"trusty\" (最常用)设置源。安装软件属性，密钥及源。"
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml30(para)
 msgid ""
 "You can change the mirror to one near you on: <link "
 "href=\"https://downloads.mariadb.org/mariadb/repositories/\">downloads.mariadb.org</link>"
-msgstr ""
+msgstr "您可以改变镜像到离您最近的一个：<link href=\"https://downloads.mariadb.org/mariadb/repositories/\">downloads.mariadb.org</link>"
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml37(para)
 msgid "Update your system and install the required packages: <placeholder-1/>"
-msgstr ""
+msgstr "升级您的系统并安装必要的软件包：<placeholder-1/>"
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml43(para)
 msgid ""
 "If you have mariaDB already installed you need to re-apply all the "
 "permissions from the installation guide. It will purge all privileges!"
-msgstr ""
+msgstr "如果您已经安装了mariaDB，您需要重新申请安装指南中的所有权限。此将清理所有的权限！"
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml49(para)
 msgid "Adjust the configuration:"
@@ -576,52 +577,52 @@ msgstr "调整配置文件："
 msgid ""
 "In the <filename>/etc/mysql/my.conf</filename> file, make the following "
 "changes:"
-msgstr ""
+msgstr "在<filename>/etc/mysql/my.conf</filename>文件中，进行如下修改："
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml58(para)
 msgid "Create the <filename>/etc/mysql/conf.d/wsrep.cnf</filename> file."
-msgstr ""
+msgstr "创建<filename>/etc/mysql/conf.d/wsrep.cnf</filename>文件"
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml62(para)
 msgid "Paste the following lines in this file:"
-msgstr ""
+msgstr "将如下内容粘贴到文件中："
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml67(replaceable)
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml69(replaceable)
 msgid "PRIMARY_NODE_IP"
-msgstr ""
+msgstr "PRIMARY_NODE_IP"
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml67(replaceable)
 msgid "SECONDARY_NODE_IP"
-msgstr ""
+msgstr "SECONDARY_NODE_IP"
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml70(replaceable)
 msgid "NODE_NAME"
-msgstr ""
+msgstr "NODE_NAME"
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml72(para)
 msgid ""
 "Replace <replaceable>PRIMARY_NODE_IP</replaceable> and "
 "<replaceable>SECONDARY_NODE_IP</replaceable> with the IP addresses of your "
 "primary and secondary servers."
-msgstr ""
+msgstr "使用您主服务器和次服务器的IP地址替换<replaceable>PRIMARY_NODE_IP</replaceable> 和 <replaceable>SECONDARY_NODE_IP</replaceable>"
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml77(para)
 msgid ""
 "Replace <replaceable>PRIMARY_NODE_IP</replaceable> with the hostname of the "
 "server. This is set for logging."
-msgstr ""
+msgstr "使用服务器的主机名替换<replaceable>PRIMARY_NODE_IP</replaceable>。这项配置用于日志。"
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml80(para)
 msgid ""
 "Copy this file to all other databases servers and change the value of "
 "<literal>wsrep_cluster_address</literal> and "
 "<literal>wsrep_node_name</literal> accordingly."
-msgstr ""
+msgstr "将此文件拷贝到所有的其他数据库服务器上并相应的修改<literal>wsrep_cluster_address</literal> 和<literal>wsrep_node_name</literal>的值。"
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml83(para)
 msgid "Start mysql as root and execute the following queries:"
-msgstr ""
+msgstr "使用root启动mysql并执行以下查询："
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml85(para)
 msgid ""
@@ -648,51 +649,51 @@ msgid ""
 "<filename>debian.cnf</filename> file in <filename>/etc/mysql</filename> on "
 "all database servers. Should something go wrong just copy the backup file "
 "back."
-msgstr ""
+msgstr "下一步执行之前创建所有数据库服务器的<filename>debian.cnf</filename>文件的备份文件，位于<filename>/etc/mysql</filename>。当有什么错误发生时，仅需拷贝备份文件回来。"
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml110(para)
 msgid ""
 "Make sure you have SSH root access on the other servers. From the primary "
 "database server, copy the <filename>debian.cnf</filename> to all other "
 "servers."
-msgstr ""
+msgstr "确保您拥有其他服务器上的SSH root权限。从组数据库服务器，拷贝<filename>debian.cnf</filename>到其他所有服务器上。"
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml114(para)
 msgid ""
 "After the copy make sure that all files are the same, you can do this by "
 "using the following command:"
-msgstr ""
+msgstr "复制之后需确保所有的文件都是相同的，你能通过使用如下命令确认："
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml116(para)
 msgid "From the <filename>debian.cnf</filename> get the database password:"
-msgstr ""
+msgstr "从<filename>debian.cnf</filename>中获取数据库密码："
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml118(para)
 msgid "The result will look like this:"
-msgstr ""
+msgstr "结果将如下所示："
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml131(para)
 msgid ""
 "Run the following query on every server except the primary node. This will "
 "make sure that you can restart the database again. Do not forget to add the "
 "password from the <filename>debian.cnf</filename>."
-msgstr ""
+msgstr "在除了主节点的服务器上运行如下查询。这将确保您能再次重启服务器。不要忘记添加<filename>debian.cnf</filename>中的密码。"
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml137(para)
 msgid ""
 "Stop all the mysql servers and start the first server with the following "
 "command:"
-msgstr ""
+msgstr "停止所有的mysql服务器然后使用如下命令启动第一个服务器："
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml139(para)
 msgid "All other nodes can now be started using:"
-msgstr ""
+msgstr "其他所有节点现在能被启动："
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml141(para)
 msgid ""
 "Verify the wsrep replication by logging in as root under mysql and running "
 "the following command:"
-msgstr ""
+msgstr "通过以root身份登录mysql并运行以下命令来确认wsrep复制："
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml7(title)
 msgid "Run neutron L3 agent"
@@ -731,8 +732,8 @@ msgid ""
 "agents across nodes. Also, the DHCP agent can be natively highly available. "
 "You can configure the number of DHCP agents per network using the parameter "
 "<placeholder-1/> in <filename>neutron.conf</filename>. By default this is "
-"equal to 1. To achieve highly availability assign more than one DHCP agent "
-"per network."
+"equal to 1. To achieve high availability assign more than one DHCP agent per"
+" network."
 msgstr "OpenStack 网络服务拥有一个调度程序，所有可以在多个节点同时运行各种代理程序。同样，DHCP 代理服务自身就是支持高可用的。每个网络使用多少 DHCP 代理程序是可以通过配置文件 <filename>neutron.conf</filename> 中的 <placeholder-1/> 进行配置的。默认值是 1 ，要实现 DHCP 代理服务的高可用，应为每个网络设置多个 DHCP 代理程序。"
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_lbaas_agent.xml7(title)
@@ -754,22 +755,20 @@ msgstr "高可用 OpenStack 块设备存储服务"
 #: ./doc/high-availability-guide/api/section_cinder_api.xml8(para)
 msgid ""
 "Making the Block Storage (cinder) API service highly available in active / "
-"passive mode involves"
-msgstr "实现 OpenStack 块设备存储服务（ cinder ）主/从模式的高可用包括以下步骤："
+"passive mode involves:"
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml12(para)
-msgid "Configure Block Storage to listen on the VIP address,"
-msgstr "配置 OpenStack 块设备存储服务监听虚拟 IP 地址，"
+msgid "Configuring Block Storage to listen on the VIP address"
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml15(para)
-msgid "Managing Block Storage API daemon with the Pacemaker cluster manager,"
-msgstr "使用 Pacemaker 管理 OpenStack 块设备存储服务，"
+msgid "Managing Block Storage API daemon with the Pacemaker cluster manager"
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml19(para)
-#: ./doc/high-availability-guide/api/section_glance_api.xml20(para)
-#: ./doc/high-availability-guide/api/section_keystone.xml20(para)
-msgid "Configure OpenStack services to use this IP address."
-msgstr "配置 OpenStack 服务使用该虚拟 IP 地址。"
+msgid "Configuring OpenStack services to use this IP address"
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml23(para)
 msgid ""
@@ -890,6 +889,11 @@ msgstr "配置 OpenStack 镜像服务监听虚拟 IP 地址，"
 #: ./doc/high-availability-guide/api/section_glance_api.xml16(para)
 msgid "Manage OpenStack Image API daemon with the Pacemaker cluster manager."
 msgstr "使用 Pacemaker 管理 OpenStack 镜像服务。"
+
+#: ./doc/high-availability-guide/api/section_glance_api.xml20(para)
+#: ./doc/high-availability-guide/api/section_keystone.xml20(para)
+msgid "Configure OpenStack services to use this IP address."
+msgstr "配置 OpenStack 服务使用该虚拟 IP 地址。"
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml24(para)
 msgid ""
@@ -1125,9 +1129,9 @@ msgstr "现在可以在 Pacemaker 中填加 Telemetry 监中心相关资源。�
 
 #: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml40(para)
 msgid ""
-"<literal>p_ceilometer-agent-central</literal>, a resource for manage "
+"<literal>p_ceilometer-agent-central</literal>, a resource for managing the "
 "Ceilometer Central Agent service"
-msgstr "<literal>p_ceilometer-agent-central</literal> 资源，对 Telemetry 监控中心进行管理。"
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml44(para)
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml37(para)
@@ -1522,32 +1526,32 @@ msgstr "高可用的MySQL"
 #: ./doc/high-availability-guide/controller/section_mysql.xml12(para)
 msgid ""
 "MySQL is the default database server used by many OpenStack services. Making"
-" the MySQL service highly available involves"
-msgstr "MySQL 是多数 OpenStack 服务的默认数据库服务程序。实现 MySQL 的高可用包括以下步骤："
+" the MySQL service highly available involves:"
+msgstr "MySQL是许多OpenStack服务所使用的默认数据库服务。确保MySQL服务高可用涉及到："
 
 #: ./doc/high-availability-guide/controller/section_mysql.xml16(para)
-msgid "Configure a DRBD device for use by MySQL,"
-msgstr "为 MySQL 数据库配置一个 DRBD 设备，"
+msgid "Configuring a DRBD device for use by MySQL"
+msgstr "配置被MySQL使用的DRBD设备"
 
 #: ./doc/high-availability-guide/controller/section_mysql.xml19(para)
-msgid "Configure MySQL to use a data directory residing on that DRBD device,"
-msgstr "配置 MySQL 使用建立在 DRBD 设备之上的数据目录，"
+msgid "Configuring MySQL to use a data directory residing on that DRBD device"
+msgstr "配置MySQL使用位于DRBD设备上的数据目录"
 
 #: ./doc/high-availability-guide/controller/section_mysql.xml23(para)
 msgid ""
-"Select and assign a virtual IP address (VIP) that can freely float between "
-"cluster nodes,"
-msgstr "选择并绑定一个可以在各集群节点之间迁移的虚拟 IP 地址 （即 VIP ），"
+"Selecting and assigning a virtual IP address (VIP) that can freely float "
+"between cluster nodes"
+msgstr "选择并绑定一个可以在各集群节点之间迁移的虚拟 IP 地址 (即 VIP )"
 
 #: ./doc/high-availability-guide/controller/section_mysql.xml27(para)
-msgid "Configure MySQL to listen on that IP address,"
-msgstr "配置 MySQL 监听该 IP 地址，"
+msgid "Configuring MySQL to listen on that IP address"
+msgstr "配置 MySQL 监听那个 IP 地址"
 
 #: ./doc/high-availability-guide/controller/section_mysql.xml30(para)
 msgid ""
-"Manage all resources, including the MySQL daemon itself, with the Pacemaker "
-"cluster manager."
-msgstr "使用 Pacemaker 管理上述所有资源，包括 MySQL 数据库。"
+"Managing all resources, including the MySQL daemon itself, with the "
+"Pacemaker cluster manager"
+msgstr "使用 Pacemaker 管理上述所有资源，包括 MySQL 数据库"
 
 #: ./doc/high-availability-guide/controller/section_mysql.xml36(para)
 msgid ""
@@ -1614,10 +1618,10 @@ msgstr "创建文件系统"
 msgid ""
 "Once the DRBD resource is running and in the primary role (and potentially "
 "still in the process of running the initial device synchronization), you may"
-" proceed with creating the filesystem for MySQL data. XFS is the generally "
+" proceed with creating the filesystem for MySQL data. XFS is generally the "
 "recommended filesystem due to its journaling, efficient allocation, and "
 "performance:"
-msgstr "当 DRBD 资源已经激活并处于 “primay” 角色（可能初始化同步正在进行，还没有完成），可以开始创建文件系统。 XFS 由于拥有日志系统，分配效率高，性能好等优点，是建议选择的文件系统："
+msgstr "当 DRBD 资源已经激活并处于 “primay” 角色(可能初始化同步正在进行，还没有完成)，可以开始创建文件系统。 XFS 由于拥有日志系统，分配效率高，性能好等优点，是建议选择的文件系统。"
 
 #: ./doc/high-availability-guide/controller/section_mysql.xml123(title)
 msgid "Prepare MySQL for Pacemaker high availability"
@@ -1890,7 +1894,7 @@ msgid ""
 "Once the Pacemaker services have started, Pacemaker will create a default "
 "empty cluster configuration with no resources. You may observe Pacemaker's "
 "status with the <placeholder-1/> utility:"
-msgstr ""
+msgstr "Pacemaker 服务启动之后，会自动建立一份空白的集群配置，不包含任何资源。可以通过 <placeholder-1/> 工具查看 Packemaker 集群的状态："
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml7(title)
 msgid "Set up Corosync"
@@ -1902,7 +1906,7 @@ msgid ""
 "create a configuration file, stored in "
 "<filename>/etc/corosync/corosync.conf</filename>. Corosync can be configured"
 " to work with either multicast or unicast IP addresses."
-msgstr ""
+msgstr "除了安装 <package>Corosync</package> 之外，还需要创建一个配置文件 <filename>/etc/corosync/corosync.conf</filename> 。Corosync 可以使用组播或者单播 IP 地址进行集群心跳通信。"
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml14(title)
 msgid "Set up Corosync with multicast"
@@ -1914,7 +1918,7 @@ msgid ""
 "(<filename>corosync.conf.example</filename>) as part of the documentation "
 "bundled with the <package>Corosync</package> package. An example Corosync "
 "configuration file is shown below:"
-msgstr ""
+msgstr "大多数 Linux 发行版都会中在 <package>Corosync</package> 软件包中附带一份配置示例(<filename>corosync.conf.example</filename>)。Corosync示例配置文件如下："
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml19(title)
 msgid "Corosync configuration file (<filename>corosync.conf</filename>)"
@@ -2016,7 +2020,7 @@ msgid ""
 "Some environments may not support multicast. For such cases, Corosync should"
 " be configured for unicast. An example fragment of the Corosync "
 "configuration file is shown below:"
-msgstr ""
+msgstr "某些环境中可能不支持组播。这时应该配置 Corosync 使用单播，下面是使用单播的 Corosync 配置文件的一部分："
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml171(title)
 msgid ""
