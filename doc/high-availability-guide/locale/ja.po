@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-04-03 10:04+0000\n"
-"PO-Revision-Date: 2015-04-03 17:44+0000\n"
+"POT-Creation-Date: 2015-04-08 13:57+0000\n"
+"PO-Revision-Date: 2015-04-08 17:31+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -700,11 +700,74 @@ msgstr "Neutron L3 エージェントの実行"
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml8(para)
 msgid ""
 "The neutron L3 agent is scalable, due to the scheduler that allows "
-"distribution of virtual routers across multiple nodes. There is no native "
-"feature to make these routers highly available. At this time, the "
-"active/passive solution exists to run the Neutron L3 agent in failover mode "
-"with <application>Pacemaker</application>. See the <link linkend=\"ha-using-"
-"active-passive\">active/passive section</link> of this guide."
+"distribution of virtual routers across multiple nodes. The following options"
+" are available to make a router highly available:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml14(para)
+msgid ""
+"Automatic L3 agent failover for routers via the <placeholder-1/> "
+"configuration option in <filename>/etc/neutron/neutron.conf</filename>."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml19(para)
+msgid ""
+"Use Layer 3 High Availability with VRRP. The following configuration options"
+" need to be set in <filename>/etc/neutron/neutron.conf</filename> to enable "
+"it:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml28(th)
+msgid "Option"
+msgstr "オプション"
+
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml29(th)
+msgid "Value to set"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml30(th)
+msgid "Description"
+msgstr "説明"
+
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml36(para)
+msgid "l3_ha"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml42(para)
+msgid "All routers will be highly available by default."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml47(para)
+msgid "max_l3_agents_per_router"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml50(para)
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml63(para)
+msgid "2"
+msgstr "2"
+
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml53(para)
+msgid ""
+"Maximum number of network nodes to be used for the HA router. The value can "
+"be larger than 2 but needs to be at least 2."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml60(para)
+msgid "min_l3_agents_per_router"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml66(para)
+msgid ""
+"Minimum number of network nodes to be used for the HA router. A new router "
+"creation will fail unless there are at least <placeholder-1/> network nodes "
+"available. The value should not be less than 2."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml76(para)
+msgid ""
+"Using the active/passive solution to run the Neutron L3 agent in failover "
+"mode with <application>Pacemaker</application>. See the <link linkend=\"ha-"
+"using-active-passive\">active/passive section</link> of this guide."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_metadata_agent.xml7(title)
@@ -1807,7 +1870,7 @@ msgstr "すべてのOpenStack設定ファイルは、仮想IPアドレスを参�
 msgid ""
 "The monitor check is quite simple since it just establishes a TCP connection"
 " to the API port. Comparing to the active/passive mode using "
-"<application>Corosync</application> and resources agents, we don't check if "
+"<application>Corosync</application> and resource agents, we don't check if "
 "the service is actually running. That's why all OpenStack API services "
 "should be monitored by another tool, for example "
 "<application>Nagios</application>."
@@ -1819,10 +1882,10 @@ msgstr "スケジューラー"
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml39(para)
 msgid ""
-"OpenStack schedulers are used to determine how to dispatch compute, network "
-"and volume requests. The most common setup is to use RabbitMQ as messaging "
-"system. Those services are connected to the messaging backend and can scale-"
-"out:"
+"OpenStack schedulers are used to determine how to dispatch compute, network,"
+" and volume requests. The most common setup is to use RabbitMQ as a "
+"messaging system. Those services are connected to the messaging backend and "
+"can scale-out:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml45(systemitem)
