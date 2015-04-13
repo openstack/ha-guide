@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-10 06:00+0000\n"
+"POT-Creation-Date: 2015-04-13 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1242,7 +1242,7 @@ msgid "API services"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:10(para)
-msgid "All OpenStack projects have an API service for controlling all the resources in the Cloud. In active/active mode, the most common setup is to scale-out these services on at least two nodes and use load balancing and a virtual IP address (with <application>HAProxy</application> and <application>Keepalived</application> in this setup)."
+msgid "All OpenStack projects have an API service for controlling all the resources in the Cloud. In active/active mode, the most common setup is to scale out these services on at least two nodes and to use load balancing and a virtual IP address (with <application>HAProxy</application> and <application>Keepalived</application> in this setup)."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:15(para)
@@ -1258,7 +1258,7 @@ msgid "All OpenStack configuration files should refer to virtual IP addresses."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:29(para)
-msgid "The monitor check is quite simple since it just establishes a TCP connection to the API port. Comparing to the active/passive mode using <application>Corosync</application> and resource agents, we don't check if the service is actually running. That's why all OpenStack API services should be monitored by another tool, for example <application>Nagios</application>."
+msgid "The monitor check is quite simple since it just establishes a TCP connection to the API port. Comparing to the active/passive mode using <application>Corosync</application> and resource agents, we do not check if the service is actually running. That is why all OpenStack API services should be monitored by another tool, for example <application>Nagios</application>."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:38(title)
@@ -1266,7 +1266,7 @@ msgid "Schedulers"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:39(para)
-msgid "OpenStack schedulers are used to determine how to dispatch compute, network, and volume requests. The most common setup is to use RabbitMQ as a messaging system. Those services are connected to the messaging backend and can scale-out:"
+msgid "OpenStack schedulers are used to determine how to dispatch compute, network, and volume requests. The most common setup is to use RabbitMQ as a messaging system. Those services are connected to the messaging back end and can scale out:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:45(systemitem)
