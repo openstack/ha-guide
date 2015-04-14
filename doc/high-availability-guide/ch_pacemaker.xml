@@ -22,7 +22,7 @@
     configuration uses existing native Pacemaker RAs (such as those
     managing MySQL databases or virtual IP addresses), existing third-party
     RAs (such as for RabbitMQ), and native OpenStack RAs (such as those
-    managing the OpenStack Identity and Image Services).</para>
+    managing the OpenStack Identity and Image services).</para>
   <xi:include href="pacemaker/section_install_packages.xml"/>
   <xi:include href="pacemaker/section_set_up_corosync.xml"/>
   <xi:include href="pacemaker/section_starting_corosync.xml"/>
