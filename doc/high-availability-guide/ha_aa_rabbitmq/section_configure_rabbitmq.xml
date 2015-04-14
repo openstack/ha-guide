@@ -22,17 +22,17 @@
   <screen><prompt>#</prompt> <userinput>scp /var/lib/rabbitmq/.erlang.cookie \
 root@<replaceable>NODE</replaceable>:/var/lib/rabbitmq/.erlang.cookie</userinput></screen>
   <para>On the target nodes ensure the correct owner, group, and permissions of the
-    <filename>.erlang.cookie</filename> file.</para>
+    <filename>.erlang.cookie</filename> file:</para>
   <screen><prompt>#</prompt> <userinput>chown rabbitmq:rabbitmq /var/lib/rabbitmq/.erlang.cookie</userinput>
 <prompt>#</prompt> <userinput>chmod 400 /var/lib/rabbitmq/.erlang.cookie</userinput></screen>
-  <para>Start RabbitMQ on all nodes and verify the nodes are running.</para>
+  <para>Start RabbitMQ on all nodes and verify the nodes are running:</para>
   <screen><prompt>#</prompt> <userinput>rabbitmqctl cluster_status</userinput>
 <computeroutput>Cluster status of node rabbit@<replaceable>NODE</replaceable>...
 [{nodes,[{disc,[rabbit@<replaceable>NODE</replaceable>]}]},
  {running_nodes,[rabbit@<replaceable>NODE</replaceable>]},
  {partitions,[]}]
 ...done.</computeroutput></screen>
-  <para>Run the following commands on all nodes except the first one.</para>
+  <para>Run the following commands on all nodes except the first one:</para>
   <screen><prompt>#</prompt> <userinput>rabbitmqctl stop_app</userinput>
 <computeroutput>Stopping node rabbit@<replaceable>NODE</replaceable>...
 ...done.</computeroutput>
@@ -49,7 +49,7 @@ root@<replaceable>NODE</replaceable>:/var/lib/rabbitmq/.erlang.cookie</userinput
   <para>To ensure that all queues, except those with auto-generated names, are
     mirrored across all running nodes it is necessary to set the policy key
     <literal>ha-mode</literal> to <literal>all</literal>. Run the following
-    command on one of the nodes.</para>
+    command on one of the nodes:</para>
   <screen><prompt>#</prompt> <userinput>rabbitmqctl set_policy ha-all '^(?!amq\.).*' '{"ha-mode": "all"}'</userinput></screen>
   <note>
     <para>More information about <link xlink:href="http://www.rabbitmq.com/ha.html">
