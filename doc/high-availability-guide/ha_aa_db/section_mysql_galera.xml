@@ -20,7 +20,7 @@
     <listitem>
         <para>
 Setup the repository for Ubuntu 14.04 "trusty" (most recent).
-Install the software properties, the key and the repository.
+Install the software properties, the key, and the repository:
         </para>
         <screen><prompt>#</prompt> <userinput>apt-get install software-properties-common</userinput>
 <prompt>#</prompt> <userinput>apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb94</userinput>
@@ -104,11 +104,11 @@ wsrep_node_name="<replaceable>NODE_NAME</replaceable>"
 
   <para>
 For the next step create a back-up file of the <filename>debian.cnf</filename> file in <filename>/etc/mysql</filename> on all database servers.
-Should something go wrong just copy the backup file back.
+Should something go wrong just copy the back-up file back.
   </para>
     <screen><prompt>#</prompt> <userinput>cp debian.cnf debian.cnf.old</userinput></screen>
     <para>
-    Make sure you have SSH root access on the other servers. From the primary database server, copy the <filename>debian.cnf</filename> to all other servers.
+    Make sure you have SSH root access on the other servers. From the primary database server, copy the <filename>debian.cnf</filename> file to all other servers by running the following command:
     </para>
     <screen><prompt>#</prompt> <userinput>scp /etc/mysql/debian.cnf root@IP-address:/etc/mysql</userinput></screen>
     <para>After the copy make sure that all files are the same, you can do this by using the following command:</para>
@@ -129,8 +129,8 @@ socket = /var/run/mysqld/mysqld.sock
 basedir = /usr
 </computeroutput></screen>
 <para>
-Run the following query on every server except the primary node. This will make sure that you can restart the database again.
-Do not forget to add the password from the <filename>debian.cnf</filename>.
+The below query should be run on every server except the primary node. This will make sure that you can restart the database again.
+Do not forget to add the password from the <filename>debian.cnf</filename>. To do this, run:
 </para>
     <screen><prompt>mysql&gt;</prompt> <userinput>GRANT SHUTDOWN ON *.* TO ‘debian-sys-maint’@’localhost' IDENTIFIED BY '&lt;debian.cnf password&gt;';</userinput>
 <prompt>mysql&gt;</prompt> <userinput>GRANT SELECT ON `mysql`.`user` TO ‘debian-sys-maint’@’localhost' IDENTIFIED BY '&lt;debian.cnf password&gt;';</userinput></screen>
