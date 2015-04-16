@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-04-11 11:01+0000\n"
-"PO-Revision-Date: 2015-04-10 10:18+0000\n"
+"POT-Creation-Date: 2015-04-14 07:12+0000\n"
+"PO-Revision-Date: 2015-04-15 07:56+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -2434,16 +2434,16 @@ msgstr "NODE"
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml24(para)
 msgid ""
 "On the target nodes ensure the correct owner, group, and permissions of the "
-"<filename>.erlang.cookie</filename> file."
+"<filename>.erlang.cookie</filename> file:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml28(para)
-msgid "Start RabbitMQ on all nodes and verify the nodes are running."
-msgstr "すべてのノードで RabbitMQ を起動し、ノードが実行中であることを確認します。"
+msgid "Start RabbitMQ on all nodes and verify the nodes are running:"
+msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml35(para)
-msgid "Run the following commands on all nodes except the first one."
-msgstr "最初のノード以外のすべてのノードで、以下のコマンドを実行します。"
+msgid "Run the following commands on all nodes except the first one:"
+msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml43(para)
 msgid "To verify the cluster status:"
@@ -2460,7 +2460,7 @@ msgid ""
 "To ensure that all queues, except those with auto-generated names, are "
 "mirrored across all running nodes it is necessary to set the policy key "
 "<literal>ha-mode</literal> to <literal>all</literal>. Run the following "
-"command on one of the nodes."
+"command on one of the nodes:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml55(para)

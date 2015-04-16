@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-04-11 11:01+0000\n"
-"PO-Revision-Date: 2015-04-13 02:00+0000\n"
-"Last-Translator: Alfred <alfredhuang211@qq.com>\n"
+"POT-Creation-Date: 2015-04-14 07:12+0000\n"
+"PO-Revision-Date: 2015-04-15 07:56+0000\n"
+"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2436,16 +2436,16 @@ msgstr "NODE"
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml24(para)
 msgid ""
 "On the target nodes ensure the correct owner, group, and permissions of the "
-"<filename>.erlang.cookie</filename> file."
-msgstr "复制时注意确认 <filename>.erlang.cookie</filename> 文件的属主、属组以及文件权限。"
+"<filename>.erlang.cookie</filename> file:"
+msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml28(para)
-msgid "Start RabbitMQ on all nodes and verify the nodes are running."
-msgstr "在所有节点上重新启动 RabbitMQ 服务，确保在所有节点上都能正常启动。"
+msgid "Start RabbitMQ on all nodes and verify the nodes are running:"
+msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml35(para)
-msgid "Run the following commands on all nodes except the first one."
-msgstr "在除第一台节点之外的其它节点服务器上运行下面的命令。"
+msgid "Run the following commands on all nodes except the first one:"
+msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml43(para)
 msgid "To verify the cluster status:"
@@ -2462,8 +2462,8 @@ msgid ""
 "To ensure that all queues, except those with auto-generated names, are "
 "mirrored across all running nodes it is necessary to set the policy key "
 "<literal>ha-mode</literal> to <literal>all</literal>. Run the following "
-"command on one of the nodes."
-msgstr "为了保证除了自动生动的队列之外的其它队列能在所有节点上实现镜像，必须将 RabbitMQ 策略配置项 <literal>ha-mode</literal> 设置为 <literal>all</literal>。在集群中任何一台节点服务器上执行下面的命令。"
+"command on one of the nodes:"
+msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml55(para)
 msgid ""

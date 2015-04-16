@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-13 06:00+0000\n"
+"POT-Creation-Date: 2015-04-16 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1646,15 +1646,15 @@ msgid "NODE"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:24(para)
-msgid "On the target nodes ensure the correct owner, group, and permissions of the <filename>.erlang.cookie</filename> file."
+msgid "On the target nodes ensure the correct owner, group, and permissions of the <filename>.erlang.cookie</filename> file:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:28(para)
-msgid "Start RabbitMQ on all nodes and verify the nodes are running."
+msgid "Start RabbitMQ on all nodes and verify the nodes are running:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:35(para)
-msgid "Run the following commands on all nodes except the first one."
+msgid "Run the following commands on all nodes except the first one:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:43(para)
@@ -1666,7 +1666,7 @@ msgid "If the cluster is working, you can now proceed to creating users and pass
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:49(para)
-msgid "To ensure that all queues, except those with auto-generated names, are mirrored across all running nodes it is necessary to set the policy key <literal>ha-mode</literal> to <literal>all</literal>. Run the following command on one of the nodes."
+msgid "To ensure that all queues, except those with auto-generated names, are mirrored across all running nodes it is necessary to set the policy key <literal>ha-mode</literal> to <literal>all</literal>. Run the following command on one of the nodes:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_configure_rabbitmq.xml:55(para)
