@@ -5,9 +5,9 @@
   version="5.0"
   xml:id="_run_neutron_lbaas_agent">
   <title>Run neutron LBaaS agent</title>
-  <para>Currently there's no native feature to make the LBaaS agent highly
-     available using the default plugin HAProxy. A common way to make
-     HAProxy highly available is to use VRRP (Virtual Router Redundancy
-     Protocol), unfortunately this is not yet implemented in the LBaaS
-     HAProxy plugin.</para>
+  <para>Currently, there's no native feature to make the LBaaS agent highly
+     available using the default plug-in HAProxy. A common way to make
+     HAProxy highly available is to use the VRRP (Virtual Router Redundancy
+     Protocol). Unfortunately, this is not yet implemented in the LBaaS
+     HAProxy plug-in.</para>
 </section>
