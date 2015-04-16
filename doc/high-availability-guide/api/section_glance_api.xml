@@ -5,15 +5,15 @@
   version="5.0"
   xml:id="s-glance-api">
   <title>Highly available OpenStack Image API</title>
-  <para>OpenStack Image Service offers a service for discovering, registering,
+  <para>The OpenStack Image service offers a service for discovering, registering,
     and retrieving virtual machine images. To make the OpenStack Image API
     service highly available in active / passive mode, you must:</para>
   <itemizedlist>
     <listitem>
-      <para>Configure OpenStack Image to listen on the VIP address.</para>
+      <para>Configure the OpenStack Image service to listen on the VIP address.</para>
     </listitem>
     <listitem>
-      <para>Manage OpenStack Image API daemon with the Pacemaker cluster
+      <para>Manage the OpenStack Image API daemon with the Pacemaker cluster
         manager.</para>
     </listitem>
     <listitem>
@@ -21,7 +21,7 @@
     </listitem>
   </itemizedlist>
   <note>
-    <para>Here is the <link xlink:href="http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_glance.html">documentation</link>
+    <para>Here is the <link xlink:href="http://docs.openstack.org/juno/install-guide/install/apt/content/ch_glance.html">documentation</link>
       for installing the OpenStack Image API service.</para>
   </note>
   <section xml:id="_add_openstack_image_api_resource_to_pacemaker">
@@ -31,7 +31,7 @@
     <screen><prompt>#</prompt> <userinput>cd /usr/lib/ocf/resource.d/openstack</userinput>
 <prompt>#</prompt> <userinput>wget https://raw.github.com/madkiss/openstack-resource-agents/master/ocf/glance-api</userinput>
 <prompt>#</prompt> <userinput>chmod a+rx *</userinput></screen>
-    <para>You can now add the Pacemaker configuration for OpenStack Image API
+    <para>You can now add the Pacemaker configuration for the OpenStack Image API
       resource. Connect to the Pacemaker cluster with <literal>crm
       configure</literal>, and add the following cluster resources:</para>
     <programlisting>primitive p_glance-api ocf:openstack:glance-api \
@@ -56,7 +56,7 @@ op monitor interval="30s" timeout="30s"</programlisting>
       dependent resources, on one of your nodes.</para>
   </section>
   <section xml:id="_configure_openstack_image_service_api">
-    <title>Configure OpenStack Image Service API</title>
+    <title>Configure OpenStack Image service API</title>
     <para>Edit <filename>/etc/glance/glance-api.conf</filename>:</para>
     <programlisting language="ini"># We have to use MySQL connection to store data:
 sql_connection=mysql://glance:password@192.168.42.101/glance
@@ -64,7 +64,7 @@ sql_connection=mysql://glance:password@192.168.42.101/glance
 # We bind OpenStack Image API to the VIP:
 bind_host = 192.168.42.103
 
-# Connect to OpenStack Image Registry service:
+# Connect to OpenStack Image registry service:
 registry_host = 192.168.42.103
 
 # We send notifications to High Available RabbitMQ:
