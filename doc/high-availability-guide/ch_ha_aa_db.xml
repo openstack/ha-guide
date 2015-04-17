@@ -8,7 +8,7 @@
     <para>The first step is installing the database that sits at the heart of
       the cluster. When we talk about High Availability, we talk about several
       databases (for redundancy) and a means to keep them synchronized. In
-      this case, we must choose the <application>MySQL</application> database,
+      this case, we choose the <application>MySQL</application> database,
       along with <application>Galera</application> for synchronous multi-master
       replication.</para>
     <note>
@@ -25,4 +25,5 @@
         has its own replication, or another database HA option.</para>
     </note>
   <xi:include href="ha_aa_db/section_mysql_galera.xml"/>
+  <xi:include href="ha_aa_db/section_mariadb_galera_rh.xml"/>
 </chapter>
