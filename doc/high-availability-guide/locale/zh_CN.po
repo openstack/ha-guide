@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-04-14 07:12+0000\n"
-"PO-Revision-Date: 2015-04-15 07:56+0000\n"
+"POT-Creation-Date: 2015-04-16 14:28+0000\n"
+"PO-Revision-Date: 2015-04-16 14:28+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -94,8 +94,8 @@ msgid ""
 " Pacemaker RAs (such as those managing MySQL databases or virtual IP "
 "addresses), existing third-party RAs (such as for RabbitMQ), and native "
 "OpenStack RAs (such as those managing the OpenStack Identity and Image "
-"Services)."
-msgstr "Pacemaker 通过资源代理程序（默认提供了 70 多种）和应用程序进行交互，在 Pacemaker 集群中应用第三方资源代理程序也非常容易。OpenStack 高可用配置中使用了 Pacemaker 自带的资源代理程序（如 MySQL 数据库服务、虚拟 IP 地址等）、已有的第三方资源代理程序（如 RabbitMQ 服务）以及 OpenStack 资源代理程序（如 OpenStack 身份认证服务、磁盘镜像服务）。"
+"services)."
+msgstr ""
 
 #: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml7(title)
 msgid "RabbitMQ"
@@ -550,8 +550,8 @@ msgstr "为已经加上 wresp 补丁的 MySQL 数据库安装 Galera ："
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml21(para)
 msgid ""
 "Setup the repository for Ubuntu 14.04 \"trusty\" (most recent). Install the "
-"software properties, the key and the repository."
-msgstr "为 Ubuntu 14.04 \"trusty\" (最常用)设置源。安装软件属性，密钥及源。"
+"software properties, the key, and the repository:"
+msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml30(para)
 msgid ""
@@ -647,16 +647,16 @@ msgstr "在某些环境中，可能还需要对 NAT 防火墙进行配置，以�
 msgid ""
 "For the next step create a back-up file of the "
 "<filename>debian.cnf</filename> file in <filename>/etc/mysql</filename> on "
-"all database servers. Should something go wrong just copy the backup file "
+"all database servers. Should something go wrong just copy the back-up file "
 "back."
-msgstr "下一步执行之前创建所有数据库服务器的<filename>debian.cnf</filename>文件的备份文件，位于<filename>/etc/mysql</filename>。当有什么错误发生时，仅需拷贝备份文件回来。"
+msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml110(para)
 msgid ""
 "Make sure you have SSH root access on the other servers. From the primary "
-"database server, copy the <filename>debian.cnf</filename> to all other "
-"servers."
-msgstr "确保您拥有其他服务器上的SSH root权限。从组数据库服务器，拷贝<filename>debian.cnf</filename>到其他所有服务器上。"
+"database server, copy the <filename>debian.cnf</filename> file to all other "
+"servers by running the following command:"
+msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml114(para)
 msgid ""
@@ -674,10 +674,10 @@ msgstr "结果将如下所示："
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml131(para)
 msgid ""
-"Run the following query on every server except the primary node. This will "
-"make sure that you can restart the database again. Do not forget to add the "
-"password from the <filename>debian.cnf</filename>."
-msgstr "在除了主节点的服务器上运行如下查询。这将确保您能再次重启服务器。不要忘记添加<filename>debian.cnf</filename>中的密码。"
+"The below query should be run on every server except the primary node. This "
+"will make sure that you can restart the database again. Do not forget to add"
+" the password from the <filename>debian.cnf</filename>. To do this, run:"
+msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml137(para)
 msgid ""
@@ -805,11 +805,11 @@ msgstr "运行 neutron LBaas 代理服务"
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_lbaas_agent.xml8(para)
 msgid ""
-"Currently there's no native feature to make the LBaaS agent highly available"
-" using the default plugin HAProxy. A common way to make HAProxy highly "
-"available is to use VRRP (Virtual Router Redundancy Protocol), unfortunately"
-" this is not yet implemented in the LBaaS HAProxy plugin."
-msgstr "目前 Neutron LBaaS 代理服务是无法通过其自带的 HAProxy 插件 实现高可用的。实现 HAProxy 高可用常见的方案是使用 VRRP （Virtual Router Redundancy Protocol ，虚拟路由冗余协议），不过 LBaaS HAProxy 插件目前还不支持该协议。"
+"Currently, there's no native feature to make the LBaaS agent highly "
+"available using the default plug-in HAProxy. A common way to make HAProxy "
+"highly available is to use the VRRP (Virtual Router Redundancy Protocol). "
+"Unfortunately, this is not yet implemented in the LBaaS HAProxy plug-in."
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml7(title)
 msgid "Highly available Block Storage API"
@@ -847,7 +847,7 @@ msgstr "在 Pacemaker 中添加 OpenStack 块设备存储服务资源"
 #: ./doc/high-availability-guide/api/section_cinder_api.xml29(para)
 #: ./doc/high-availability-guide/api/section_glance_api.xml29(para)
 #: ./doc/high-availability-guide/api/section_neutron_server.xml30(para)
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml25(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml26(para)
 #: ./doc/high-availability-guide/api/section_keystone.xml29(para)
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml15(para)
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml19(para)
@@ -864,7 +864,7 @@ msgstr "现在可以在 Pacemaker 中填加 OpenStack 块设备存储服务相�
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml41(para)
 #: ./doc/high-availability-guide/api/section_glance_api.xml41(para)
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml37(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml38(para)
 #: ./doc/high-availability-guide/controller/section_rabbitmq.xml165(para)
 #: ./doc/high-availability-guide/controller/section_mysql.xml182(para)
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml26(para)
@@ -940,18 +940,19 @@ msgstr "高可用 OpenStack 镜像 API 服务"
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml8(para)
 msgid ""
-"OpenStack Image Service offers a service for discovering, registering, and "
-"retrieving virtual machine images. To make the OpenStack Image API service "
-"highly available in active / passive mode, you must:"
-msgstr "OpenStack 镜像服务用于发现、登记以及获取虚拟机镜像。实现 OpenStack 镜像服务主/从模式的高可用包括以下步骤："
+"The OpenStack Image service offers a service for discovering, registering, "
+"and retrieving virtual machine images. To make the OpenStack Image API "
+"service highly available in active / passive mode, you must:"
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml13(para)
-msgid "Configure OpenStack Image to listen on the VIP address."
-msgstr "配置 OpenStack 镜像服务监听虚拟 IP 地址，"
+msgid "Configure the OpenStack Image service to listen on the VIP address."
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml16(para)
-msgid "Manage OpenStack Image API daemon with the Pacemaker cluster manager."
-msgstr "使用 Pacemaker 管理 OpenStack 镜像服务。"
+msgid ""
+"Manage the OpenStack Image API daemon with the Pacemaker cluster manager."
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml20(para)
 #: ./doc/high-availability-guide/api/section_keystone.xml20(para)
@@ -960,10 +961,10 @@ msgstr "配置 OpenStack 服务使用该虚拟 IP 地址。"
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml24(para)
 msgid ""
-"Here is the <link href=\"http://docs.openstack.org/trunk/install-"
+"Here is the <link href=\"http://docs.openstack.org/juno/install-"
 "guide/install/apt/content/ch_glance.html\">documentation</link> for "
 "installing the OpenStack Image API service."
-msgstr "参见 OpenStack 镜像服务的安装<link href=\"http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_glance.html\"> 文档 </link>。"
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml28(title)
 msgid "Add OpenStack Image API resource to Pacemaker"
@@ -971,10 +972,10 @@ msgstr "在 Pacemaker 中添加 OpenStack 镜像服务资源"
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml34(para)
 msgid ""
-"You can now add the Pacemaker configuration for OpenStack Image API "
+"You can now add the Pacemaker configuration for the OpenStack Image API "
 "resource. Connect to the Pacemaker cluster with <literal>crm "
 "configure</literal>, and add the following cluster resources:"
-msgstr "现在可以在 Pacemaker 中填加 OpenStack 镜像服务相关资源。执行 <literal>crm configure</literal> 命令进入 Pacemaker 配置菜单，然后加入下列集群资源："
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml44(para)
 msgid ""
@@ -1000,8 +1001,8 @@ msgid ""
 msgstr "配置完成后，在 <literal>crm configure</literal>  菜单下输入 <literal>commit</literal> 提交所有配置变更。随后 Pacemaker 会其中一台节点服务器上启动OpenStack 镜像服务（包括所有相关资源）。"
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml59(title)
-msgid "Configure OpenStack Image Service API"
-msgstr "配置 OpenStack 镜像服务"
+msgid "Configure OpenStack Image service API"
+msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml60(para)
 msgid "Edit <filename>/etc/glance/glance-api.conf</filename>:"
@@ -1160,18 +1161,19 @@ msgstr "Telemtry （ ceilometer ）是 OpenStack 系统中的计量和监控服�
 #: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml12(para)
 msgid ""
 "Due to limitations of a polling model, a single instance of this agent can "
-"be polling a given list of meters. In this setup, we install this service on"
-" the API nodes also in the active / passive mode."
-msgstr "由于 “polling” 模式的限制，只能运行一个监控中心来收集指定的数据。在示例中，监控中心运行在 API 节点服务器上，实现的高可用也是主/从模式。"
+"be polling a given list of meters, unless workload partitioning has been "
+"configured for multiple central agents. In this setup, we install this "
+"service on the API nodes also in the active / passive mode."
+msgstr ""
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml16(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml17(para)
 msgid ""
 "Making the Telemetry central agent service highly available in active / "
 "passive mode involves managing its daemon with the Pacemaker cluster "
 "manager."
 msgstr "Telemetry 监控中心的主/从模式高可用是通过 Pacemaker 管理其后台守护进程实现。"
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml20(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml21(para)
 msgid ""
 "You will find at <link "
 "href=\"http://docs.openstack.org/developer/ceilometer/install/manual.html"
@@ -1179,24 +1181,24 @@ msgid ""
 "Telemetry central agent."
 msgstr "参见 Telemtry 服务监控中心的安装<link href=\"http://docs.openstack.org/developer/ceilometer/install/manual.html#installing-the-central-agent\"> 文档 </link>。"
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml24(title)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml25(title)
 msgid "Add the Telemetry central agent resource to Pacemaker"
 msgstr "在 Pacemaker 中添加 Telemetry 监控中心资源"
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml29(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml30(para)
 msgid ""
 "You may then proceed with adding the Pacemaker configuration for the "
 "Telemetry central agent resource. Connect to the Pacemaker cluster with "
 "<literal>crm configure</literal>, and add the following cluster resources:"
 msgstr "现在可以在 Pacemaker 中填加 Telemetry 监中心相关资源。执行 <literal>crm configure</literal> 命令进入 Pacemaker 配置菜单，然后加入下列集群资源："
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml40(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml41(para)
 msgid ""
 "<literal>p_ceilometer-agent-central</literal>, a resource for managing the "
 "Ceilometer Central Agent service"
 msgstr "<literal>p_ceilometer-agent-central</literal>, 用来管理 Ceilometer 监控代理服务的资源 "
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml44(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml45(para)
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml37(para)
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml37(para)
 msgid ""
@@ -1205,7 +1207,7 @@ msgid ""
 "changes as required."
 msgstr "<literal>crm configure</literal> 支持批量输入，因此可以拷贝粘贴上面到现有的 Pacemaker 配置中，然后根据需要再作修改。"
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml47(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml48(para)
 msgid ""
 "Once completed, commit your configuration changes by entering "
 "<literal>commit</literal> from the <literal>crm configure</literal> menu. "
@@ -1213,11 +1215,11 @@ msgid ""
 "dependent resources, on one of your nodes."
 msgstr "配置完成后，在 <literal>crm configure</literal>  菜单下输入 <literal>commit</literal> 提交所有配置变更。随后 Pacemaker 会其中一台节点服务器上启动 Telemetry 监控中心（包括所有相关资源）。"
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml53(title)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml54(title)
 msgid "Configure Telemetry central agent service"
 msgstr "配置 Telemetry 监中心"
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml54(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml55(para)
 msgid "Edit <filename>/etc/ceilometer/ceilometer.conf</filename>:"
 msgstr "编辑 <filename>/etc/ceilometer/ceilometer.conf</filename>："
 
@@ -1920,6 +1922,20 @@ msgid ""
 " configuring these services with multiple messaging servers."
 msgstr "请参阅  <link linkend=\"s-rabbitmq\">RabbitMQ 部分</link> 将 OpenStack 各组件配置为可同时使用多个消息队列服务器。"
 
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml67(title)
+msgid "Telemetry Central agent"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml68(para)
+msgid ""
+"The Telemetry Central agent can be configured to partition its polling "
+"workload between multiple agents, enabling high availability. Please refer "
+"to <link href=\"http://docs.openstack.org/admin-guide-cloud/content"
+"/section_telemetry-cetral-compute-agent-ha.html\"> this section</link> of "
+"the <citetitle>OpenStack Cloud Administrator Guide</citetitle> for the "
+"requirements and implementation details of this configuration."
+msgstr ""
+
 #: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml7(title)
 msgid "Start Pacemaker"
 msgstr "启动 Pacemaker"
@@ -2589,10 +2605,10 @@ msgstr "高可用 neutron DHCP 代理程序"
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml9(para)
 msgid ""
-"Neutron DHCP agent distributes IP addresses to the VMs with dnsmasq (by "
+"The neutron DHCP agent distributes IP addresses to the VMs with dnsmasq (by "
 "default). High availability for the DHCP agent is achieved by adopting "
 "Pacemaker."
-msgstr "Neutron DHCP 代理程序使用 dnsmasq （默认情况下）为虚拟机实例分配 IP 地址。Neutron DHCP 代理程序高可用也通过 Pacemaker 实现。"
+msgstr ""
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml13(para)
 msgid ""
@@ -2618,9 +2634,9 @@ msgstr "该配置会创建："
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml33(para)
 msgid ""
-"<literal>p_neutron-agent-dhcp</literal>, a resource for manage Neutron DHCP "
-"Agent service."
-msgstr "<literal>p_neutron-agent-dhcp</literal>资源，对 neutron DHCP 代理程序进行管理。"
+"<literal>p_neutron-agent-dhcp</literal>, a resource for managing the neutron"
+" DHCP Agent service."
+msgstr ""
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml40(para)
 msgid ""

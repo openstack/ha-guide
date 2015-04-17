@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-16 06:00+0000\n"
+"POT-Creation-Date: 2015-04-17 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,7 +62,7 @@ msgid "Pacemaker relies on the <link href=\"http://www.corosync.org\">Corosync</
 msgstr ""
 
 #: ./doc/high-availability-guide/ch_pacemaker.xml:19(para)
-msgid "Pacemaker interacts with applications through resource agents (RAs), of which it supports over 70 natively. Pacemaker can also easily use third-party RAs. An OpenStack high-availability configuration uses existing native Pacemaker RAs (such as those managing MySQL databases or virtual IP addresses), existing third-party RAs (such as for RabbitMQ), and native OpenStack RAs (such as those managing the OpenStack Identity and Image Services)."
+msgid "Pacemaker interacts with applications through resource agents (RAs), of which it supports over 70 natively. Pacemaker can also easily use third-party RAs. An OpenStack high-availability configuration uses existing native Pacemaker RAs (such as those managing MySQL databases or virtual IP addresses), existing third-party RAs (such as for RabbitMQ), and native OpenStack RAs (such as those managing the OpenStack Identity and Image services)."
 msgstr ""
 
 #: ./doc/high-availability-guide/ch_ha_aa_rabbitmq.xml:7(title)
@@ -382,7 +382,7 @@ msgid "Installing Galera through a MySQL version patched for wsrep:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:21(para)
-msgid "Setup the repository for Ubuntu 14.04 \"trusty\" (most recent). Install the software properties, the key and the repository."
+msgid "Setup the repository for Ubuntu 14.04 \"trusty\" (most recent). Install the software properties, the key, and the repository:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:30(para)
@@ -454,11 +454,11 @@ msgid "This might also mean configuring any NAT firewall between nodes to allow 
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:105(para)
-msgid "For the next step create a back-up file of the <filename>debian.cnf</filename> file in <filename>/etc/mysql</filename> on all database servers. Should something go wrong just copy the backup file back."
+msgid "For the next step create a back-up file of the <filename>debian.cnf</filename> file in <filename>/etc/mysql</filename> on all database servers. Should something go wrong just copy the back-up file back."
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:110(para)
-msgid "Make sure you have SSH root access on the other servers. From the primary database server, copy the <filename>debian.cnf</filename> to all other servers."
+msgid "Make sure you have SSH root access on the other servers. From the primary database server, copy the <filename>debian.cnf</filename> file to all other servers by running the following command:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:114(para)
@@ -474,7 +474,7 @@ msgid "The result will look like this:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:131(para)
-msgid "Run the following query on every server except the primary node. This will make sure that you can restart the database again. Do not forget to add the password from the <filename>debian.cnf</filename>."
+msgid "The below query should be run on every server except the primary node. This will make sure that you can restart the database again. Do not forget to add the password from the <filename>debian.cnf</filename>. To do this, run:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:137(para)
@@ -570,7 +570,7 @@ msgid "Run neutron LBaaS agent"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_lbaas_agent.xml:8(para)
-msgid "Currently there's no native feature to make the LBaaS agent highly available using the default plugin HAProxy. A common way to make HAProxy highly available is to use VRRP (Virtual Router Redundancy Protocol), unfortunately this is not yet implemented in the LBaaS HAProxy plugin."
+msgid "Currently, there's no native feature to make the LBaaS agent highly available using the default plug-in HAProxy. A common way to make HAProxy highly available is to use the VRRP (Virtual Router Redundancy Protocol). Unfortunately, this is not yet implemented in the LBaaS HAProxy plug-in."
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml:7(title)
@@ -601,7 +601,7 @@ msgstr ""
 msgid "Add Block Storage API resource to Pacemaker"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:29(para) ./doc/high-availability-guide/api/section_glance_api.xml:29(para) ./doc/high-availability-guide/api/section_neutron_server.xml:30(para) ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:25(para) ./doc/high-availability-guide/api/section_keystone.xml:29(para) ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml:15(para) ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml:19(para) ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml:19(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:29(para) ./doc/high-availability-guide/api/section_glance_api.xml:29(para) ./doc/high-availability-guide/api/section_neutron_server.xml:30(para) ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:26(para) ./doc/high-availability-guide/api/section_keystone.xml:29(para) ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml:15(para) ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml:19(para) ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml:19(para)
 msgid "First of all, you need to download the resource agent to your system:"
 msgstr ""
 
@@ -609,7 +609,7 @@ msgstr ""
 msgid "You can now add the Pacemaker configuration for Block Storage API resource. Connect to the Pacemaker cluster with <literal>crm configure</literal>, and add the following cluster resources:"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_cinder_api.xml:41(para) ./doc/high-availability-guide/api/section_glance_api.xml:41(para) ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:37(para) ./doc/high-availability-guide/controller/section_rabbitmq.xml:165(para) ./doc/high-availability-guide/controller/section_mysql.xml:182(para) ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml:26(para) ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml:30(para)
+#: ./doc/high-availability-guide/api/section_cinder_api.xml:41(para) ./doc/high-availability-guide/api/section_glance_api.xml:41(para) ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:38(para) ./doc/high-availability-guide/controller/section_rabbitmq.xml:165(para) ./doc/high-availability-guide/controller/section_mysql.xml:182(para) ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml:26(para) ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml:30(para)
 msgid "This configuration creates"
 msgstr ""
 
@@ -662,15 +662,15 @@ msgid "Highly available OpenStack Image API"
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml:8(para)
-msgid "OpenStack Image Service offers a service for discovering, registering, and retrieving virtual machine images. To make the OpenStack Image API service highly available in active / passive mode, you must:"
+msgid "The OpenStack Image service offers a service for discovering, registering, and retrieving virtual machine images. To make the OpenStack Image API service highly available in active / passive mode, you must:"
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml:13(para)
-msgid "Configure OpenStack Image to listen on the VIP address."
+msgid "Configure the OpenStack Image service to listen on the VIP address."
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml:16(para)
-msgid "Manage OpenStack Image API daemon with the Pacemaker cluster manager."
+msgid "Manage the OpenStack Image API daemon with the Pacemaker cluster manager."
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml:20(para) ./doc/high-availability-guide/api/section_keystone.xml:20(para)
@@ -678,7 +678,7 @@ msgid "Configure OpenStack services to use this IP address."
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml:24(para)
-msgid "Here is the <link href=\"http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_glance.html\">documentation</link> for installing the OpenStack Image API service."
+msgid "Here is the <link href=\"http://docs.openstack.org/juno/install-guide/install/apt/content/ch_glance.html\">documentation</link> for installing the OpenStack Image API service."
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml:28(title)
@@ -686,7 +686,7 @@ msgid "Add OpenStack Image API resource to Pacemaker"
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml:34(para)
-msgid "You can now add the Pacemaker configuration for OpenStack Image API resource. Connect to the Pacemaker cluster with <literal>crm configure</literal>, and add the following cluster resources:"
+msgid "You can now add the Pacemaker configuration for the OpenStack Image API resource. Connect to the Pacemaker cluster with <literal>crm configure</literal>, and add the following cluster resources:"
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml:44(para)
@@ -702,7 +702,7 @@ msgid "Once completed, commit your configuration changes by entering <literal>co
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml:59(title)
-msgid "Configure OpenStack Image Service API"
+msgid "Configure OpenStack Image service API"
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml:60(para)
@@ -810,42 +810,42 @@ msgid "Telemetry (ceilometer) is the metering and monitoring service in OpenStac
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:12(para)
-msgid "Due to limitations of a polling model, a single instance of this agent can be polling a given list of meters. In this setup, we install this service on the API nodes also in the active / passive mode."
+msgid "Due to limitations of a polling model, a single instance of this agent can be polling a given list of meters, unless workload partitioning has been configured for multiple central agents. In this setup, we install this service on the API nodes also in the active / passive mode."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:16(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:17(para)
 msgid "Making the Telemetry central agent service highly available in active / passive mode involves managing its daemon with the Pacemaker cluster manager."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:20(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:21(para)
 msgid "You will find at <link href=\"http://docs.openstack.org/developer/ceilometer/install/manual.html#installing-the-central-agent\">this page</link> the process to install the Telemetry central agent."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:24(title)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:25(title)
 msgid "Add the Telemetry central agent resource to Pacemaker"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:29(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:30(para)
 msgid "You may then proceed with adding the Pacemaker configuration for the Telemetry central agent resource. Connect to the Pacemaker cluster with <literal>crm configure</literal>, and add the following cluster resources:"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:40(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:41(para)
 msgid "<literal>p_ceilometer-agent-central</literal>, a resource for managing the Ceilometer Central Agent service"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:44(para) ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml:37(para) ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml:37(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:45(para) ./doc/high-availability-guide/network/section_highly_available_neutron_l3_agent.xml:37(para) ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml:37(para)
 msgid "<literal>crm configure</literal> supports batch input, so you may copy and paste the above into your live pacemaker configuration, and then make changes as required."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:47(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:48(para)
 msgid "Once completed, commit your configuration changes by entering <literal>commit</literal> from the <literal>crm configure</literal> menu. Pacemaker will then start the Ceilometer Central Agent service, and its dependent resources, on one of your nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:53(title)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:54(title)
 msgid "Configure Telemetry central agent service"
 msgstr ""
 
-#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:54(para)
+#: ./doc/high-availability-guide/api/section_ceilometer_agent_central.xml:55(para)
 msgid "Edit <filename>/etc/ceilometer/ceilometer.conf</filename>:"
 msgstr ""
 
@@ -1295,6 +1295,14 @@ msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:63(para)
 msgid "Please refer to the <link linkend=\"s-rabbitmq\">RabbitMQ section</link> for configuring these services with multiple messaging servers."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:67(title)
+msgid "Telemetry Central agent"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_controllers/section_run_openstack_api_and_schedulers.xml:68(para)
+msgid "The Telemetry Central agent can be configured to partition its polling workload between multiple agents, enabling high availability. Please refer to <link href=\"http://docs.openstack.org/admin-guide-cloud/content/section_telemetry-cetral-compute-agent-ha.html\"> this section</link> of the <citetitle>OpenStack Cloud Administrator Guide</citetitle> for the requirements and implementation details of this configuration."
 msgstr ""
 
 #: ./doc/high-availability-guide/pacemaker/section_start_pacemaker.xml:7(title)
@@ -1750,7 +1758,7 @@ msgid "Highly available neutron DHCP agent"
 msgstr ""
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml:9(para)
-msgid "Neutron DHCP agent distributes IP addresses to the VMs with dnsmasq (by default). High availability for the DHCP agent is achieved by adopting Pacemaker."
+msgid "The neutron DHCP agent distributes IP addresses to the VMs with dnsmasq (by default). High availability for the DHCP agent is achieved by adopting Pacemaker."
 msgstr ""
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml:13(para)
@@ -1770,7 +1778,7 @@ msgid "This configuration creates:"
 msgstr ""
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml:33(para)
-msgid "<literal>p_neutron-agent-dhcp</literal>, a resource for manage Neutron DHCP Agent service."
+msgid "<literal>p_neutron-agent-dhcp</literal>, a resource for managing the neutron DHCP Agent service."
 msgstr ""
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_dhcp_agent.xml:40(para)
