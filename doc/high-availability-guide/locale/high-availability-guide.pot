@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-17 06:00+0000\n"
+"POT-Creation-Date: 2015-04-18 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -346,7 +346,7 @@ msgid "Database"
 msgstr ""
 
 #: ./doc/high-availability-guide/ch_ha_aa_db.xml:8(para)
-msgid "The first step is installing the database that sits at the heart of the cluster. When we talk about High Availability, we talk about several databases (for redundancy) and a means to keep them synchronized. In this case, we must choose the <application>MySQL</application> database, along with <application>Galera</application> for synchronous multi-master replication."
+msgid "The first step is installing the database that sits at the heart of the cluster. When we talk about High Availability, we talk about several databases (for redundancy) and a means to keep them synchronized. In this case, we choose the <application>MySQL</application> database, along with <application>Galera</application> for synchronous multi-master replication."
 msgstr ""
 
 #: ./doc/high-availability-guide/ch_ha_aa_db.xml:15(para)
@@ -413,11 +413,11 @@ msgstr ""
 msgid "Paste the following lines in this file:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:67(replaceable) ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:69(replaceable)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:67(replaceable) ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:69(replaceable) ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:101(replaceable)
 msgid "PRIMARY_NODE_IP"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:67(replaceable)
+#: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:67(replaceable) ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:101(replaceable)
 msgid "SECONDARY_NODE_IP"
 msgstr ""
 
@@ -487,6 +487,102 @@ msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_db/section_mysql_galera.xml:141(para)
 msgid "Verify the wsrep replication by logging in as root under mysql and running the following command:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:7(title)
+msgid "MariaDB with Galera (Red Hat-based platforms)"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:8(para)
+msgid "MariaDB with Galera provides synchronous database replication in an active-active, multi-master environment. High availability for the data itself is managed internally by Galera, while access availability will be managed by HAProxy."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:12(para)
+msgid "This guide assumes that three nodes are used to form the MariaDB Galera cluster. Unless otherwise specified, all commands need to be executed on all cluster nodes."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:17(title)
+msgid "To install MariaDB with Galera"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:19(para)
+msgid "Red Hat-based distributions include Galera packages in their repositories. To install the most current version of the packages, run the following command:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:26(para)
+msgid "(Optional) Configure the <application>clustercheck</application> utility."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:27(para)
+msgid "If HAProxy is used to load-balance client access to MariaDB, as described in <link linkend=\"ha-aa-haproxy\">the HAProxy section</link> of this document, you can use the <application>clustercheck</application> utility to improve health checks."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:34(para)
+msgid "Create file <filename>etc/sysconfig/clustercheck</filename> with the following contents:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:38(replaceable) ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:70(replaceable)
+msgid "PASSWORD"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:42(para)
+msgid "Make sure a sensible password is used."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:46(para)
+msgid "Configure monitor service (used by HAProxy):"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:47(para)
+msgid "Create file <filename>/etc/xinetd.d/galera-monitor</filename> with the following contents:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:68(para)
+msgid "Create the database user required by <application>clustercheck</application>:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:74(para)
+msgid "Start xinetd (required by <application>clustercheck</application>):"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:82(para)
+msgid "Configure MariaDB with Galera."
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:85(para)
+msgid "Create the Galera configuration file <filename>/etc/my.cnf.d/galera.cnf</filename> with the following contents:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:98(replaceable)
+msgid "NODE_IP"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:101(replaceable)
+msgid "TERTIARY_NODE_IP"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:116(para)
+msgid "Open firewall ports used for MariaDB and Galera communications:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:131(para)
+msgid "Start MariaDB cluster:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:134(para)
+msgid "On node 1:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:138(para)
+msgid "On nodes 2 and 3:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:142(para)
+msgid "Once the output from <application>clustercheck</application> is <placeholder-1/> on all nodes, restart MariaDB on node 1:"
+msgstr ""
+
+#: ./doc/high-availability-guide/ha_aa_db/section_mariadb_galera_rh.xml:144(replaceable)
+msgid "mysql PIDs"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_network/section_run_neutron_l3_agent.xml:7(title)
