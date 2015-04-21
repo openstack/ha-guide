@@ -10,7 +10,8 @@
 default). High availability for the DHCP agent is achieved by adopting
 Pacemaker.</para>
         <note>
-          <para>Here is the <link xlink:href="http://docs.openstack.org/trunk/config-reference/content/networking-options-dhcp.html">documentation</link> for installing neutron DHCP agent.</para>
+          <para>Here is the <link
+            xlink:href="http://docs.openstack.org/admin-guide-cloud/content/app_demo_multi_dhcp_agents.html">documentation</link> for installing neutron DHCP agent.</para>
         </note>
         <section xml:id="_add_neutron_dhcp_agent_resource_to_pacemaker">
 

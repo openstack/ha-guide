@@ -8,7 +8,7 @@
 networks. High availability for the metadata agent is achieved by adopting
 Pacemaker.</para>
         <note>
-          <para>Here is the <link xlink:href="http://docs.openstack.org/trunk/config-reference/content/networking-options-metadata.html">documentation</link> for installing Neutron Metadata Agent.</para>
+          <para>Here is the <link xlink:href="http://docs.openstack.org/juno/config-reference/content/networking-options-metadata.html">documentation</link> for installing Neutron Metadata Agent.</para>
         </note>
         <section xml:id="_add_neutron_metadata_agent_resource_to_pacemaker">
             <title>Add neutron metadata agent resource to Pacemaker</title>
