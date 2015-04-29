@@ -21,7 +21,7 @@
   </itemizedlist>
   <note>
     <para>Here is the
-      <link xlink:href="http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_cinder.html">documentation</link>
+      <link xlink:href="http://docs.openstack.org/kilo/install-guide/install/apt/content/ch_cinder.html">documentation</link>
       for installing Block Storage service.</para>
     </note>
   <section xml:id="_add_block_storage_api_resource_to_pacemaker">

@@ -46,9 +46,9 @@
       Official manual for installing RabbitMQ on openSUSE</link>
     </para>
     <procedure>
-      <title>On SLES:</title>
+      <title>On SLES 12:</title>
       <step>
-        <screen><prompt>#</prompt> <userinput>zypper addrepo -f obs://Cloud:OpenStack:Juno/SLE_11_SP3 Juno</userinput></screen>
+        <screen><prompt>#</prompt> <userinput>zypper addrepo -f obs://Cloud:OpenStack:Kilo/SLE_12 Kilo</userinput></screen>
         <note>
           <para>The packages are signed by GPG key 893A90DAD85F9316. You should
             verify the fingerprint of the imported GPG key before using

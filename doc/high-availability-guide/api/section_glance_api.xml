@@ -21,7 +21,7 @@
     </listitem>
   </itemizedlist>
   <note>
-    <para>Here is the <link xlink:href="http://docs.openstack.org/juno/install-guide/install/apt/content/ch_glance.html">documentation</link>
+    <para>Here is the <link xlink:href="http://docs.openstack.org/kilo/install-guide/install/apt/content/ch_glance.html">documentation</link>
       for installing the OpenStack Image API service.</para>
   </note>
   <section xml:id="_add_openstack_image_api_resource_to_pacemaker">

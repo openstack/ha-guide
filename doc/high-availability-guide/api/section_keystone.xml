@@ -21,7 +21,7 @@
     </listitem>
   </itemizedlist>
   <note>
-    <para>Here is the <link xlink:href="http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_keystone.html">documentation</link>
+    <para>Here is the <link xlink:href="http://docs.openstack.org/kilo/install-guide/install/apt/content/ch_keystone.html">documentation</link>
       for installing OpenStack Identity service.</para>
   </note>
   <section xml:id="_add_openstack_identity_resource_to_pacemaker">
@@ -59,8 +59,8 @@ op monitor interval="30s" timeout="30s"</programlisting>
       parameters:</para>
     <para>On Havana:</para>
     <programlisting language="ini">bind_host = 192.168.42.103</programlisting>
-    <para>On Icehouse, the <literal>admin_bind_host</literal> option lets you
-      use a private network for the admin access.</para>
+    <para>The <literal>admin_bind_host</literal> option lets you use a private
+      network for the admin access.</para>
     <programlisting language="ini">public_bind_host = 192.168.42.103
 admin_bind_host = 192.168.42.103</programlisting>
     <para>To be sure all data will be highly available, you should be sure

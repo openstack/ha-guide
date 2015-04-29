@@ -35,6 +35,19 @@
     </abstract>
     <revhistory>
       <revision>
+        <date>2015-04-30</date>
+        <revdescription>
+          <itemizedlist spacing="compact">
+            <listitem>
+              <para>This guide has various updates for the Kilo
+                release, such as adding MariaDB, updates to the
+                MySQL information, corosync and networking
+                updates.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
+      <revision>
           <date>2014-10-17</date>
           <revdescription>
             <itemizedlist spacing="compact">
@@ -52,7 +65,7 @@
           <revdescription>
             <itemizedlist spacing="compact">
               <listitem>
-                <para>Conversion to Docbook.</para>
+                <para>Conversion to DocBook.</para>
               </listitem>
             </itemizedlist>
           </revdescription>
