@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-04-24 13:41+0000\n"
-"PO-Revision-Date: 2015-04-24 13:42+0000\n"
+"POT-Creation-Date: 2015-04-29 14:53+0000\n"
+"PO-Revision-Date: 2015-04-29 15:14+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-"
 "manuals-i18n/language/ja/)\n"
@@ -339,9 +339,6 @@ msgstr ""
 msgid "2014-05-16"
 msgstr "2014-05-16"
 
-msgid "Conversion to Docbook."
-msgstr "DocBook 形式に変換しました。"
-
 msgid "2014-04-17"
 msgstr "2014-04-17"
 
@@ -498,15 +495,6 @@ msgstr "neutron LBaaS エージェントの実行"
 
 msgid "Highly available Block Storage API"
 msgstr "高可用性 Block Storage API"
-
-msgid ""
-"Here is the <link href=\"http://docs.openstack.org/trunk/install-guide/"
-"install/apt/content/ch_cinder.html\">documentation</link> for installing "
-"Block Storage service."
-msgstr ""
-"ここに Block Storage のインストールに関する<link href=\"http://docs."
-"openstack.org/trunk/install-guide/install/apt/content/ch_cinder.html\">ドキュ"
-"メント</link>があります。"
 
 msgid "Add Block Storage API resource to Pacemaker"
 msgstr "Block Storage API リソースの Pacemaker への追加"
@@ -688,15 +676,6 @@ msgstr ""
 msgid "Configure OpenStack services to use the virtual IP address."
 msgstr "OpenStack のサービスが仮想 IP アドレスを使用するよう設定します。"
 
-msgid ""
-"Here is the <link href=\"http://docs.openstack.org/trunk/install-guide/"
-"install/apt/content/ch_networking.html\">documentation</link> for installing "
-"OpenStack Networking service."
-msgstr ""
-"ここに OpenStack Networking Service をインストールするための<link href="
-"\"http://docs.openstack.org/trunk/install-guide/install/apt/content/"
-"ch_networking.html\">ドキュメント</link>があります。"
-
 msgid "Add OpenStack Networking Server resource to Pacemaker"
 msgstr "OpenStack Networking Server リソースの Pacemaker への追加"
 
@@ -856,15 +835,6 @@ msgid "Configure OpenStack Identity to listen on the VIP address,"
 msgstr ""
 "OpenStack Identity がその仮想 IP アドレスでリッスンするよう設定します。"
 
-msgid ""
-"Here is the <link href=\"http://docs.openstack.org/trunk/install-guide/"
-"install/apt/content/ch_keystone.html\">documentation</link> for installing "
-"OpenStack Identity service."
-msgstr ""
-"ここに OpenStack Identity Service をインストールするための<link href="
-"\"http://docs.openstack.org/trunk/install-guide/install/apt/content/"
-"ch_keystone.html\">ドキュメント</link>があります。"
-
 msgid "Add OpenStack Identity resource to Pacemaker"
 msgstr "OpenStack Identity リソースの Pacemaker への追加"
 
@@ -919,13 +889,6 @@ msgstr ""
 
 msgid "On Havana:"
 msgstr "Havana の場合:"
-
-msgid ""
-"On Icehouse, the <literal>admin_bind_host</literal> option lets you use a "
-"private network for the admin access."
-msgstr ""
-"Icehouse の場合、<literal>admin_bind_host</literal> オプションにより管理アク"
-"セス用のプライベートネットワークを使用できます。"
 
 msgid ""
 "To be sure all data will be highly available, you should be sure that you "
@@ -1383,8 +1346,8 @@ msgstr "openSUSE の場合:"
 msgid "Official manual for installing RabbitMQ on openSUSE"
 msgstr "openSUSE の RabbitMQ インストールに関する公式マニュアル"
 
-msgid "On SLES:"
-msgstr "SLES の場合:"
+msgid "On SLES 12:"
+msgstr "SLES 12 の場合:"
 
 msgid ""
 "The packages are signed by GPG key 893A90DAD85F9316. You should verify the "

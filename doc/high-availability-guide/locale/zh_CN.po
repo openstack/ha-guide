@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-04-24 13:41+0000\n"
-"PO-Revision-Date: 2015-04-24 13:42+0000\n"
+"POT-Creation-Date: 2015-04-29 14:53+0000\n"
+"PO-Revision-Date: 2015-04-29 14:53+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/"
 "openstack-manuals-i18n/language/zh_CN/)\n"
@@ -353,9 +353,6 @@ msgstr "本手册根据 OpenStack 文档规范进行了修订，改正了不少�
 
 msgid "2014-05-16"
 msgstr "2014-05-16"
-
-msgid "Conversion to Docbook."
-msgstr "转换为 Dockbook 格式。"
 
 msgid "2014-04-17"
 msgstr "2014-04-17"
@@ -716,14 +713,6 @@ msgstr "使用 Pacemaker 管理 OpenStack 块设备存储服务"
 msgid "Configuring OpenStack services to use this IP address"
 msgstr "使用该 IP 地址配置 OpenStack 服务"
 
-msgid ""
-"Here is the <link href=\"http://docs.openstack.org/trunk/install-guide/"
-"install/apt/content/ch_cinder.html\">documentation</link> for installing "
-"Block Storage service."
-msgstr ""
-"参见 OpenStack 块设储服务的安装<link href=\"http://docs.openstack.org/trunk/"
-"install-guide/install/apt/content/ch_cinder.html\"> 文档 </link>。"
-
 msgid "Add Block Storage API resource to Pacemaker"
 msgstr "在 Pacemaker 中添加 OpenStack 块设备存储服务资源"
 
@@ -908,14 +897,6 @@ msgstr "使用 Pacemaker 管理 OpenStack 网络服务，"
 msgid "Configure OpenStack services to use the virtual IP address."
 msgstr "配置 OpenStack 服务使用该虚拟  IP 地址。"
 
-msgid ""
-"Here is the <link href=\"http://docs.openstack.org/trunk/install-guide/"
-"install/apt/content/ch_networking.html\">documentation</link> for installing "
-"OpenStack Networking service."
-msgstr ""
-"参见 OpenStack 网络服务的安装<link href=\"http://docs.openstack.org/trunk/"
-"install-guide/install/apt/content/ch_networking.html\"> 文档 </link>。"
-
 msgid "Add OpenStack Networking Server resource to Pacemaker"
 msgstr "在 Pacemaker 中添加 OpenStack 网络服务资源"
 
@@ -1073,14 +1054,6 @@ msgstr "配置 OpenStack 身份认证服务监听虚拟 IP 地址，"
 msgid "Managing OpenStack Identity daemon with the Pacemaker cluster manager,"
 msgstr "使用 Pacemaker 管理 OpenStack 身份认证服务，"
 
-msgid ""
-"Here is the <link href=\"http://docs.openstack.org/trunk/install-guide/"
-"install/apt/content/ch_keystone.html\">documentation</link> for installing "
-"OpenStack Identity service."
-msgstr ""
-"参见 OpenStack 身份认证服务的安装<link href=\"http://docs.openstack.org/"
-"trunk/install-guide/install/apt/content/ch_keystone.html\"> 文档 </link>。"
-
 msgid "Add OpenStack Identity resource to Pacemaker"
 msgstr "在 Pacemaker 中添加 OpenStack 认证服务资源"
 
@@ -1134,13 +1107,6 @@ msgstr ""
 
 msgid "On Havana:"
 msgstr "对于 Havana 版本："
-
-msgid ""
-"On Icehouse, the <literal>admin_bind_host</literal> option lets you use a "
-"private network for the admin access."
-msgstr ""
-"对于 Icehouse 版本，<literal>admin_bind_host</literal> 配置项可认实现通过内部"
-"网络地址进行管理任务。"
 
 msgid ""
 "To be sure all data will be highly available, you should be sure that you "
@@ -2231,9 +2197,6 @@ msgstr "在 openSUSE 系统中："
 
 msgid "Official manual for installing RabbitMQ on openSUSE"
 msgstr "在 openSUSE 发行版上安装 RabbitMQ 的官方文档"
-
-msgid "On SLES:"
-msgstr "在 SLES 系统中："
 
 msgid ""
 "The packages are signed by GPG key 893A90DAD85F9316. You should verify the "

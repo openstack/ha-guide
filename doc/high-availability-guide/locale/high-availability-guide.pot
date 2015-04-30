@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-25 06:00+0000\n"
+"POT-Creation-Date: 2015-04-30 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -238,42 +238,50 @@ msgid "This guide describes how to install, configure, and manage OpenStack for 
 msgstr ""
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml:38(date)
-msgid "2014-10-17"
+msgid "2015-04-30"
 msgstr ""
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml:42(para)
-msgid "This guide has gone through editorial changes to follow the OpenStack documentation conventions. Various smaller issues have been fixed."
+msgid "This guide has various updates for the Kilo release, such as adding MariaDB, updates to the MySQL information, corosync and networking updates."
 msgstr ""
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml:51(date)
-msgid "2014-05-16"
+msgid "2014-10-17"
 msgstr ""
 
 #: ./doc/high-availability-guide/bk-ha-guide.xml:55(para)
-msgid "Conversion to Docbook."
+msgid "This guide has gone through editorial changes to follow the OpenStack documentation conventions. Various smaller issues have been fixed."
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:61(date)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:64(date)
+msgid "2014-05-16"
+msgstr ""
+
+#: ./doc/high-availability-guide/bk-ha-guide.xml:68(para)
+msgid "Conversion to DocBook."
+msgstr ""
+
+#: ./doc/high-availability-guide/bk-ha-guide.xml:74(date)
 msgid "2014-04-17"
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:65(para)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:78(para)
 msgid "Minor cleanup of typos, otherwise no major revisions for Icehouse release."
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:72(date)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:85(date)
 msgid "2012-01-16"
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:76(para)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:89(para)
 msgid "Organizes guide based on cloud controller and compute nodes."
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:82(date)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:95(date)
 msgid "2012-05-24"
 msgstr ""
 
-#: ./doc/high-availability-guide/bk-ha-guide.xml:86(para)
+#: ./doc/high-availability-guide/bk-ha-guide.xml:99(para)
 msgid "Begin trunk designation."
 msgstr ""
 
@@ -690,7 +698,7 @@ msgid "Configuring OpenStack services to use this IP address"
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml:23(para)
-msgid "Here is the <link href=\"http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_cinder.html\">documentation</link> for installing Block Storage service."
+msgid "Here is the <link href=\"http://docs.openstack.org/kilo/install-guide/install/apt/content/ch_cinder.html\">documentation</link> for installing Block Storage service."
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_cinder_api.xml:28(title)
@@ -774,7 +782,7 @@ msgid "Configure OpenStack services to use this IP address."
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml:24(para)
-msgid "Here is the <link href=\"http://docs.openstack.org/juno/install-guide/install/apt/content/ch_glance.html\">documentation</link> for installing the OpenStack Image API service."
+msgid "Here is the <link href=\"http://docs.openstack.org/kilo/install-guide/install/apt/content/ch_glance.html\">documentation</link> for installing the OpenStack Image API service."
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_glance_api.xml:28(title)
@@ -850,7 +858,7 @@ msgid "Configure OpenStack services to use the virtual IP address."
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_neutron_server.xml:25(para)
-msgid "Here is the <link href=\"http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_networking.html\">documentation</link> for installing OpenStack Networking service."
+msgid "Here is the <link href=\"http://docs.openstack.org/kilo/install-guide/install/apt/content/ch_networking.html\">documentation</link> for installing OpenStack Networking service."
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_neutron_server.xml:29(title)
@@ -962,7 +970,7 @@ msgid "Managing OpenStack Identity daemon with the Pacemaker cluster manager,"
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_keystone.xml:24(para)
-msgid "Here is the <link href=\"http://docs.openstack.org/trunk/install-guide/install/apt/content/ch_keystone.html\">documentation</link> for installing OpenStack Identity service."
+msgid "Here is the <link href=\"http://docs.openstack.org/kilo/install-guide/install/apt/content/ch_keystone.html\">documentation</link> for installing OpenStack Identity service."
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_keystone.xml:28(title)
@@ -998,7 +1006,7 @@ msgid "On Havana:"
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_keystone.xml:62(para)
-msgid "On Icehouse, the <literal>admin_bind_host</literal> option lets you use a private network for the admin access."
+msgid "The <literal>admin_bind_host</literal> option lets you use a private network for the admin access."
 msgstr ""
 
 #: ./doc/high-availability-guide/api/section_keystone.xml:66(para)
@@ -1714,7 +1722,7 @@ msgid "Official manual for installing RabbitMQ on openSUSE"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:49(title)
-msgid "On SLES:"
+msgid "On SLES 12:"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_rabbitmq/section_install_rabbitmq.xml:53(para)
@@ -1786,7 +1794,7 @@ msgid "Neutron metadata agent allows Compute API metadata to be reachable by VMs
 msgstr ""
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml:11(para)
-msgid "Here is the <link href=\"http://docs.openstack.org/juno/config-reference/content/networking-options-metadata.html\">documentation</link> for installing Neutron Metadata Agent."
+msgid "Here is the <link href=\"http://docs.openstack.org/kilo/config-reference/content/networking-options-metadata.html\">documentation</link> for installing Neutron Metadata Agent."
 msgstr ""
 
 #: ./doc/high-availability-guide/network/section_highly_available_neutron_metadata_agent.xml:14(title)
