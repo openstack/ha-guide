@@ -13,7 +13,11 @@
 target/
 publish-docs/
 generated/
+build/
 /build-*.log.gz
+
+# Testenvironment
+.tox/
 
 # Transifex Client Setting
 .tx
