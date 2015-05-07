@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-30 06:00+0000\n"
+"POT-Creation-Date: 2015-05-07 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -302,7 +302,7 @@ msgid "HAProxy nodes"
 msgstr ""
 
 #: ./doc/high-availability-guide/ch_ha_aa_haproxy.xml:10(para)
-msgid "HAProxy is a very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications. It is particularly suited for web sites crawling under very high loads while needing persistence or Layer 7 processing. Supporting tens of thousands of connections is clearly realistic with today’s hardware."
+msgid "HAProxy is a very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications. It is particularly suited for web sites crawling under very high loads while needing persistence or Layer 7 processing. Supporting tens of thousands of connections is clearly realistic with todays hardware."
 msgstr ""
 
 #: ./doc/high-availability-guide/ch_ha_aa_haproxy.xml:14(para)
@@ -315,6 +315,10 @@ msgstr ""
 
 #: ./doc/high-availability-guide/ch_ha_aa_haproxy.xml:157(para)
 msgid "After each change of this file, you should restart HAProxy."
+msgstr ""
+
+#: ./doc/high-availability-guide/ch_ha_aa_haproxy.xml:159(para)
+msgid "Note that the Galera cluster configuration commands indicate two of the three controllers are backup. That should be done to ensure only one node serves write requests because OpenStack support for multi-node writes is not production-ready yet."
 msgstr ""
 
 #: ./doc/high-availability-guide/ch_ha_aa_controllers.xml:7(title)
