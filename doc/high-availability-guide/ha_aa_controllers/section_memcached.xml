@@ -5,10 +5,14 @@
   version="5.0"
   xml:id="_memcached">
   <title>Memcached</title>
-  <para>Most OpenStack services use an application to offer persistence and
-    store ephemeral data like tokens. <application>Memcached</application>
-    is one of them and can scale-out easily without any specific tricks
-    required.</para>
+  <para>Most OpenStack services can use <application>Memcached</application> to
+      store ephemeral data, such as tokens. Although <application>Memcached</application>
+      does not support typical forms of redundancy, such as clustering, OpenStack
+      services can use almost any number of instances by configuring multiple
+      hostnames or IP addresses. The <application>Memcached</application>
+      client implements hashing to balance objects among the instances. Failure of
+      an instance only impacts a percentage of the objects and the client automatically
+      removes it from the list of instances.</para>
   <para>To install and configure it, read the
     <link xlink:href="http://code.google.com/p/memcached/wiki/NewStart">
     official documentation</link>.</para>
