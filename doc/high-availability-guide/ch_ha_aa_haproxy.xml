@@ -25,7 +25,7 @@ nodes running HAProxy.</para>
 
 defaults
   log  global
-  maxconn  8000
+  maxconn  4000
   option  redispatch
   retries  3
   timeout  http-request 10s
