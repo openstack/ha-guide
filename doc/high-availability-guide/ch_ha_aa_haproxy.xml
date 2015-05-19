@@ -131,7 +131,7 @@ listen ceilometer_api_cluster
   server controller2 10.0.0.2:8774 check inter 2000 rise 2 fall 5
 
 listen spice_cluster
-  bind &lt;Virtual IP&gt;:6082
+  bind &lt;Virtual IP&gt;:6080
   balance  source
   option  tcpka
   option  tcplog
