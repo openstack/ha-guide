@@ -59,7 +59,7 @@ op monitor interval="30s" timeout="30s"</programlisting>
     <title>Configure Block Storage API service</title>
     <para>Edit <filename>/etc/cinder/cinder.conf</filename>:</para>
     <programlisting language="ini"># We have to use MySQL connection to store data:
-sql_connection=mysql://cinder:password@192.168.42.101/cinder
+sql_connection=mysql+pymysql://cinder:password@192.168.42.101/cinder
 
 # We bind Block Storage API to the VIP:
 osapi_volume_listen = 192.168.42.103

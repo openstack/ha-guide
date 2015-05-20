@@ -219,7 +219,7 @@ order o_drbd_before_mysql inf: ms_drbd_mysql:promote g_mysql:start</programlisti
       <literal>192.168.42.101</literal> as in the configuration explained here,
       you would use the following line in your OpenStack Image registry
       configuration file (<filename>glance-registry.conf</filename>):</para>
-    <programlisting language="ini">sql_connection = mysql://glancedbadmin:&lt;password&gt;@192.168.42.101/glance</programlisting>
+    <programlisting language="ini">sql_connection = mysql+pymysql://glancedbadmin:&lt;password&gt;@192.168.42.101/glance</programlisting>
     <para>No other changes are necessary to your OpenStack configuration. If the
       node currently hosting your database experiences a problem
       necessitating service failover, your OpenStack services may experience

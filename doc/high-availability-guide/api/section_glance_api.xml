@@ -59,7 +59,7 @@ op monitor interval="30s" timeout="30s"</programlisting>
     <title>Configure OpenStack Image service API</title>
     <para>Edit <filename>/etc/glance/glance-api.conf</filename>:</para>
     <programlisting language="ini"># We have to use MySQL connection to store data:
-sql_connection=mysql://glance:password@192.168.42.101/glance
+sql_connection=mysql+pymysql://glance:password@192.168.42.101/glance
 
 # We bind OpenStack Image API to the VIP:
 bind_host = 192.168.42.103

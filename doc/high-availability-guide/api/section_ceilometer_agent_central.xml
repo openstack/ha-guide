@@ -62,6 +62,6 @@ rabbit_host = 192.168.42.102
 
 [database]
 # We have to use MySQL connection to store data:
-sql_connection=mysql://ceilometer:password@192.168.42.101/ceilometer</programlisting>
+sql_connection=mysql+pymysql://ceilometer:password@192.168.42.101/ceilometer</programlisting>
   </section>
 </section>
