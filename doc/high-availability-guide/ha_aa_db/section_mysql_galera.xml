@@ -23,7 +23,7 @@ Setup the repository for Ubuntu 14.04 "trusty" (most recent).
 Install the software properties, the key, and the repository:
         </para>
         <screen><prompt>#</prompt> <userinput>apt-get install software-properties-common</userinput>
-<prompt>#</prompt> <userinput>apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb94</userinput>
+<prompt>#</prompt> <userinput>apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db</userinput>
 <prompt>#</prompt> <userinput>add-apt-repository 'deb http://ams2.mirrors.digitalocean.com/mariadb/repo/5.5/ubuntu trusty main'</userinput></screen>
 
    <note>
