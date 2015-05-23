@@ -136,7 +136,7 @@ in order for the cluster to remain functional.
 When one node fails and failover transfers control to other nodes,
 the system must ensure that data and processes remain sane.
 To determine this, the contents of the remaining nodes are compared
-and, if there are discrepencies, a "majority rules" algorithm is implemented.
+and, if there are discrepancies, a "majority rules" algorithm is implemented.
 
 For this reason, each cluster in a high availability environment
 must have an odd number of nodes and the quorum must specify an odd number of nodes.
