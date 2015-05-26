@@ -6,15 +6,19 @@
   xml:id="ha-aa-db">
   <title>Database</title>
     <para>The first step is installing the database that sits at the heart of
-      the cluster. When we talk about High Availability, we talk about several
+      the cluster. When we talk about high availability (HA), we talk about several
       databases (for redundancy) and a means to keep them synchronized. In
       this case, we choose the <application>MySQL</application> database,
-      along with <application>Galera</application> for synchronous multi-master
+      along with <application>Galera</application> plug-in for synchronous multi-master
       replication.</para>
+    <para>The Galera Cluster plug-in is a multi-master Cluster based on
+      synchronous replication. It is a high availability solution, which provides
+      high system uptime, no data loss, and scalability
+      for growth.</para>
     <note>
-      <para>The choice of database isn't a foregone conclusion; you're not
+      <para>The choice of database is not a foregone conclusion; you are not
         required to use <application>MySQL</application>. It is, however, a
-        fairly common choice in OpenStack installations, so we'll cover it
+        fairly common choice in OpenStack installations, so we will cover it
         here.</para>
     </note>
     <note>
