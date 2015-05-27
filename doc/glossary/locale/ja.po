@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-05-15 19:06+0000\n"
-"PO-Revision-Date: 2015-05-15 13:32+0000\n"
+"POT-Creation-Date: 2015-05-27 04:05+0000\n"
+"PO-Revision-Date: 2015-05-27 02:50+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-"
 "manuals-i18n/language/ja/)\n"
@@ -758,6 +758,12 @@ msgstr ""
 "ダウンロードするために使用されるデータの合計量、またはダウンロードするために"
 "利用可能なデータの合計量を表す。"
 
+msgid "barbican"
+msgstr "barbican"
+
+msgid "Code name of the key management service for OpenStack."
+msgstr "OpenStack の key management サービスのコード名。"
+
 msgid "bare"
 msgstr "bare"
 
@@ -789,6 +795,12 @@ msgstr ""
 "象) に分ける。サブジェクトが特定のアクセスモードを許可されるかどうかを判断す"
 "るために、サブジェクトの権限がオブジェクトの区分と比較される。権限や区分のス"
 "キーマは、格子モデルで表現される。"
+
+msgid "Benchmark service"
+msgstr "Benchmark サービス"
+
+msgid "rally"
+msgstr "rally"
 
 msgid "Bexar"
 msgstr "Bexar"
@@ -1394,6 +1406,9 @@ msgstr "CMDB (構成管理データベース)"
 msgid "Configuration Management Database."
 msgstr "構成管理データベース。"
 
+msgid "congress"
+msgstr "congress"
+
 msgid "command filter"
 msgstr "コマンドフィルター"
 
@@ -1588,6 +1603,9 @@ msgstr "コンテナーサーバー"
 msgid "An Object Storage server that manages containers."
 msgstr "コンテナーを管理する Object Storage サーバー。"
 
+msgid "Containers service"
+msgstr "Containers サービス"
+
 msgid "magnum"
 msgstr "magnum"
 
@@ -1654,6 +1672,9 @@ msgstr ""
 "ユーザーのみが知っている、またはアクセスできるデータ。ユーザーが正当であるこ"
 "とを検証するために使用される。クレデンシャルは、認証中にサーバーに提示され"
 "る。例えば、パスワード、秘密鍵、電子証明書、フィンガープリントなどがある。"
+
+msgid "Cross-Origin Resource Sharing (CORS)"
+msgstr "Cross-Origin Resource Sharing (CORS)"
 
 msgid "Crowbar"
 msgstr "Crowbar"
@@ -1758,6 +1779,12 @@ msgstr ""
 "アカウント、コンテナー、オブジェクトデータベースを他のノードに変更点をコピー"
 "する Object Storage コンポーネント。"
 
+msgid "Database service"
+msgstr "Database サービス"
+
+msgid "Data processing service"
+msgstr "Data processing サービス"
+
 msgid "sahara"
 msgstr "sahara"
 
@@ -1845,6 +1872,12 @@ msgid ""
 msgstr ""
 "管理者が、Identity を使用する代わりに、<literal>nova-manage</literal> コマン"
 "ド経由でユーザーを作成および管理できる、Compute 内のオプション。"
+
+msgid "Designate"
+msgstr "Designate"
+
+msgid "Code name for the DNS service project for OpenStack."
+msgstr "OpenStack の DNS サービスプロジェクトのコード名。"
 
 msgid "Desktop-as-a-Service"
 msgstr "Desktop-as-a-Service"
@@ -1973,6 +2006,9 @@ msgid ""
 "A record that specifies information about a particular domain and belongs to "
 "the domain."
 msgstr "特定のドメインに関する情報を指定し、ドメインに所属するレコード。"
+
+msgid "DNS service"
+msgstr "DNS サービス"
 
 msgid "dnsmasq"
 msgstr "dnsmasq"
@@ -2587,6 +2623,15 @@ msgstr "glance"
 
 msgid "glance API server"
 msgstr "glance API サーバー"
+
+msgid ""
+"Processes client requests for VMs, updates Image service metadata on the "
+"registry server, and communicates with the store adapter to upload VM images "
+"from the back-end store."
+msgstr ""
+"仮想マシンに対するクライアントリクエスト、レジストリーサーバーにおける Image "
+"サービスのメタデータの更新、バックエンドストアから仮想マシンイメージをアップ"
+"ロードするためのストアアダプターを用いた通信を処理する。"
 
 msgid "glance registry"
 msgstr "Glance レジストリ"
@@ -3456,6 +3501,9 @@ msgstr ""
 
 msgid "M"
 msgstr "M"
+
+msgid "magnetoDB"
+msgstr "magnetoDB"
 
 msgid ""
 "Code name for the OpenStack project that provides the Containers Service."
