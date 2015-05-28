@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-05-07 06:00+0000\n"
+"POT-Creation-Date: 2015-05-28 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1322,22 +1322,22 @@ msgid "Memcached"
 msgstr ""
 
 #: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:8(para)
-msgid "Most OpenStack services use an application to offer persistence and store ephemeral data like tokens. <application>Memcached</application> is one of them and can scale-out easily without any specific tricks required."
+msgid "Most OpenStack services can use <application>Memcached</application> to store ephemeral data, such as tokens. Although <application>Memcached</application> does not support typical forms of redundancy, such as clustering, OpenStack services can use almost any number of instances by configuring multiple hostnames or IP addresses. The <application>Memcached</application> client implements hashing to balance objects among the instances. Failure of an instance only impacts a percentage of the objects and the client automatically removes it from the list of instances."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:12(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:16(para)
 msgid "To install and configure it, read the <link href=\"http://code.google.com/p/memcached/wiki/NewStart\"> official documentation</link>."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:15(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:19(para)
 msgid "Memory caching is managed by oslo-incubator, so the way to use multiple memcached servers is the same for all projects."
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:17(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:21(para)
 msgid "Example configuration with two hosts:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:19(para)
+#: ./doc/high-availability-guide/ha_aa_controllers/section_memcached.xml:23(para)
 msgid "By default, <literal>controller1</literal> handles the caching service but if the host goes down, <literal>controller2</literal> does the job. For more information about <application>Memcached</application> installation, see the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/\"> OpenStack Cloud Administrator Guide</link>."
 msgstr ""
 
