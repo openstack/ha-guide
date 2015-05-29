@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-05-28 06:00+0000\n"
+"POT-Creation-Date: 2015-05-29 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -302,22 +302,22 @@ msgid "HAProxy nodes"
 msgstr ""
 
 #: ./doc/high-availability-guide/ch_ha_aa_haproxy.xml:10(para)
-msgid "HAProxy is a very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications. It is particularly suited for web sites crawling under very high loads while needing persistence or Layer 7 processing. Supporting tens of thousands of connections is clearly realistic with todays hardware."
+msgid "HAProxy is a very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications. It is particularly suited for web sites crawling under very high loads while needing persistence or Layer 7 processing. Supporting tens of thousands of connections is clearly realistic with today’s hardware."
 msgstr ""
 
 #: ./doc/high-availability-guide/ch_ha_aa_haproxy.xml:14(para)
-msgid "For installing HAProxy on your nodes, you should consider its <link href=\"http://haproxy.1wt.eu/#docs\">official documentation</link>. Also, you have to consider that this service should not be a single point of failure, so you need at least two nodes running HAProxy."
+msgid "For installing HAProxy on your nodes, you should consider its <link href=\"http://haproxy.1wt.eu/#docs\">official documentation</link>. And also, you have to consider that HAProxy should not be a single point of failure so you need to ensure its availability by other means, such as Pacemaker or Keepalived. It is advisable to have multiple HAProxy instances running, where the number of these instances is a small odd number like 3 or 5. Also it is a common practice to collocate HAProxy instances with existing OpenStack controllers."
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_haproxy.xml:17(para)
-msgid "Here is an example of the HAProxy configuration file:"
+#: ./doc/high-availability-guide/ch_ha_aa_haproxy.xml:25(para)
+msgid "Here is an example for the HAProxy configuration file:"
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_haproxy.xml:157(para)
+#: ./doc/high-availability-guide/ch_ha_aa_haproxy.xml:178(para)
 msgid "After each change of this file, you should restart HAProxy."
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_haproxy.xml:159(para)
+#: ./doc/high-availability-guide/ch_ha_aa_haproxy.xml:180(para)
 msgid "Note that the Galera cluster configuration commands indicate two of the three controllers are backup. That should be done to ensure only one node serves write requests because OpenStack support for multi-node writes is not production-ready yet."
 msgstr ""
 
