@@ -236,4 +236,80 @@ nodelist { <co xml:id="CO1-8"/>
     </callout>
   </calloutlist>
   </section>
+  <section xml:id="_set_up_corosync_votequorum_full_size">
+  <title>Set up Corosync with votequorum library</title>
+  <para>Votequorum library is part of the corosync project. It provides
+  interface to the vote-based quorum service and it needs to be explicitly
+  enabled in the Corosync configuration file. The main role of votequorum
+  library is to avoid split-brain situations, but it also provides a mechanism
+  to:
+  <itemizedlist>
+    <listitem>
+      <para>Query the quorum status</para>
+    </listitem>
+    <listitem>
+      <para>Get a list of nodes known to the quorum service</para>
+    </listitem>
+    <listitem>
+      <para>Receive notifications of quorum state changes</para>
+    </listitem>
+    <listitem>
+      <para>Change the number of votes assigned to a node</para>
+    </listitem>
+    <listitem>
+      <para>Change the number of expected votes for a cluster to be
+        quorate</para>
+    </listitem>
+    <listitem>
+      <para>Connect an additional quorum device to allow small clusters
+        remain quorate during node outages</para>
+    </listitem>
+  </itemizedlist>
+  Votequorum library has been created to replace and eliminate from advanced
+  cluster configurations qdisk, disk-based quorum daemon for CMAN.
+  </para>
+  <formalpara>
+    <title>Votequorum service configuration within Corosync</title>
+    <para>
+      <programlisting language="ini">quorum {
+            provider: corosync_votequorum <co xml:id="CR0-1"/>
+            expected_votes: 7 <co xml:id="CR0-2"/>
+            wait_for_all: 1 <co xml:id="CR0-3"/>
+            last_man_standing: 1 <co xml:id="CR0-4"/>
+            last_man_standing_window: 10000 <co xml:id="CR0-5"/>
+      }</programlisting>
+    </para>
+  </formalpara>
+  <calloutlist>
+   <callout arearefs="CR0-1"><para>Provider <option>corosync_votequorum</option>
+        enables votequorum library, this is the only required option.</para>
+   </callout>
+   <callout arearefs="CR0-2"><para>The cluster is fully operational with
+        <option>expected_votes</option> 7 nodes (each node has 1 vote),
+        quorum: 4. If list of nodes is specified as <option>nodelist</option>
+        the <option>expected_votes</option> is ignored.</para>
+   </callout>
+   <callout arearefs="CR0-3"><para><option>wait_for_all</option>
+    When starting up a cluster (all nodes down) it will hold the cluster quorum
+    until all of the nodes become online and joint the cluster first time
+    (new in Corosync 2.0).</para>
+   </callout>
+   <callout arearefs="CR0-4"><para><option>last_man_standing</option> enable
+    Last Man Standing (LMS) feature (disabled by default: 0). If a cluster is on
+    the quorum edge (expected_votes: 7 online nodes: 4) for time longer than
+    configured in <option>last_man_standing_window</option>, the cluster can
+    recalculate quorum and continue operating even if the next node will be
+    lost. This logic is repeated until the number of online nodes in the cluster
+    reach 2. In order to allow cluster step down from 2 members to only 1,
+    what is not recommended <option>auto_tie_breaker</option> option needs
+    to be set.</para>
+   </callout>
+   <callout arearefs="CR0-5"><para><option>last_man_standing_window</option>
+    is time required to recalculate quorum after one or most hosts have been
+    lost from the cluster. To do the new quorum recalculation, the cluster needs
+    to have quorum at least for <option>last_man_standing_window</option>,
+    time in [ms] (default: 10000ms).</para>
+   </callout>
+  </calloutlist>
+  </section>
 </section>
