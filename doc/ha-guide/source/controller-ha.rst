@@ -10,4 +10,5 @@ and must talk to all other services.
    :maxdepth: 2
 
    controller-ha-haproxy.rst
+   controller-ha-galera.rst
 
