@@ -1,4 +1,3 @@
-
 ==========================
 High availability concepts
 ==========================
@@ -41,54 +40,57 @@ In order to eliminate SPOFs, check that mechanisms exist for redundancy of:
 
 - Facility services such as power, air conditioning, and fire protection
 
-Most high availability systems fail in the event of multiple independent
-(non-consequential) failures.
-In this case, most implementations favor protecting data over maintaining availability.
+Most high availability systems fail in the event of multiple
+independent (non-consequential) failures. In this case, most
+implementations favor protecting data over maintaining availability.
 
-High-availability systems typically achieve an uptime percentage of 99.99% or more,
-which roughly equates to less than an hour of cumulative downtime per year.
-In order to achieve this, high availability systems
-should keep recovery times after a failure to about one to two minutes,
-sometimes significantly less.
+High-availability systems typically achieve an uptime percentage of
+99.99% or more, which roughly equates to less than an hour of
+cumulative downtime per year. In order to achieve this, high
+availability systems should keep recovery times after a failure to
+about one to two minutes, sometimes significantly less.
 
-OpenStack currently meets such availability requirements for its own infrastructure services,
-meaning that an uptime of 99.99% is feasible for the OpenStack infrastructure proper.
-However, OpenStack does not guarantee 99.99% availability for individual guest instances.
+OpenStack currently meets such availability requirements for its own
+infrastructure services, meaning that an uptime of 99.99% is feasible
+for the OpenStack infrastructure proper. However, OpenStack does not
+guarantee 99.99% availability for individual guest instances.
 
-This document discusses some common methods of implementing highly available systems,
-with an emphasis on the core OpenStack services
-and other open source services that are closely aligned with OpenStack.
+This document discusses some common methods of implementing highly
+available systems, with an emphasis on the core OpenStack services and
+other open source services that are closely aligned with OpenStack.
 These methods are by no means the only ways to do it;
 you may supplement these services with commercial hardware and software
 that provides additional features and functionality.
 You also need to address high availability concerns
 for any applications software that you run on your OpenStack environment.
-The important thing is to make sure that your services are redundant and available;
-how you achieve that is up to you.
+The important thing is to make sure that your services are redundant
+and available; how you achieve that is up to you.
 
 Stateless vs. stateful services
 -------------------------------
 
-Preventing single points of failure can depend on whether or not a service is stateless.
+Preventing single points of failure can depend on whether or not a
+service is stateless.
 
 Stateless service
   A service that provides a response after your request
   and then requires no further attention.
   To make a stateless service highly available,
   you need to provide redundant instances and load balance them.
-  OpenStack services that are stateless include ``nova-api``, ``nova-conductor``,
-  ``glance-api``, ``keystone-api``, ``neutron-api`` and ``nova-scheduler``.
+  OpenStack services that are stateless include ``nova-api``,
+  ``nova-conductor``, ``glance-api``, ``keystone-api``,
+  ``neutron-api`` and ``nova-scheduler``.
 
 Stateful service
   A service where subsequent requests to the service
   depend on the results of the first request.
-  Stateful services are more difficult to manage
-  because a single action typically involves more than one request,
-  so simply providing additional instances and load balancing does not solve the problem.
-  For example, if the horizon user interface reset itself every time you went to a new page,
-  it would not be very useful.
-  OpenStack services that are stateful include the OpenStack database and message queue.
-
+  Stateful services are more difficult to manage because a single
+  action typically involves more than one request, so simply providing
+  additional instances and load balancing does not solve the problem.
+  For example, if the horizon user interface reset itself every time
+  you went to a new page, it would not be very useful.
+  OpenStack services that are stateful include the OpenStack database
+  and message queue.
   Making stateful services highly available can depend on whether you choose
   an active/passive or active/active configuration.
 
@@ -106,26 +108,29 @@ Stateful services may be configured as active/passive or active/active:
 
   A typical active/passive installation for a stateful service maintains
   a replacement resource that can be brought online when required.
-  Requests are handled using a :term:`virtual IP` address (VIP) that facilitates
-  returning to service with minimal reconfiguration.
-  A separate application (such as Pacemaker or Corosync) monitors these services,
-  bringing the backup online as necessary.
+  Requests are handled using a :term:`virtual IP` address (VIP) that
+  facilitates returning to service with minimal reconfiguration.
+  A separate application (such as Pacemaker or Corosync) monitors
+  these services, bringing the backup online as necessary.
 
 :term:`active/passive configuration`
-  Each service also has a backup but manages both the main and redundant systems concurrently.
+  Each service also has a backup but manages both the main and
+  redundant systems concurrently.
   This way, if there is a failure, the user is unlikely to notice.
   The backup system is already online and takes on increased load
   while the main system is fixed and brought back online.
 
-  Typically, an active/active installation for a stateless service maintains a redundant instance,
-  and requests are load balanced using a virtual IP address and a load balancer such as HAProxy.
+  Typically, an active/active installation for a stateless service
+  maintains a redundant instance, and requests are load balanced using
+  a virtual IP address and a load balancer such as HAProxy.
 
-  A typical active/active installation for a stateful service
-  includes redundant services, with all instances having an identical state.
-  In other words,  updates to one instance of a database update all other instances.
-  This way a request to one instance is the same as a request to any other.
-  A load balancer manages the traffic to these systems,
-  ensuring that operational systems always handle the request.
+  A typical active/active installation for a stateful service includes
+  redundant services, with all instances having an identical state. In
+  other words, updates to one instance of a database update all other
+  instances. This way a request to one instance is the same as a
+  request to any other. A load balancer manages the traffic to these
+  systems, ensuring that operational systems always handle the
+  request.
 
 Clusters and quorums
 --------------------
@@ -138,10 +143,11 @@ the system must ensure that data and processes remain sane.
 To determine this, the contents of the remaining nodes are compared
 and, if there are discrepancies, a "majority rules" algorithm is implemented.
 
-For this reason, each cluster in a high availability environment
-must have an odd number of nodes and the quorum must specify an odd number of nodes.
-If multiple nodes fail so that the cluster size falls below the quorum value,
-the cluster itself fails.
+For this reason, each cluster in a high availability environment must
+have an odd number of nodes and the quorum must specify an odd number
+of nodes.
+If multiple nodes fail so that the cluster size falls below the quorum
+value, the cluster itself fails.
 
 For example, in a 7-node cluster, the quorum could be set to 5 or 3.
 If quorum is 5 and three nodes fail simultaneously,

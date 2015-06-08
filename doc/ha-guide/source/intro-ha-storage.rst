@@ -1,7 +1,7 @@
-
 =====================================
 Overview of high availability storage
 =====================================
+
 Making the Block Storage (cinder) API service highly available in
 active/passive mode involves:
 
