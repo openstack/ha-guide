@@ -1,6 +1,6 @@
 
 =============================================
-Hardware considerations for High Availability
+Hardware considerations for high availability
 =============================================
 
 [TODO: Provide a minimal architecture example for HA,

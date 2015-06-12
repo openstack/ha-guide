@@ -5,7 +5,7 @@ Install operating system on each node
 
 The first step in setting up your highly-available OpenStack cluster
 is to install the operating system on each node.
-Follow the instructions in the Install Guides:
+Follow the instructions in the OpenStack Installation Guides:
 
 [TODO(DreidelLhasa): Replace the following with real links]
 
@@ -13,5 +13,5 @@ Follow the instructions in the Install Guides:
 - Ubuntu: [link to Ubuntu install guide]
 - Red Hat Linux Enterprise, CentOS, and Fedora: [link to Red Hat install guide]
 
-The Install Guides also include a list of the services that use passwords
-with important notes about using them.
+The OpenStack Installation Guides also include a list of the services
+that use passwords with important notes about using them.

@@ -6,8 +6,8 @@ Configure the VIP
 You must select and assign a virtual IP address (VIP)
 that can freely float between cluster nodes.
 
-This configuration creates `p_ip_api`,
-a virtual IP address for use by the API node (192.168.42.103):
+This configuration creates ``p_ip_api``,
+a virtual IP address for use by the API node (``192.168.42.103``):
 
 ::
 

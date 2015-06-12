@@ -7,8 +7,8 @@ Abstract
 
 This guide describes how to install and configure
 OpenStack for high availability.
-It supplements the Installation Guide
-and assumes that you are familiar with the material in that guide.
+It supplements the OpenStack Installation Guides
+and assumes that you are familiar with the material in those guides.
 
 This guide documents OpenStack Liberty, OpenStack Kilo, OpenStack Juno,
 and OpenStack Icehouse releases.
