@@ -2,7 +2,7 @@
 High availability concepts
 ==========================
 
-High Availability systems seek to minimize two things:
+High availability systems seek to minimize two things:
 
 System downtime
   Occurs when a user-facing service is unavailable
@@ -28,7 +28,7 @@ that is running on hardware that did not fail.
 
 A crucial aspect of high availability
 is the elimination of single points of failure (SPOFs).
-An SPOF is an individual piece of equipment or software
+A SPOF is an individual piece of equipment or software
 that causes system downtime or data loss if it fails.
 In order to eliminate SPOFs, check that mechanisms exist for redundancy of:
 
@@ -44,7 +44,7 @@ Most high availability systems fail in the event of multiple
 independent (non-consequential) failures. In this case, most
 implementations favor protecting data over maintaining availability.
 
-High-availability systems typically achieve an uptime percentage of
+High availability systems typically achieve an uptime percentage of
 99.99% or more, which roughly equates to less than an hour of
 cumulative downtime per year. In order to achieve this, high
 availability systems should keep recovery times after a failure to

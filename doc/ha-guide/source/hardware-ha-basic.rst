@@ -5,8 +5,8 @@ Hardware setup
 
 The standard hardware requirements:
 
-- `Neutron <http://docs.openstack.org/juno/install-guide/install/apt/content/ch_overview.html#example-architecture-with-neutron-networking-hw>`_
-- `Nova-network <http://docs.openstack.org/juno/install-guide/install/apt/content/ch_overview.html#example-architecture-with-legacy-networking-hw>`_
+- `neutron <http://docs.openstack.org/juno/install-guide/install/apt/content/ch_overview.html#example-architecture-with-neutron-networking-hw>`_
+- `nova-network <http://docs.openstack.org/juno/install-guide/install/apt/content/ch_overview.html#example-architecture-with-legacy-networking-hw>`_
 
 However, OpenStack does not require a significant amount of resources
 and the following minimum requirements should support
@@ -18,11 +18,11 @@ with core services and several instances:
 +-------------------+------------+----------+---------+
 | Node type         | Processor  | Memory   | Storage |
 +===================+============+==========+=========+
-| Controller node   | 3          | 2 GB     | 5 GB    |
+| controller node   | 3          | 2 GB     | 5 GB    |
 +-------------------+------------+----------+---------+
-| Network node      | 3          | 512 MB   | 5 GB    |
+| network node      | 3          | 512 MB   | 5 GB    |
 +-------------------+------------+----------+---------+
-| Compute node      | 3          | 2 GB     | 10 GB   |
+| compute node      | 3          | 2 GB     | 10 GB   |
 +-------------------+------------+----------+---------+
 
 

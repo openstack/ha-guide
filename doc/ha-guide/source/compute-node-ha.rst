@@ -1,4 +1,4 @@
 
 ==================================================
-Configuring the Compute node for high availability
+Configuring the compute node for high availability
 ==================================================

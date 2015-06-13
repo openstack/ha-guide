@@ -1,6 +1,6 @@
 
 ================================================
-Configuring the Controller for high availability
+Configuring the controller for high availability
 ================================================
 
 The cloud controller runs on the management network
