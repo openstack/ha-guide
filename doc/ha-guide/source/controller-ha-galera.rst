@@ -63,7 +63,13 @@ Galera/MySQL in:
     ::
 
       # apt-get update
-      # apt-get install mariadb-galera-server galera
+      # apt-get install mariadb-galera-server
+
+    .. note ::
+
+       The galara package is now called galera-3 and is already a dependency
+       of mariadb-galera-server. Therefore it should not be specified on the
+       command line.
 
 
     .. warning ::
@@ -72,7 +78,7 @@ Galera/MySQL in:
        you must re-apply all the permissions listed in the installation guide.
 
 #. Adjust the configuration by making the following changes to the
-   :file:`/etc/mysql/my.conf` file:
+   :file:`/etc/mysql/my.cnf` file:
 
    ::
 
