@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-05-29 06:00+0000\n"
+"POT-Creation-Date: 2015-06-18 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -358,14 +358,18 @@ msgid "Database"
 msgstr ""
 
 #: ./doc/high-availability-guide/ch_ha_aa_db.xml:8(para)
-msgid "The first step is installing the database that sits at the heart of the cluster. When we talk about High Availability, we talk about several databases (for redundancy) and a means to keep them synchronized. In this case, we choose the <application>MySQL</application> database, along with <application>Galera</application> for synchronous multi-master replication."
+msgid "The first step is installing the database that sits at the heart of the cluster. When we talk about high availability (HA), we talk about several databases (for redundancy) and a means to keep them synchronized. In this case, we choose the <application>MySQL</application> database, along with <application>Galera</application> plug-in for synchronous multi-master replication."
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_db.xml:15(para)
-msgid "The choice of database isn't a foregone conclusion; you're not required to use <application>MySQL</application>. It is, however, a fairly common choice in OpenStack installations, so we'll cover it here."
+#: ./doc/high-availability-guide/ch_ha_aa_db.xml:14(para)
+msgid "The Galera Cluster plug-in is a multi-master Cluster based on synchronous replication. It is a high availability solution, which provides high system uptime, no data loss, and scalability for growth."
 msgstr ""
 
-#: ./doc/high-availability-guide/ch_ha_aa_db.xml:21(para)
+#: ./doc/high-availability-guide/ch_ha_aa_db.xml:19(para)
+msgid "The choice of database is not a foregone conclusion; you are not required to use <application>MySQL</application>. It is, however, a fairly common choice in OpenStack installations, so we will cover it here."
+msgstr ""
+
+#: ./doc/high-availability-guide/ch_ha_aa_db.xml:25(para)
 msgid "MySQL with Galera is by no means the only way to achieve database HA. MariaDB Galera Cluster (<link href=\"https://mariadb.org/\">https://mariadb.org/</link>) and Percona XtraDB Cluster (<link href=\"http://www.percona.com/\">http://www.percona.com/</link>) also work with Galera. You also have the option to use PostgreSQL, which has its own replication, or another database HA option."
 msgstr ""
 
@@ -1543,6 +1547,62 @@ msgstr ""
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:231(para)
 msgid "The <placeholder-1/> configuration option is optional when using IPv4 and required when using IPv6. This is a 32-bit value specifying the node identifier delivered to the cluster membership service. If this is not specified with IPv4, the node id will be determined from the 32-bit IP address the system to which the system is bound with ring identifier of 0. The node identifier value of zero is reserved and should not be used."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:240(title)
+msgid "Set up Corosync with votequorum library"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:248(para)
+msgid "Query the quorum status"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:251(para)
+msgid "Get a list of nodes known to the quorum service"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:254(para)
+msgid "Receive notifications of quorum state changes"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:257(para)
+msgid "Change the number of votes assigned to a node"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:260(para)
+msgid "Change the number of expected votes for a cluster to be quorate"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:264(para)
+msgid "Connect an additional quorum device to allow small clusters remain quorate during node outages"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:241(para)
+msgid "Votequorum library is part of the corosync project. It provides interface to the vote-based quorum service and it needs to be explicitly enabled in the Corosync configuration file. The main role of votequorum library is to avoid split-brain situations, but it also provides a mechanism to: <placeholder-1/> Votequorum library has been created to replace and eliminate from advanced cluster configurations qdisk, disk-based quorum daemon for CMAN."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:272(title)
+msgid "Votequorum service configuration within Corosync"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:284(para)
+msgid "Provider <placeholder-1/> enables votequorum library, this is the only required option."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:287(para)
+msgid "The cluster is fully operational with <placeholder-1/> 7 nodes (each node has 1 vote), quorum: 4. If list of nodes is specified as <placeholder-2/> the <placeholder-3/> is ignored."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:292(para)
+msgid "<placeholder-1/> When starting up a cluster (all nodes down) it will hold the cluster quorum until all of the nodes become online and joint the cluster first time (new in Corosync 2.0)."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:297(para)
+msgid "<placeholder-1/> enable Last Man Standing (LMS) feature (disabled by default: 0). If a cluster is on the quorum edge (expected_votes: 7 online nodes: 4) for time longer than configured in <placeholder-2/>, the cluster can recalculate quorum and continue operating even if the next node will be lost. This logic is repeated until the number of online nodes in the cluster reach 2. In order to allow cluster step down from 2 members to only 1, what is not recommended <placeholder-3/> option needs to be set."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:307(para)
+msgid "<placeholder-1/> is time required to recalculate quorum after one or most hosts have been lost from the cluster. To do the new quorum recalculation, the cluster needs to have quorum at least for <placeholder-2/>, time in [ms] (default: 10000ms)."
 msgstr ""
 
 #: ./doc/high-availability-guide/pacemaker/section_install_packages.xml:7(title)

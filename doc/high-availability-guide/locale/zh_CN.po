@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-05-28 19:07+0000\n"
-"PO-Revision-Date: 2015-05-28 19:24+0000\n"
+"POT-Creation-Date: 2015-06-17 09:52+0000\n"
+"PO-Revision-Date: 2015-06-17 14:47+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/"
 "openstack-manuals-i18n/language/zh_CN/)\n"
@@ -1185,6 +1185,9 @@ msgstr "对于 Fedora 和 RHEL 发行版"
 msgid "On Havana:"
 msgstr "对于 Havana 版本："
 
+msgid "On SLES 12:"
+msgstr "在SLES 12中："
+
 msgid "On Ubuntu and Debian"
 msgstr "对于 Ubuntu 和 Debian 发行版"
 
@@ -1816,15 +1819,6 @@ msgstr ""
 
 msgid "The Pacemaker cluster stack"
 msgstr "Packmaker 集群"
-
-msgid ""
-"The choice of database isn't a foregone conclusion; you're not required to "
-"use <application>MySQL</application>. It is, however, a fairly common choice "
-"in OpenStack installations, so we'll cover it here."
-msgstr ""
-"<application>MySQL</application> 并不是唯一的选择，以它作为示例是因为目前已有"
-"的 OpenStack 布署案例中，使用 <application>MySQL</application> 作为数据库比较"
-"常见。"
 
 msgid ""
 "The cloud controller runs on the management network and must talk to all "
