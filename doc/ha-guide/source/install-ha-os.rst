@@ -9,9 +9,9 @@ Follow the instructions in the OpenStack Installation Guides:
 
 [TODO(DreidelLhasa): Replace the following with real links]
 
-- openSUSE and SUSE Linux Enterprise: [link to SUSE install guide]
+- CentOS, Fedora, RHEL: [link to RedHat install guide]
+- openSUSE, SUSE Linux Enterprise Server: [link to SUSE install guide]
 - Ubuntu: [link to Ubuntu install guide]
-- Red Hat Linux Enterprise, CentOS, and Fedora: [link to Red Hat install guide]
 
 The OpenStack Installation Guides also include a list of the services
 that use passwords with important notes about using them.
