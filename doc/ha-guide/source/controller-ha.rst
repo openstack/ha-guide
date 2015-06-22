@@ -13,4 +13,6 @@ and must talk to all other services.
    controller-ha-haproxy.rst
    controller-ha-galera.rst
    controller-ha-rabbitmq.rst
+   controller-ha-keystone.rst
    controller-ha-telemetry.rst
+
