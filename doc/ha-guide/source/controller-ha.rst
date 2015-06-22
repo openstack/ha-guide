@@ -9,6 +9,7 @@ and must talk to all other services.
 .. toctree::
    :maxdepth: 2
 
+   controller-ha-pacemaker.rst
    controller-ha-haproxy.rst
    controller-ha-galera.rst
 
