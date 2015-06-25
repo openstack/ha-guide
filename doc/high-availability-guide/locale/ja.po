@@ -1,13 +1,14 @@
 #
 # Translators:
 # Sasuke(Kyohei MORIYAMA) <>, 2014
+# Sasuke(Kyohei MORIYAMA) <>, 2015
 # Tomoyuki KATO <tomo@dream.daynight.jp>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-05-28 19:07+0000\n"
-"PO-Revision-Date: 2015-05-28 19:24+0000\n"
-"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
+"POT-Creation-Date: 2015-06-23 11:29+0000\n"
+"PO-Revision-Date: 2015-06-25 02:36+0000\n"
+"Last-Translator: Sasuke(Kyohei MORIYAMA) <>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-"
 "manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -42,6 +43,9 @@ msgstr "2014-05-16"
 
 msgid "2014-10-17"
 msgstr "2014-10-17"
+
+msgid "2015-04-30"
+msgstr "2015-04-30"
 
 msgid "<application>Memcached</application> service"
 msgstr "<application>Memcached</application> サービス"
@@ -281,6 +285,13 @@ msgstr "設定を調整します。"
 msgid "After each change of this file, you should restart HAProxy."
 msgstr "このファイルの変更後、HAProxy を再起動すべきです。"
 
+msgid ""
+"After the copy make sure that all files are the same, you can do this by "
+"using the following command:"
+msgstr ""
+"コピーした後、下に示したコマンドを実行することで、すべてのファイルが同じとい"
+"うことを確認してください:"
+
 msgid "All OpenStack API services"
 msgstr "すべての OpenStack API サービス"
 
@@ -465,6 +476,9 @@ msgstr ""
 
 msgid "HAProxy nodes"
 msgstr "HAProxy ノード"
+
+msgid "Here is an example for the HAProxy configuration file:"
+msgstr "これはHAProxyの設定ファイル例です"
 
 msgid "High Availability systems seek to minimize two things:"
 msgstr "高可用性システムは、以下の 2 つの最小化を目指しています。"
@@ -673,6 +687,12 @@ msgstr "Galera を用いた MySQL"
 msgid "NODE"
 msgstr "NODE"
 
+msgid "NODE_IP"
+msgstr "NODE_IP"
+
+msgid "NODE_NAME"
+msgstr "NODE_NAME"
+
 msgid "Network components, such as switches and routers"
 msgstr "スイッチやルーターなどのネットワークの構成要素"
 
@@ -774,6 +794,12 @@ msgstr ""
 "セージング層によるクラスター通信を確立する必要があります。これは、以下のパッ"
 "ケージをインストールする必要があります。(また通常、パッケージ管理ソフトウェア"
 "が自動的にそれらに依存するものをインストールします):"
+
+msgid "On node 1:"
+msgstr "ノード1上:"
+
+msgid "On nodes 2 and 3:"
+msgstr "ノード2と3上:"
 
 msgid "On openSUSE and SLES"
 msgstr "openSUSE / SLES の場合"
@@ -965,6 +991,9 @@ msgstr ""
 msgid "PASSWORD"
 msgstr "PASSWORD"
 
+msgid "PRIMARY_NODE_IP"
+msgstr "PRIMARY_NODE_IP"
+
 msgid ""
 "Pacemaker relies on the <link href=\"http://www.corosync.org\">Corosync</"
 "link> messaging layer for reliable cluster communications. Corosync "
@@ -977,6 +1006,9 @@ msgstr ""
 "一リング順序制御・メンバー管理プロトコルを実装しています。また、UDP および "
 "InfiniBand によるメッセージング、クォーラムおよびクラスターメンバー管理を "
 "Pacemaker に提供します。"
+
+msgid "Paste the following lines in this file:"
+msgstr "このファイル内へ下に示した行を貼り付けます"
 
 msgid "Prepare MySQL for Pacemaker high availability"
 msgstr "Pacemaker 高可用性のための MySQL の準備"
@@ -1041,6 +1073,9 @@ msgstr "neutron LBaaS エージェントの実行"
 msgid "Run neutron metadata agent"
 msgstr "Neutron メタデータエージェントの実行"
 
+msgid "SECONDARY_NODE_IP"
+msgstr "SECONDARY_NODE_IP"
+
 msgid "Schedulers"
 msgstr "スケジューラー"
 
@@ -1056,6 +1091,9 @@ msgstr "Corosync のセットアップ"
 msgid "Start Pacemaker"
 msgstr "Pacemaker の開始"
 
+msgid "Start mysql as root and execute the following queries:"
+msgstr "rootでmysqlを起動し、下に示したクエリを実行してください:"
+
 msgid "Starting Corosync"
 msgstr "Corosync の開始"
 
@@ -1067,6 +1105,9 @@ msgstr "ストレージ構成要素"
 
 msgid "System downtime"
 msgstr "システム停止時間"
+
+msgid "TERTIARY_NODE_IP"
+msgstr "TERTIARY_NODE_IP"
 
 msgid "Telemetry"
 msgstr "Telemetry"
@@ -1160,6 +1201,9 @@ msgid ""
 msgstr ""
 "パッケージは GPG キー 893A90DAD85F9316 を用いて署名されています。使用する前に"
 "インポートした GPG キーのフィンガープリントを検証すべきです。"
+
+msgid "The result will look like this:"
+msgstr "結果はこのようになります:"
 
 msgid "Then, set the following properties:"
 msgstr "そして、以下のプロパティを設定します。"
@@ -1259,6 +1303,11 @@ msgstr ""
 "に応じてオンラインにできる冗長なインスタンスを動作させます。リクエストは、必"
 "要最小限の再設定でサービスを動作させられる、仮想 IP アドレスを使用して処理さ"
 "れます。"
+
+msgid "Update your system and install the required packages: <placeholder-1/>"
+msgstr ""
+"システムアップデートと必須パッケージのインストールをしてください: "
+"<placeholder-1/>"
 
 msgid "Use HA queues in RabbitMQ (x-ha-policy: all):"
 msgstr "RabbitMQ における HA キューの使用 (x-ha-policy: all):"
@@ -1481,12 +1530,24 @@ msgstr "カレント"
 msgid "heat-engine"
 msgstr "heat-engine"
 
+msgid "l3_ha"
+msgstr "l3_ha"
+
 msgid ""
 "managing all resources, including the RabbitMQ daemon itself, with the "
 "Pacemaker cluster manager."
 msgstr ""
 "RabbitMQ デーモン自身を含む、すべてのリソースを Pacemaker クラスターマネー"
 "ジャーで管理します。"
+
+msgid "max_l3_agents_per_router"
+msgstr "max_l3_agents_per_router"
+
+msgid "min_l3_agents_per_router"
+msgstr "min_l3_agents_per_router"
+
+msgid "mysql PIDs"
+msgstr "mysqlのPID"
 
 msgid "neutron-server"
 msgstr "neutron-server"

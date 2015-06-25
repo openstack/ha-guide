@@ -2,14 +2,15 @@
 # Translators:
 # Alfred <alfredhuang211@qq.com>, 2015
 # zhaochao <zhaochao1984@gmail.com>, 2015
+# 刘俊朋 <liujunpeng@inspur.com>, 2015
 # 秋林 <chenqioulin_1983@163.com>, 2015
 # 颜海峰 <yanheven@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-06-17 09:52+0000\n"
-"PO-Revision-Date: 2015-06-17 14:47+0000\n"
-"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
+"POT-Creation-Date: 2015-06-23 11:29+0000\n"
+"PO-Revision-Date: 2015-06-24 08:40+0000\n"
+"Last-Translator: 刘俊朋 <liujunpeng@inspur.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/"
 "openstack-manuals-i18n/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -44,6 +45,9 @@ msgstr "2014-05-16"
 
 msgid "2014-10-17"
 msgstr "2014-10-17"
+
+msgid "2015-04-30"
+msgstr "2015-04-30"
 
 msgid "<application>Memcached</application> service"
 msgstr "<application>Memcached</application> 服务"
@@ -533,6 +537,9 @@ msgstr "使用该 IP 地址配置 OpenStack 服务"
 
 msgid "Configuring a DRBD device for use by MySQL"
 msgstr "配置被MySQL使用的DRBD设备"
+
+msgid "Conversion to DocBook."
+msgstr "转换为DocBook格式。"
 
 msgid ""
 "Copy this file to all other databases servers and change the value of "
@@ -1453,6 +1460,21 @@ msgid "PRIMARY_NODE_IP"
 msgstr "PRIMARY_NODE_IP"
 
 msgid ""
+"Pacemaker interacts with applications through resource agents (RAs), of "
+"which it supports over 70 natively. Pacemaker can also easily use third-"
+"party RAs. An OpenStack high-availability configuration uses existing native "
+"Pacemaker RAs (such as those managing MySQL databases or virtual IP "
+"addresses), existing third-party RAs (such as for RabbitMQ), and native "
+"OpenStack RAs (such as those managing the OpenStack Identity and Image "
+"services)."
+msgstr ""
+"Pacemaker 通过资源代理程序(RAs)（默认提供了 70 多种）和应用程序进行交互，在 "
+"Pacemaker 集群中应用第三方资源代理程序(RAs)也非常容易。OpenStack 高可用配置中"
+"使用了 Pacemaker 自带的资源代理程序RAs（如 MySQL 数据库服务、虚拟 IP 地址"
+"等）、已有的第三方资源代理程序(如 RabbitMQ 服务)以及 OpenStack 资源代理程序"
+"RAs(如 OpenStack 身份认证服务、磁盘镜像服务)。"
+
+msgid ""
 "Pacemaker relies on the <link href=\"http://www.corosync.org\">Corosync</"
 "link> messaging layer for reliable cluster communications. Corosync "
 "implements the Totem single-ring ordering and membership protocol. It also "
@@ -1930,6 +1952,13 @@ msgid ""
 "This guide has gone through editorial changes to follow the OpenStack "
 "documentation conventions. Various smaller issues have been fixed."
 msgstr "本手册根据 OpenStack 文档规范进行了修订，改正了不少细微的错误。"
+
+msgid ""
+"This guide has various updates for the Kilo release, such as adding MariaDB, "
+"updates to the MySQL information, corosync and networking updates."
+msgstr ""
+"本教程针对Kilo版本有多项更新，比如添加MariaDB，更新MySQL信息，corosync和网络"
+"更新。"
 
 msgid ""
 "This method does not ensure a zero downtime since it has to recreate all the "
