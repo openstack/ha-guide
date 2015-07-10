@@ -40,6 +40,11 @@ In order to eliminate SPOFs, check that mechanisms exist for redundancy of:
 
 - Facility services such as power, air conditioning, and fire protection
 
+In the event that a component fails and a back-up system must take on
+its load, most high availability systems will replace the failed
+component as quickly as possible to maintain necessary redundancy. This
+way time spent in a degraded protection state is minimized.
+
 Most high availability systems fail in the event of multiple
 independent (non-consequential) failures. In this case, most
 implementations favor protecting data over maintaining availability.

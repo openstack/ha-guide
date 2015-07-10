@@ -42,6 +42,10 @@
         protection</para>
     </listitem>
   </itemizedlist>
+  <para>In the event that a component fails and a back-up system must take on
+    its load, most high availability systems will replace the failed
+    component as quickly as possible to maintain necessary redundancy. This
+    way time spent in a degraded protection state is minimized.</para>
   <para>Most high availability systems will fail in the event of multiple
     independent (non-consequential) failures. In this case, most systems will
     protect data over maintaining availability.</para>
