@@ -12,7 +12,7 @@ RTO (Recovery Time Objective),
 and ETR (Expected Time of Repair,]
 
 Network components
-------------------
+~~~~~~~~~~~~~~~~~~
 
 [TODO Need discussion of network hardware, bonding interfaces,
 intelligent Layer 2 switches, routers and Layer 3 switches.]
@@ -27,8 +27,8 @@ and expected SLA.]
 See [TODO link] for more information about configuring networking
 for high availability.
 
-Load Balancing (HAProxy)
--------------------------
+Load balancing (HAProxy)
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 HAProxy is a load balancer that runs on each controller in the cluster
 but does not synchronize the state.
@@ -44,7 +44,7 @@ and shares the same SLA.
 See [TODO link] for information about configuring HAProxy.
 
 Database (MySQL/Galera)
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 MySQL with Galera can be configured
 using one of the following strategies:

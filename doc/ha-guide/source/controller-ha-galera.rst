@@ -29,7 +29,7 @@ Galera can be used with any of the following:
 [TODO: the structure of the MySQL and MariaDB sections should be made parallel]
 
 Install the MySQL database on the primary database server
----------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Install a version of MySQL patched for wsrep (Write Set REPlication)
 from `https://launchpad.net/codership-mysql`.
@@ -144,7 +144,7 @@ Galera/MySQL in:
    section of the Configuration Reference.
 
 Configure the database on other database servers
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Next, you need to copy the database configuration to the other database
 servers. Before doing this, make a backup copy of this file that you can use
@@ -288,7 +288,7 @@ to recover from an error:
 .. _maria-db-ha:
 
 MariaDB with Galera (Red Hat-based platforms)
----------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 MariaDB with Galera provides synchronous database replication in an
 active-active, multi-master environment. High availability for the data itself
@@ -300,7 +300,7 @@ cluster. Unless otherwise specified, all commands need to be executed on all
 cluster nodes.
 
 Procedure 6.1. To install MariaDB with Galera
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------
 
 #.  Distributions based on Red Hat include Galera packages in their
     repositories. To install the most current version of the packages, run the

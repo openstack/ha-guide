@@ -40,7 +40,7 @@ The steps to implement the Pacemaker cluster stack are:
 .. _pacemaker-install:
 
 Install packages
-----------------
+~~~~~~~~~~~~~~~~
 
 On any host that is meant to be part of a Pacemaker cluster,
 you must first establish cluster communications
@@ -65,7 +65,7 @@ usually installs automatically):
 .. _pacemaker-corosync-setup:
 
 Set up Corosync
----------------
+~~~~~~~~~~~~~~~
 
 After installing the Corosync package, you must create
 the :file:`/etc/corosync/corosync.conf` configuration file.
@@ -81,7 +81,7 @@ or to use the votequorum library.
 .. _corosync-multicast:
 
 Set up Corosync with multicast
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 Most distributions ship an example configuration file
 (:file:`corosync.conf.example`)
@@ -230,7 +230,7 @@ Note the following:
 .. _corosync-unicast:
 
 Set up Corosync with unicast
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 For environments that do not support multicast,
 Corosync should be configured for unicast.
@@ -319,7 +319,7 @@ Note the following:
 .. _corosync-votequorum:
 
 Set up Corosync with votequorum library
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------
 
 The votequorum library is part of the corosync project.
 It provides an interface to the vote-based quorum service
@@ -400,7 +400,7 @@ Note the following:
 .. _pacemaker-corosync-start:
 
 Start Corosync
---------------
+~~~~~~~~~~~~~~
 
 Corosync is started as a regular system service.
 Depending on your distribution, it may ship with an LSB init script,
@@ -460,7 +460,7 @@ give the command for Corosync version 1?]
 .. _pacemaker-start:
 
 Start Pacemaker
----------------
+~~~~~~~~~~~~~~~
 
 After the Corosync services have been started
 and you have verified that the cluster is communicating properly,
@@ -496,7 +496,7 @@ Use the :command:`crm_mon` utility to observe the status of Pacemaker:
 .. _pacemaker-cluster-properties:
 
 Set basic cluster properties
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After you set up your Pacemaker cluster,
 you should set a few basic cluster properties

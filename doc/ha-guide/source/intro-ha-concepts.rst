@@ -18,7 +18,7 @@ where a single failure deteriorates
 into a series of consequential failures.
 
 Redundancy and failover
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 High availability is implemented with redundant hardware
 running redundant instances of each service.
@@ -67,7 +67,7 @@ The important thing is to make sure that your services are redundant
 and available; how you achieve that is up to you.
 
 Stateless vs. stateful services
--------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Preventing single points of failure can depend on whether or not a
 service is stateless.
@@ -95,7 +95,7 @@ Stateful service
   an active/passive or active/active configuration.
 
 Active/Passive vs Active/Active
--------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Stateful services may be configured as active/passive or active/active:
 
@@ -133,7 +133,7 @@ Stateful services may be configured as active/passive or active/active:
   request.
 
 Clusters and quorums
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 The quorum specifies the minimal number of nodes
 that must be functional in a cluster of redundant nodes
@@ -161,7 +161,7 @@ Production systems should always run with quorum enabled.
 
 
 Single-controller high availability mode
-----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 OpenStack supports a single-controller high availability mode
 that is managed by the services that manage highly available environments
