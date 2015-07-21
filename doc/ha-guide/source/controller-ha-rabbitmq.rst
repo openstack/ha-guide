@@ -96,7 +96,7 @@ the availability of service since it is resilient to failures.
 Production servers should run (at least) three RabbitMQ servers;
 for testing and demonstration purposes,
 it is possible to run only two servers.
-In this section, we congfigure two nodes,
+In this section, we configure two nodes,
 called `rabbit1` and `rabbit2`.
 To build a broker, we need to ensure
 that all nodes have the same Erlang cookie file.

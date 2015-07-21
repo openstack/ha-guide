@@ -67,7 +67,7 @@ Galera/MySQL in:
 
     .. note ::
 
-       The galara package is now called galera-3 and is already a dependency
+       The galera package is now called galera-3 and is already a dependency
        of mariadb-galera-server. Therefore it should not be specified on the
        command line.
 
@@ -258,7 +258,7 @@ to recover from an error:
        | wsrep_flow_control_sent      | 0                                    |
        | wsrep_flow_control_recv      | 0                                    |
        | wsrep_cert_deps_distance     | 1.029703                             |
-       |riaDB with Galera (Red Hat-based platforms) wsrep_apply_oooe             | 0.024752                             |
+       | wsrep_apply_oooe             | 0.024752                             |
        | wsrep_apply_oool             | 0.000000                             |
        | wsrep_apply_window           | 1.024752                             |
        | wsrep_commit_oooe            | 0.000000                             |
