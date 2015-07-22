@@ -385,7 +385,7 @@ Note the following:
   This logic is repeated until the number of online nodes
   in the cluster reaches 2.
   In order to allow the cluster to step down from 2 members to only 1,
-  the ``auto_tie_breaker`` paramaeter needs to be set;
+  the ``auto_tie_breaker`` parameter needs to be set;
   this is not recommended for production environments.
 
 - ``last_man_standing_window`` specifies the time, in milliseconds,
