@@ -60,22 +60,22 @@ Galera/MySQL in:
 
 #. Update your system and install the required packages:
 
-    ::
+   ::
 
-      # apt-get update
-      # apt-get install mariadb-galera-server
+     # apt-get update
+     # apt-get install mariadb-galera-server
 
-    .. note ::
+   .. note ::
 
-       The galera package is now called galera-3 and is already a dependency
-       of mariadb-galera-server. Therefore it should not be specified on the
-       command line.
+      The galara package is now called galera-3 and is already a dependency
+      of mariadb-galera-server. Therefore it should not be specified on the
+      command line.
 
 
-    .. warning ::
+   .. warning ::
 
-       If you have already installed MariaDB, installing Galera will purge all privileges;
-       you must re-apply all the permissions listed in the installation guide.
+      If you have already installed MariaDB, installing Galera will purge all privileges;
+      you must re-apply all the permissions listed in the installation guide.
 
 #. Adjust the configuration by making the following changes to the
    :file:`/etc/mysql/my.cnf` file:
@@ -150,139 +150,139 @@ Next, you need to copy the database configuration to the other database
 servers. Before doing this, make a backup copy of this file that you can use
 to recover from an error:
 
-  ::
+::
 
-     cd /etc/mysql
-     cp debian.cnf debian.cnf.bak
+   cd /etc/mysql
+   cp debian.cnf debian.cnf.bak
 
 #. Be sure that SSH root access is established for the other database servers.
    Then copy the :file:`debian.cnf` file to each other server
    and reset the file permissions and owner to reduce the security risk.
    Do this by issuing the following commands on the primary database server:
 
-     ::
+   ::
 
-        # scp /etc/mysql/debian.cnf root@{IP-address}:/etc/mysql
-        # ssh root@{IP-address} chmod 640 /etc/mysql/debian.cnf
-        # ssh root@{IP-address} chown root /etc/mysql/debian.cnf
+      # scp /etc/mysql/debian.cnf root@{IP-address}:/etc/mysql
+      # ssh root@{IP-address} chmod 640 /etc/mysql/debian.cnf
+      # ssh root@{IP-address} chown root /etc/mysql/debian.cnf
 
 #. Use the following command after the copy to verify that all files are
    identical:
 
-     ::
+   ::
 
-        # md5sum debian.cnf
+      # md5sum debian.cnf
 
 
 #. You need to get the database password from the :file:`debian.cnf` file.
    You can do this with the following command:
 
-     ::
+   ::
 
-        # cat /etc/mysql/debian.cnf
+      # cat /etc/mysql/debian.cnf
 
    The result will be similar to this:
 
-     ::
+   ::
 
-       [client]
-       host = localhost
-       user = debian-sys-maint
-       password = FiKiOY1Lw8Sq46If
-       socket = /var/run/mysqld/mysqld.sock
-       [mysql_upgrade]
-       host = localhost
-       user = debian-sys-maint
-       password = FiKiOY1Lw8Sq46If
-       socket = /var/run/mysqld/mysqld.sock
-       basedir = /usr
+      [client]
+      host = localhost
+      user = debian-sys-maint
+      password = FiKiOY1Lw8Sq46If
+      socket = /var/run/mysqld/mysqld.sock
+      [mysql_upgrade]
+      host = localhost
+      user = debian-sys-maint
+      password = FiKiOY1Lw8Sq46If
+      socket = /var/run/mysqld/mysqld.sock
+      basedir = /usr
 
    Alternately, you can run the following command to print out just the `password` line:
 
-     ::
+   ::
 
-        # grep password /etc/mysql/debian.cnf
+      # grep password /etc/mysql/debian.cnf
 
 #. Now run the following query on each server other than the primary database
    node. This will ensure that you can restart the database again. You will
    need to supply the password you got in the previous step:
 
-     ::
+   ::
 
-       mysql> GRANT SHUTDOWN ON *.* TO ‘debian-sys-maint’@’localhost' IDENTIFIED BY '<debian.cnf {password}>';
-       mysql> GRANT SELECT ON `mysql`.`user` TO ‘debian-sys-maint’@’localhost' IDENTIFIED BY '<debian.cnf {password}>';
+      mysql> GRANT SHUTDOWN ON *.* TO ‘debian-sys-maint’@’localhost' IDENTIFIED BY '<debian.cnf {password}>';
+      mysql> GRANT SELECT ON `mysql`.`user` TO ‘debian-sys-maint’@’localhost' IDENTIFIED BY '<debian.cnf {password}>';
 
 #. Stop all the mysql servers and start the first server with the following
    command:
 
-     ::
+   ::
 
-       # service mysql start --wsrep-new-cluster
+      # service mysql start --wsrep-new-cluster
 
 #. Start all the other nodes with the following command:
 
-     ::
+   ::
 
-       # service mysql start
+      # service mysql start
 
 #. Verify the wsrep replication by logging in as root under mysql and running
    the following command:
 
-     ::
+   ::
 
-       mysql> SHOW STATUS LIKE ‘wsrep%’;
-       +------------------------------+--------------------------------------+
-       | Variable_name                | Value                                |
-       +------------------------------+--------------------------------------+
-       | wsrep_local_state_uuid       | d6a51a3a-b378-11e4-924b-23b6ec126a13 |
-       | wsrep_protocol_version       | 5                                    |
-       | wsrep_last_committed         | 202                                  |
-       | wsrep_replicated             | 201                                  |
-       | wsrep_replicated_bytes       | 89579                                |
-       | wsrep_repl_keys              | 865                                  |
-       | wsrep_repl_keys_bytes        | 11543                                |
-       | wsrep_repl_data_bytes        | 65172                                |
-       | wsrep_repl_other_bytes       | 0                                    |
-       | wsrep_received               | 8                                    |
-       | wsrep_received_bytes         | 853                                  |
-       | wsrep_local_commits          | 201                                  |
-       | wsrep_local_cert_failures    | 0                                    |
-       | wsrep_local_replays          | 0                                    |
-       | wsrep_local_send_queue       | 0                                    |
-       | wsrep_local_send_queue_avg   | 0.000000                             |
-       | wsrep_local_recv_queue       | 0                                    |
-       | wsrep_local_recv_queue_avg   | 0.000000                             |
-       | wsrep_local_cached_downto    | 1                                    |
-       | wsrep_flow_control_paused_ns | 0                                    |
-       | wsrep_flow_control_paused    | 0.000000                             |
-       | wsrep_flow_control_sent      | 0                                    |
-       | wsrep_flow_control_recv      | 0                                    |
-       | wsrep_cert_deps_distance     | 1.029703                             |
-       | wsrep_apply_oooe             | 0.024752                             |
-       | wsrep_apply_oool             | 0.000000                             |
-       | wsrep_apply_window           | 1.024752                             |
-       | wsrep_commit_oooe            | 0.000000                             |
-       | wsrep_commit_oool            | 0.000000                             |
-       | wsrep_commit_window          | 1.000000                             |
-       | wsrep_local_state            | 4                                    |
-       | wsrep_local_state_comment    | Synced                               |
-       | wsrep_cert_index_size        | 18                                   |
-       | wsrep_causal_reads           | 0                                    |
-       | wsrep_cert_interval          | 0.024752                             |
-       | wsrep_incoming_addresses     | <first IP>:3306,<second IP>:3306     |
-       | wsrep_cluster_conf_id        | 2                                    |
-       | wsrep_cluster_size           | 2                                    |
-       | wsrep_cluster_state_uuid     | d6a51a3a-b378-11e4-924b-23b6ec126a13 |
-       | wsrep_cluster_status         | Primary                              |
-       | wsrep_connected              | ON                                   |
-       | wsrep_local_bf_aborts        | 0                                    |
-       | wsrep_local_index            | 1                                    |
-       | wsrep_provider_name          | Galera                               |
-       | wsrep_provider_vendor        | Codership Oy <info@codership.com>    |
-       | wsrep_provider_version       | 25.3.5-wheezy(rXXXX)                 |
-       | wsrep_ready                  | ON                                   |
-       | wsrep_thread_count           | 2                                    |
-       +------------------------------+--------------------------------------+
+      mysql> SHOW STATUS LIKE ‘wsrep%’;
+      +------------------------------+--------------------------------------+
+      | Variable_name                | Value                                |
+      +------------------------------+--------------------------------------+
+      | wsrep_local_state_uuid       | d6a51a3a-b378-11e4-924b-23b6ec126a13 |
+      | wsrep_protocol_version       | 5                                    |
+      | wsrep_last_committed         | 202                                  |
+      | wsrep_replicated             | 201                                  |
+      | wsrep_replicated_bytes       | 89579                                |
+      | wsrep_repl_keys              | 865                                  |
+      | wsrep_repl_keys_bytes        | 11543                                |
+      | wsrep_repl_data_bytes        | 65172                                |
+      | wsrep_repl_other_bytes       | 0                                    |
+      | wsrep_received               | 8                                    |
+      | wsrep_received_bytes         | 853                                  |
+      | wsrep_local_commits          | 201                                  |
+      | wsrep_local_cert_failures    | 0                                    |
+      | wsrep_local_replays          | 0                                    |
+      | wsrep_local_send_queue       | 0                                    |
+      | wsrep_local_send_queue_avg   | 0.000000                             |
+      | wsrep_local_recv_queue       | 0                                    |
+      | wsrep_local_recv_queue_avg   | 0.000000                             |
+      | wsrep_local_cached_downto    | 1                                    |
+      | wsrep_flow_control_paused_ns | 0                                    |
+      | wsrep_flow_control_paused    | 0.000000                             |
+      | wsrep_flow_control_sent      | 0                                    |
+      | wsrep_flow_control_recv      | 0                                    |
+      | wsrep_cert_deps_distance     | 1.029703                             |
+      | wsrep_apply_oooe             | 0.024752                             |
+      | wsrep_apply_oool             | 0.000000                             |
+      | wsrep_apply_window           | 1.024752                             |
+      | wsrep_commit_oooe            | 0.000000                             |
+      | wsrep_commit_oool            | 0.000000                             |
+      | wsrep_commit_window          | 1.000000                             |
+      | wsrep_local_state            | 4                                    |
+      | wsrep_local_state_comment    | Synced                               |
+      | wsrep_cert_index_size        | 18                                   |
+      | wsrep_causal_reads           | 0                                    |
+      | wsrep_cert_interval          | 0.024752                             |
+      | wsrep_incoming_addresses     | <first IP>:3306,<second IP>:3306     |
+      | wsrep_cluster_conf_id        | 2                                    |
+      | wsrep_cluster_size           | 2                                    |
+      | wsrep_cluster_state_uuid     | d6a51a3a-b378-11e4-924b-23b6ec126a13 |
+      | wsrep_cluster_status         | Primary                              |
+      | wsrep_connected              | ON                                   |
+      | wsrep_local_bf_aborts        | 0                                    |
+      | wsrep_local_index            | 1                                    |
+      | wsrep_provider_name          | Galera                               |
+      | wsrep_provider_vendor        | Codership Oy <info@codership.com>    |
+      | wsrep_provider_version       | 25.3.5-wheezy(rXXXX)                 |
+      | wsrep_ready                  | ON                                   |
+      | wsrep_thread_count           | 2                                    |
+      +------------------------------+--------------------------------------+
 
 
 .. _maria-db-ha:
@@ -302,13 +302,13 @@ cluster nodes.
 Procedure 6.1. To install MariaDB with Galera
 ---------------------------------------------
 
-#.  Distributions based on Red Hat include Galera packages in their
-    repositories. To install the most current version of the packages, run the
-    following command:
+#. Distributions based on Red Hat include Galera packages in their
+   repositories. To install the most current version of the packages, run the
+   following command:
 
-    ::
+   ::
 
-       # yum install -y mariadb-galera-server xinetd rsync
+      # yum install -y mariadb-galera-server xinetd rsync
 
 #. (Optional) Configure the :file:`clustercheck` utility.
 
@@ -328,9 +328,9 @@ Procedure 6.1. To install MariaDB with Galera
         MYSQL_HOST="localhost"
         MYSQL_PORT="3306"
 
-     .. warning ::
+     .. warning::
 
-                   Be sure to supply a sensible password.
+        Be sure to supply a sensible password.
 
    - Configure the monitor service (used by HAProxy) by creating
      the :file:`/etc/xinetd.d/galera-monitor` file with the following contents:
@@ -355,17 +355,17 @@ Procedure 6.1. To install MariaDB with Galera
           flags = REUSE
        }
 
-    - Create the database user required by :command:`clustercheck`:
+   - Create the database user required by :command:`clustercheck`:
 
-      ::
+     ::
 
         # systemctl start mysqld
         # mysql -e "CREATE USER 'clustercheck'@'localhost' IDENTIFIED BY 'PASSWORD';"
         # systemctl stop mysqld
 
-    - Start the :command:`xinetd` daemon required by :command:`clustercheck`:
+   - Start the :command:`xinetd` daemon required by :command:`clustercheck`:
 
-      ::
+     ::
 
         # systemctl daemon-reload
         # systemctl enable xinetd
