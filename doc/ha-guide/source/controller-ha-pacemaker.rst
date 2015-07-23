@@ -17,15 +17,21 @@ Corosync implements the Totem single-ring ordering and membership protocol.
 It also provides UDP and InfiniBand based messaging,
 quorum, and cluster membership to Pacemaker.
 
-Pacemaker interacts with applications through resource agents (RAs),
-of which it supports over 70 natively.
-Pacemaker can also easily use third-party RAs.
-An OpenStack high-availability configuration
-uses existing native Pacemaker RAs
-(such as those managing MySQL databases or virtual IP addresses),
-existing third-party RAs (such as for RabbitMQ),
-and native OpenStack RAs
-(such as those managing the OpenStack Identity and Image services).
+Pacemaker does not inherently (need or want to) understand the
+applications it manages. Instead, it relies on resource agents (RAs),
+scripts that encapsulate the knowledge of how to start, stop, and
+check the health of each application managed by the cluster.
+
+These agents must conform to one of the
+`OCF <https://github.com/ClusterLabs/OCF-spec/blob/master/ra/resource-agent-api.md>`_,
+`SYS-V <http://refspecs.linux-foundation.org/LSB_3.0.0/LSB-Core-generic/LSB-Core-generic/iniscrptact.html>`_,
+Upstart, or Systemd standards.
+
+Pacemaker ships with a large set of OCF agents (such as those managing
+MySQL databases, virtual IP addresses, and RabbitMQ), but can also use
+any agents already installed on your system and can be extended with
+your own (see the
+`developer guide <http://www.linux-ha.org/doc/dev-guides/ra-dev-guide.html>`_).
 
 The steps to implement the Pacemaker cluster stack are:
 
