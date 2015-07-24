@@ -299,8 +299,8 @@ This guide assumes that three nodes are used to form the MariaDB Galera
 cluster. Unless otherwise specified, all commands need to be executed on all
 cluster nodes.
 
-Procedure 6.1. To install MariaDB with Galera
----------------------------------------------
+To install MariaDB with Galera
+------------------------------
 
 #. Distributions based on Red Hat include Galera packages in their
    repositories. To install the most current version of the packages, run the
