@@ -118,7 +118,7 @@ Stateful services may be configured as active/passive or active/active:
   A separate application (such as Pacemaker or Corosync) monitors
   these services, bringing the backup online as necessary.
 
-:term:`active/passive configuration`
+:term:`active/active configuration`
   Each service also has a backup but manages both the main and
   redundant systems concurrently.
   This way, if there is a failure, the user is unlikely to notice.
