@@ -226,21 +226,28 @@ nodelist { <co xml:id="CO1-8"/>
          be specified.</para>
       </note>
       <para>Possible options are:</para>
-      <para>The <option>ringX_addr</option> specifies IP address of one of the nodes.
-        X is ring number.</para>
-      <para>The <option>nodeid</option> configuration option is optional when using IPv4 and required
-        when using IPv6. This is a 32-bit value specifying the node identifier delivered to the
-        cluster membership  service. If this is not specified with IPv4, the node id will be
-        determined from the 32-bit IP address the system to which the system is bound with ring
-        identifier of 0. The node identifier value of zero is reserved and should not be used.</para>
+      <para>The <option>ringX_addr</option> specifies the IP address of one of the nodes.
+        X is the ring number.</para>
+      <para>The <option>nodeid</option> configuration option is optional when
+        using IPv4 and required when using IPv6. This is a 32-bit value
+        specifying the node identifier delivered to the cluster membership
+        service. When using IPv4, this defaults to the 32-bit IP address to
+        which the system is bound with the ring identifier of 0. The node
+        identifier value of zero is reserved and should not be used.</para>
     </callout>
   </calloutlist>
   </section>
+
   <section xml:id="_set_up_corosync_votequorum_full_size">
-  <title>Set up Corosync with votequorum library</title>
-  <para>Votequorum library is part of the corosync project. It provides
-  interface to the vote-based quorum service and it needs to be explicitly
-  enabled in the Corosync configuration file. The main role of votequorum
+  <title>Set up Corosync with votequorum library for a full-size cluster</title>
+  <para>This section describes a full-size cluster configuration with three or
+  more members which is appropriate for production deployments.
+  For a two-node configuration that can be used for demostrations and testing,
+  please go to the next section.
+  </para>
+  <para>Votequorum library is a part of the Corosync project. It provides
+  an interface to the vote-based quorum service and it must be explicitly
+  enabled in the Corosync configuration file. The main role of the votequorum
   library is to avoid split-brain situations, but it also provides a mechanism
   to:
   <itemizedlist>
@@ -296,7 +303,7 @@ nodelist { <co xml:id="CO1-8"/>
    </callout>
    <callout arearefs="CR0-4"><para><option>last_man_standing</option> enable
     Last Man Standing (LMS) feature (disabled by default: 0). If a cluster is on
-    the quorum edge (expected_votes: 7 online nodes: 4) for time longer than
+    the quorum edge (expected_votes: 7; online nodes: 4) for time longer than
     configured in <option>last_man_standing_window</option>, the cluster can
     recalculate quorum and continue operating even if the next node will be
     lost. This logic is repeated until the number of online nodes in the cluster
@@ -305,10 +312,85 @@ nodelist { <co xml:id="CO1-8"/>
     to be set.</para>
    </callout>
    <callout arearefs="CR0-5"><para><option>last_man_standing_window</option>
-    is time required to recalculate quorum after one or most hosts have been
+    is time required to recalculate the quorum after one or most hosts have been
     lost from the cluster. To do the new quorum recalculation, the cluster needs
     to have quorum at least for <option>last_man_standing_window</option>,
     time in [ms] (default: 10000ms).</para>
+   </callout>
+  </calloutlist>
+  </section>
+
+  <section xml:id="_set_up_corosync_votequorum_two_hosts_cluster">
+  <title>Set up Corosync with votequorum library for two-host clusters</title>
+  <para>The two-node cluster configuration is a special case that Pacemaker
+  supports for demonstration and testing; it is a special feature of the
+  votequorum library and is not recommended for production environments.
+  </para>
+  <formalpara>
+    <title>Multicast votequorum service configuration for two-host
+           Corosync cluster</title>
+    <para>
+      <programlisting language="ini">quorum {
+        provider: corosync_votequorum <co xml:id="CR1-0"/>
+        expected_votes: 2
+        two_node: 1 <co xml:id="CR1-1"/>
+      }</programlisting>
+    </para>
+  </formalpara>
+  <calloutlist>
+   <callout arearefs="CR1-0"><para><option>corosync_votequorum</option>
+        enables votequorum provider library.</para>
+   </callout>
+   <callout arearefs="CR1-1"><para>Put the cluser into two-node operational
+        mode (default: 0).
+        <note><para>Setting <option>two_node</option> to 1 enables
+              <option>wait_for_all</option> by default. It is still possible to
+              override <option>wait_for_all</option> by explicitly setting it
+              to 0. If more than 2 nodes join the cluster, the
+              <option>two_node</option> option is automatically disabled.</para>
+        </note>
+        <important>
+            <para>Disabling <option>wait_for_all</option> in a two-node cluster
+            may be dangerous as it can lead to a situation (stonith deathmatch)
+            where each node comes up, assumes the other is down, and fences
+            peer in order to safely start clustered services. The peer
+            eventually comes up and repeats the process until the underlying
+            fault is rectified.</para>
+        </important>
+    </para>
+   </callout>
+  </calloutlist>
+
+  <formalpara>
+    <title>Unicast (UDP) votequorum service configuration for two-host
+           Corosync cluster</title>
+    <para>
+      <programlisting language="ini">quorum {
+        provider: corosync_votequorum <co xml:id="CR1-4"/>
+        two_node: 1 <co xml:id="CR1-5"/>
+      }
+
+      nodelist { <co xml:id="CR1-6"/>
+        node {
+           ring0_addr: 192.168.1.1
+        }
+        node {
+           ring0_addr: 192.168.1.2
+        }
+      }</programlisting>
+    </para>
+  </formalpara>
+  <calloutlist>
+   <callout arearefs="CR1-4"><para><option>corosync_votequorum</option>
+        enables votequorum provider library.</para>
+   </callout>
+   <callout arearefs="CR1-5"><para>For the cluster to work with two members only
+        <option>two_node</option> artificially sets quorum below mathematical
+        majority.</para>
+   </callout>
+   <callout arearefs="CR1-6"><para>Unicast Corosync configuratrion requires
+    <option>nodelist</option> option to explicitly provide a list of cluster
+    members.</para>
    </callout>
   </calloutlist>
   </section>
