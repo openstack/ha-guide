@@ -2,9 +2,32 @@
 Overview of highly-available controllers
 ========================================
 
-A highly-available OpenStack environment
-must have a controller cluster with three or more nodes.
-The following components are normally included in the cluster.
+OpenStack is a set of multiple services exposed to the end users
+as HTTP(s) APIs. Additionally, for own internal usage OpenStack
+requires SQL database server and AMQP broker. The physical servers,
+where all the components are running are often called controllers.
+This modular OpenStack architecture allows to duplicate all the
+components and run them on different controllers.
+By making all the components redundant it is possible to make
+OpenStack highly-available.
+
+In general we can divide all the OpenStack components into three categories:
+
+- OpenStack APIs, these are HTTP(s) stateless services written in python,
+  easy to duplicate and mostly easy to load balance.
+
+- SQL relational database server provides stateful type consumed by other
+  components. Supported databases are MySQL, MariaDB, and PostgreSQL.
+  Making SQL database redundant is complex.
+
+- :term:`Advanced Message Queuing Protocol (AMQP)` provides OpenStack
+  internal stateful communication service.
+
+Assuming that every single OpenStack controller runs the full set of
+the elementary services (symmetric controller), the common good practice
+is to have a small odd number of controllers.
+Most of the time, it means three OpenStack controllers.
+
 
 [TODO Discuss SLA (Service Level Agreement), if this is the measure we use.
 Other possibilities include MTTR (Mean Time To Recover),
