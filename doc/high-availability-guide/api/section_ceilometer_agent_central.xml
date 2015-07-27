@@ -62,6 +62,11 @@ rabbit_host = 192.168.42.102
 
 [database]
 # We have to use MySQL connection to store data:
-sql_connection=mysql+pymysql://ceilometer:password@192.168.42.101/ceilometer</programlisting>
+sql_connection=mysql://ceilometer:password@192.168.42.101/ceilometer
+# Alternatively, you can switch to pymysql,
+# a new Python 3 compatible library and use
+# sql_connection=mysql+pymysql://ceilometer:password@192.168.42.101/ceilometer
+# and be ready when everything moves to Python 3.
+# Ref: https://wiki.openstack.org/wiki/PyMySQL_evaluation</programlisting>
   </section>
 </section>

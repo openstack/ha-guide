@@ -68,6 +68,11 @@ Edit the :file:`/etc/cinder/cinder.conf` file:
 
    # We have to use MySQL connection to store data:
    sql_connection=mysql://cinder:password@192.168.42.101/cinder
+   # Alternatively, you can switch to pymysql,
+   # a new Python 3 compatible library and use
+   # sql_connection=mysql+pymysql://cinder:password@192.168.42.101/cinder
+   # and be ready when everything moves to Python 3.
+   # Ref: https://wiki.openstack.org/wiki/PyMySQL_evaluation
 
    # We bind Block Storage API to the VIP:
    osapi_volume_listen = 192.168.42.103
