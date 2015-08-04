@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-07-20 06:00+0000\n"
+"POT-Creation-Date: 2015-08-04 06:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1118,67 +1118,111 @@ msgid "Possible options are:"
 msgstr ""
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:229(para)
-msgid "The <placeholder-1/> specifies IP address of one of the nodes. X is ring number."
+msgid "The <placeholder-1/> specifies the IP address of one of the nodes. X is the ring number."
 msgstr ""
 
 #: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:231(para)
-msgid "The <placeholder-1/> configuration option is optional when using IPv4 and required when using IPv6. This is a 32-bit value specifying the node identifier delivered to the cluster membership service. If this is not specified with IPv4, the node id will be determined from the 32-bit IP address the system to which the system is bound with ring identifier of 0. The node identifier value of zero is reserved and should not be used."
+msgid "The <placeholder-1/> configuration option is optional when using IPv4 and required when using IPv6. This is a 32-bit value specifying the node identifier delivered to the cluster membership service. When using IPv4, this defaults to the 32-bit IP address to which the system is bound with the ring identifier of 0. The node identifier value of zero is reserved and should not be used."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:240(title)
-msgid "Set up Corosync with votequorum library"
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:242(title)
+msgid "Set up Corosync with votequorum library for a full-size cluster"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:248(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:243(para)
+msgid "This section describes a full-size cluster configuration with three or more members which is appropriate for production deployments. For a two-node configuration that can be used for demostrations and testing, please go to the next section."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:255(para)
 msgid "Query the quorum status"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:251(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:258(para)
 msgid "Get a list of nodes known to the quorum service"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:254(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:261(para)
 msgid "Receive notifications of quorum state changes"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:257(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:264(para)
 msgid "Change the number of votes assigned to a node"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:260(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:267(para)
 msgid "Change the number of expected votes for a cluster to be quorate"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:264(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:271(para)
 msgid "Connect an additional quorum device to allow small clusters remain quorate during node outages"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:241(para)
-msgid "Votequorum library is part of the corosync project. It provides interface to the vote-based quorum service and it needs to be explicitly enabled in the Corosync configuration file. The main role of votequorum library is to avoid split-brain situations, but it also provides a mechanism to: <placeholder-1/> Votequorum library has been created to replace and eliminate from advanced cluster configurations qdisk, disk-based quorum daemon for CMAN."
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:248(para)
+msgid "Votequorum library is a part of the Corosync project. It provides an interface to the vote-based quorum service and it must be explicitly enabled in the Corosync configuration file. The main role of the votequorum library is to avoid split-brain situations, but it also provides a mechanism to: <placeholder-1/> Votequorum library has been created to replace and eliminate from advanced cluster configurations qdisk, disk-based quorum daemon for CMAN."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:272(title)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:279(title)
 msgid "Votequorum service configuration within Corosync"
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:284(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:291(para)
 msgid "Provider <placeholder-1/> enables votequorum library, this is the only required option."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:287(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:294(para)
 msgid "The cluster is fully operational with <placeholder-1/> 7 nodes (each node has 1 vote), quorum: 4. If list of nodes is specified as <placeholder-2/> the <placeholder-3/> is ignored."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:292(para)
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:299(para)
 msgid "<placeholder-1/> When starting up a cluster (all nodes down) it will hold the cluster quorum until all of the nodes become online and joint the cluster first time (new in Corosync 2.0)."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:297(para)
-msgid "<placeholder-1/> enable Last Man Standing (LMS) feature (disabled by default: 0). If a cluster is on the quorum edge (expected_votes: 7 online nodes: 4) for time longer than configured in <placeholder-2/>, the cluster can recalculate quorum and continue operating even if the next node will be lost. This logic is repeated until the number of online nodes in the cluster reach 2. In order to allow cluster step down from 2 members to only 1, what is not recommended <placeholder-3/> option needs to be set."
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:304(para)
+msgid "<placeholder-1/> enable Last Man Standing (LMS) feature (disabled by default: 0). If a cluster is on the quorum edge (expected_votes: 7; online nodes: 4) for time longer than configured in <placeholder-2/>, the cluster can recalculate quorum and continue operating even if the next node will be lost. This logic is repeated until the number of online nodes in the cluster reach 2. In order to allow cluster step down from 2 members to only 1, what is not recommended <placeholder-3/> option needs to be set."
 msgstr ""
 
-#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:307(para)
-msgid "<placeholder-1/> is time required to recalculate quorum after one or most hosts have been lost from the cluster. To do the new quorum recalculation, the cluster needs to have quorum at least for <placeholder-2/>, time in [ms] (default: 10000ms)."
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:314(para)
+msgid "<placeholder-1/> is time required to recalculate the quorum after one or most hosts have been lost from the cluster. To do the new quorum recalculation, the cluster needs to have quorum at least for <placeholder-2/>, time in [ms] (default: 10000ms)."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:324(title)
+msgid "Set up Corosync with votequorum library for two-host clusters"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:325(para)
+msgid "The two-node cluster configuration is a special case that Pacemaker supports for demonstration and testing; it is a special feature of the votequorum library and is not recommended for production environments."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:330(title)
+msgid "Multicast votequorum service configuration for two-host Corosync cluster"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:341(para) ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:384(para)
+msgid "<placeholder-1/> enables votequorum provider library."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:346(para)
+msgid "Setting <placeholder-1/> to 1 enables <placeholder-2/> by default. It is still possible to override <placeholder-3/> by explicitly setting it to 0. If more than 2 nodes join the cluster, the <placeholder-4/> option is automatically disabled."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:353(para)
+msgid "Disabling <placeholder-1/> in a two-node cluster may be dangerous as it can lead to a situation (stonith deathmatch) where each node comes up, assumes the other is down, and fences peer in order to safely start clustered services. The peer eventually comes up and repeats the process until the underlying fault is rectified."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:344(para)
+msgid "Put the cluser into two-node operational mode (default: 0). <placeholder-1/><placeholder-2/>"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:365(title)
+msgid "Unicast (UDP) votequorum service configuration for two-host Corosync cluster"
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:387(para)
+msgid "For the cluster to work with two members only <placeholder-1/> artificially sets quorum below mathematical majority."
+msgstr ""
+
+#: ./doc/high-availability-guide/pacemaker/section_set_up_corosync.xml:391(para)
+msgid "Unicast Corosync configuratrion requires <placeholder-1/> option to explicitly provide a list of cluster members."
 msgstr ""
 
 #: ./doc/high-availability-guide/controller/section_rabbitmq.xml:11(title)
