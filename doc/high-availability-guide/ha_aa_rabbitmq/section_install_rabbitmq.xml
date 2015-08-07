@@ -8,7 +8,7 @@
   <section xml:id="_on_ubuntu_debian">
     <title>On Ubuntu and Debian</title>
     <para>RabbitMQ is packaged on both distros:</para>
-    <screen><prompt>#</prompt> <userinput>apt-get install rabbitmq-server rabbitmq-plugins</userinput></screen>
+    <screen><prompt>#</prompt> <userinput>apt-get install rabbitmq-server</userinput></screen>
     <note>
       <para>
         <link xlink:href="http://www.rabbitmq.com/install-debian.html">

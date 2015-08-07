@@ -27,7 +27,7 @@ you are using:
    * - Distribution
      - Command
    * - Ubuntu, Debian
-     - :command:`# apt-get install rabbitmq-server rabbitmq-plugins`
+     - :command:`# apt-get install rabbitmq-server`
    * - RHEL, Fedora, CentOS
      - :command:`# yum install rabbitmq-server`
    * - openSUSE
