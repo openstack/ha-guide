@@ -56,7 +56,7 @@ Ceph
 ----
 
 `Ceph RBD <http://ceph.com/>`_
-is an inately high availability storage back end.
+is an innately high availability storage back end.
 It creates a storage cluster with multiple nodes
 that communicate with each other
 to replicate and redistribute data dynamically.
