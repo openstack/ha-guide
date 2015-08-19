@@ -68,7 +68,12 @@ rabbit_host = 192.168.42.102
 
 [database]
 # We have to use MySQL connection to store data:
-connection = mysql+pymysql://neutron:password@192.168.42.101/neutron</programlisting>
+connection = mysql://neutron:password@192.168.42.101/neutron
+# Alternatively, you can switch to pymysql,
+# a new Python 3 compatible library and use
+# connection=mysql+pymysql://neutron:password@192.168.42.101/neutron
+# and be ready when everything moves to Python 3.
+# Ref: https://wiki.openstack.org/wiki/PyMySQL_evaluation</programlisting>
   </section>
   <section xml:id="_configure_openstack_services_to_use_highly_available_openstack_networking_server">
   <title>Configure OpenStack services to use highly available OpenStack

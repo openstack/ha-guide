@@ -73,6 +73,11 @@ to configure the OpenStack image service:
 
    # We have to use MySQL connection to store data:
    sql_connection=mysql://glance:password@192.168.42.101/glance
+   # Alternatively, you can switch to pymysql,
+   # a new Python 3 compatible library and use
+   # sql_connection=mysql+pymysql://glance:password@192.168.42.101/glance
+   # and be ready when everything moves to Python 3.
+   # Ref: https://wiki.openstack.org/wiki/PyMySQL_evaluation
 
    # We bind OpenStack Image API to the VIP:
    bind_host = 192.168.42.103
