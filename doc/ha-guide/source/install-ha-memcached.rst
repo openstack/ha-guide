@@ -40,6 +40,6 @@ if the host goes down, `controller2` does the job.
 For more information about memcached installation,
 see the
 `OpenStack Cloud Administrator Guide
-<http://docs.openstack.org/admin-guide-cloud/content/>`_.
+<http://docs.openstack.org/admin-guide-cloud/>`_.
 
 

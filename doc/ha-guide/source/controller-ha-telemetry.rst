@@ -67,8 +67,9 @@ in the OpenStack Configuration Reference.
    otherwise samples may be missing or duplicated. The list of meters to poll
    can be set in the :file:`/etc/ceilometer/pipeline.yaml` configuration file.
    For more information about pipelines see the `Data collection and
-   processing <http://docs.openstack.org/admin-guide-cloud/content/
-   section_telemetry-data-collection-processing.html>`__ section.
+   processing
+   <http://docs.openstack.org/admin-guide-cloud/telemetry-data-collection.html#data-collection-and-processing>`__
+   section.
 
 To enable the compute agent to run multiple instances simultaneously with
 workload partitioning, the workload_partitioning option has to be set to

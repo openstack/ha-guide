@@ -10,7 +10,8 @@
 for VMs on tenant networks. High availability for the L3 agent is achieved by
 adopting Pacemaker.</para>
         <note>
-          <para>Here is the <link xlink:href="http://docs.openstack.org/admin-guide-cloud/content/install_neutron-l3.html">documentation</link> for installing neutron L3 agent.</para>
+          <para>Here is the <link xlink:href="http://docs.openstack.org/admin-guide-cloud/networking_config-agents.html#configure-l3-agent">documentation</link>
+          for installing neutron L3 agent.</para>
         </note>
         <section xml:id="_add_neutron_l3_agent_resource_to_pacemaker">
 

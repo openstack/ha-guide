@@ -77,7 +77,7 @@ or even the failure of the data center itself.
 When Ceph RBD is used for ephemeral volumes
 as well as block and image storage, it supports
 `live migration
-<http://docs.openstack.org/admin-guide-cloud/content/section_live-migration-usage.html>`_
+<http://docs.openstack.org/admin-guide-cloud/compute-live-migration-usage.html>`_
 of VMs with ephemeral drives;
 LVM only supports live migration of volume-backed VMs.
 

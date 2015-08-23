@@ -23,6 +23,6 @@
   <para>By default, <literal>controller1</literal> handles the caching service
     but if the host goes down, <literal>controller2</literal> does the job. For
     more information about <application>Memcached</application> installation,
-    see the <link xlink:href="http://docs.openstack.org/admin-guide-cloud/content/">
+    see the <link xlink:href="http://docs.openstack.org/admin-guide-cloud/">
     OpenStack Cloud Administrator Guide</link>.</para>
 </section>
