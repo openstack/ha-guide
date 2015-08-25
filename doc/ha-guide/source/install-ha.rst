@@ -8,6 +8,5 @@ Installing high availability packages
    :maxdepth: 2
 
    install-ha-os.rst
-   install-ha-vip.rst
    install-ha-memcached.rst
    install-ha-ntp.rst
