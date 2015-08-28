@@ -79,9 +79,9 @@ The following components/services can work with HA queues:
 that shows each component and the earliest release that allows it
 to work with HA queues.]
 
-- OpenStack compute
-- OpenStack block storage
-- OpenStack networking
+- OpenStack Compute
+- OpenStack Block Storage
+- OpenStack Networking
 - Telemetry
 
 We have to consider that, while exchanges and bindings
@@ -97,70 +97,70 @@ Production servers should run (at least) three RabbitMQ servers;
 for testing and demonstration purposes,
 it is possible to run only two servers.
 In this section, we configure two nodes,
-called `rabbit1` and `rabbit2`.
+called ``rabbit1`` and ``rabbit2``.
 To build a broker, we need to ensure
 that all nodes have the same Erlang cookie file.
 
 [TODO: Should the example instead use a minimum of three nodes?]
 
-To do so, stop RabbitMQ everywhere and copy the cookie
-from the first node to each of the other node(s):
+#. To do so, stop RabbitMQ everywhere and copy the cookie
+   from the first node to each of the other node(s):
 
-.. code-block:: console
+   .. code-block:: console
 
-   # scp /var/lib/rabbitmq/.erlang.cookie root@NODE:/var/lib/rabbitmq/.erlang.cookie
+      # scp /var/lib/rabbitmq/.erlang.cookie root@NODE:/var/lib/rabbitmq/.erlang.cookie
 
-On each target node, verify the correct owner,
-group, and permissions of the file :file:`erlang.cookie`.
+#. On each target node, verify the correct owner,
+   group, and permissions of the file :file:`erlang.cookie`.
 
-.. code-block:: console
+   .. code-block:: console
 
-   # chown rabbitmq:rabbitmq /var/lib/rabbitmq/.erlang.cookie
-   # chmod 400 /var/lib/rabbitmq/.erlang.cookie
+      # chown rabbitmq:rabbitmq /var/lib/rabbitmq/.erlang.cookie
+      # chmod 400 /var/lib/rabbitmq/.erlang.cookie
 
-Start RabbitMQ on all nodes and verify that the nodes are running:
+#. Start RabbitMQ on all nodes and verify that the nodes are running:
 
-.. code-block:: console
+   .. code-block:: console
 
-   # rabbitmqctl cluster_status
-   Cluster status of node rabbit@NODE...
-   [{nodes,[{disc,[rabbit@NODE]}]},
-    {running_nodes,[rabbit@NODE]},
-    {partitions,[]}]
-   ...done.
+      # rabbitmqctl cluster_status
+      Cluster status of node rabbit@NODE...
+      [{nodes,[{disc,[rabbit@NODE]}]},
+       {running_nodes,[rabbit@NODE]},
+       {partitions,[]}]
+      ...done.
 
-Run the following commands on each node except the first one:
+#. Run the following commands on each node except the first one:
 
-.. code-block:: console
+   .. code-block:: console
 
-   # rabbitmqctl stop_app
-   Stopping node rabbit@NODE...
-   ...done.
-   # rabbitmqctl join_cluster rabbit@rabbit1
-   # rabbitmqctl start_app
-   Starting node rabbit@NODE ...
-   ...done.
+      # rabbitmqctl stop_app
+      Stopping node rabbit@NODE...
+      ...done.
+      # rabbitmqctl join_cluster rabbit@rabbit1
+      # rabbitmqctl start_app
+      Starting node rabbit@NODE ...
+      ...done.
 
-To verify the cluster status:
+#. To verify the cluster status:
 
-.. code-block:: console
+   .. code-block:: console
 
-   # rabbitmqctl cluster_status
-   Cluster status of node rabbit@NODE...
-   [{nodes,[{disc,[rabbit@rabbit1]},{ram,[rabbit@NODE]}]}, \
-       {running_nodes,[rabbit@NODE,rabbit@rabbit1]}]
+      # rabbitmqctl cluster_status
+      Cluster status of node rabbit@NODE...
+      [{nodes,[{disc,[rabbit@rabbit1]},{ram,[rabbit@NODE]}]}, \
+          {running_nodes,[rabbit@NODE,rabbit@rabbit1]}]
 
-If the cluster is working,
-you can create usernames and passwords for the queues.
+   If the cluster is working,
+   you can create usernames and passwords for the queues.
 
-To ensure that all queues except those with auto-generated names
-are mirrored across all running nodes,
-set the `ha-mode` policy key to all
-by running the following command on one of the nodes:
+#. To ensure that all queues except those with auto-generated names
+   are mirrored across all running nodes,
+   set the ``ha-mode`` policy key to all
+   by running the following command on one of the nodes:
 
-.. code-block:: console
+   .. code-block:: console
 
-   # rabbitmqctl set_policy ha-all '^(?!amq\.).*' '{"ha-mode": "all"}'
+      # rabbitmqctl set_policy ha-all '^(?!amq\.).*' '{"ha-mode": "all"}'
 
 More information is available in the RabbitMQ documentation:
 
@@ -178,52 +178,52 @@ to use at least two RabbitMQ nodes.
 
 Do this configuration on all services using RabbitMQ:
 
-- RabbitMQ HA cluster host:port pairs:
-  [TODO: Add rabbit3 if you agree]
+#. RabbitMQ HA cluster host:port pairs:
+   [TODO: Add rabbit3 if you agree]
 
-  ::
+   ::
 
-     rabbit_hosts=rabbit1:5672,rabbit2:5672
+      rabbit_hosts=rabbit1:5672,rabbit2:5672
 
-- How frequently to retry connecting with RabbitMQ:
-  [TODO: document the unit of measure here?  Seconds?]
+#. How frequently to retry connecting with RabbitMQ:
+   [TODO: document the unit of measure here?  Seconds?]
 
-  ::
+   ::
 
-     rabbit_retry_interval=1
+      rabbit_retry_interval=1
 
-- How long to back-off for between retries when connecting to RabbitMQ:
-  [TODO: document the unit of measure here?  Seconds?]
+#. How long to back-off for between retries when connecting to RabbitMQ:
+   [TODO: document the unit of measure here?  Seconds?]
 
-  ::
+   ::
 
-     rabbit_retry_backoff=2
+      rabbit_retry_backoff=2
 
-- Maximum retries with trying to connect to RabbitMQ (infinite by default):
+#. Maximum retries with trying to connect to RabbitMQ (infinite by default):
 
-  ::
+   ::
 
-     rabbit_max_retries=0
+      rabbit_max_retries=0
 
-- Use durable queues in RabbitMQ:
+#. Use durable queues in RabbitMQ:
 
-  ::
+   ::
 
-     rabbit_durable_queues=true
+      rabbit_durable_queues=true
 
-- Use HA queues in RabbitMQ (x-ha-policy: all):
+#. Use HA queues in RabbitMQ (x-ha-policy: all):
 
-  ::
+   ::
 
-     rabbit_ha_queues=true
+      rabbit_ha_queues=true
 
 .. note::
 
    If you change the configuration from an old set-up
    that did not use HA queues, you should restart the service:
 
-.. code-block:: console
+   .. code-block:: console
 
-       # rabbitmqctl stop_app
-       # rabbitmqctl reset
-       # rabbitmqctl start_app
+      # rabbitmqctl stop_app
+      # rabbitmqctl reset
+      # rabbitmqctl start_app

@@ -32,7 +32,7 @@ Install the MySQL database on the primary database server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Install a version of MySQL patched for wsrep (Write Set REPlication)
-from `https://launchpad.net/codership-mysql`.
+from https://launchpad.net/codership-mysql.
 The wsrep API supports synchronous replication
 and so is suitable for configuring MySQL High Availability in OpenStack.
 
@@ -42,37 +42,37 @@ Galera/MySQL in:
 - `wsrep readme file <https://launchpadlibrarian.net/66669857/README-wsrep>`_
 - `Galera Getting Started guide <http://galeracluster.com/documentation-webpages/gettingstarted.html>`_
 
-#.  Install the software properties, the key, and the repository;
-    For Ubuntu 14.04 "trusty", the command sequence is:
+#. Install the software properties, the key, and the repository;
+   For Ubuntu 14.04 "trusty", the command sequence is:
 
-    [TODO: provide instructions for SUSE and Red Hat]
+   [TODO: provide instructions for SUSE and Red Hat]
 
-    ::
+   .. code-block:: console
 
       # apt-get install software-properties-common
       # apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
       # add-apt-repository 'deb http://ams2.mirrors.digitalocean.com/mariadb/repo/5.5/ubuntu trusty main'
 
-    .. note ::
+   .. note::
 
-       You can choose a different mirror from the list at
-       `downloads.mariadb.org <https://downloads.mariadb.org>`_
+      You can choose a different mirror from the list at
+      `downloads.mariadb.org <https://downloads.mariadb.org>`_
 
 #. Update your system and install the required packages:
 
-   ::
+   .. code-block:: console
 
      # apt-get update
      # apt-get install mariadb-galera-server
 
-   .. note ::
+   .. note::
 
       The galara package is now called galera-3 and is already a dependency
       of mariadb-galera-server. Therefore it should not be specified on the
       command line.
 
 
-   .. warning ::
+   .. warning::
 
       If you have already installed MariaDB, installing Galera will purge all privileges;
       you must re-apply all the permissions listed in the installation guide.
@@ -80,7 +80,7 @@ Galera/MySQL in:
 #. Adjust the configuration by making the following changes to the
    :file:`/etc/mysql/my.cnf` file:
 
-   ::
+   .. code-block:: ini
 
      query_cache_size=0
      binlog_format=ROW
@@ -91,7 +91,7 @@ Galera/MySQL in:
 #. Create the :file:`/etc/mysql/conf.d/wsrep.cnf` file;
    paste the following lines into this file:
 
-   ::
+   .. code-block:: ini
 
      [mysqld]
      wsrep_provider=/usr/lib/galera/libgalera_smm.so
@@ -102,7 +102,7 @@ Galera/MySQL in:
      wsrep_node_address="{PRIMARY_NODE_IP}"
      wsrep_node_name="{NODE_NAME}"
 
-   - Replace (PRIMARY_NODE_IP}, {SECONDARY_NODE}, and (TERTIARY__NODE_IP}
+   - Replace {PRIMARY_NODE_IP}, {SECONDARY_NODE}, and {TERTIARY__NODE_IP}
      with the IP addresses of your servers.
 
    - Replace {NODE_NAME} with the hostname of the server.
@@ -126,7 +126,7 @@ Galera/MySQL in:
 #. Verify that the nodes can access each other through the firewall.
    On Red Hat, this means adjusting :manpage:`iptables(8)`, as in:
 
-   ::
+   .. code-block:: console
 
      # iptables --insert RH-Firewall-1-INPUT 1 --proto tcp \
        --source <my IP>/24 --destination <my IP>/32 --dport 3306 \
@@ -138,7 +138,7 @@ Galera/MySQL in:
 
    You may also need to configure any NAT firewall between nodes to allow direct connections.
    You may need to disable SELinux
-   or configure it to allow :command:`mysqld` to listen to sockets at unprivileged ports.
+   or configure it to allow ``mysqld`` to listen to sockets at unprivileged ports.
    See the `Firewalls and default ports
    <http://docs.openstack.org/kilo/config-reference/content/firewalls-default-ports.html>`_
    section of the Configuration Reference.
@@ -150,17 +150,17 @@ Next, you need to copy the database configuration to the other database
 servers. Before doing this, make a backup copy of this file that you can use
 to recover from an error:
 
-::
+.. code-block:: console
 
-   cd /etc/mysql
-   cp debian.cnf debian.cnf.bak
+   # cd /etc/mysql
+   # cp debian.cnf debian.cnf.bak
 
 #. Be sure that SSH root access is established for the other database servers.
    Then copy the :file:`debian.cnf` file to each other server
    and reset the file permissions and owner to reduce the security risk.
    Do this by issuing the following commands on the primary database server:
 
-   ::
+   .. code-block:: console
 
       # scp /etc/mysql/debian.cnf root@{IP-address}:/etc/mysql
       # ssh root@{IP-address} chmod 640 /etc/mysql/debian.cnf
@@ -169,7 +169,7 @@ to recover from an error:
 #. Use the following command after the copy to verify that all files are
    identical:
 
-   ::
+   .. code-block:: console
 
       # md5sum debian.cnf
 
@@ -177,13 +177,13 @@ to recover from an error:
 #. You need to get the database password from the :file:`debian.cnf` file.
    You can do this with the following command:
 
-   ::
+   .. code-block:: console
 
       # cat /etc/mysql/debian.cnf
 
    The result will be similar to this:
 
-   ::
+   .. code-block:: ini
 
       [client]
       host = localhost
@@ -197,9 +197,9 @@ to recover from an error:
       socket = /var/run/mysqld/mysqld.sock
       basedir = /usr
 
-   Alternately, you can run the following command to print out just the `password` line:
+   Alternately, you can run the following command to print out just the ``password`` line:
 
-   ::
+   .. code-block:: console
 
       # grep password /etc/mysql/debian.cnf
 
@@ -215,13 +215,13 @@ to recover from an error:
 #. Stop all the mysql servers and start the first server with the following
    command:
 
-   ::
+   .. code-block:: console
 
       # service mysql start --wsrep-new-cluster
 
 #. Start all the other nodes with the following command:
 
-   ::
+   .. code-block:: console
 
       # service mysql start
 
@@ -306,22 +306,22 @@ To install MariaDB with Galera
    repositories. To install the most current version of the packages, run the
    following command:
 
-   ::
+   .. code-block:: console
 
       # yum install -y mariadb-galera-server xinetd rsync
 
-#. (Optional) Configure the :file:`clustercheck` utility.
+#. (Optional) Configure the ``clustercheck`` utility.
 
    [TODO: Should this be moved to some other place?]
 
    If HAProxy is used to load-balance client access to MariaDB
    as described in the HAProxy section of this document,
-   you can use the :command:`clustercheck` utility to improve health checks.
+   you can use the ``clustercheck`` utility to improve health checks.
 
-   - Create the :file:`etc/sysconfig/clustercheck` file with the following
+   - Create the :file:`/etc/sysconfig/clustercheck` file with the following
      contents:
 
-     ::
+     .. code-block:: ini
 
         MYSQL_USERNAME="clustercheck"
         MYSQL_PASSWORD={PASSWORD}
@@ -355,17 +355,17 @@ To install MariaDB with Galera
           flags = REUSE
        }
 
-   - Create the database user required by :command:`clustercheck`:
+   - Create the database user required by ``clustercheck``:
 
-     ::
+     .. code-block:: console
 
         # systemctl start mysqld
         # mysql -e "CREATE USER 'clustercheck'@'localhost' IDENTIFIED BY 'PASSWORD';"
         # systemctl stop mysqld
 
-   - Start the :command:`xinetd` daemon required by :command:`clustercheck`:
+   - Start the ``xinetd`` daemon required by ``clustercheck``:
 
-     ::
+     .. code-block:: console
 
         # systemctl daemon-reload
         # systemctl enable xinetd
@@ -376,7 +376,7 @@ To install MariaDB with Galera
    - Create the :file:`/etc/my.cnf.d/galera.cnf` configuration file
      with the following content:
 
-     ::
+     .. code-block:: ini
 
        [mysqld]
        skip-name-resolve=1
@@ -406,7 +406,7 @@ To install MariaDB with Galera
 
    - Open the firewall ports used for MariaDB and Galera communications:
 
-     ::
+     .. code-block:: console
 
          # firewall-cmd --add-service=mysql
          # firewall-cmd --add-port=4444/tcp
@@ -425,22 +425,22 @@ To install MariaDB with Galera
 
      - On node 1, run the following command:
 
-       ::
+       .. code-block:: console
 
-         # sudo -u mysql /usr/libexec/mysqld --wsrep-cluster-address='gcomm://' &
+          # sudo -u mysql /usr/libexec/mysqld --wsrep-cluster-address='gcomm://' &
 
      - On nodes 2 and 3, run the following command:
 
-       ::
+       .. code-block:: console
 
-         systemctl start mariadb
+          # systemctl start mariadb
 
-     - After the output from the :command:`clustercheck` command is 200 on all nodes,
+     - After the output from the ``clustercheck`` command is 200 on all nodes,
        restart the MariaDB on node 1 with the following command sequence:
 
        [TODO: is the kill command necessary here?]
 
-       ::
+       .. code-block:: console
 
          # kill <mysql PIDs>
          # systemctl start mariadb

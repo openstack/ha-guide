@@ -4,11 +4,11 @@ High availability concepts
 
 High availability systems seek to minimize two things:
 
-System downtime
+**System downtime**
   Occurs when a user-facing service is unavailable
   beyond a specified maximum amount of time.
 
-Data loss
+**Data loss**
   Accidental deletion or destruction of data.
 
 Most high availability systems guarantee protection against system downtime
