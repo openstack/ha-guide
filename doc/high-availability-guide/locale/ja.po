@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-08-24 00:49+0000\n"
-"PO-Revision-Date: 2015-08-24 04:43+0000\n"
+"POT-Creation-Date: 2015-08-27 10:09+0000\n"
+"PO-Revision-Date: 2015-08-28 01:39+0000\n"
 "Last-Translator: Daisuke Matsui <nanodayo@hotmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/openstack/openstack-"
 "manuals-i18n/language/ja/)\n"
@@ -327,6 +327,9 @@ msgid "Configure OpenStack Identity to listen on the VIP address,"
 msgstr ""
 "OpenStack Identity がその仮想 IP アドレスでリッスンするよう設定します。"
 
+msgid "Configure OpenStack Image service API"
+msgstr "OpenStack Image サービス API の設定"
+
 msgid "Configure OpenStack Networking server"
 msgstr "OpenStack Networking Server の設定"
 
@@ -383,6 +386,12 @@ msgstr "Telemetry 中央エージェントサービスの設定"
 
 msgid "Configure the VIP"
 msgstr "仮想 IP の設定"
+
+msgid "Configuring Block Storage to listen on the VIP address"
+msgstr "Block Storage がその仮想 IP アドレスをリッスンする設定"
+
+msgid "Configuring OpenStack services to use this IP address"
+msgstr "OpenStack のサービスがこの IP アドレスを使用する設定"
 
 msgid "Copyright details are filled in by the template."
 msgstr "Copyright details are filled in by the template."
