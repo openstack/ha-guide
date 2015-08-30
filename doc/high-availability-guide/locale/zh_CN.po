@@ -1,6 +1,7 @@
 #
 # Translators:
 # Alfred <alfredhuang211@qq.com>, 2015
+# niluyy <abc10086hi@126.com>, 2015
 # zhaochao <zhaochao1984@gmail.com>, 2015
 # 刘俊朋 <liujunpeng@inspur.com>, 2015
 # 秋林 <chenqioulin_1983@163.com>, 2015
@@ -8,9 +9,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-07-28 21:43+0000\n"
-"PO-Revision-Date: 2015-07-27 08:18+0000\n"
-"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
+"POT-Creation-Date: 2015-08-28 06:45+0000\n"
+"PO-Revision-Date: 2015-08-30 01:43+0000\n"
+"Last-Translator: niluyy <abc10086hi@126.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/openstack/openstack-"
 "manuals-i18n/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -994,6 +995,16 @@ msgid ""
 msgstr "在<filename>/etc/mysql/my.conf</filename>文件中，进行如下修改："
 
 msgid ""
+"In the event that a component fails and a back-up system must take on its "
+"load, most high availability systems will replace the failed component as "
+"quickly as possible to maintain necessary redundancy. This way time spent in "
+"a degraded protection state is minimized."
+msgstr ""
+"当某个组件崩溃后， 备用系统必须把该组件的工作负载承接过来。绝大多数的高可用系"
+"统会尽快的把崩溃的组件替换掉用以保证系统的必要冗余安全性。该处理方案中系统处"
+"在保护降级状态中的时间要尽可能的少"
+
+msgid ""
 "In versions prior to Juno, this option was called "
 "<literal>glance_api_servers</literal> in the <literal>[DEFAULT]</literal> "
 "section."
@@ -1176,6 +1187,20 @@ msgstr ""
 
 msgid "MySQL with Galera"
 msgstr "MySQL 和 Galera"
+
+msgid ""
+"MySQL with Galera is by no means the only way to achieve database HA. "
+"MariaDB Galera Cluster (<link xlink:href=\"https://mariadb.org/\">https://"
+"mariadb.org/</link>) and Percona XtraDB Cluster (<link xlink:href=\"http://"
+"www.percona.com/\">http://www.percona.com/</link>) also work with Galera. "
+"You also have the option to use PostgreSQL, which has its own replication, "
+"or another database HA option."
+msgstr ""
+"MySQL+Galera绝对不是唯一种实现数据库高可用的方案。MariaDB Galera 集群 (<link "
+"xlink:href=\"https://mariadb.org/\">https://mariadb.org/</link>) 和Percona "
+"XtraDB集群 (<link xlink:href=\"http://www.percona.com/\">http://www.percona."
+"com/</link>) 都可以和Galera一起使用的。除此之外，你可以使用PostgreSQL，"
+"PostgreSQL有自己的数据同步方案，或者使用其他的数据库高可用方案"
 
 msgid "NODE"
 msgstr "NODE"
