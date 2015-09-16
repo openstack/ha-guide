@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: High Availability Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-28 06:00+0000\n"
+"POT-Creation-Date: 2015-09-16 18:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../controller-ha-galera.rst:313
-msgid "(Optional) Configure the :file:`clustercheck` utility."
+msgid "(Optional) Configure the ``clustercheck`` utility."
+msgstr ""
+
+#: ../intro-ha-concepts.rst:12
+msgid "**Data loss**"
+msgstr ""
+
+#: ../intro-ha-concepts.rst:9
+msgid "**System downtime**"
 msgstr ""
 
 #: ../networking-ha-l3.rst:0
@@ -360,8 +368,8 @@ msgstr ""
 
 #: ../controller-ha-galera.rst:438
 msgid ""
-"After the output from the :command:`clustercheck` command is 200 on all "
-"nodes, restart the MariaDB on node 1 with the following command sequence:"
+"After the output from the ``clustercheck`` command is 200 on all nodes, "
+"restart the MariaDB on node 1 with the following command sequence:"
 msgstr ""
 
 #: ../controller-ha-keystone.rst:63
@@ -389,7 +397,7 @@ msgstr ""
 #: ../controller-ha-galera.rst:200
 msgid ""
 "Alternately, you can run the following command to print out just the "
-"`password` line:"
+"``password`` line:"
 msgstr ""
 
 #: ../storage-ha-backend.rst:14
@@ -503,7 +511,7 @@ msgid ""
 "Configure OpenStack services to use highly available OpenStack Image API"
 msgstr ""
 
-#: ../controller-ha-keystone.rst:104
+#: ../controller-ha-keystone.rst:103
 msgid ""
 "Configure OpenStack services to use the highly available OpenStack Identity"
 msgstr ""
@@ -524,7 +532,7 @@ msgid ""
 "about configuring networking."
 msgstr ""
 
-#: ../install-ha-vip.rst:4
+#: ../controller-ha-vip.rst:4
 msgid "Configure the VIP"
 msgstr ""
 
@@ -610,12 +618,12 @@ msgstr ""
 
 #: ../controller-ha-galera.rst:321
 msgid ""
-"Create the :file:`etc/sysconfig/clustercheck` file with the following "
+"Create the :file:`/etc/sysconfig/clustercheck` file with the following "
 "contents:"
 msgstr ""
 
 #: ../controller-ha-galera.rst:358
-msgid "Create the database user required by :command:`clustercheck`:"
+msgid "Create the database user required by ``clustercheck``:"
 msgstr ""
 
 #: ../networking-ha-lbaas.rst:8
@@ -624,10 +632,6 @@ msgid ""
 "available using the default plug-in HAProxy. A common way to make HAProxy "
 "highly available is to use the VRRP (Virtual Router Redundancy Protocol). "
 "Unfortunately, this is not yet implemented in the LBaaS HAProxy plug-in."
-msgstr ""
-
-#: ../intro-ha-concepts.rst:12
-msgid "Data loss"
 msgstr ""
 
 #: ../controller-ha-galera.rst:4
@@ -687,7 +691,7 @@ msgid ""
 "image service:"
 msgstr ""
 
-#: ../controller-ha-keystone.rst:75
+#: ../controller-ha-keystone.rst:74
 msgid ""
 "Edit the :file:`keystone.conf` file to change the values of the :manpage:"
 "`bind(2)` parameters:"
@@ -722,7 +726,7 @@ msgstr ""
 msgid "For Kilo and beyond, focus on L3HA and DVR."
 msgstr ""
 
-#: ../controller-ha-keystone.rst:113
+#: ../controller-ha-keystone.rst:112
 msgid ""
 "For OpenStack Compute, for example, if your OpenStack Identiy service IP "
 "address is 192.168.42.103, use the following configuration in your :file:"
@@ -962,8 +966,8 @@ msgstr ""
 #: ../controller-ha-galera.rst:317
 msgid ""
 "If HAProxy is used to load-balance client access to MariaDB as described in "
-"the HAProxy section of this document, you can use the :command:"
-"`clustercheck` utility to improve health checks."
+"the HAProxy section of this document, you can use the ``clustercheck`` "
+"utility to improve health checks."
 msgstr ""
 
 #: ../controller-ha-pacemaker.rst:284
@@ -1056,7 +1060,7 @@ msgstr ""
 #: ../controller-ha-galera.rst:34
 msgid ""
 "Install a version of MySQL patched for wsrep (Write Set REPlication) from "
-"`https://launchpad.net/codership-mysql`. The wsrep API supports synchronous "
+"https://launchpad.net/codership-mysql. The wsrep API supports synchronous "
 "replication and so is suitable for configuring MySQL High Availability in "
 "OpenStack."
 msgstr ""
@@ -1396,24 +1400,28 @@ msgstr ""
 msgid "Open the firewall ports used for MariaDB and Galera communications:"
 msgstr ""
 
+#: ../controller-ha-rabbitmq.rst:83
+msgid "OpenStack Block Storage"
+msgstr ""
+
+#: ../controller-ha-rabbitmq.rst:82
+msgid "OpenStack Compute"
+msgstr ""
+
 #: ../index.rst:3
 msgid "OpenStack High Availability Guide"
 msgstr ""
 
 #: ../controller-ha-keystone.rst:6
 msgid ""
-"OpenStack Identity (keystone) is the Identity Service in OpenStack that is "
+"OpenStack Identity (keystone) is the Identity service in OpenStack that is "
 "used by many services. You should be familiar with `OpenStack identity "
 "concepts <http://docs.openstack.org/juno/install-guide/install/apt/content/"
 "keystone-concepts.html>`_ before proceeding."
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:83
-msgid "OpenStack block storage"
-msgstr ""
-
-#: ../controller-ha-rabbitmq.rst:82
-msgid "OpenStack compute"
+#: ../controller-ha-rabbitmq.rst:84
+msgid "OpenStack Networking"
 msgstr ""
 
 #: ../intro-ha-concepts.rst:58
@@ -1438,10 +1446,6 @@ msgstr ""
 
 #: ../networking-ha.rst:33
 msgid "OpenStack network nodes contain:"
-msgstr ""
-
-#: ../controller-ha-rabbitmq.rst:84
-msgid "OpenStack networking"
 msgstr ""
 
 #: ../intro-ha-concepts.rst:171
@@ -1528,7 +1532,7 @@ msgstr ""
 
 #: ../controller-ha-pacemaker.rst:531
 msgid ""
-"Production environments should not set the `` no-quorum-policy=\"ignore\"`` "
+"Production environments should not set the ``no-quorum-policy=\"ignore\"`` "
 "parameter."
 msgstr ""
 
@@ -1536,8 +1540,9 @@ msgstr ""
 msgid ""
 "Production servers should run (at least) three RabbitMQ servers; for testing "
 "and demonstration purposes, it is possible to run only two servers. In this "
-"section, we configure two nodes, called `rabbit1` and `rabbit2`. To build a "
-"broker, we need to ensure that all nodes have the same Erlang cookie file."
+"section, we configure two nodes, called ``rabbit1`` and ``rabbit2``. To "
+"build a broker, we need to ensure that all nodes have the same Erlang cookie "
+"file."
 msgstr ""
 
 #: ../controller-ha-pacemaker.rst:336
@@ -1622,15 +1627,15 @@ msgstr ""
 msgid "Remove user accounts with empty user names because they cause problems:"
 msgstr ""
 
-#: ../controller-ha-galera.rst:105
-msgid ""
-"Replace (PRIMARY_NODE_IP}, {SECONDARY_NODE}, and (TERTIARY__NODE_IP} with "
-"the IP addresses of your servers."
-msgstr ""
-
 #: ../controller-ha-galera.rst:108
 msgid ""
 "Replace {NODE_NAME} with the hostname of the server. This is set for logging."
+msgstr ""
+
+#: ../controller-ha-galera.rst:105
+msgid ""
+"Replace {PRIMARY_NODE_IP}, {SECONDARY_NODE}, and {TERTIARY__NODE_IP} with "
+"the IP addresses of your servers."
 msgstr ""
 
 #: ../networking-ha-dhcp.rst:6
@@ -1703,7 +1708,7 @@ msgstr ""
 msgid ""
 "Setting ``last_man_standing`` to 1 enables the Last Man Standing (LMS) "
 "feature; by default, it is disabled (set to 0). If a cluster is on the "
-"quorum edge (``expected_votes:``set to 7; ``online nodes:`` set to 4) for "
+"quorum edge (``expected_votes:`` set to 7; ``online nodes:`` set to 4) for "
 "longer than the time specified for the ``last_man_standing_window`` "
 "parameter, the cluster can recalculate quorum and continue operating even if "
 "the next node will be lost. This logic is repeated until the number of "
@@ -1763,12 +1768,12 @@ msgid ""
 "the configuration menu."
 msgstr ""
 
-#: ../controller-ha-galera.rst:366
-msgid "Start the :command:`xinetd` daemon required by :command:`clustercheck`:"
-msgstr ""
-
 #: ../controller-ha-galera.rst:424
 msgid "Start the MariaDB cluster:"
+msgstr ""
+
+#: ../controller-ha-galera.rst:366
+msgid "Start the ``xinetd`` daemon required by ``clustercheck``:"
 msgstr ""
 
 #: ../intro-ha-concepts.rst:100
@@ -1807,10 +1812,6 @@ msgstr ""
 
 #: ../install-ha-ntp.rst:16
 msgid "SuSe: [link to suse install guide]"
-msgstr ""
-
-#: ../intro-ha-concepts.rst:9
-msgid "System downtime"
 msgstr ""
 
 # #-#-#-#-#  controller-ha-rabbitmq.pot (High Availability Guide 0.0.1)  #-#-#-#-#
@@ -1864,9 +1865,9 @@ msgid ""
 "The OpenStack Networking service has a scheduler that lets you run multiple "
 "agents across nodes; the DHCP agent can be natively highly available. To "
 "configure the number of DHCP agents per network, modify the "
-"`dhcp_agents_per_network` parameter in the :file:`/etc/neutron/neutron.conf` "
-"file. By default this is set to 1. To achieve high availability, assign more "
-"than one DHCP agent per network."
+"``dhcp_agents_per_network`` parameter in the :file:`/etc/neutron/neutron."
+"conf` file. By default this is set to 1. To achieve high availability, "
+"assign more than one DHCP agent per network."
 msgstr ""
 
 #: ../controller-ha-telemetry.rst:11
@@ -1878,7 +1879,7 @@ msgstr ""
 #: ../compute-node-ha-api.rst:6
 msgid ""
 "The `Installation Guide <http://docs.openstack.org/juno/install-guide/"
-"install/apt/content/ch_nova.html>` gives instructions for installing "
+"install/apt/content/ch_nova.html>`_ gives instructions for installing "
 "multiple compute nodes. To make them highly available, you must configure "
 "the envirionment to include multiple instances of the API and other services."
 msgstr ""
@@ -1891,7 +1892,7 @@ msgid ""
 "applications."
 msgstr ""
 
-#: ../controller-ha-keystone.rst:84
+#: ../controller-ha-keystone.rst:83
 msgid ""
 "The ``admin_bind_host`` parameter lets you use a private network for admin "
 "access."
@@ -2080,7 +2081,7 @@ msgid ""
 "OpenStack Image API service."
 msgstr ""
 
-#: ../install-ha-vip.rst:9
+#: ../controller-ha-vip.rst:9
 msgid ""
 "This configuration creates ``p_ip_api``, a virtual IP address for use by the "
 "API node (``192.168.42.103``):"
@@ -2145,7 +2146,7 @@ msgid ""
 "environment."
 msgstr ""
 
-#: ../controller-ha-keystone.rst:87
+#: ../controller-ha-keystone.rst:86
 msgid ""
 "To be sure that all data is highly available, ensure that everything is "
 "stored in the MySQL database (which is also highly available):"
@@ -2169,7 +2170,7 @@ msgstr ""
 #: ../controller-ha-rabbitmq.rst:156
 msgid ""
 "To ensure that all queues except those with auto-generated names are "
-"mirrored across all running nodes, set the `ha-mode` policy key to all by "
+"mirrored across all running nodes, set the ``ha-mode`` policy key to all by "
 "running the following command on one of the nodes:"
 msgstr ""
 
@@ -2245,8 +2246,8 @@ msgstr ""
 
 #: ../controller-ha-pacemaker.rst:426
 msgid ""
-"Use the :command:`corosync-cfgtool` utility with the -s option to get a "
-"summary of the health of the communication rings:"
+"Use the :command:`corosync-cfgtool` utility with the :option:`-s` option to "
+"get a summary of the health of the communication rings:"
 msgstr ""
 
 #: ../controller-ha-pacemaker.rst:441
@@ -2343,7 +2344,7 @@ msgid ""
 "central and compute agent service is able to run and function correctly."
 msgstr ""
 
-#: ../controller-ha-keystone.rst:121
+#: ../controller-ha-keystone.rst:120
 msgid ""
 "You also need to create the OpenStack Identity Endpoint with this IP address."
 msgstr ""
@@ -2394,11 +2395,10 @@ msgstr ""
 #: ../controller-ha-galera.rst:139
 msgid ""
 "You may also need to configure any NAT firewall between nodes to allow "
-"direct connections. You may need to disable SELinux or configure it to "
-"allow :command:`mysqld` to listen to sockets at unprivileged ports. See the "
-"`Firewalls and default ports <http://docs.openstack.org/kilo/config-"
-"reference/content/firewalls-default-ports.html>`_ section of the "
-"Configuration Reference."
+"direct connections. You may need to disable SELinux or configure it to allow "
+"``mysqld`` to listen to sockets at unprivileged ports. See the `Firewalls "
+"and default ports <http://docs.openstack.org/kilo/config-reference/content/"
+"firewalls-default-ports.html>`_ section of the Configuration Reference."
 msgstr ""
 
 #: ../storage-ha-glance.rst:124
@@ -2437,7 +2437,7 @@ msgid ""
 "(lower stratum) servers and other nodes to reference the controller node."
 msgstr ""
 
-#: ../install-ha-vip.rst:6
+#: ../controller-ha-vip.rst:6
 msgid ""
 "You must select and assign a virtual IP address (VIP) that can freely float "
 "between cluster nodes."
@@ -2463,7 +2463,7 @@ msgid ""
 "environment."
 msgstr ""
 
-#: ../controller-ha-keystone.rst:106
+#: ../controller-ha-keystone.rst:105
 msgid ""
 "Your OpenStack services must now point their OpenStack Identity "
 "configuration to the highly available virtual cluster IP address rather than "
@@ -2692,8 +2692,13 @@ msgstr ""
 msgid "`Zookeeper <http://zookeeper.apache.org/>`__."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:404
-msgid "``last_man_standing_window`` specifies the time, in milliseconds,"
+#: ../controller-ha-pacemaker.rst:397
+msgid ""
+"``last_man_standing_window`` specifies the time, in milliseconds, required "
+"to recalculate quorum after one or most hosts have been lost from the "
+"cluster. To do the new quorum recalculation, the cluster must have quorum "
+"for at least the interval specified for  ``last_man_standing_window``; the "
+"default is 10000ms."
 msgstr ""
 
 #: ../controller-ha-pacemaker.rst:315
@@ -2798,14 +2803,6 @@ msgstr ""
 
 #: ../controller-ha-pacemaker.rst:58
 msgid "pacemaker (Note that the crm shell should be downloaded separately.)"
-msgstr ""
-
-#: ../controller-ha-pacemaker.rst:398
-msgid ""
-"required to recalculate quorum after one or most hosts have been lost from "
-"the cluster. To do the new quorum recalculation, the cluster must have "
-"quorum for at least the interval specified for  "
-"``last_man_standing_window``; the default is 10000ms."
 msgstr ""
 
 #: ../controller-ha-pacemaker.rst:69

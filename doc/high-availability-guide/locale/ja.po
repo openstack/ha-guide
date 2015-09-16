@@ -1,22 +1,24 @@
-#
 # Translators:
 # Daisuke Matsui <nanodayo@hotmail.com>, 2015
 # Sasuke(Kyohei MORIYAMA) <>, 2014
 # Sasuke(Kyohei MORIYAMA) <>, 2015
 # Tomoyuki KATO <tomo@dream.daynight.jp>, 2013-2015
+#
+# OpenStack Infra <zanata@openstack.org>, 2015. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-08-27 10:09+0000\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-09-15 07:40+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2015-08-28 01:39+0000\n"
 "Last-Translator: Daisuke Matsui <nanodayo@hotmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/openstack/openstack-"
 "manuals-i18n/language/ja/)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Zanata 3.7.1\n"
 
 msgid "2"
 msgstr "2"
