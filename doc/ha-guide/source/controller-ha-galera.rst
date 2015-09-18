@@ -152,8 +152,7 @@ to recover from an error:
 
 .. code-block:: console
 
-   # cd /etc/mysql
-   # cp debian.cnf debian.cnf.bak
+   # cp /etc/mysql/debian.cnf /etc/mysql/debian.cnf.bak
 
 #. Be sure that SSH root access is established for the other database servers.
    Then copy the :file:`debian.cnf` file to each other server
@@ -209,8 +208,8 @@ to recover from an error:
 
    ::
 
-      mysql> GRANT SHUTDOWN ON *.* TO ‘debian-sys-maint’@’localhost' IDENTIFIED BY '<debian.cnf {password}>';
-      mysql> GRANT SELECT ON `mysql`.`user` TO ‘debian-sys-maint’@’localhost' IDENTIFIED BY '<debian.cnf {password}>';
+      mysql> GRANT SHUTDOWN ON *.* TO 'debian-sys-maint'@'localhost' IDENTIFIED BY '<debian.cnf {password}>';
+      mysql> GRANT SELECT ON 'mysql'.'user' TO 'debian-sys-maint'@'localhost' IDENTIFIED BY '<debian.cnf {password}>';
 
 #. Stop all the mysql servers and start the first server with the following
    command:
@@ -230,7 +229,7 @@ to recover from an error:
 
    ::
 
-      mysql> SHOW STATUS LIKE ‘wsrep%’;
+      mysql> SHOW STATUS LIKE 'wsrep%';
       +------------------------------+--------------------------------------+
       | Variable_name                | Value                                |
       +------------------------------+--------------------------------------+
