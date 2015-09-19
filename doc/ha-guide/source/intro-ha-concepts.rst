@@ -148,16 +148,39 @@ the system must ensure that data and processes remain sane.
 To determine this, the contents of the remaining nodes are compared
 and, if there are discrepancies, a "majority rules" algorithm is implemented.
 
-For this reason, each cluster in a high availability environment must
-have an odd number of nodes and the quorum must specify an odd number
-of nodes.
+For this reason, each cluster in a high availability environment should
+have an odd number of nodes and the quorum is defined as more than a half
+of the nodes.
 If multiple nodes fail so that the cluster size falls below the quorum
 value, the cluster itself fails.
 
-For example, in a 7-node cluster, the quorum could be set to 5 or 3.
-If quorum is 5 and three nodes fail simultaneously,
-the cluster itself would fail,
-whereas it would continue to function if the quorum were set to 3.
+For example, in a seven-node cluster, the quorum should be set to
+floor(7/2) + 1 == 4. If quorum is four and four nodes fail simultaneously,
+the cluster itself would fail, whereas it would continue to function, if
+no more than three nodes fail. If split to partitions of three and four nodes
+respectively, the quorum of four nodes would continue to operate the majority
+partition and stop or fence the minority one (depending on the
+no-quorum-policy cluster configuration).
+
+And the quorum could also have been set to three, just as a configuration
+example.
+
+.. note::
+
+  Note that setting the quorum to a value less than floor(n/2) + 1 is not
+  recommended and would likely cause a split-brain in a face of network
+  partitions.
+
+Then, for the given example when four nodes fail simultaneously,
+the cluster would continue to function as well. But if split to partitions of
+three and four nodes respectively, the quorum of three would have made both
+sides to attempt to fence the other and host resources. And without fencing
+enabled, it would go straight to running two copies of each resource.
+
+This is why setting the quorum to a value less than floor(n/2) + 1 is
+dangerous. However it may be required for some specific cases, like a
+temporary measure at a point it is known with 100% certainty that the other
+nodes are down.
 
 When configuring an OpenStack environment for study or demonstration purposes,
 it is possible to turn off the quorum checking;
