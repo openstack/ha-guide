@@ -6,44 +6,13 @@ This repository contains the OpenStack High Availability Guide.
 For more details, see the `OpenStack Documentation wiki page
 <http://wiki.openstack.org/Documentation>`_.
 
-Prerequisites
-=============
-
-`Apache Maven <http://maven.apache.org/>`_ must be installed to build the
-documentation.
-
-To install Maven 3 for Ubuntu 12.04 and later, and Debian wheezy and later::
-
-    apt-get install maven
-
-On Fedora 20 and later::
-
-    yum install maven
-
-On openSUSE 13.1 and later::
-
-    zypper ar http://download.opensuse.org/repositories/devel:/tools:/building/openSUSE_13.1/devel:tools:building.repo
-    zypper install maven
-
 Building
 ========
 
 The root directory of the *OpenStack High Availability Guide*
-is ``doc/high-availability-guide``.
+is ``doc/ha-guide``.
 
-To build the guide, move into the directory ``doc/high-availability-guide``,
-then run the ``mvn`` command in that directory::
-
-    cd doc/high-availability-guide/
-    mvn clean generate-sources
-
-The generated PDF documentation file is::
-
-    doc/high-availability-guide/target/docbkx/webhelp/high-availability-guide/high-availability-guide.pdf
-
-The root of the generated HTML documentation is::
-
-    doc/high-availability-guide/target/docbkx/webhelp/high-availability-guide/index.html
+To build the guide, run ``tox -e docs``.
 
 Testing of changes and building of the manual
 =============================================
@@ -55,8 +24,6 @@ gating jobs.
 If you like to run individual tests, run:
 
  * ``tox -e checkniceness`` - to run the niceness tests
- * ``tox -e checksyntax`` - to run syntax checks
- * ``tox -e checkdeletions`` - to check that no deleted files are referenced
  * ``tox -e checkbuild`` - to actually build the manual
 
 tox will use the openstack-doc-tools package for execution of these
