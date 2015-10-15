@@ -7,7 +7,7 @@ OpenStack Identity (keystone)
 is the Identity service in OpenStack that is used by many services.
 You should be familiar with
 `OpenStack identity concepts
-<http://docs.openstack.org/juno/install-guide/install/apt/content/keystone-concepts.html>`_
+<http://docs.openstack.org/liberty/install-guide-ubuntu/common/get_started_identity.html>`_
 before proceeding.
 
 Making the OpenStack Identity service highly available

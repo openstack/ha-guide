@@ -116,11 +116,6 @@ you would use the following configuration in your :file:`nova.conf` file:
    ...
 
 
-.. note::
-
-         In releases prior to Juno, this option was called
-         ``glance_api_servers`` and located in the [DEFAULT] section.
-
 You must also create the OpenStack Image API endpoint with this IP address.
 If you are using both private and public IP addresses,
 you should create two Virtual IP addresses

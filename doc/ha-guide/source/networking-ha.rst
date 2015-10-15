@@ -4,7 +4,7 @@ OpenStack network nodes
 =======================
 
 Configure networking on each node.
-The `Networking <http://docs.openstack.org/juno/install-guide/install/apt/content/ch_basic_environment.html#basics-prerequisites>`_
+The `Networking <http://docs.openstack.org/liberty/install-guide-ubuntu/environment.html>`_
 section of the *Install Guide* includes basic information
 about configuring networking.
 

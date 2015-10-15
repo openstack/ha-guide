@@ -5,8 +5,8 @@ Hardware setup
 
 The standard hardware requirements:
 
-- `neutron <http://docs.openstack.org/juno/install-guide/install/apt/content/ch_overview.html#example-architecture-with-neutron-networking-hw>`_
-- `nova-network <http://docs.openstack.org/juno/install-guide/install/apt/content/ch_overview.html#example-architecture-with-legacy-networking-hw>`_
+- `neutron <http://docs.openstack.org/kilo/install-guide/install/apt/content/ch_overview.html#example-architecture-with-neutron-networking-hw>`_
+- `nova-network <http://docs.openstack.org/kilo/install-guide/install/apt/content/ch_overview.html#example-architecture-with-legacy-networking-hw>`_
 
 However, OpenStack does not require a significant amount of resources
 and the following minimum requirements should support
