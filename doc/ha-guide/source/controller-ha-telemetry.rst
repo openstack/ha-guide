@@ -39,7 +39,7 @@ the Telemetry services.
 For information about the required configuration options that have
 to be set in the :file:`ceilometer.conf` configuration file for both
 the central and compute agents, see the `coordination section
-<http://docs.openstack.org/kilo/config-reference/content/
+<http://docs.openstack.org/liberty/config-reference/content/
 ch_configuring-openstack-telemetry.html>`__
 in the OpenStack Configuration Reference.
 
@@ -58,7 +58,7 @@ For backward compatibility and supporting existing deployments, the central
 agent configuration also supports using different configuration files for
 groups of service instances of this type that are running in parallel.
 For enabling this configuration, set a value for the partitioning_group_prefix
-option in the `central section <http://docs.openstack.org/kilo/
+option in the `central section <http://docs.openstack.org/liberty/
 config-reference/content/ch_configuring-openstack-telemetry.html>`__
 in the OpenStack Configuration Reference.
 
@@ -73,6 +73,6 @@ in the OpenStack Configuration Reference.
 
 To enable the compute agent to run multiple instances simultaneously with
 workload partitioning, the workload_partitioning option has to be set to
-``True`` under the `compute section <http://docs.openstack.org/kilo/
+``True`` under the `compute section <http://docs.openstack.org/liberty/
 config-reference/content/ch_configuring-openstack-telemetry.html>`__
 in the :file:`ceilometer.conf` configuration file.

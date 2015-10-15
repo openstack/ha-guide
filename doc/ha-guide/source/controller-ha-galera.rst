@@ -140,7 +140,7 @@ Galera/MySQL in:
    You may need to disable SELinux
    or configure it to allow ``mysqld`` to listen to sockets at unprivileged ports.
    See the `Firewalls and default ports
-   <http://docs.openstack.org/kilo/config-reference/content/firewalls-default-ports.html>`_
+   <http://docs.openstack.org/liberty/config-reference/content/firewalls-default-ports.html>`_
    section of the Configuration Reference.
 
 Configure the database on other database servers

@@ -13,7 +13,7 @@ in active / passive mode, you must:
 
 This section assumes that you are familiar with the
 `documentation
-<http://docs.openstack.org/kilo/install-guide/install/apt/content/ch_glance.html>`_
+<http://docs.openstack.org/liberty/install-guide-ubuntu/glance.html>`_
 for installing the OpenStack Image API service.
 
 .. _glance-api-pacemaker:
