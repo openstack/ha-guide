@@ -30,7 +30,7 @@ Add OpenStack Identity resource to Pacemaker
       # cd /usr/lib/ocf/resource.d
       # mkdir openstack
       # cd openstack
-      # wget https://raw.github.com/madkiss/openstack-resource-agents/master/ocf/keystone
+      # wget https://git.openstack.org/cgit/openstack/openstack-resource-agents/plain/ocf/keystone
       # chmod a+rx *
 
 #. You can now add the Pacemaker configuratioon

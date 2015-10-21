@@ -26,8 +26,7 @@ You must first download the resource agent to your system:
 .. code-block:: console
 
    # cd /usr/lib/ocf/resource.d/openstack
-   # wget https://raw.github.com/madkiss/openstack-resource-agents/ \
-      master/ocf/glance-api
+   # wget https://git.openstack.org/cgit/openstack/openstack-resource-agents/plain/ocf/glance-api
    # chmod a+rx *
 
 You can now add the Pacemaker configuration
