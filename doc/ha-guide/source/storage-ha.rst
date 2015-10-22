@@ -7,6 +7,7 @@ Configuring Storage for high availability
 
    storage-ha-cinder.rst
    storage-ha-glance.rst
+   storage-ha-manila.rst
    storage-ha-backend.rst
 
 
