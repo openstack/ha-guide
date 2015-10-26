@@ -5,8 +5,8 @@ Hardware setup
 
 The standard hardware requirements:
 
-- `neutron <http://docs.openstack.org/kilo/install-guide/install/apt/content/ch_overview.html#example-architecture-with-neutron-networking-hw>`_
-- `nova-network <http://docs.openstack.org/kilo/install-guide/install/apt/content/ch_overview.html#example-architecture-with-legacy-networking-hw>`_
+- `Provider networks <http://docs.openstack.org/liberty/install-guide-ubuntu/overview.html#networking-option-1-provider-networks>`_
+- `Self-service networks <http://docs.openstack.org/liberty/install-guide-ubuntu/overview.html#networking-option-2-self-service-networks>`_
 
 However, OpenStack does not require a significant amount of resources
 and the following minimum requirements should support
@@ -15,15 +15,13 @@ with core services and several instances:
 
 [TODO: Verify that these numbers are good]
 
-+-------------------+------------+----------+---------+
-| Node type         | Processor  | Memory   | Storage |
-+===================+============+==========+=========+
-| controller node   | 3          | 2 GB     | 5 GB    |
-+-------------------+------------+----------+---------+
-| network node      | 3          | 512 MB   | 5 GB    |
-+-------------------+------------+----------+---------+
-| compute node      | 3          | 2 GB     | 10 GB   |
-+-------------------+------------+----------+---------+
++-------------------+------------+----------+-----------+------+
+| Node type         | Processor  | Memory   | Storage   | NIC  |
++===================+============+==========+===========+======+
+| controller node   | 1-2        | 8 GB     | 100 GB    | 2    |
++-------------------+------------+----------+-----------+------+
+| compute node      | 2-4+       | 8+ GB    | 100+ GB   | 2    |
++-------------------+------------+----------+-----------+------+
 
 
 For demonstrations and studying,
