@@ -117,7 +117,7 @@ you would use the following configuration in your :file:`nova.conf` file:
 
 You must also create the OpenStack Image API endpoint with this IP address.
 If you are using both private and public IP addresses,
-you should create two Virtual IP addresses
+you should create two virtual IP addresses
 and define your endpoint like this:
 
 .. code-block:: console
