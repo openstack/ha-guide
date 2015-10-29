@@ -177,3 +177,12 @@ but is not appropriate for a production environment.
 
 It is possible to add controllers to such an environment
 to convert it into a truly highly available environment.
+
+
+High availability is not for every user. It presents some challenges.
+High availability may be too complex for databases or
+systems with large amounts of data. Replication can slow large systems
+down. Different setups have different prerequisites. Read the guidelines
+for each setup.
+
+High availability is turned off as the default in OpenStack setups.
