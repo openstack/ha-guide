@@ -128,11 +128,12 @@ in a non-HA environment.
 
       .. code-block:: console
 
-         $ keystone endpoint-create --region $KEYSTONE_REGION \
-           --service-id $service-id \
-           --publicurl 'http://PUBLIC_VIP:5000/v2.0' \
-           --adminurl 'http://192.168.42.103:35357/v2.0' \
-           --internalurl 'http://192.168.42.103:5000/v2.0'
+         $ openstack endpoint create --region $KEYSTONE_REGION \
+           $service-type public http://PUBLIC_VIP:5000/v2.0
+         $ openstack endpoint create --region $KEYSTONE_REGION \
+           $service-type admin http://192.168.42.103:35357/v2.0
+         $ openstack endpoint create --region $KEYSTONE_REGION \
+           $service-type internal http://192.168.42.103:5000/v2.0
 
 
 #. If you are using the horizon dashboard,
