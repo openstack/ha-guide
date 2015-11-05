@@ -33,7 +33,7 @@ Add OpenStack Identity resource to Pacemaker
       # wget https://git.openstack.org/cgit/openstack/openstack-resource-agents/plain/ocf/keystone
       # chmod a+rx *
 
-#. You can now add the Pacemaker configuratioon
+#. You can now add the Pacemaker configuration
    for the OpenStack Identity resource
    by running the :command:`crm configure` command
    to connect to the Pacemaker cluster.
