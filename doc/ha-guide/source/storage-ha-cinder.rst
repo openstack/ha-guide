@@ -5,7 +5,7 @@
 Highly available Block Storage API
 ==================================
 
-Making the block storage (cinder) API service highly available
+Making the Block Storage API service (cinder) highly available
 in active/passive mode involves:
 
 - :ref:`ha-cinder-pacemaker`
@@ -44,7 +44,7 @@ and add the following cluster resources:
 This configuration creates ``p_cinder-api``,
 a resource for managing the Block Storage API service.
 
-:command:`crm configure` supports batch input,
+The command :command:`crm configure` supports batch input,
 so you may copy and paste the lines above
 into your live pacemaker configuration and then make changes as required.
 For example, you may enter ``edit p_ip_cinder-api``
@@ -67,10 +67,10 @@ Edit the :file:`/etc/cinder/cinder.conf` file:
    :linenos:
 
    # We have to use MySQL connection to store data:
-   sql_connection=mysql://cinder:password@192.168.42.101/cinder
+   sql_connection = mysql://cinder:password@192.168.42.101/cinder
    # Alternatively, you can switch to pymysql,
    # a new Python 3 compatible library and use
-   # sql_connection=mysql+pymysql://cinder:password@192.168.42.101/cinder
+   # sql_connection = mysql+pymysql://cinder:password@192.168.42.101/cinder
    # and be ready when everything moves to Python 3.
    # Ref: https://wiki.openstack.org/wiki/PyMySQL_evaluation
 
@@ -96,7 +96,7 @@ as you would for a non-HA environment.
 You must create the Block Storage API endpoint with this IP.
 
 If you are using both private and public IP addresses,
-you should create two Virtual IPs and define your endpoint like this:
+you should create two virtual IPs and define your endpoint like this:
 
 .. code-block:: console
 
