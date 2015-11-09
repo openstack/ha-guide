@@ -109,7 +109,7 @@ Galera/MySQL in:
      This is set for logging.
 
    - Copy this file to all other databases servers and change
-     the value of wsrep_cluster_address and wsrep_node_name accordingly.
+     the value of wsrep_node_address and wsrep_node_name accordingly.
 
 #. Start :command:`mysql` as root and execute the following queries:
 
