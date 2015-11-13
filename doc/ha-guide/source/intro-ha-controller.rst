@@ -74,7 +74,7 @@ using one of the following strategies:
 
 - Each instance has its own IP address;
   OpenStack services are configured with the list of these IP addresses
-  so they can select on of the addresses from those available.
+  so they can select one of the addresses from those available.
 
 - The MySQL/Galera cluster runs behind HAProxy.
   HAProxy the load balances incoming requests
