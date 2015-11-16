@@ -23,17 +23,6 @@ In general we can divide all the OpenStack components into three categories:
 - :term:`Advanced Message Queuing Protocol (AMQP)` provides OpenStack
   internal stateful communication service.
 
-Assuming that every single OpenStack controller runs the full set of
-the elementary services (symmetric controller), the common good practice
-is to have a small odd number of controllers.
-Most of the time, it means three OpenStack controllers.
-
-
-[TODO Discuss SLA (Service Level Agreement), if this is the measure we use.
-Other possibilities include MTTR (Mean Time To Recover),
-RTO (Recovery Time Objective),
-and ETR (Expected Time of Repair,]
-
 Network components
 ~~~~~~~~~~~~~~~~~~
 
@@ -49,6 +38,29 @@ and expected SLA.]
 
 See [TODO link] for more information about configuring networking
 for high availability.
+
+Common deployement architectures
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are primarily two HA architectures in use today.
+
+One uses a cluster manager such as Pacemaker or Veritas to co-ordinate
+the actions of the various services across a set of machines. Since
+we are focused on FOSS, we will refer to this as the Pacemaker
+architecture.
+
+The other is optimized for Active/Active services that do not require
+any inter-machine coordination. In this setup, services are started by
+your init system (systemd in most modern distributions) and a tool is
+used to move IP addresses between the hosts. The most common package
+for doing this is keepalived.
+
+.. toctree::
+   :maxdepth: 1
+
+   intro-ha-arch-pacemaker.rst
+   intro-ha-arch-keepalived.rst
+
 
 Load balancing (HAProxy)
 ~~~~~~~~~~~~~~~~~~~~~~~~
