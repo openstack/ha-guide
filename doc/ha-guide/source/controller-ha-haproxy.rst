@@ -33,8 +33,27 @@ Note the following:
 - The common practice is to locate an HAProxy instance
   on each OpenStack controller in the environment.
 
+
+Once configured (see example file below), add HAProxy to the cluster
+and ensure the VIP(s) can only run on machines where HAProxy is active:
+
+``pcs``
+
+.. code-block:: console
+
+   $ pcs resource create lb-haproxy systemd:haproxy --clone
+   $ pcs constraint order start p_api-ip then lb-haproxy-clone kind=Optional
+   $ pcs constraint colocation add p_api-ip with lb-haproxy-clone
+
+``crmsh``
+
+TBA
+
+Example Config File
+~~~~~~~~~~~~~~~~~~~~~
+
 Here is an example :file:`/etc/haproxy/haproxy.cfg` configuration
-file. You would need a copy of it on each controller node.
+file. You need a copy of it on each controller node.
 
 .. note::
 
