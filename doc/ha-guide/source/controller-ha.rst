@@ -10,8 +10,8 @@ and must talk to all other services.
    :maxdepth: 2
 
    controller-ha-pacemaker.rst
-   controller-ha-haproxy.rst
    controller-ha-vip.rst
+   controller-ha-haproxy.rst
    controller-ha-galera.rst
    controller-ha-memcached.rst
    controller-ha-rabbitmq.rst
