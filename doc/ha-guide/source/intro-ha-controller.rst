@@ -60,18 +60,3 @@ for doing this is keepalived.
 
    intro-ha-arch-pacemaker.rst
    intro-ha-arch-keepalived.rst
-
-Memcached back end
-~~~~~~~~~~~~~~~~~~
-
-Memcached is a memory cache demon that can be used
-by most OpenStack services to store ephemeral data, such as tokens.
-Although Memcached does not support
-typical forms of redundancy such as clustering,
-OpenStack services can use almost any number of instances
-by configuring multiple hostnames or IP addresses.
-The Memcached client implements hashing
-to balance objects among the instances.
-Failure of an instance only impacts a percentage of the objects
-and the client automatically removes it from the list of instances.
-The SLA is several minutes.
