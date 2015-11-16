@@ -95,29 +95,6 @@ using one of the following strategies:
   - `http://www.joinfu.com/`
   - `http://www.joinfu.com/`
 
-
-AMQP (RabbitMQ)
-~~~~~~~~~~~~~~~
-
-RabbitMQ nodes fail over both on the application
-and the infrastructure layers.
-The application layer is controlled by
-the ``oslo.messaging`` configuration options
-for multiple AMQP hosts. If the AMQP node fails,
-the application reconnects to the next one configured
-within the specified reconnect interval.
-The specified reconnect interval constitutes its SLA.
-On the infrastructure layer,
-the SLA is the time for which RabbitMQ cluster reassembles.
-Several cases are possible.
-The Mnesia keeper node is the master
-of the corresponding Pacemaker resource for RabbitMQ;
-when it fails, the result is a full AMQP cluster downtime interval.
-Normally, its SLA is no more than several minutes.
-Failure of another node that is a slave
-of the corresponding Pacemaker resource for RabbitMQ
-results in no AMQP cluster downtime at all.
-
 Memcached back end
 ~~~~~~~~~~~~~~~~~~
 

@@ -3,6 +3,24 @@ RabbitMQ
 ========
 
 RabbitMQ is the default AMQP server used by many OpenStack services.
+
+RabbitMQ nodes fail over both on the application and the
+infrastructure layers.
+
+The application layer is controlled by the ``oslo.messaging``
+configuration options for multiple AMQP hosts. If the AMQP node fails,
+the application reconnects to the next one configured within the
+specified reconnect interval. The specified reconnect interval
+constitutes its SLA.
+
+On the infrastructure layer, the SLA is the time for which RabbitMQ
+cluster reassembles. Several cases are possible. The Mnesia keeper
+node is the master of the corresponding Pacemaker resource for
+RabbitMQ; when it fails, the result is a full AMQP cluster downtime
+interval. Normally, its SLA is no more than several minutes. Failure
+of another node that is a slave of the corresponding Pacemaker
+resource for RabbitMQ results in no AMQP cluster downtime at all.
+
 Making the RabbitMQ service highly available involves the following steps:
 
 - :ref:`Install RabbitMQ<rabbitmq-install>`
@@ -75,7 +93,7 @@ The following components/services can work with HA queues:
 
 [TODO: replace "currently" with specific release names]
 
-[TODO: Does this list need to be updated?  Perhaps we need a table
+[TODO: Does this list need to be updated? Perhaps we need a table
 that shows each component and the earliest release that allows it
 to work with HA queues.]
 
@@ -186,14 +204,14 @@ Do this configuration on all services using RabbitMQ:
       rabbit_hosts=rabbit1:5672,rabbit2:5672
 
 #. How frequently to retry connecting with RabbitMQ:
-   [TODO: document the unit of measure here?  Seconds?]
+   [TODO: document the unit of measure here? Seconds?]
 
    ::
 
       rabbit_retry_interval=1
 
 #. How long to back-off for between retries when connecting to RabbitMQ:
-   [TODO: document the unit of measure here?  Seconds?]
+   [TODO: document the unit of measure here? Seconds?]
 
    ::
 
