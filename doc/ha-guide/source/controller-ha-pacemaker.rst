@@ -1,4 +1,3 @@
-
 =======================
 Pacemaker cluster stack
 =======================
@@ -22,10 +21,10 @@ applications it manages. Instead, it relies on resource agents (RAs),
 scripts that encapsulate the knowledge of how to start, stop, and
 check the health of each application managed by the cluster.
 
-These agents must conform to one of the
-`OCF <https://github.com/ClusterLabs/OCF-spec/blob/master/ra/resource-agent-api.md>`_,
-`SYS-V <http://refspecs.linux-foundation.org/LSB_3.0.0/LSB-Core-generic/LSB-Core-generic/iniscrptact.html>`_,
-Upstart, or Systemd standards.
+These agents must conform to one of the `OCF <https://github.com/ClusterLabs/
+OCF-spec/blob/master/ra/resource-agent-api.md>`_,
+`SysV Init <http://refspecs.linux-foundation.org/LSB_3.0.0/LSB-Core-generic/
+LSB-Core-generic/iniscrptact.html>`_, Upstart, or Systemd standards.
 
 Pacemaker ships with a large set of OCF agents (such as those managing
 MySQL databases, virtual IP addresses, and RabbitMQ), but can also use
@@ -41,8 +40,6 @@ The steps to implement the Pacemaker cluster stack are:
 - :ref:`pacemaker-start`
 - :ref:`pacemaker-cluster-properties`
 
-
-
 .. _pacemaker-install:
 
 Install packages
@@ -55,23 +52,49 @@ This involves installing the following packages
 (and their dependencies, which your package manager
 usually installs automatically):
 
-- pacemaker (Note that the crm shell should be downloaded separately.)
+- pacemaker
 
-- crmsh
+- pcs (CentOS or RHEL) or crmsh
 
 - corosync
 
-- cluster-glue
-
-- fence-agents (Fedora only;
-  all other distributions use fencing agents from cluster-glue)
+- fence-agents (CentOS or RHEL) or cluster-glue
 
 - resource-agents
 
 .. _pacemaker-corosync-setup:
 
-Set up Corosync
-~~~~~~~~~~~~~~~
+Set up the cluster with `pcs`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Make sure pcs is running and configured to start at boot time:
+
+   - :command:`systemctl enable pcsd`
+   - :command:`systemctl start pcsd`
+
+#. Set a password for hacluster user **on each host**.
+
+   Since the cluster is a single administrative domain, it is generally
+   accepted to use the same password on all nodes.
+
+   - :command:`echo my-secret-password-no-dont-use-this-one |
+     passwd --stdin hacluster`
+
+#. Use that password to authenticate to the nodes which will
+   make up the cluster. The :option:`-p` option is used to give
+   the password on command line and makes it easier to script.
+
+   - :command:`pcs cluster auth NODE1 NODE2 NODE3 -u hacluster
+     -p my-secret-password-no-dont-use-this-one --force`
+
+#. Create the cluster, giving it a name, and start it:
+
+   - :command:`pcs cluster setup --force --name my-first-openstack-cluster
+     NODE1 NODE2 NODE3`
+   - :command:`pcs cluster start --all`
+
+Set up the cluster with `crmsh`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After installing the Corosync package, you must create
 the :file:`/etc/corosync/corosync.conf` configuration file.
@@ -88,7 +111,6 @@ or to use the votequorum library.
 - :ref:`corosync-unicast`
 - :ref:`corosync-votequorum`
 
-
 .. _corosync-multicast:
 
 Set up Corosync with multicast
@@ -99,8 +121,7 @@ Most distributions ship an example configuration file
 as part of the documentation bundled with the Corosync package.
 An example Corosync configuration file is shown below:
 
-Example Corosync configuration file for multicast (corosync.conf)
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+**Example Corosync configuration file for multicast (corosync.conf)**
 
 .. code-block:: ini
 
@@ -186,8 +207,8 @@ Note the following:
   with 4 allowed retransmits.
   These defaults are intended to minimize failover times,
   but can cause frequent "false alarms" and unintended failovers
-  in case of short network interruptions.
-  The values used here are safer, albeit with slightly extended failover times.
+  in case of short network interruptions. The values used here are safer,
+  albeit with slightly extended failover times.
 
 - With ``secauth`` enabled,
   Corosync nodes mutually authenticate using a 128-byte shared secret
@@ -249,12 +270,9 @@ Note the following:
                 gid: haclient
               }
 
-
-
 - Once created, the :file:`corosync.conf` file
   (and the :file:`authkey` file if the secauth option is enabled)
   must be synchronized across all cluster nodes.
-
 
 .. _corosync-unicast:
 
@@ -266,8 +284,7 @@ Corosync should be configured for unicast.
 An example fragment of the :file:`corosync.conf` file
 for unicastis shown below:
 
-Corosync configuration file fragment for unicast (corosync.conf)
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+**Corosync configuration file fragment for unicast (corosync.conf)**
 
 .. code-block:: ini
 
@@ -378,13 +395,13 @@ in the :file:`corosync.com` file is:
 
 .. code-block:: ini
 
-    quorum {
-            provider: corosync_votequorum (1)
-            expected_votes: 7 (2)
-            wait_for_all: 1 (3)
-            last_man_standing: 1 (4)
-            last_man_standing_window: 10000 (5)
-           }
+   quorum {
+           provider: corosync_votequorum (1)
+           expected_votes: 7 (2)
+           wait_for_all: 1 (3)
+           last_man_standing: 1 (4)
+           last_man_standing_window: 10000 (5)
+          }
 
 Note the following:
 
@@ -429,7 +446,7 @@ Note the following:
 .. _pacemaker-corosync-start:
 
 Start Corosync
-~~~~~~~~~~~~~~
+--------------
 
 Corosync is started as a regular system service.
 Depending on your distribution, it may ship with an LSB init script,
@@ -451,28 +468,28 @@ to get a summary of the health of the communication rings:
 
 .. code-block:: console
 
-    # corosync-cfgtool -s
-    Printing ring status.
-    Local node ID 435324542
-    RING ID 0
-            id      = 192.168.42.82
-            status  = ring 0 active with no faults
-    RING ID 1
-            id      = 10.0.42.100
-            status  = ring 1 active with no faults
+   # corosync-cfgtool -s
+   Printing ring status.
+   Local node ID 435324542
+   RING ID 0
+           id      = 192.168.42.82
+           status  = ring 0 active with no faults
+   RING ID 1
+           id      = 10.0.42.100
+           status  = ring 1 active with no faults
 
 Use the :command:`corosync-objctl` utility
 to dump the Corosync cluster member list:
 
 .. code-block:: console
 
-    # corosync-objctl runtime.totem.pg.mrp.srp.members
-    runtime.totem.pg.mrp.srp.435324542.ip=r(0) ip(192.168.42.82) r(1) ip(10.0.42.100)
-    runtime.totem.pg.mrp.srp.435324542.join_count=1
-    runtime.totem.pg.mrp.srp.435324542.status=joined
-    runtime.totem.pg.mrp.srp.983895584.ip=r(0) ip(192.168.42.87) r(1) ip(10.0.42.254)
-    runtime.totem.pg.mrp.srp.983895584.join_count=1
-    runtime.totem.pg.mrp.srp.983895584.status=joined
+   # corosync-objctl runtime.totem.pg.mrp.srp.members
+   runtime.totem.pg.mrp.srp.435324542.ip=r(0) ip(192.168.42.82) r(1) ip(10.0.42.100)
+   runtime.totem.pg.mrp.srp.435324542.join_count=1
+   runtime.totem.pg.mrp.srp.435324542.status=joined
+   runtime.totem.pg.mrp.srp.983895584.ip=r(0) ip(192.168.42.87) r(1) ip(10.0.42.254)
+   runtime.totem.pg.mrp.srp.983895584.join_count=1
+   runtime.totem.pg.mrp.srp.983895584.status=joined
 
 You should see a ``status=joined`` entry
 for each of your constituent cluster nodes.
@@ -481,15 +498,14 @@ for each of your constituent cluster nodes.
 give the command for Corosync version 1?]
 
 .. note::
-         If you are using Corosync version 2,
-         use the :command:`corosync-cmapctl` utility
-         instead of :command:`corosync-objctl`;
-         it is a direct replacement.
+
+   If you are using Corosync version 2, use the :command:`corosync-cmapctl`
+   utility instead of :command:`corosync-objctl`; it is a direct replacement.
 
 .. _pacemaker-start:
 
 Start Pacemaker
-~~~~~~~~~~~~~~~
+---------------
 
 After the Corosync services have been started
 and you have verified that the cluster is communicating properly,
@@ -509,18 +525,17 @@ Use the :command:`crm_mon` utility to observe the status of Pacemaker:
 
 .. code-block:: console
 
-    ============
-    Last updated: Sun Oct  7 21:07:52 2012
-    Last change: Sun Oct  7 20:46:00 2012 via cibadmin on node2
-    Stack: openais
-    Current DC: node2 - partition with quorum
-    Version: 1.1.6-9971ebba4494012a93c03b40a2c58ec0eb60f50c
-    2 Nodes configured, 2 expected votes
-    0 Resources configured.
-    ============
+   ============
+   Last updated: Sun Oct  7 21:07:52 2012
+   Last change: Sun Oct  7 20:46:00 2012 via cibadmin on node2
+   Stack: openais
+   Current DC: node2 - partition with quorum
+   Version: 1.1.6-9971ebba4494012a93c03b40a2c58ec0eb60f50c
+   2 Nodes configured, 2 expected votes
+   0 Resources configured.
+   ============
 
-    Online: [ node2 node1 ]
-
+   Online: [ node2 node1 ]
 
 .. _pacemaker-cluster-properties:
 
@@ -528,23 +543,28 @@ Set basic cluster properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After you set up your Pacemaker cluster,
-you should set a few basic cluster properties
-using one of the following methods:
+you should set a few basic cluster properties:
 
-- Start the :command:`crm` shell
-  and enter :command:`configure` to change into the configuration menu.
-- Type :command:`crm configure` from a shell prompt
-  to jump straight into the Pacemaker configuration menu.
+``crmsh``
+
+Type :command:`crm configure` from a shell prompt to jump straight
+into the Pacemaker configuration menu.
 
 Set the following properties:
 
 .. code-block:: console
 
-    property no-quorum-policy="ignore" \ #  1
-      pe-warn-series-max="1000" \        #  2
-      pe-input-series-max="1000" \
-      pe-error-series-max="1000" \
-      cluster-recheck-interval="5min"    #  3
+   property no-quorum-policy="ignore" \ #  1
+     pe-warn-series-max="1000" \        #  2
+     pe-input-series-max="1000" \
+     pe-error-series-max="1000" \
+     cluster-recheck-interval="5min"    #  3
+
+``pcs``
+
+- :command:`pcs property set pe-warn-series-max="1000"
+  pe-input-series-max="1000" pe-error-series-max="1000"
+  cluster-recheck-interval="5min"`
 
 Note the following:
 
@@ -554,7 +574,7 @@ Note the following:
 - Production environments should not set the
   ``no-quorum-policy="ignore"`` parameter.
 
-  The`` no-quorum-policy="ignore"`` parameter
+  The ``no-quorum-policy="ignore"`` parameter
   is required in 2-node Pacemaker clusters to disable quorum enforcement.
   if quorum enforcement is enabled and one of the two nodes fails,
   then the remaining node can not establish the majority of quorum votes
@@ -580,4 +600,3 @@ Note the following:
   such as 5 or 3 minutes.
 
 After you make these changes, you may commit the updated configuration.
-
