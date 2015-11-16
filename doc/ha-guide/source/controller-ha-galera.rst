@@ -95,7 +95,7 @@ Galera/MySQL in:
 
      [mysqld]
      wsrep_provider=/usr/lib/galera/libgalera_smm.so
-     wsrep_cluster_name="Openstack"
+     wsrep_cluster_name="OpenStack"
      wsrep_sst_auth=wsrep_sst:wspass
      wsrep_cluster_address="gcomm://{PRIMARY_NODE_IP},{SECONDARY_NODE_IP},{TERTIARY_NODE_IP}"
      wsrep_sst_method=rsync
