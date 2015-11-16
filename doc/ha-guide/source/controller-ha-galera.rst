@@ -1,30 +1,47 @@
-
 =======================
 Database (Galera/MySQL)
 =======================
 
-The first step is installing the database that sits at the heart of the
-cluster. To implement High Availability, run an instance of the database on
-each controller node, using Galera for synchronous multi-master replication.
-The Galera Cluster plug-in is a multi-master cluster based on synchronous
-replication. It is a high availability service that provides high system
-uptime, no data loss, and scalability for growth.
+Databases sit at the heart of an OpenStack deployment.
 
-High Availability for the OpenStack database
-can be achieved in many different ways,
-depending on the type of database
-that is used in a particular installation.
-Galera can be used with any of the following:
+High Availability for the OpenStack database can be achieved in many
+different ways, depending on the type of database that is used in a
+particular installation.  Most deployments are based on the Galera
+plugin for MySQL (or it's fork: MariaDB) but other options include the
+`Percona XtraDB Cluster <http://www.percona.com/>`, PostgreSQL which
+has its own replication, or any other `ACID
+<https://en.wikipedia.org/wiki/ACID>`_ compliant database.
 
-- MySQL is the most common choice;
-  the next section tells how to configure Galera/MySQL.
-- `MariaDB Galera Cluster <https://mariadb.org/>`_
-  is supported for environments based on Red Hat distributions;
-  configuration instructions are in :ref:`maria-db-ha`.
-- `Percona XtraDB Cluster <http://www.percona.com/>`_
-  works with Galera.
-- You can also use PostgreSQL, which has its own replication,
-  or another database HA option.
+MySQL with Galera can be configured using one of the following
+strategies:
+
+#. Each instance has its own IP address;
+
+   OpenStack services are configured with the list of these IP
+   addresses so they can select on of the addresses from those
+   available.
+
+#. The MySQL/Galera cluster runs behind HAProxy.
+
+   HAProxy the load balances incoming requests and exposes just one IP
+   address for all the clients.
+
+   Galera synchronous replication guarantees a zero slave lag.  The
+   failover procedure completes once HAProxy detects that the active
+   back end has gone down and switches to the backup one, which is
+   then marked as 'UP'.  If no back ends are up (in other words, the
+   Galera cluster is not ready to accept connections), the failover
+   procedure finishes only when the Galera cluster has been
+   successfully reassembled.  The SLA is normally no more than 5
+   minutes.
+
+#. Use MySQL/Galera in active/passive mode to avoid deadlocks on
+   ``SELECT ... FOR UPDATE`` type queries (used, for example, by nova
+   and neutron).  This issue is discussed more in the following:
+
+   - `http://lists.openstack.org/pipermail/openstack-dev/2014-May/035264.html`
+   - `http://www.joinfu.com/`
+   - `http://www.joinfu.com/`
 
 [TODO: the structure of the MySQL and MariaDB sections should be made parallel]
 

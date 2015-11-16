@@ -61,40 +61,6 @@ for doing this is keepalived.
    intro-ha-arch-pacemaker.rst
    intro-ha-arch-keepalived.rst
 
-
-Database (MySQL/Galera)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-MySQL with Galera can be configured
-using one of the following strategies:
-
-- Each instance has its own IP address;
-  OpenStack services are configured with the list of these IP addresses
-  so they can select one of the addresses from those available.
-
-- The MySQL/Galera cluster runs behind HAProxy.
-  HAProxy the load balances incoming requests
-  and exposes just one IP address for all the clients.
-
-  Galera synchronous replication guarantees a zero slave lag.
-  The failover procedure completes once HAProxy detects
-  that the active back end has gone down and switches to the backup one,
-  which is then marked as 'UP'.
-  If no back ends are up (in other words,
-  the Galera cluster is not ready to accept connections),
-  the failover procedure finishes only when
-  the Galera cluster has been successfully reassembled.
-  The SLA is normally no more than 5 minutes.
-
-- Use MySQL/Galera in active/passive mode
-  to avoid deadlocks on ``SELECT ... FOR UPDATE`` type queries
-  (used, for example, by nova and neutron).
-  This issue is discussed more in the following:
-
-  - `http://lists.openstack.org/pipermail/openstack-dev/2014-May/035264.html`
-  - `http://www.joinfu.com/`
-  - `http://www.joinfu.com/`
-
 Memcached back end
 ~~~~~~~~~~~~~~~~~~
 
