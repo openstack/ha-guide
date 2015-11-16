@@ -1,14 +1,21 @@
-
 =============
-HAProxy nodes
+HAProxy
 =============
 
-HAProxy provides a fast and reliable HTTP reverse proxy
-and load balancer for TCP and HTTP-based applications.
-It is particularly suited for web sites crawling under very high loads
-while needing persistence or Layer 7 processing.
-Supporting tens of thousands of connections
-is clearly realistic with today’s hardware.
+HAProxy provides a fast and reliable HTTP reverse proxy and load
+balancer for TCP and HTTP-based applications. It is particularly
+suited for web sites crawling under very high loads while needing
+persistence or Layer 7 processing. Supporting tens of thousands of
+connections is clearly realistic with today’s hardware.
+
+Each instance of HAProxy configures its front end to accept connections
+only from the virtual IP (VIP) address and to terminate them as a list
+of all instances of the corresponding service under load balancing.
+For example, any OpenStack API service.
+
+This makes the instances of HAProxy act independently and fail over
+transparently together with the network endpoints (VIP addresses)
+failover and therefore shares the same SLA.
 
 [TODO (Add note about using commercial load-balancers]
 
@@ -26,10 +33,12 @@ Note the following:
 - The common practice is to locate an HAProxy instance
   on each OpenStack controller in the environment.
 
-Here is an example :file:`/etc/haproxy/haproxy.cfg` configuration file.
-[TODO: Is a copy required on each controller node?]
-Note that you must restart the HAProxy service to implement
-any changes made to this file.
+Here is an example :file:`/etc/haproxy/haproxy.cfg` configuration
+file. You would need a copy of it on each controller node.
+
+.. note::
+
+   To implement any changes made to this you must restart the HAProxy service
 
 ::
 

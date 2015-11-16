@@ -62,22 +62,6 @@ for doing this is keepalived.
    intro-ha-arch-keepalived.rst
 
 
-Load balancing (HAProxy)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-HAProxy is a load balancer that runs on each controller in the cluster
-but does not synchronize the state.
-Each instance of HAProxy configures its frontend to accept connections
-only from the virtual IP (VIP) address and to terminate them
-as a list of all instances of the corresponding service under load balancing.
-For example, any OpenStack API service.
-This makes the instances of HAProxy act independently
-and fail over transparently
-together with the Network endpoints (VIP addresses) failover
-and shares the same SLA.
-
-See [TODO link] for information about configuring HAProxy.
-
 Database (MySQL/Galera)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
