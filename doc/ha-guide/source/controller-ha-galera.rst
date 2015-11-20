@@ -151,13 +151,13 @@ Galera/MySQL in:
 
 #. Start :command:`mysql` as root and execute the following queries:
 
-   .. code-block:: console
+   .. code-block:: mysql
 
       mysql> SET wsrep_on=OFF; GRANT ALL ON *.* TO wsrep_sst@'%' IDENTIFIED BY 'wspass';
 
    Remove user accounts with empty user names because they cause problems:
 
-   .. code-block:: console
+   .. code-block:: mysql
 
       mysql> SET wsrep_on=OFF; DELETE FROM mysql.user WHERE user='';
 
@@ -245,10 +245,10 @@ to recover from an error:
    node. This will ensure that you can restart the database again. You will
    need to supply the password you got in the previous step:
 
-   ::
+   .. code-block:: mysql
 
       mysql> GRANT SHUTDOWN ON *.* TO 'debian-sys-maint'@'localhost' IDENTIFIED BY '<debian.cnf {password}>';
-      mysql> GRANT SELECT ON 'mysql'.'user' TO 'debian-sys-maint'@'localhost' IDENTIFIED BY '<debian.cnf {password}>';
+      mysql> GRANT SELECT ON mysql.user TO 'debian-sys-maint'@'localhost' IDENTIFIED BY '<debian.cnf {password}>';
 
 #. Stop all the mysql servers and start the first server with the following
    command:
@@ -266,7 +266,7 @@ to recover from an error:
 #. Verify the wsrep replication by logging in as root under mysql and running
    the following command:
 
-   .. code-block:: console
+   .. code-block:: mysql
 
       mysql> SHOW STATUS LIKE 'wsrep%';
       +------------------------------+--------------------------------------+
