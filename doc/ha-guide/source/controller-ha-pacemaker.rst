@@ -75,6 +75,11 @@ Set up Corosync
 
 After installing the Corosync package, you must create
 the :file:`/etc/corosync/corosync.conf` configuration file.
+
+.. note::
+         For Ubuntu, you should also enable the Corosync service
+         in the ``/etc/default/corosync`` configuration file.
+
 Corosync can be configured to work
 with either multicast or unicast IP addresses
 or to use the votequorum library.
@@ -97,7 +102,7 @@ An example Corosync configuration file is shown below:
 Example Corosync configuration file for multicast (corosync.conf)
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-::
+.. code-block:: ini
 
    totem {
          version: 2
@@ -224,7 +229,25 @@ Note the following:
 
            If you are using Corosync version 2 on Ubuntu 14.04,
            remove or comment out lines under the service stanza,
-           which enables Pacemaker to start up.
+           which enables Pacemaker to start up. Another potential
+           problem is the boot and shutdown order of Corosync and
+           Pacemaker. To force Pacemaker to start after Corosync and
+           stop before Corosync, fix the start and kill symlinks manually:
+
+           .. code-block:: console
+
+              # update-rc.d pacemaker start 20 2 3 4 5 . stop 00 0 1 6 .
+
+           The Pacemaker service also requires an additional
+           configuration file ``/etc/corosync/uidgid.d/pacemaker``
+           to be created with the following content:
+
+           .. code-block:: ini
+
+              uidgid {
+                uid: hacluster
+                gid: haclient
+              }
 
 
 
@@ -246,7 +269,7 @@ for unicastis shown below:
 Corosync configuration file fragment for unicast (corosync.conf)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-::
+.. code-block:: ini
 
    totem {
            #...
@@ -353,7 +376,7 @@ from advanced cluster configurations.
 A sample votequorum service configuration
 in the :file:`corosync.com` file is:
 
-::
+.. code-block:: ini
 
     quorum {
             provider: corosync_votequorum (1)
@@ -484,7 +507,7 @@ After the Pacemaker services have started,
 Pacemaker creates a default empty cluster configuration with no resources.
 Use the :command:`crm_mon` utility to observe the status of Pacemaker:
 
-::
+.. code-block:: console
 
     ============
     Last updated: Sun Oct  7 21:07:52 2012
@@ -515,7 +538,7 @@ using one of the following methods:
 
 Set the following properties:
 
-::
+.. code-block:: console
 
     property no-quorum-policy="ignore" \ #  1
       pe-warn-series-max="1000" \        #  2
