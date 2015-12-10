@@ -180,7 +180,6 @@ file. You need a copy of it on each controller node.
       bind <Virtual IP>:8777
       balance  source
       option  tcpka
-      option  httpchk
       option  tcplog
       server controller1 10.0.0.1:8777 check inter 2000 rise 2 fall 5
       server controller2 10.0.0.2:8777 check inter 2000 rise 2 fall 5
@@ -217,11 +216,13 @@ file. You need a copy of it on each controller node.
 
 Note the following:
 
-- The Galera cluster configuration commands indicate
+- The Galera cluster configuration directive ``backup`` indicates
   that two of the three controllers are standby nodes.
-  [TODO: be specific about the coding that defines this]
   This ensures that only one node services write requests
   because OpenStack support for multi-node writes is not yet production-ready.
 
-- [TODO: we need more commentary about the contents and format of this file]
+- The Telemetry API service configuration does not have the ``option httpchk``
+  directive as it cannot process this check properly.
+  TODO: explain why the Telemetry API is so special
 
+- [TODO: we need more commentary about the contents and format of this file]
