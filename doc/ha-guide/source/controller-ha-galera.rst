@@ -4,15 +4,31 @@ Database (Galera/MySQL)
 
 Databases sit at the heart of an OpenStack deployment.
 
-High Availability for the OpenStack database can be achieved in many
-different ways, depending on the type of database that is used in a
-particular installation.  Most deployments are based on the Galera
-plugin for MySQL (or it's fork: MariaDB) but other options include the
-`Percona XtraDB Cluster <http://www.percona.com/>`, PostgreSQL which
-has its own replication, or any other `ACID
-<https://en.wikipedia.org/wiki/ACID>`_ compliant database.
+To avoid the database being a single point of failure, we require that
+it be replicated and the ability to support multiple masters can help
+when trying to scale other components.
 
-MySQL with Galera can be configured using one of the following
+One of the most popular database choices is Galera for MySQL/MariaDB,
+it supports:
+
+- Synchronous replication
+- Active/active multi-master topology
+- Automatic node joining
+- True parallel replication, on row level
+- Direct client connections, native MySQL look & feel
+
+and claims:
+
+- No slave lag
+- No lost transactions
+- Both read and write scalability
+- Smaller client latencies
+
+Other options include the `Percona XtraDB Cluster <http://www.percona.com/>`_,
+PostgreSQL which has its own replication, and other `ACID
+<https://en.wikipedia.org/wiki/ACID>`_ compliant databases.
+
+Galera can be configured using one of the following
 strategies:
 
 #. Each instance has its own IP address;
@@ -21,7 +37,7 @@ strategies:
    addresses so they can select on of the addresses from those
    available.
 
-#. The MySQL/Galera cluster runs behind HAProxy.
+#. Galera runs behind HAProxy.
 
    HAProxy the load balances incoming requests and exposes just one IP
    address for all the clients.
@@ -39,9 +55,12 @@ strategies:
    ``SELECT ... FOR UPDATE`` type queries (used, for example, by nova
    and neutron).  This issue is discussed more in the following:
 
-   - `http://lists.openstack.org/pipermail/openstack-dev/2014-May/035264.html`
-   - `http://www.joinfu.com/`
-   - `http://www.joinfu.com/`
+   - http://lists.openstack.org/pipermail/openstack-dev/2014-May/035264.html
+   - http://www.joinfu.com/
+
+Of these options, the second one is highly recommended. Although Galera
+supports active/active configurations, we recommend active/passive
+(enforced by the load balancer) in order to avoid lock contention.
 
 [TODO: the structure of the MySQL and MariaDB sections should be made parallel]
 
@@ -57,7 +76,8 @@ You can find additional information about installing and configuring
 Galera/MySQL in:
 
 - `wsrep readme file <https://launchpadlibrarian.net/66669857/README-wsrep>`_
-- `Galera Getting Started guide <http://galeracluster.com/documentation-webpages/gettingstarted.html>`_
+- `Galera Getting Started guide
+  <http://galeracluster.com/documentation-webpages/gettingstarted.html>`_
 
 #. Install the software properties, the key, and the repository;
    For Ubuntu 14.04 "trusty", the command sequence is:
@@ -91,11 +111,12 @@ Galera/MySQL in:
 
    .. warning::
 
-      If you have already installed MariaDB, installing Galera will purge all privileges;
-      you must re-apply all the permissions listed in the installation guide.
+      If you have already installed MariaDB, installing Galera will purge
+      all privileges; you must re-apply all the permissions listed in the
+      installation guide.
 
 #. Adjust the configuration by making the following changes to the
-   :file:`/etc/mysql/my.cnf` file:
+   ``/etc/mysql/my.cnf`` file:
 
    .. code-block:: ini
 
@@ -105,19 +126,19 @@ Galera/MySQL in:
      innodb_autoinc_lock_mode=2
      innodb_doublewrite=1
 
-#. Create the :file:`/etc/mysql/conf.d/wsrep.cnf` file;
+#. Create the ``/etc/mysql/conf.d/wsrep.cnf`` file;
    paste the following lines into this file:
 
    .. code-block:: ini
 
-     [mysqld]
-     wsrep_provider=/usr/lib/galera/libgalera_smm.so
-     wsrep_cluster_name="OpenStack"
-     wsrep_sst_auth=wsrep_sst:wspass
-     wsrep_cluster_address="gcomm://{PRIMARY_NODE_IP},{SECONDARY_NODE_IP},{TERTIARY_NODE_IP}"
-     wsrep_sst_method=rsync
-     wsrep_node_address="{PRIMARY_NODE_IP}"
-     wsrep_node_name="{NODE_NAME}"
+      [mysqld]
+      wsrep_provider=/usr/lib/galera/libgalera_smm.so
+      wsrep_cluster_name="OpenStack"
+      wsrep_sst_auth=wsrep_sst:wspass
+      wsrep_cluster_address="gcomm://{PRIMARY_NODE_IP},{SECONDARY_NODE_IP},{TERTIARY_NODE_IP}"
+      wsrep_sst_method=rsync
+      wsrep_node_address="{PRIMARY_NODE_IP}"
+      wsrep_node_name="{NODE_NAME}"
 
    - Replace {PRIMARY_NODE_IP}, {SECONDARY_NODE}, and {TERTIARY__NODE_IP}
      with the IP addresses of your servers.
@@ -130,34 +151,34 @@ Galera/MySQL in:
 
 #. Start :command:`mysql` as root and execute the following queries:
 
-   ::
+   .. code-block:: console
 
-     mysql> SET wsrep_on=OFF; GRANT ALL ON *.* TO wsrep_sst@'%' IDENTIFIED BY 'wspass';
+      mysql> SET wsrep_on=OFF; GRANT ALL ON *.* TO wsrep_sst@'%' IDENTIFIED BY 'wspass';
 
    Remove user accounts with empty user names because they cause problems:
 
-   ::
+   .. code-block:: console
 
-    mysql> SET wsrep_on=OFF; DELETE FROM mysql.user WHERE user='';
+      mysql> SET wsrep_on=OFF; DELETE FROM mysql.user WHERE user='';
 
 #. Verify that the nodes can access each other through the firewall.
    On Red Hat, this means adjusting :manpage:`iptables(8)`, as in:
 
    .. code-block:: console
 
-     # iptables --insert RH-Firewall-1-INPUT 1 --proto tcp \
-       --source <my IP>/24 --destination <my IP>/32 --dport 3306 \
-       -j ACCEPT
-     # iptables --insert RH-Firewall-1-INPUT 1 --proto tcp \
-       --source <my IP>/24 --destination <my IP>/32 --dport 4567 \
-       -j ACCEPT
+      # iptables --insert RH-Firewall-1-INPUT 1 --proto tcp \
+        --source <my IP>/24 --destination <my IP>/32 --dport 3306 \
+        -j ACCEPT
+      # iptables --insert RH-Firewall-1-INPUT 1 --proto tcp \
+        --source <my IP>/24 --destination <my IP>/32 --dport 4567 \
+        -j ACCEPT
 
 
-   You may also need to configure any NAT firewall between nodes to allow direct connections.
-   You may need to disable SELinux
-   or configure it to allow ``mysqld`` to listen to sockets at unprivileged ports.
-   See the `Firewalls and default ports
-   <http://docs.openstack.org/liberty/config-reference/content/firewalls-default-ports.html>`_
+   You may also need to configure any NAT firewall between nodes to allow
+   direct connections. You may need to disable SELinux or configure it to
+   allow ``mysqld`` to listen to sockets at unprivileged ports.
+   See the `Firewalls and default ports <http://docs.openstack.org/
+   liberty/config-reference/content/firewalls-default-ports.html>`_
    section of the Configuration Reference.
 
 Configure the database on other database servers
@@ -172,7 +193,7 @@ to recover from an error:
    # cp /etc/mysql/debian.cnf /etc/mysql/debian.cnf.bak
 
 #. Be sure that SSH root access is established for the other database servers.
-   Then copy the :file:`debian.cnf` file to each other server
+   Then copy the ``debian.cnf`` file to each other server
    and reset the file permissions and owner to reduce the security risk.
    Do this by issuing the following commands on the primary database server:
 
@@ -190,7 +211,7 @@ to recover from an error:
       # md5sum debian.cnf
 
 
-#. You need to get the database password from the :file:`debian.cnf` file.
+#. You need to get the database password from the ``debian.cnf`` file.
    You can do this with the following command:
 
    .. code-block:: console
@@ -213,7 +234,8 @@ to recover from an error:
       socket = /var/run/mysqld/mysqld.sock
       basedir = /usr
 
-   Alternately, you can run the following command to print out just the ``password`` line:
+   Alternately, you can run the following command to print out just
+   the ``password`` line:
 
    .. code-block:: console
 
@@ -244,7 +266,7 @@ to recover from an error:
 #. Verify the wsrep replication by logging in as root under mysql and running
    the following command:
 
-   ::
+   .. code-block:: console
 
       mysql> SHOW STATUS LIKE 'wsrep%';
       +------------------------------+--------------------------------------+
@@ -334,13 +356,13 @@ To install MariaDB with Galera
    as described in the HAProxy section of this document,
    you can use the ``clustercheck`` utility to improve health checks.
 
-   - Create the :file:`/etc/sysconfig/clustercheck` file with the following
+   - Create the ``/etc/sysconfig/clustercheck`` file with the following
      contents:
 
      .. code-block:: ini
 
         MYSQL_USERNAME="clustercheck"
-        MYSQL_PASSWORD={PASSWORD}
+        MYSQL_PASSWORD=myUncrackablePassword
         MYSQL_HOST="localhost"
         MYSQL_PORT="3306"
 
@@ -349,9 +371,9 @@ To install MariaDB with Galera
         Be sure to supply a sensible password.
 
    - Configure the monitor service (used by HAProxy) by creating
-     the :file:`/etc/xinetd.d/galera-monitor` file with the following contents:
+     the ``/etc/xinetd.d/galera-monitor`` file with the following contents:
 
-     ::
+   .. code-block:: none
 
        service galera-monitor
        {
@@ -376,7 +398,7 @@ To install MariaDB with Galera
      .. code-block:: console
 
         # systemctl start mysqld
-        # mysql -e "CREATE USER 'clustercheck'@'localhost' IDENTIFIED BY 'PASSWORD';"
+        # mysql -e "CREATE USER 'clustercheck'@'localhost' IDENTIFIED BY 'myUncrackablePassword';"
         # systemctl stop mysqld
 
    - Start the ``xinetd`` daemon required by ``clustercheck``:
@@ -389,74 +411,60 @@ To install MariaDB with Galera
 
 #. Configure MariaDB with Galera.
 
-   - Create the :file:`/etc/my.cnf.d/galera.cnf` configuration file
+   - Create the ``/etc/my.cnf.d/galera.cnf`` configuration file
      with the following content:
 
      .. code-block:: ini
 
-       [mysqld]
-       skip-name-resolve=1
-       binlog_format=ROW
-       default-storage-engine=innodb
-       innodb_autoinc_lock_mode=2
-       innodb_locks_unsafe_for_binlog=1
-       max_connections=2048
-       query_cache_size=0
-       query_cache_type=0
-       bind_address=NODE_IP
-       wsrep_provider=/usr/lib64/galera/libgalera_smm.so
-       wsrep_cluster_name="galera_cluster"
-       wsrep_cluster_address="gcomm://PRIMARY_NODE_IP, SECONDARY_NODE_IP, TERTIARY_NODE_IP"
-       wsrep_slave_threads=1
-       wsrep_certify_nonPK=1
-       wsrep_max_ws_rows=131072
-       wsrep_max_ws_size=1073741824
-       wsrep_debug=0
-       wsrep_convert_LOCK_to_trx=0
-       wsrep_retry_autocommit=1
-       wsrep_auto_increment_control=1
-       wsrep_drupal_282555_workaround=0
-       wsrep_causal_reads=0
-       wsrep_notify_cmd=
-       wsrep_sst_method=rsync
+        [mysqld]
+        skip-name-resolve=1
+        binlog_format=ROW
+        default-storage-engine=innodb
+        innodb_autoinc_lock_mode=2
+        innodb_locks_unsafe_for_binlog=1
+        query_cache_size=0
+        query_cache_type=0
+        bind_address=NODE_IP
+        wsrep_provider=/usr/lib64/galera/libgalera_smm.so
+        wsrep_cluster_name="galera_cluster"
+        wsrep_slave_threads=1
+        wsrep_certify_nonPK=1
+        wsrep_max_ws_rows=131072
+        wsrep_max_ws_size=1073741824
+        wsrep_debug=0
+        wsrep_convert_LOCK_to_trx=0
+        wsrep_retry_autocommit=1
+        wsrep_auto_increment_control=1
+        wsrep_drupal_282555_workaround=0
+        wsrep_causal_reads=0
+        wsrep_notify_cmd=
+        wsrep_sst_method=rsync
 
-   - Open the firewall ports used for MariaDB and Galera communications:
+   .. note::
 
-     .. code-block:: console
+      ``wsrep_ssl_encryption`` is strongly recommended and should be
+      enabled on all production deployments. We do NOT cover how to
+      configure SSL here.
 
-         # firewall-cmd --add-service=mysql
-         # firewall-cmd --add-port=4444/tcp
-         # firewall-cmd --add-port=4567/tcp
-         # firewall-cmd --add-port=4568/tcp
-         # firewall-cmd --add-port=9200/tcp
-         # firewall-cmd --add-port=9300/tcp
-         # firewall-cmd --add-service=mysql --permanent
-         # firewall-cmd --add-port=4444/tcp --permanent
-         # firewall-cmd --add-port=4567/tcp --permanent
-         # firewall-cmd --add-port=4568/tcp --permanent
-         # firewall-cmd --add-port=9200/tcp --permanent
-         # firewall-cmd --add-port=9300/tcp --permanent
+#. Add Galera to the Cluster.
 
-   - Start the MariaDB cluster:
+   - On **one** host, run:
 
-     - On node 1, run the following command:
+     - :command:`pcs resource create galera galera enable_creation=true
+       wsrep_cluster_address="gcomm://NODE1,NODE2,NODE3"
+       additional_parameters='--open-files-limit=16384' meta master-max=3
+       ordered=true op promote timeout=300s on-fail=block --master`
 
-       .. code-block:: console
+     .. note::
 
-          # sudo -u mysql /usr/libexec/mysqld --wsrep-cluster-address='gcomm://' &
+        ``wsrep_cluster_address`` must be of the form NODE1,NODE2,NODE3
 
-     - On nodes 2 and 3, run the following command:
+     .. note::
 
-       .. code-block:: console
+        Node names must be in the form that the cluster knows them as
+        (that is, with or withouth domains as appropriate) and there can
+        not be a trailing comma.
 
-          # systemctl start mariadb
-
-     - After the output from the ``clustercheck`` command is 200 on all nodes,
-       restart the MariaDB on node 1 with the following command sequence:
-
-       [TODO: is the kill command necessary here?]
-
-       .. code-block:: console
-
-         # kill <mysql PIDs>
-         # systemctl start mariadb
+     By specifying ``wsrep_cluster_address`` in the cluster
+     configuration, there are whole classes of problems we can avoid
+     if the list of nodes ever needs to change.
