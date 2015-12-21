@@ -186,7 +186,7 @@ file. You need a copy of it on each controller node.
       server controller2 10.0.0.2:8777 check inter 2000 rise 2 fall 5
       server controller3 10.0.0.3:8777 check inter 2000 rise 2 fall 5
 
-    listen spice_cluster
+    listen nova_vncproxy_cluster
       bind <Virtual IP>:6080
       balance  source
       option  tcpka
