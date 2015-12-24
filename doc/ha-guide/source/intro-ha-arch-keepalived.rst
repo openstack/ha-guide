@@ -92,5 +92,5 @@ The following sections describe these limitations.
    require its own procedure to regain quorum.
 
 If you find any or all of these limitations concerning, you are
-encouraged to refer to the `Pacemaker HA architectire
-<introl-ha-design-pacemaker.html>`_ instead.
+encouraged to refer to the
+:doc:`Pacemaker HA architecture<intro-ha-arch-pacemaker>` instead.
