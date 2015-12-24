@@ -527,15 +527,15 @@ Use the :command:`crm_mon` utility to observe the status of Pacemaker:
 
    ============
    Last updated: Sun Oct  7 21:07:52 2012
-   Last change: Sun Oct  7 20:46:00 2012 via cibadmin on node2
+   Last change: Sun Oct  7 20:46:00 2012 via cibadmin on NODE2
    Stack: openais
-   Current DC: node2 - partition with quorum
+   Current DC: NODE2 - partition with quorum
    Version: 1.1.6-9971ebba4494012a93c03b40a2c58ec0eb60f50c
-   2 Nodes configured, 2 expected votes
+   3 Nodes configured, 3 expected votes
    0 Resources configured.
    ============
 
-   Online: [ node2 node1 ]
+   Online: [ NODE3 NODE2 NODE1 ]
 
 .. _pacemaker-cluster-properties:
 
@@ -547,45 +547,23 @@ you should set a few basic cluster properties:
 
 ``crmsh``
 
-Type :command:`crm configure` from a shell prompt to jump straight
-into the Pacemaker configuration menu.
-
-Set the following properties:
-
 .. code-block:: console
 
-   property no-quorum-policy="ignore" \ #  1
-     pe-warn-series-max="1000" \        #  2
+   $ crm configure property pe-warn-series-max="1000" \
      pe-input-series-max="1000" \
      pe-error-series-max="1000" \
-     cluster-recheck-interval="5min"    #  3
+     cluster-recheck-interval="5min"
 
 ``pcs``
 
-- :command:`pcs property set pe-warn-series-max="1000"
-  pe-input-series-max="1000" pe-error-series-max="1000"
-  cluster-recheck-interval="5min"`
+.. code-block:: console
+
+   $ pcs property set pe-warn-series-max=1000 \
+     pe-input-series-max=1000 \
+     pe-error-series-max=1000 \
+     cluster-recheck-interval=5min
 
 Note the following:
-
-.. hard-coded numbers are used here because they are essentially footnotes
-   to the code block.
-
-- Production environments should not set the
-  ``no-quorum-policy="ignore"`` parameter.
-
-  The ``no-quorum-policy="ignore"`` parameter
-  is required in 2-node Pacemaker clusters to disable quorum enforcement.
-  if quorum enforcement is enabled and one of the two nodes fails,
-  then the remaining node can not establish the majority of quorum votes
-  that are necessary to run services.
-  This means that it is unable to take over any resources.
-  Ignoring loss of quorum in the cluster avoids this problem
-  and is appropriate for small configurations used
-  for study or demonstration purposes.
-  Clusters that ignore lose of quorum are vulnerable to split-brain
-  because, if both nodes remain online but lose communication with each other,
-  either node may become active.
 
 - Setting the ``pe-warn-series-max``, ``pe-input-series-max``
   and ``pe-error-series-max`` parameters to 1000
