@@ -2,12 +2,11 @@
 Pacemaker cluster stack
 =======================
 
-OpenStack infrastructure high availability relies on the
-`Pacemaker <http://clusterlabs.org/>`_ cluster stack,
-the state-of-the-art high availability and load balancing stack
-for the Linux platform.
-Pacemaker is storage and application-agnostic,
-and is in no way specific to OpenStack.
+`Pacemaker <http://clusterlabs.org/>`_ cluster stack is the state-of-the-art
+high availability and load balancing stack for the Linux platform.
+Pacemaker is useful to make OpenStack infrastructure highly available.
+Also, it is storage and application-agnostic, and in no way
+specific to OpenStack.
 
 Pacemaker relies on the
 `Corosync <http://corosync.github.io/corosync/>`_ messaging layer
