@@ -14,8 +14,10 @@ High availability systems seek to minimize two things:
 Most high availability systems guarantee protection against system downtime
 and data loss only in the event of a single failure.
 However, they are also expected to protect against cascading failures,
-where a single failure deteriorates
-into a series of consequential failures.
+where a single failure deteriorates into a series of consequential failures.
+Many service providers guarantee :term:`Service Level Agreement (SLA)`
+including uptime percentage of computing service, which is calculated based
+on the available time and system downtime excluding planned outage time.
 
 Redundancy and failover
 ~~~~~~~~~~~~~~~~~~~~~~~
