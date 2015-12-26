@@ -185,6 +185,13 @@ More information is available in the RabbitMQ documentation:
 - `Highly Available Queues <http://www.rabbitmq.com/ha.html>`_
 - `Clustering Guide <https://www.rabbitmq.com/clustering.html>`_
 
+.. note::
+
+   As another option to make RabbitMQ highly available, RabbitMQ contains the
+   OCF scripts for the Pacemaker cluster resource agents since version 3.5.7.
+   It provides the active/active RabbitMQ cluster with mirrored queues.
+   For more information, see `Auto-configuration of a cluster with
+   a Pacemaker <http://www.rabbitmq.com/pacemaker.html>`_.
 
 .. _rabbitmq-services:
 
