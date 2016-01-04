@@ -83,13 +83,13 @@ Set up the cluster with `pcs`
    make up the cluster. The :option:`-p` option is used to give
    the password on command line and makes it easier to script.
 
-   - :command:`pcs cluster auth NODE1 NODE2 NODE3 -u hacluster
-     -p my-secret-password-no-dont-use-this-one --force`
+   - :command:`pcs cluster auth controller1 controller2 controller3
+     -u hacluster -p my-secret-password-no-dont-use-this-one --force`
 
 #. Create the cluster, giving it a name, and start it:
 
    - :command:`pcs cluster setup --force --name my-first-openstack-cluster
-     NODE1 NODE2 NODE3`
+     controller1 controller2 controller3`
    - :command:`pcs cluster start --all`
 
 Set up the cluster with `crmsh`
@@ -150,7 +150,7 @@ An example Corosync configuration file is shown below:
         # The following is a two-ring multicast configuration. (4)
         interface {
                 ringnumber: 0
-                bindnetaddr: 192.168.42.0
+                bindnetaddr: 10.0.0.0
                 mcastaddr: 239.255.42.1
                 mcastport: 5405
         }
@@ -291,7 +291,7 @@ for unicastis shown below:
            #...
            interface {
                    ringnumber: 0
-                   bindnetaddr: 192.168.42.0
+                   bindnetaddr: 10.0.0.0
                    broadcast: yes (1)
                    mcastport: 5405
            }
@@ -306,12 +306,12 @@ for unicastis shown below:
 
    nodelist { (3)
            node {
-                   ring0_addr: 192.168.42.1
+                   ring0_addr: 10.0.0.1
                    ring1_addr: 10.0.42.1
                    nodeid: 1
            }
            node {
-                   ring0_addr: 192.168.42.2
+                   ring0_addr: 10.0.0.2
                    ring1_addr: 10.0.42.2
                    nodeid: 2
            }
@@ -471,7 +471,7 @@ to get a summary of the health of the communication rings:
    Printing ring status.
    Local node ID 435324542
    RING ID 0
-           id      = 192.168.42.82
+           id      = 10.0.0.82
            status  = ring 0 active with no faults
    RING ID 1
            id      = 10.0.42.100
@@ -483,10 +483,10 @@ to dump the Corosync cluster member list:
 .. code-block:: console
 
    # corosync-objctl runtime.totem.pg.mrp.srp.members
-   runtime.totem.pg.mrp.srp.435324542.ip=r(0) ip(192.168.42.82) r(1) ip(10.0.42.100)
+   runtime.totem.pg.mrp.srp.435324542.ip=r(0) ip(10.0.0.82) r(1) ip(10.0.42.100)
    runtime.totem.pg.mrp.srp.435324542.join_count=1
    runtime.totem.pg.mrp.srp.435324542.status=joined
-   runtime.totem.pg.mrp.srp.983895584.ip=r(0) ip(192.168.42.87) r(1) ip(10.0.42.254)
+   runtime.totem.pg.mrp.srp.983895584.ip=r(0) ip(10.0.0.87) r(1) ip(10.0.42.254)
    runtime.totem.pg.mrp.srp.983895584.join_count=1
    runtime.totem.pg.mrp.srp.983895584.status=joined
 
@@ -526,15 +526,15 @@ Use the :command:`crm_mon` utility to observe the status of Pacemaker:
 
    ============
    Last updated: Sun Oct  7 21:07:52 2012
-   Last change: Sun Oct  7 20:46:00 2012 via cibadmin on NODE2
+   Last change: Sun Oct  7 20:46:00 2012 via cibadmin on controller2
    Stack: openais
-   Current DC: NODE2 - partition with quorum
+   Current DC: controller2 - partition with quorum
    Version: 1.1.6-9971ebba4494012a93c03b40a2c58ec0eb60f50c
    3 Nodes configured, 3 expected votes
    0 Resources configured.
    ============
 
-   Online: [ NODE3 NODE2 NODE1 ]
+   Online: [ controller3 controller2 controller1 ]
 
 .. _pacemaker-cluster-properties:
 

@@ -36,7 +36,7 @@ API resource. Connect to the Pacemaker cluster with the
       os_password="secretsecret"
       os_username="admin" \
       os_tenant_name="admin"
-      keystone_get_token_url="http://192.168.42.103:5000/v2.0/tokens" \
+      keystone_get_token_url="http://10.0.0.11:5000/v2.0/tokens" \
       op monitor interval="30s" timeout="30s"
 
 This configuration creates ``p_manila-api``, a resource for managing the
@@ -64,14 +64,14 @@ Edit the :file:`/etc/manila/manila.conf` file:
    :linenos:
 
    # We have to use MySQL connection to store data:
-   sql_connection = mysql+pymysql://manila:password@192.168.42.101/manila?charset=utf8
+   sql_connection = mysql+pymysql://manila:password@10.0.0.11/manila?charset=utf8
 
    # We bind Shared File Systems API to the VIP:
-   osapi_volume_listen = 192.168.42.103
+   osapi_volume_listen = 10.0.0.11
 
    # We send notifications to High Available RabbitMQ:
    notifier_strategy = rabbit
-   rabbit_host = 192.168.42.102
+   rabbit_host = 10.0.0.11
 
 
 .. _ha-manila-services:
@@ -95,7 +95,7 @@ virtual IPs and define your endpoints like this:
      sharev2 public 'http://PUBLIC_VIP:8786/v2/%(tenant_id)s'
 
    $ openstack endpoint create --region RegionOne \
-     sharev2 internal 'http://192.168.42.103:8786/v2/%(tenant_id)s'
+     sharev2 internal 'http://10.0.0.11:8786/v2/%(tenant_id)s'
 
    $ openstack endpoint create --region RegionOne \
-     sharev2 admin 'http://192.168.42.103:8786/v2/%(tenant_id)s'
+     sharev2 admin 'http://10.0.0.11:8786/v2/%(tenant_id)s'

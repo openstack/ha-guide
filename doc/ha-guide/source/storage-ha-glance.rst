@@ -41,7 +41,7 @@ and add the following cluster resources:
       params config="/etc/glance/glance-api.conf" \
       os_password="secretsecret" \
       os_username="admin" os_tenant_name="admin" \
-      os_auth_url="http://192.168.42.103:5000/v2.0/" \
+      os_auth_url="http://10.0.0.11:5000/v2.0/" \
       op monitor interval="30s" timeout="30s"
 
 This configuration creates ``p_glance-api``,
@@ -71,22 +71,22 @@ to configure the OpenStack image service:
 .. code-block:: ini
 
    # We have to use MySQL connection to store data:
-   sql_connection=mysql://glance:password@192.168.42.101/glance
+   sql_connection=mysql://glance:password@10.0.0.11/glance
    # Alternatively, you can switch to pymysql,
    # a new Python 3 compatible library and use
-   # sql_connection=mysql+pymysql://glance:password@192.168.42.101/glance
+   # sql_connection=mysql+pymysql://glance:password@10.0.0.11/glance
    # and be ready when everything moves to Python 3.
    # Ref: https://wiki.openstack.org/wiki/PyMySQL_evaluation
 
    # We bind OpenStack Image API to the VIP:
-   bind_host = 192.168.42.103
+   bind_host = 10.0.0.11
 
    # Connect to OpenStack Image registry service:
-   registry_host = 192.168.42.103
+   registry_host = 10.0.0.11
 
    # We send notifications to High Available RabbitMQ:
    notifier_strategy = rabbit
-   rabbit_host = 192.168.42.102
+   rabbit_host = 10.0.0.11
 
 [TODO: need more discussion of these parameters]
 
@@ -103,7 +103,7 @@ of an OpenStack Image API server
 as you would in a non-HA cluster.
 
 For OpenStack Compute, for example,
-if your OpenStack Image API service IP address is 192.168.42.103
+if your OpenStack Image API service IP address is 10.0.0.11
 (as in the configuration explained here),
 you would use the following configuration in your :file:`nova.conf` file:
 
@@ -111,7 +111,7 @@ you would use the following configuration in your :file:`nova.conf` file:
 
    [glance]
    ...
-   api_servers = 192.168.42.103
+   api_servers = 10.0.0.11
    ...
 
 
@@ -124,7 +124,7 @@ and define your endpoint like this:
 
    $ keystone endpoint-create --region $KEYSTONE_REGION \
       --service-id $service-id --publicurl 'http://PUBLIC_VIP:9292' \
-      --adminurl 'http://192.168.42.103:9292' \
-      --internalurl 'http://192.168.42.103:9292'
+      --adminurl 'http://10.0.0.11:9292' \
+      --internalurl 'http://10.0.0.11:9292'
 
 

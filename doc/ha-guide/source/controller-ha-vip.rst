@@ -7,18 +7,18 @@ You must select and assign a virtual IP address (VIP)
 that can freely float between cluster nodes.
 
 This configuration creates ``vip``,
-a virtual IP address for use by the API node (``192.168.42.103``):
+a virtual IP address for use by the API node (``10.0.0.11``):
 
 For ``crmsh``:
 
 .. code-block:: console
 
    primitive vip ocf:heartbeat:IPaddr2 \
-     params ip="192.168.42.103" cidr_netmask="24" op monitor interval="30s"
+     params ip="10.0.0.11" cidr_netmask="24" op monitor interval="30s"
 
 For ``pcs``:
 
 .. code-block:: console
 
    # pcs resource create vip ocf:heartbeat:IPaddr2 \
-     params ip="192.168.42.103" cidr_netmask="24" op monitor interval="30s"
+     params ip="10.0.0.11" cidr_netmask="24" op monitor interval="30s"

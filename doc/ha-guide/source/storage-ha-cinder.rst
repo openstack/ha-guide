@@ -38,7 +38,7 @@ and add the following cluster resources:
       os_password="secretsecret"
       os_username="admin" \
       os_tenant_name="admin"
-      keystone_get_token_url="http://192.168.42.103:5000/v2.0/tokens" \
+      keystone_get_token_url="http://10.0.0.11:5000/v2.0/tokens" \
       op monitor interval="30s" timeout="30s"
 
 This configuration creates ``p_cinder-api``,
@@ -67,19 +67,19 @@ Edit the :file:`/etc/cinder/cinder.conf` file:
    :linenos:
 
    # We have to use MySQL connection to store data:
-   sql_connection = mysql://cinder:password@192.168.42.101/cinder
+   sql_connection = mysql://cinder:password@10.0.0.11/cinder
    # Alternatively, you can switch to pymysql,
    # a new Python 3 compatible library and use
-   # sql_connection = mysql+pymysql://cinder:password@192.168.42.101/cinder
+   # sql_connection = mysql+pymysql://cinder:password@10.0.0.11/cinder
    # and be ready when everything moves to Python 3.
    # Ref: https://wiki.openstack.org/wiki/PyMySQL_evaluation
 
    # We bind Block Storage API to the VIP:
-   osapi_volume_listen = 192.168.42.103
+   osapi_volume_listen = 10.0.0.11
 
    # We send notifications to High Available RabbitMQ:
    notifier_strategy = rabbit
-   rabbit_host = 192.168.42.102
+   rabbit_host = 10.0.0.11
 
 
 .. _ha-cinder-services:
@@ -103,7 +103,7 @@ you should create two virtual IPs and define your endpoint like this:
    $ keystone endpoint-create --region $KEYSTONE_REGION \
       --service-id $service-id \
       --publicurl 'http://PUBLIC_VIP:8776/v1/%(tenant_id)s' \
-      --adminurl 'http://192.168.42.103:8776/v1/%(tenant_id)s' \
-      --internalurl 'http://192.168.42.103:8776/v1/%(tenant_id)s'
+      --adminurl 'http://10.0.0.11:8776/v1/%(tenant_id)s' \
+      --internalurl 'http://10.0.0.11:8776/v1/%(tenant_id)s'
 
 
