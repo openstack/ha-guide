@@ -95,9 +95,9 @@ file. You need a copy of it on each controller node.
       bind <Virtual IP>:3306
       balance  source
       option  httpchk
-      server controller1 10.0.0.4:3306 check port 9200 inter 2000 rise 2 fall 5
-      server controller2 10.0.0.5:3306 backup check port 9200 inter 2000 rise 2 fall 5
-      server controller3 10.0.0.6:3306 backup check port 9200 inter 2000 rise 2 fall 5
+      server controller1 10.0.0.1:3306 check port 9200 inter 2000 rise 2 fall 5
+      server controller2 10.0.0.2:3306 backup check port 9200 inter 2000 rise 2 fall 5
+      server controller3 10.0.0.3:3306 backup check port 9200 inter 2000 rise 2 fall 5
 
     listen glance_api_cluster
       bind <Virtual IP>:9292
