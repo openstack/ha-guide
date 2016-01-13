@@ -12,3 +12,13 @@ Follow the instructions in the OpenStack Installation Guides:
 
 The OpenStack Installation Guides also include a list of the services
 that use passwords with important notes about using them.
+
+This guide uses the following example IP addresses:
+
+.. code-block:: none
+
+   # controller
+   10.0.0.11       controller # virtual IP
+   10.0.0.12       controller1
+   10.0.0.13       controller2
+   10.0.0.14       controller3

@@ -46,7 +46,7 @@ Add OpenStack Identity resource to Pacemaker
           os_password="secretsecret" \
           os_username="admin"
           os_tenant_name="admin"
-          os_auth_url="http://192.168.42.103:5000/v2.0/" \
+          os_auth_url="http://10.0.0.11:5000/v2.0/" \
           op monitor interval="30s" timeout="30s"
 
    This configuration creates ``p_keystone``,
@@ -76,9 +76,9 @@ Configure OpenStack Identity service
 
    .. code-block:: ini
 
-      bind_host = 192.168.42.103
-      public_bind_host = 192.168.42.103
-      admin_bind_host = 192.168.42.103
+      bind_host = 10.0.0.11
+      public_bind_host = 10.0.0.11
+      admin_bind_host = 10.0.0.11
 
    The ``admin_bind_host`` parameter
    lets you use a private network for admin access.
@@ -110,12 +110,12 @@ of an OpenStack Identity server as you would do
 in a non-HA environment.
 
 #. For OpenStack Compute, for example,
-   if your OpenStack Identiy service IP address is 192.168.42.103,
+   if your OpenStack Identiy service IP address is 10.0.0.11,
    use the following configuration in your :file:`api-paste.ini` file:
 
    .. code-block:: ini
 
-      auth_host = 192.168.42.103
+      auth_host = 10.0.0.11
 
 #. You also need to create the OpenStack Identity Endpoint
    with this IP address.
@@ -131,9 +131,9 @@ in a non-HA environment.
          $ openstack endpoint create --region $KEYSTONE_REGION \
            $service-type public http://PUBLIC_VIP:5000/v2.0
          $ openstack endpoint create --region $KEYSTONE_REGION \
-           $service-type admin http://192.168.42.103:35357/v2.0
+           $service-type admin http://10.0.0.11:35357/v2.0
          $ openstack endpoint create --region $KEYSTONE_REGION \
-           $service-type internal http://192.168.42.103:5000/v2.0
+           $service-type internal http://10.0.0.11:5000/v2.0
 
 
 #. If you are using the horizon dashboard,
@@ -142,6 +142,6 @@ in a non-HA environment.
 
    .. code-block:: ini
 
-      OPENSTACK_HOST = 192.168.42.103
+      OPENSTACK_HOST = 10.0.0.11
 
 
