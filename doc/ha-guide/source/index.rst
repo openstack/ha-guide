@@ -23,6 +23,7 @@ Contents
 .. toctree::
    :maxdepth: 2
 
+   common/conventions.rst
    intro-ha.rst
    hardware-ha.rst
    install-ha.rst
