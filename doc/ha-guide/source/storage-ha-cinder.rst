@@ -5,12 +5,67 @@
 Highly available Block Storage API
 ==================================
 
-Making the Block Storage API service (cinder) highly available
-in active/passive mode involves:
+Cinder provides 'block storage as a service' suitable for performance
+sensitive scenarios such as databases, expandable file systems, or
+providing a server with access to raw block level storage.
+
+Persistent block storage can survive instance termination and can also
+be moved across instances like any external storage device. Cinder
+also has volume snapshots capability for backing up the volumes.
+
+Making this Block Storage API service highly available in
+active/passive mode involves:
 
 - :ref:`ha-cinder-pacemaker`
 - :ref:`ha-cinder-configure`
 - :ref:`ha-cinder-services`
+
+In theory, you can run the Block Storage service as active/active.
+However, because of sufficient concerns, it is recommended running
+the volume component as active/passive only.
+
+Jon Bernard writes:
+
+::
+
+  Requests are first seen by Cinder in the API service, and we have a
+  fundamental problem there - a standard test-and-set race condition
+  exists for many operations where the volume status is first checked
+  for an expected status and then (in a different operation) updated to
+  a pending status. The pending status indicates to other incoming
+  requests that the volume is undergoing a current operation, however it
+  is possible for two simultaneous requests to race here, which
+  undefined results.
+
+  Later, the manager/driver will receive the message and carry out the
+  operation. At this stage there is a question of the synchronization
+  techniques employed by the drivers and what guarantees they make.
+
+  If cinder-volume processes exist as different process, then the
+  'synchronized' decorator from the lockutils package will not be
+  sufficient. In this case the programmer can pass an argument to
+  synchronized() 'external=True'. If external is enabled, then the
+  locking will take place on a file located on the filesystem. By
+  default, this file is placed in Cinder's 'state directory' in
+  /var/lib/cinder so won't be visible to cinder-volume instances running
+  on different machines.
+
+  However, the location for file locking is configurable. So an
+  operator could configure the state directory to reside on shared
+  storage. If the shared storage in use implements unix file locking
+  semantics, then this could provide the requisite synchronization
+  needed for an active/active HA configuration.
+
+  The remaining issue is that not all drivers use the synchronization
+  methods, and even fewer of those use the external file locks. A
+  sub-concern would be whether they use them correctly.
+
+You can read more about these concerns on the
+`Red Hat Bugzilla <https://bugzilla.redhat.com/show_bug.cgi?id=1193229>`_
+and there is a
+`psuedo roadmap <https://etherpad.openstack.org/p/cinder-kilo-stabilisation-work>`_
+for addressing them upstream.
+
 
 .. _ha-cinder-pacemaker:
 
