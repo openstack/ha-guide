@@ -2,7 +2,12 @@
 RabbitMQ
 ========
 
-RabbitMQ is the default AMQP server used by many OpenStack services.
+An AMQP (Advanced Message Queuing Protocol) compliant message bus is
+required for most OpenStack components in order to coordinate the
+execution of jobs entered into the system.
+
+The most popular AMQP implementation used in OpenStack installations
+is RabbitMQ.
 
 RabbitMQ nodes fail over both on the application and the
 infrastructure layers.
@@ -29,6 +34,41 @@ Making the RabbitMQ service highly available involves the following steps:
 
 - :ref:`Configure OpenStack services to use Rabbit HA queues
   <rabbitmq-services>`
+
+.. note::
+
+   Access to RabbitMQ is not normally handled by HAproxy. Instead,
+   consumers must be supplied with the full list of hosts running
+   RabbitMQ with ``rabbit_hosts`` and turn on the ``rabbit_ha_queues``
+   option.
+
+   Jon Eck found the `core issue
+   <http://people.redhat.com/jeckersb/private/vip-failover-tcp-persist.html>`_
+   and went into some detail regarding the `history and solution
+   <http://john.eckersberg.com/improving-ha-failures-with-tcp-timeouts.html>`_
+   on his blog.
+
+   In summary though:
+
+   The source address for the connection from HAProxy back to the
+   client is the VIP address. However the VIP address is no longer
+   present on the host. This means that the network (IP) layer
+   deems the packet unroutable, and informs the transport (TCP)
+   layer. TCP, however, is a reliable transport. It knows how to
+   handle transient errors and will retry. And so it does.
+
+   In this case that is a problem though, because:
+
+   TCP generally holds on to hope for a long time. A ballpark
+   estimate is somewhere on the order of tens of minutes (30
+   minutes is commonly referenced). During this time it will keep
+   probing and trying to deliver the data.
+
+   It is important to note that HAProxy has no idea that any of this is
+   happening. As far as its process is concerned, it called
+   ``write()`` with the data and the kernel returned success. The
+   resolution is already understood and just needs to make its way
+   through a review.
 
 .. _rabbitmq-install:
 
@@ -60,16 +100,16 @@ you are using:
 
 .. note::
 
-         For SLES 12, the packages are signed by GPG key 893A90DAD85F9316.
-         You should verify the fingerprint of the imported GPG key before using it.
+   For SLES 12, the packages are signed by GPG key 893A90DAD85F9316.
+   You should verify the fingerprint of the imported GPG key before using it.
 
-         ::
+   ::
 
-            Key ID: 893A90DAD85F9316
-            Key Name: Cloud:OpenStack OBS Project <Cloud:OpenStack@build.opensuse.org>
-            Key Fingerprint: 35B34E18ABC1076D66D5A86B893A90DAD85F9316
-            Key Created: Tue Oct  8 13:34:21 2013
-            Key Expires: Thu Dec 17 13:34:21 2015
+      Key ID: 893A90DAD85F9316
+      Key Name: Cloud:OpenStack OBS Project <Cloud:OpenStack@build.opensuse.org>
+      Key Fingerprint: 35B34E18ABC1076D66D5A86B893A90DAD85F9316
+      Key Created: Tue Oct  8 13:34:21 2013
+      Key Expires: Thu Dec 17 13:34:21 2015
 
 For more information,
 see the official installation manual for the distribution:
@@ -204,11 +244,10 @@ to use at least two RabbitMQ nodes.
 Do this configuration on all services using RabbitMQ:
 
 #. RabbitMQ HA cluster host:port pairs:
-   [TODO: Add rabbit3 if you agree]
 
    ::
 
-      rabbit_hosts=rabbit1:5672,rabbit2:5672
+      rabbit_hosts=rabbit1:5672,rabbit2:5672,rabbit3:5672
 
 #. How frequently to retry connecting with RabbitMQ:
    [TODO: document the unit of measure here? Seconds?]
