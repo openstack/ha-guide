@@ -17,7 +17,31 @@ in active/passive mode involves:
 Add Block Storage API resource to Pacemaker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You must first download the resource agent to your system:
+On RHEL-based systems, you should create resources for cinder's
+systemd agents and create constraints to enforce startup/shutdown
+ordering:
+
+.. code-block:: console
+
+  pcs resource create openstack-cinder-api systemd:openstack-cinder-api --clone interleave=true
+  pcs resource create openstack-cinder-scheduler systemd:openstack-cinder-scheduler --clone interleave=true
+  pcs resource create openstack-cinder-volume systemd:openstack-cinder-volume
+
+  pcs constraint order start openstack-cinder-api-clone then openstack-cinder-scheduler-clone
+  pcs constraint colocation add openstack-cinder-scheduler-clone with openstack-cinder-api-clone
+  pcs constraint order start openstack-cinder-scheduler-clone then openstack-cinder-volume
+  pcs constraint colocation add openstack-cinder-volume with openstack-cinder-scheduler-clone
+
+
+If the Block Storage service runs on the same nodes as the other services,
+then it is advisable to also include:
+
+.. code-block:: console
+
+   pcs constraint order start openstack-keystone-clone then openstack-cinder-api-clone
+
+Alternatively, instead of using systemd agents, download and
+install the OCF resource agent:
 
 .. code-block:: console
 
@@ -25,10 +49,8 @@ You must first download the resource agent to your system:
    # wget https://git.openstack.org/cgit/openstack/openstack-resource-agents/plain/ocf/cinder-api
    # chmod a+rx *
 
-You can now add the Pacemaker configuration
-for Block Storage API resource.
-Connect to the Pacemaker cluster
-with the :command:`crm configure` command
+You can now add the Pacemaker configuration for Block Storage API resource.
+Connect to the Pacemaker cluster with the :command:`crm configure` command
 and add the following cluster resources:
 
 ::
@@ -61,16 +83,67 @@ and its dependent resources on one of your nodes.
 Configure Block Storage API service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Edit the :file:`/etc/cinder/cinder.conf` file:
+Edit the ``/etc/cinder/cinder.conf`` file:
+
+On a RHEL-based system, it should look something like:
+
+.. code-block:: ini
+   :linenos:
+
+   [DEFAULT]
+   # This is the name which we should advertise ourselves as and for
+   # A/P installations it should be the same everywhere
+   host = cinder-cluster-1
+
+   # Listen on the Block Storage VIP
+   osapi_volume_listen = 10.0.0.11
+
+   auth_strategy = keystone
+   control_exchange = cinder
+
+   volume_driver = cinder.volume.drivers.nfs.NfsDriver
+   nfs_shares_config = /etc/cinder/nfs_exports
+   nfs_sparsed_volumes = true
+   nfs_mount_options = v3
+
+   [database]
+   sql_connection = mysql://cinder:CINDER_DBPASS@10.0.0.11/cinder
+   max_retries = -1
+
+   [keystone_authtoken]
+   # 10.0.0.11 is the Keystone VIP
+   identity_uri = http://10.0.0.11:35357/
+   auth_uri = http://10.0.0.11:5000/
+   admin_tenant_name = service
+   admin_user = cinder
+   admin_password = CINDER_PASS
+
+   [oslo_messaging_rabbit]
+   # Explicitly list the rabbit hosts as it doesn't play well with HAProxy
+   rabbit_hosts = 10.0.0.12,10.0.0.13,10.0.0.14
+   # As a consequence, we also need HA queues
+   rabbit_ha_queues = True
+   heartbeat_timeout_threshold = 60
+   heartbeat_rate = 2
+
+Replace ``CINDER_DBPASS`` with the password you chose for the Block Storage
+database. Replace ``CINDER_PASS`` with the password you chose for the
+``cinder`` user in the Identity service.
+
+This example assumes that you are using NFS for the physical storage, which
+will almost never be true in a production installation.
+
+If you are using the Block Storage service OCF agent, some settings will
+be filled in for you, resulting in a shorter configuration file:
 
 .. code-block:: ini
    :linenos:
 
    # We have to use MySQL connection to store data:
-   sql_connection = mysql://cinder:password@10.0.0.11/cinder
+   sql_connection = mysql://cinder:CINDER_DBPASS@10.0.0.11/cinder
    # Alternatively, you can switch to pymysql,
    # a new Python 3 compatible library and use
-   # sql_connection = mysql+pymysql://cinder:password@10.0.0.11/cinder
+   # sql_connection = mysql+pymysql://cinder:CINDER_DBPASS@10.0.0.11/cinder
    # and be ready when everything moves to Python 3.
    # Ref: https://wiki.openstack.org/wiki/PyMySQL_evaluation
 
@@ -81,6 +154,8 @@ Edit the :file:`/etc/cinder/cinder.conf` file:
    notifier_strategy = rabbit
    rabbit_host = 10.0.0.11
 
+Replace ``CINDER_DBPASS`` with the password you chose for the Block Storage
+database.
 
 .. _ha-cinder-services:
 
@@ -105,5 +180,4 @@ you should create two virtual IPs and define your endpoint like this:
       --publicurl 'http://PUBLIC_VIP:8776/v1/%(tenant_id)s' \
       --adminurl 'http://10.0.0.11:8776/v1/%(tenant_id)s' \
       --internalurl 'http://10.0.0.11:8776/v1/%(tenant_id)s'
-
 
