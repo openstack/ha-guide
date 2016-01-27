@@ -6,13 +6,9 @@
 *.egg
 *.egg-info
 
-# Testenvironment
-.tox
-
 # Build directories
 target/
 publish-docs/
-generated/
 build/
 /build-*.log.gz
 
