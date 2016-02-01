@@ -38,7 +38,7 @@ cluster manager:
    majority. Failure to do this leads very quickly to an internal
    `split-brain <http://en.wikipedia.org/wiki/Split-brain_(computing)>`_
    state - where different parts of the system are pulling in
-   different and incompatioble directions.
+   different and incompatible directions.
 
 #. Data integrity through fencing (a non-responsive process does not
    imply it is not doing anything)
@@ -75,7 +75,7 @@ clusters contain at least three nodes so that we can take advantage of
 `quorum <quorum_>`_.
 
 Quorum becomes important when a failure causes the cluster to split in
-two or more paritions. In this situation, you want the majority to
+two or more partitions. In this situation, you want the majority to
 ensure the minority are truly dead (through fencing) and continue to
 host resources. For a two-node cluster, no side has the majority and
 you can end up in a situation where both sides fence each other, or
@@ -120,7 +120,7 @@ In this configuration, each service runs in a dedicated cluster of
 The benefits of this approach are the physical isolation between
 components and the ability to add capacity to specific components.
 
-You would also choose this option if you prefer to have more but
+You would choose this option if you prefer to have more but
 less powerful boxes.
 
 This scenario can be visualized as below, where each box below
@@ -134,7 +134,7 @@ Mixed
 
 It is also possible to follow a segregated approach for one or more
 components that are expected to be a bottleneck and use a collapsed
-apprach for the remainder.
+approach for the remainder.
 
 
 Proxy server
@@ -187,7 +187,7 @@ alternatives in the marketplace.
 
 We use a check interval of 1 second, however, the timeouts vary by service.
 
-Generally, we use round-robin to distriute load amongst instances of
+Generally, we use round-robin to distribute load amongst instances of
 active/active services, however, Galera uses the ``stick-table`` options
 to ensure that incoming connections to the virtual IP (VIP) should be
 directed to only one of the available back ends.
