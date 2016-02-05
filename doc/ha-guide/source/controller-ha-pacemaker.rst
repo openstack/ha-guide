@@ -61,6 +61,8 @@ usually installs automatically):
 
 - resource-agents
 
+- libqb0
+
 .. _pacemaker-corosync-setup:
 
 Set up the cluster with `pcs`
