@@ -92,6 +92,12 @@ Set up the cluster with `pcs`
      controller1 controller2 controller3`
    - :command:`pcs cluster start --all`
 
+.. note ::
+
+   In Red Hat Enterprise Linux or CentOS environments, this is a recommended
+   path to perform configuration. For more information, see the `RHEL docs
+   <https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/High_Availability_Add-On_Reference/ch-clusteradmin-HAAR.html#s1-clustercreate-HAAR>`_.
+
 Set up the cluster with `crmsh`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
