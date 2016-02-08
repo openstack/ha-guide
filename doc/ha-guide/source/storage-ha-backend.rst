@@ -30,16 +30,9 @@ An OpenStack environment includes multiple data pools for the VMs:
     can use the Object Storage service (swift)
     or Ceph RBD as the storage back end.
 
-
-Instructions for configuring storage back ends
-for the different storage options is provided in:
-
-[TODO: add proper links to the install guides]
-
-- openSUSE and SUSE Linux Enterprise: [link to SUSE install guide]
-- Ubuntu: [link to Ubuntu install guide]
-- Red Hat Linux Enterprise, CentOS, and Fedora:
-  [link to Red Hat install guide]
+For more information about configuring storage back ends for
+the different storage options, see the `Cloud Administrator Guide
+<http://docs.openstack.org/admin-guide-cloud/>`_.
 
 This section discusses ways to protect against
 data loss in your OpenStack environment.
