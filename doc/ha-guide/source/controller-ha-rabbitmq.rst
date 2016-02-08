@@ -194,10 +194,15 @@ that all nodes have the same Erlang cookie file.
       # rabbitmqctl stop_app
       Stopping node rabbit@NODE...
       ...done.
-      # rabbitmqctl join_cluster rabbit@rabbit1
+      # rabbitmqctl join_cluster --ram rabbit@rabbit1
       # rabbitmqctl start_app
       Starting node rabbit@NODE ...
       ...done.
+
+.. note::
+
+   The default node type is a disc node. In this guide, nodes
+   join the cluster as RAM nodes.
 
 #. To verify the cluster status:
 
