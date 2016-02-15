@@ -44,6 +44,12 @@ OpenStack network nodes contain:
 - :ref:`Neutron metadata agent<neutron-metadata>`
 - :ref:`Neutron LBaaS<neutron-lbaas>` (Load Balancing as a Service) agent
 
+.. note::
+
+   For Liberty, we do not have the standalone network nodes in general.
+   We usually run the Networking services on the controller nodes.
+   In this guide, we use the term "network nodes" for convenience.
+
 .. toctree::
    :maxdepth: 2
 
