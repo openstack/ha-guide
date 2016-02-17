@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: High Availability Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-15 06:00+0000\n"
+"POT-Creation-Date: 2016-02-17 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3788,6 +3788,13 @@ msgstr ""
 
 #: ../networking-ha.rst:45
 msgid ":ref:`Neutron LBaaS<neutron-lbaas>` (Load Balancing as a Service) agent"
+msgstr ""
+
+#: ../networking-ha.rst:49
+msgid ""
+"For Liberty, we do not have the standalone network nodes in general. We "
+"usually run the Networking services on the controller nodes. In this guide, "
+"we use the term \"network nodes\" for convenience."
 msgstr ""
 
 #: ../noncore-ha.rst:4
