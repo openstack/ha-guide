@@ -442,7 +442,7 @@ Note the following:
   this is not recommended for production environments.
 
 - ``last_man_standing_window`` specifies the time, in milliseconds,
-  required to recalculate quorum after one or most hosts
+  required to recalculate quorum after one or more hosts
   have been lost from the cluster.
   To do the new quorum recalculation,
   the cluster must have quorum for at least the interval
