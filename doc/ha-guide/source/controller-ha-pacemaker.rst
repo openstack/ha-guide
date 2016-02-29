@@ -70,29 +70,37 @@ Set up the cluster with `pcs`
 
 #. Make sure pcs is running and configured to start at boot time:
 
-   - :command:`systemctl enable pcsd`
-   - :command:`systemctl start pcsd`
+   .. code-block:: console
+
+      $ systemctl enable pcsd
+      $ systemctl start pcsd
 
 #. Set a password for hacluster user **on each host**.
 
    Since the cluster is a single administrative domain, it is generally
    accepted to use the same password on all nodes.
 
-   - :command:`echo my-secret-password-no-dont-use-this-one |
-     passwd --stdin hacluster`
+   .. code-block:: console
+
+      $ echo my-secret-password-no-dont-use-this-one \
+        | passwd --stdin hacluster
 
 #. Use that password to authenticate to the nodes which will
    make up the cluster. The :option:`-p` option is used to give
    the password on command line and makes it easier to script.
 
-   - :command:`pcs cluster auth controller1 controller2 controller3
-     -u hacluster -p my-secret-password-no-dont-use-this-one --force`
+   .. code-block:: console
+
+      $ pcs cluster auth controller1 controller2 controller3 \
+        -u hacluster -p my-secret-password-no-dont-use-this-one --force
 
 #. Create the cluster, giving it a name, and start it:
 
-   - :command:`pcs cluster setup --force --name my-first-openstack-cluster
-     controller1 controller2 controller3`
-   - :command:`pcs cluster start --all`
+   .. code-block:: console
+
+      $ pcs cluster setup --force --name my-first-openstack-cluster \
+        controller1 controller2 controller3
+      $ pcs cluster start --all
 
 .. note ::
 
@@ -461,12 +469,9 @@ an upstart job, or a systemd unit file.
 Either way, the service is usually named corosync:
 
 - :command:`# /etc/init.d/corosync start` (LSB)
-
 - :command:`# service corosync start` (LSB, alternate)
-
-- :command:`# start corosync (upstart)`
-
-- :command:`# systemctl start corosync (systemd)`
+- :command:`# start corosync` (upstart)
+- :command:`# systemctl start corosync` (systemd)
 
 You can now check the Corosync connectivity with two tools.
 
