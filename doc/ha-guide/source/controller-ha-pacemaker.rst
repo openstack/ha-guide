@@ -322,14 +322,19 @@ for unicastis shown below:
 
    nodelist { (3)
            node {
-                   ring0_addr: 10.0.0.1
-                   ring1_addr: 10.0.42.1
+                   ring0_addr: 10.0.0.12
+                   ring1_addr: 10.0.42.12
                    nodeid: 1
            }
            node {
-                   ring0_addr: 10.0.0.2
-                   ring1_addr: 10.0.42.2
+                   ring0_addr: 10.0.0.13
+                   ring1_addr: 10.0.42.13
                    nodeid: 2
+           }
+           node {
+                   ring0_addr: 10.0.0.14
+                   ring1_addr: 10.0.42.14
+                   nodeid: 3
            }
    }
    #...
