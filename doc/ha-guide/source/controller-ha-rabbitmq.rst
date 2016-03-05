@@ -176,7 +176,19 @@ that all nodes have the same Erlang cookie file.
       # chown rabbitmq:rabbitmq /var/lib/rabbitmq/.erlang.cookie
       # chmod 400 /var/lib/rabbitmq/.erlang.cookie
 
-#. Start RabbitMQ on all nodes and verify that the nodes are running:
+#. Start the message queue service on all nodes and configure it to start
+   when the system boots.
+
+   On Ubuntu, it is configured by default.
+
+   On CentOS, RHEL, openSUSE, and SLES:
+
+   .. code-block:: console
+
+      # systemctl enable rabbitmq-server.service
+      # systemctl start rabbitmq-server.service
+
+#. Verify that the nodes are running:
 
    .. code-block:: console
 
