@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: High Availability Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-23 06:00+0000\n"
+"POT-Creation-Date: 2016-03-07 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1058,13 +1058,13 @@ msgstr ""
 
 # #-#-#-#-#  controller-ha-haproxy.pot (High Availability Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  controller-ha-pacemaker.pot (High Availability Guide 0.0.1)  #-#-#-#-#
-#: ../controller-ha-haproxy.rst:40 ../controller-ha-pacemaker.rst:564
+#: ../controller-ha-haproxy.rst:40 ../controller-ha-pacemaker.rst:574
 msgid "``pcs``"
 msgstr ""
 
 # #-#-#-#-#  controller-ha-haproxy.pot (High Availability Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  controller-ha-pacemaker.pot (High Availability Guide 0.0.1)  #-#-#-#-#
-#: ../controller-ha-haproxy.rst:48 ../controller-ha-pacemaker.rst:555
+#: ../controller-ha-haproxy.rst:48 ../controller-ha-pacemaker.rst:565
 msgid "``crmsh``"
 msgstr ""
 
@@ -1383,58 +1383,28 @@ msgstr ""
 msgid "Make sure pcs is running and configured to start at boot time:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:73
-msgid ":command:`systemctl enable pcsd`"
-msgstr ""
-
-#: ../controller-ha-pacemaker.rst:74
-msgid ":command:`systemctl start pcsd`"
-msgstr ""
-
-#: ../controller-ha-pacemaker.rst:76
+#: ../controller-ha-pacemaker.rst:78
 msgid "Set a password for hacluster user **on each host**."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:78
+#: ../controller-ha-pacemaker.rst:80
 msgid ""
 "Since the cluster is a single administrative domain, it is generally "
 "accepted to use the same password on all nodes."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:81
-msgid ""
-":command:`echo my-secret-password-no-dont-use-this-one | passwd --stdin "
-"hacluster`"
-msgstr ""
-
-#: ../controller-ha-pacemaker.rst:84
+#: ../controller-ha-pacemaker.rst:88
 msgid ""
 "Use that password to authenticate to the nodes which will make up the "
 "cluster. The :option:`-p` option is used to give the password on command "
 "line and makes it easier to script."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:88
-msgid ""
-":command:`pcs cluster auth controller1 controller2 controller3 -u hacluster -"
-"p my-secret-password-no-dont-use-this-one --force`"
-msgstr ""
-
-#: ../controller-ha-pacemaker.rst:91
+#: ../controller-ha-pacemaker.rst:97
 msgid "Create the cluster, giving it a name, and start it:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:93
-msgid ""
-":command:`pcs cluster setup --force --name my-first-openstack-cluster "
-"controller1 controller2 controller3`"
-msgstr ""
-
-#: ../controller-ha-pacemaker.rst:95
-msgid ":command:`pcs cluster start --all`"
-msgstr ""
-
-#: ../controller-ha-pacemaker.rst:99
+#: ../controller-ha-pacemaker.rst:107
 msgid ""
 "In Red Hat Enterprise Linux or CentOS environments, this is a recommended "
 "path to perform configuration. For more information, see the `RHEL docs "
@@ -1443,61 +1413,61 @@ msgid ""
 "clustercreate-HAAR>`_."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:104
+#: ../controller-ha-pacemaker.rst:112
 msgid "Set up the cluster with `crmsh`"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:106
+#: ../controller-ha-pacemaker.rst:114
 msgid ""
 "After installing the Corosync package, you must create the :file:`/etc/"
 "corosync/corosync.conf` configuration file."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:110
+#: ../controller-ha-pacemaker.rst:118
 msgid ""
 "For Ubuntu, you should also enable the Corosync service in the ``/etc/"
 "default/corosync`` configuration file."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:113
+#: ../controller-ha-pacemaker.rst:121
 msgid ""
 "Corosync can be configured to work with either multicast or unicast IP "
 "addresses or to use the votequorum library."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:117
+#: ../controller-ha-pacemaker.rst:125
 msgid ":ref:`corosync-multicast`"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:118
+#: ../controller-ha-pacemaker.rst:126
 msgid ":ref:`corosync-unicast`"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:119
+#: ../controller-ha-pacemaker.rst:127
 msgid ":ref:`corosync-votequorum`"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:124
+#: ../controller-ha-pacemaker.rst:132
 msgid "Set up Corosync with multicast"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:126
+#: ../controller-ha-pacemaker.rst:134
 msgid ""
 "Most distributions ship an example configuration file (:file:`corosync.conf."
 "example`) as part of the documentation bundled with the Corosync package. An "
 "example Corosync configuration file is shown below:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:131
+#: ../controller-ha-pacemaker.rst:139
 msgid "**Example Corosync configuration file for multicast (corosync.conf)**"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:202 ../controller-ha-pacemaker.rst:329
-#: ../controller-ha-pacemaker.rst:413 ../controller-ha-pacemaker.rst:573
+#: ../controller-ha-pacemaker.rst:210 ../controller-ha-pacemaker.rst:342
+#: ../controller-ha-pacemaker.rst:426 ../controller-ha-pacemaker.rst:583
 msgid "Note the following:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:204
+#: ../controller-ha-pacemaker.rst:212
 msgid ""
 "The ``token`` value specifies the time, in milliseconds, during which the "
 "Corosync token is expected to be transmitted around the ring. When this "
@@ -1513,7 +1483,7 @@ msgid ""
 "failover times."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:220
+#: ../controller-ha-pacemaker.rst:228
 msgid ""
 "With ``secauth`` enabled, Corosync nodes mutually authenticate using a 128-"
 "byte shared secret stored in the :file:`/etc/corosync/authkey` file, which "
@@ -1521,29 +1491,29 @@ msgid ""
 "``secauth``, cluster communications are also encrypted."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:226
+#: ../controller-ha-pacemaker.rst:234
 msgid ""
 "In Corosync configurations using redundant networking (with more than one "
 "interface), you must select a Redundant Ring Protocol (RRP) mode other than "
 "none. ``active`` is the recommended RRP mode."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:231
+#: ../controller-ha-pacemaker.rst:239
 msgid "Note the following about the recommended interface configuration:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:233
+#: ../controller-ha-pacemaker.rst:241
 msgid ""
 "Each configured interface must have a unique ``ringnumber``, starting with 0."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:236
+#: ../controller-ha-pacemaker.rst:244
 msgid ""
 "The ``bindnetaddr`` is the network address of the interfaces to bind to. The "
 "example uses two network addresses of /24 IPv4 subnets."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:239
+#: ../controller-ha-pacemaker.rst:247
 msgid ""
 "Multicast groups (``mcastaddr``) must not be reused across cluster "
 "boundaries. In other words, no two distinct clusters should ever use the "
@@ -1552,20 +1522,20 @@ msgid ""
 "rfc2365.txt>`_."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:247
+#: ../controller-ha-pacemaker.rst:255
 msgid ""
 "For firewall configurations, note that Corosync communicates over UDP only, "
 "and uses ``mcastport`` (for receives) and ``mcastport - 1`` (for sends)."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:252
+#: ../controller-ha-pacemaker.rst:260
 msgid ""
 "The service declaration for the pacemaker service may be placed in the :file:"
 "`corosync.conf` file directly or in its own separate file, :file:`/etc/"
 "corosync/service.d/pacemaker`."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:258
+#: ../controller-ha-pacemaker.rst:266
 msgid ""
 "If you are using Corosync version 2 on Ubuntu 14.04, remove or comment out "
 "lines under the service stanza, which enables Pacemaker to start up. Another "
@@ -1574,42 +1544,42 @@ msgid ""
 "start and kill symlinks manually:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:269
+#: ../controller-ha-pacemaker.rst:277
 msgid ""
 "The Pacemaker service also requires an additional configuration file ``/etc/"
 "corosync/uidgid.d/pacemaker`` to be created with the following content:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:280
+#: ../controller-ha-pacemaker.rst:288
 msgid ""
 "Once created, the :file:`corosync.conf` file (and the :file:`authkey` file "
 "if the secauth option is enabled) must be synchronized across all cluster "
 "nodes."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:287
+#: ../controller-ha-pacemaker.rst:295
 msgid "Set up Corosync with unicast"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:289
+#: ../controller-ha-pacemaker.rst:297
 msgid ""
 "For environments that do not support multicast, Corosync should be "
 "configured for unicast. An example fragment of the :file:`corosync.conf` "
 "file for unicastis shown below:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:294
+#: ../controller-ha-pacemaker.rst:302
 msgid "**Corosync configuration file fragment for unicast (corosync.conf)**"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:331
+#: ../controller-ha-pacemaker.rst:344
 msgid ""
 "If the ``broadcast`` parameter is set to yes, the broadcast address is used "
 "for communication. If this option is set, the ``mcastaddr`` parameter should "
 "not be set."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:335
+#: ../controller-ha-pacemaker.rst:348
 msgid ""
 "The ``transport`` directive controls the transport mechanism used. To avoid "
 "the use of multicast entirely, specify the ``udpu`` unicast transport "
@@ -1619,7 +1589,7 @@ msgid ""
 "``iba``."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:344
+#: ../controller-ha-pacemaker.rst:357
 msgid ""
 "Within the ``nodelist`` directive, it is possible to specify specific "
 "information about the nodes in the cluster. The directive can contain only "
@@ -1628,23 +1598,23 @@ msgid ""
 "have at least the ``ring0_addr`` field filled."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:354
+#: ../controller-ha-pacemaker.rst:367
 msgid ""
 "For UDPU, every node that should be a member of the membership must be "
 "specified."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:357
+#: ../controller-ha-pacemaker.rst:370
 msgid "Possible options are:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:359
+#: ../controller-ha-pacemaker.rst:372
 msgid ""
 "``ring{X}_addr`` specifies the IP address of one of the nodes. {X} is the "
 "ring number."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:362
+#: ../controller-ha-pacemaker.rst:375
 msgid ""
 "``nodeid`` is optional when using IPv4 and required when using IPv6. This is "
 "a 32-bit value specifying the node identifier delivered to the cluster "
@@ -1654,11 +1624,11 @@ msgid ""
 "reserved and should not be used."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:375
+#: ../controller-ha-pacemaker.rst:388
 msgid "Set up Corosync with votequorum library"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:377
+#: ../controller-ha-pacemaker.rst:390
 msgid ""
 "The votequorum library is part of the corosync project. It provides an "
 "interface to the vote-based quorum service and it must be explicitly enabled "
@@ -1666,65 +1636,65 @@ msgid ""
 "to avoid split-brain situations, but it also provides a mechanism to:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:383
+#: ../controller-ha-pacemaker.rst:396
 msgid "Query the quorum status"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:385
+#: ../controller-ha-pacemaker.rst:398
 msgid "Get a list of nodes known to the quorum service"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:387
+#: ../controller-ha-pacemaker.rst:400
 msgid "Receive notifications of quorum state changes"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:389
+#: ../controller-ha-pacemaker.rst:402
 msgid "Change the number of votes assigned to a node"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:391
+#: ../controller-ha-pacemaker.rst:404
 msgid "Change the number of expected votes for a cluster to be quorate"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:393
+#: ../controller-ha-pacemaker.rst:406
 msgid ""
 "Connect an additional quorum device to allow small clusters remain quorate "
 "during node outages"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:396
+#: ../controller-ha-pacemaker.rst:409
 msgid ""
 "The votequorum library has been created to replace and eliminate qdisk, the "
 "disk-based quorum daemon for CMAN, from advanced cluster configurations."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:400
+#: ../controller-ha-pacemaker.rst:413
 msgid ""
 "A sample votequorum service configuration in the :file:`corosync.com` file "
 "is:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:415
+#: ../controller-ha-pacemaker.rst:428
 msgid ""
 "Specifying ``corosync_votequorum`` enables the votequorum library; this is "
 "the only required option."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:418
+#: ../controller-ha-pacemaker.rst:431
 msgid ""
 "The cluster is fully operational with ``expected_votes`` set to 7 nodes "
 "(each node has 1 vote), quorum: 4. If a list of nodes is specified as "
 "``nodelist``, the ``expected_votes`` value is ignored."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:423
+#: ../controller-ha-pacemaker.rst:436
 msgid ""
 "Setting ``wait_for_all`` to 1 means that, When starting up a cluster (all "
 "nodes down), the cluster quorum is held until all nodes are online and have "
 "joined the cluster for the first time. This parameter is new in Corosync 2.0."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:429
+#: ../controller-ha-pacemaker.rst:442
 msgid ""
 "Setting ``last_man_standing`` to 1 enables the Last Man Standing (LMS) "
 "feature; by default, it is disabled (set to 0). If a cluster is on the "
@@ -1737,7 +1707,7 @@ msgid ""
 "be set; this is not recommended for production environments."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:444
+#: ../controller-ha-pacemaker.rst:457
 msgid ""
 "``last_man_standing_window`` specifies the time, in milliseconds, required "
 "to recalculate quorum after one or more hosts have been lost from the "
@@ -1746,112 +1716,112 @@ msgid ""
 "default is 10000ms."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:456
+#: ../controller-ha-pacemaker.rst:469
 msgid "Start Corosync"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:458
+#: ../controller-ha-pacemaker.rst:471
 msgid ""
 "Corosync is started as a regular system service. Depending on your "
 "distribution, it may ship with an LSB init script, an upstart job, or a "
 "systemd unit file. Either way, the service is usually named corosync:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:463
+#: ../controller-ha-pacemaker.rst:476
 msgid ":command:`# /etc/init.d/corosync start` (LSB)"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:465
+#: ../controller-ha-pacemaker.rst:477
 msgid ":command:`# service corosync start` (LSB, alternate)"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:467
-msgid ":command:`# start corosync (upstart)`"
+#: ../controller-ha-pacemaker.rst:478
+msgid ":command:`# start corosync` (upstart)"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:469
-msgid ":command:`# systemctl start corosync (systemd)`"
+#: ../controller-ha-pacemaker.rst:479
+msgid ":command:`# systemctl start corosync` (systemd)"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:471
+#: ../controller-ha-pacemaker.rst:481
 msgid "You can now check the Corosync connectivity with two tools."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:473
+#: ../controller-ha-pacemaker.rst:483
 msgid ""
 "Use the :command:`corosync-cfgtool` utility with the :option:`-s` option to "
 "get a summary of the health of the communication rings:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:488
+#: ../controller-ha-pacemaker.rst:498
 msgid ""
 "Use the :command:`corosync-objctl` utility to dump the Corosync cluster "
 "member list:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:501
+#: ../controller-ha-pacemaker.rst:511
 msgid ""
 "You should see a ``status=joined`` entry for each of your constituent "
 "cluster nodes."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:504
+#: ../controller-ha-pacemaker.rst:514
 msgid ""
 "[TODO: Should the main example now use corosync-cmapctl and have the note "
 "give the command for Corosync version 1?]"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:509
+#: ../controller-ha-pacemaker.rst:519
 msgid ""
 "If you are using Corosync version 2, use the :command:`corosync-cmapctl` "
 "utility instead of :command:`corosync-objctl`; it is a direct replacement."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:515
+#: ../controller-ha-pacemaker.rst:525
 msgid "Start Pacemaker"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:517
+#: ../controller-ha-pacemaker.rst:527
 msgid ""
 "After the Corosync services have been started and you have verified that the "
 "cluster is communicating properly, you can start :command:`pacemakerd`, the "
 "Pacemaker master control process:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:521
+#: ../controller-ha-pacemaker.rst:531
 msgid ":command:`# /etc/init.d/pacemaker start` (LSB)"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:523
+#: ../controller-ha-pacemaker.rst:533
 msgid ":command:`# service pacemaker start` (LSB, alternate)"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:525
+#: ../controller-ha-pacemaker.rst:535
 msgid ":command:`# start pacemaker` (upstart)"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:527
+#: ../controller-ha-pacemaker.rst:537
 msgid ":command:`# systemctl start pacemaker` (systemd)"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:529
+#: ../controller-ha-pacemaker.rst:539
 msgid ""
 "After the Pacemaker services have started, Pacemaker creates a default empty "
 "cluster configuration with no resources. Use the :command:`crm_mon` utility "
 "to observe the status of Pacemaker:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:550
+#: ../controller-ha-pacemaker.rst:560
 msgid "Set basic cluster properties"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:552
+#: ../controller-ha-pacemaker.rst:562
 msgid ""
 "After you set up your Pacemaker cluster, you should set a few basic cluster "
 "properties:"
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:575
+#: ../controller-ha-pacemaker.rst:585
 msgid ""
 "Setting the ``pe-warn-series-max``, ``pe-input-series-max`` and ``pe-error-"
 "series-max`` parameters to 1000 instructs Pacemaker to keep a longer history "
@@ -1859,7 +1829,7 @@ msgid ""
 "Engine. This history is useful if you need to troubleshoot the cluster."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:581
+#: ../controller-ha-pacemaker.rst:591
 msgid ""
 "Pacemaker uses an event-driven approach to cluster state processing. The "
 "``cluster-recheck-interval`` parameter (which defaults to 15 minutes) "
@@ -1867,7 +1837,7 @@ msgid ""
 "prudent to reduce this to a shorter interval, such as 5 or 3 minutes."
 msgstr ""
 
-#: ../controller-ha-pacemaker.rst:587
+#: ../controller-ha-pacemaker.rst:597
 msgid "After you make these changes, you may commit the updated configuration."
 msgstr ""
 
@@ -2147,49 +2117,63 @@ msgid ""
 msgstr ""
 
 #: ../controller-ha-rabbitmq.rst:179
-msgid "Start RabbitMQ on all nodes and verify that the nodes are running:"
+msgid ""
+"Start the message queue service on all nodes and configure it to start when "
+"the system boots."
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:190
+#: ../controller-ha-rabbitmq.rst:182
+msgid "On Ubuntu, it is configured by default."
+msgstr ""
+
+#: ../controller-ha-rabbitmq.rst:184
+msgid "On CentOS, RHEL, openSUSE, and SLES:"
+msgstr ""
+
+#: ../controller-ha-rabbitmq.rst:191
+msgid "Verify that the nodes are running:"
+msgstr ""
+
+#: ../controller-ha-rabbitmq.rst:202
 msgid "Run the following commands on each node except the first one:"
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:204
+#: ../controller-ha-rabbitmq.rst:216
 msgid ""
 "The default node type is a disc node. In this guide, nodes join the cluster "
 "as RAM nodes."
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:207
+#: ../controller-ha-rabbitmq.rst:219
 msgid "To verify the cluster status:"
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:216
+#: ../controller-ha-rabbitmq.rst:228
 msgid ""
 "If the cluster is working, you can create usernames and passwords for the "
 "queues."
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:219
+#: ../controller-ha-rabbitmq.rst:231
 msgid ""
 "To ensure that all queues except those with auto-generated names are "
 "mirrored across all running nodes, set the ``ha-mode`` policy key to all by "
 "running the following command on one of the nodes:"
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:228
+#: ../controller-ha-rabbitmq.rst:240
 msgid "More information is available in the RabbitMQ documentation:"
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:230
+#: ../controller-ha-rabbitmq.rst:242
 msgid "`Highly Available Queues <http://www.rabbitmq.com/ha.html>`_"
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:231
+#: ../controller-ha-rabbitmq.rst:243
 msgid "`Clustering Guide <https://www.rabbitmq.com/clustering.html>`_"
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:235
+#: ../controller-ha-rabbitmq.rst:247
 msgid ""
 "As another option to make RabbitMQ highly available, RabbitMQ contains the "
 "OCF scripts for the Pacemaker cluster resource agents since version 3.5.7. "
@@ -2198,50 +2182,50 @@ msgid ""
 "<http://www.rabbitmq.com/pacemaker.html>`_."
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:244
+#: ../controller-ha-rabbitmq.rst:256
 msgid "Configure OpenStack services to use Rabbit HA queues"
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:246
+#: ../controller-ha-rabbitmq.rst:258
 msgid ""
 "We have to configure the OpenStack components to use at least two RabbitMQ "
 "nodes."
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:249
+#: ../controller-ha-rabbitmq.rst:261
 msgid "Do this configuration on all services using RabbitMQ:"
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:251
+#: ../controller-ha-rabbitmq.rst:263
 msgid "RabbitMQ HA cluster host:port pairs:"
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:257
+#: ../controller-ha-rabbitmq.rst:269
 msgid ""
 "How frequently to retry connecting with RabbitMQ: [TODO: document the unit "
 "of measure here? Seconds?]"
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:264
+#: ../controller-ha-rabbitmq.rst:276
 msgid ""
 "How long to back-off for between retries when connecting to RabbitMQ: [TODO: "
 "document the unit of measure here? Seconds?]"
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:271
+#: ../controller-ha-rabbitmq.rst:283
 msgid ""
 "Maximum retries with trying to connect to RabbitMQ (infinite by default):"
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:277
+#: ../controller-ha-rabbitmq.rst:289
 msgid "Use durable queues in RabbitMQ:"
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:283
+#: ../controller-ha-rabbitmq.rst:295
 msgid "Use HA queues in RabbitMQ (x-ha-policy: all):"
 msgstr ""
 
-#: ../controller-ha-rabbitmq.rst:291
+#: ../controller-ha-rabbitmq.rst:303
 msgid ""
 "If you change the configuration from an old set-up that did not use HA "
 "queues, you should restart the service:"
