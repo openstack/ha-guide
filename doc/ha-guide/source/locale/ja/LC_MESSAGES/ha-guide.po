@@ -3,6 +3,7 @@
 # OpenStack Infra <zanata@openstack.org>, 2015. #zanata
 # Yuko Katabami <yukokatabami@gmail.com>, 2015. #zanata
 # KATO Tomoyuki <kato.tomoyuki@jp.fujitsu.com>, 2016. #zanata
+# Kyohei Moriyama <flogofrein@gmail.com>, 2016. #zanata
 # Shinichi Take <chantake33@gmail.com>, 2016. #zanata
 # Yuta Hono <yuta.hono@ntt.com>, 2016. #zanata
 msgid ""
@@ -13,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-03-10 03:46+0000\n"
-"Last-Translator: KATO Tomoyuki <kato.tomoyuki@jp.fujitsu.com>\n"
+"PO-Revision-Date: 2016-03-31 12:49+0000\n"
+"Last-Translator: Kyohei Moriyama <flogofrein@gmail.com>\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "X-Generator: Zanata 3.7.3\n"
@@ -2888,6 +2889,15 @@ msgstr ""
 "すべてのノードにおいてメッセージキューサービスを起動し、システム起動時に起動"
 "するよう設定します。"
 
+msgid ""
+"Starting up one instance of the service on several controller nodes, when "
+"they can coexist and coordinate by other means. RPC in ``nova-conductor`` is "
+"one example of this."
+msgstr ""
+"いくつかのコントローラノードで、一つのサービスインスタンスが開始します。それ"
+"らは、ほかの意味で、共存、調和できるということであり、``nova-conductor``のRPC"
+"はその例の一つです。"
+
 msgid "Stateful service"
 msgstr "ステートフルサービス"
 
@@ -3114,6 +3124,15 @@ msgstr ""
 "アプリケーション層は、複数 AMQP ホスト向けの ``oslo.messaging`` 設定オプショ"
 "ンにより制御されます。AMQP ノードが故障したとき、アプリケーションが、指定され"
 "た再接続間隔で、設定された次のノードに再接続します。"
+
+msgid ""
+"The availability check of the instances is provided by heartbeat messages. "
+"When the connection with an instance is lost, the workload will be "
+"reassigned within the remained instances in the next polling cycle."
+msgstr ""
+"インスタンスの死活監視は、ハートビートメッセージによって提供されます。インス"
+"タンスとの接続が失われた時、次のポーリングサイクルにて、ワークロードは、残っ"
+"たインスタンスの中で再割り当てが行われます。"
 
 msgid ""
 "The benefits of this approach are the physical isolation between components "
