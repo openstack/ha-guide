@@ -38,8 +38,5 @@ Example configuration with two hosts:
 By default, `controller1` handles the caching service but,
 if the host goes down, `controller2` does the job.
 For more information about memcached installation,
-see the
-`OpenStack Cloud Administrator Guide
-<http://docs.openstack.org/admin-guide-cloud/>`_.
-
-
+see the `OpenStack Administrator Guide
+<http://docs.openstack.org/admin-guide/>`_.

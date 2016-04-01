@@ -68,7 +68,7 @@ in the OpenStack Configuration Reference.
    can be set in the :file:`/etc/ceilometer/pipeline.yaml` configuration file.
    For more information about pipelines see the `Data collection and
    processing
-   <http://docs.openstack.org/admin-guide-cloud/telemetry-data-collection.html#data-collection-and-processing>`__
+   <http://docs.openstack.org/admin-guide/telemetry-data-collection.html#data-collection-and-processing>`__
    section.
 
 To enable the compute agent to run multiple instances simultaneously with

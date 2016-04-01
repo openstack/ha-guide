@@ -31,8 +31,8 @@ An OpenStack environment includes multiple data pools for the VMs:
     or Ceph RBD as the storage back end.
 
 For more information about configuring storage back ends for
-the different storage options, see the `Cloud Administrator Guide
-<http://docs.openstack.org/admin-guide-cloud/>`_.
+the different storage options, see the `Administrator Guide
+<http://docs.openstack.org/admin-guide/>`_.
 
 This section discusses ways to protect against
 data loss in your OpenStack environment.
@@ -70,7 +70,7 @@ or even the failure of the data center itself.
 When Ceph RBD is used for ephemeral volumes
 as well as block and image storage, it supports
 `live migration
-<http://docs.openstack.org/admin-guide-cloud/compute-live-migration-usage.html>`_
+<http://docs.openstack.org/admin-guide/compute-live-migration-usage.html>`_
 of VMs with ephemeral drives;
 LVM only supports live migration of volume-backed VMs.
 
