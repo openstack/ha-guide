@@ -411,7 +411,7 @@ qdisk, the disk-based quorum daemon for CMAN,
 from advanced cluster configurations.
 
 A sample votequorum service configuration
-in the :file:`corosync.com` file is:
+in the :file:`corosync.conf` file is:
 
 .. code-block:: ini
 
