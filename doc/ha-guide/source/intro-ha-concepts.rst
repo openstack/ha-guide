@@ -101,8 +101,8 @@ Stateful service
   Making stateful services highly available can depend on whether you choose
   an active/passive or active/active configuration.
 
-Active/Passive vs Active/Active
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Active/Passive vs. Active/Active
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Stateful services may be configured as active/passive or active/active:
 
