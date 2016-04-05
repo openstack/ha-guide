@@ -26,9 +26,9 @@ network configuration information from
 `<http://docs.openstack.org/high-availability-guide/content/s-neutron-server.html>`_
 should not be included here.
 
-`LP1328922 <https://bugs.launchpad.net/openstack-manuals/+bug/1328922>`
+`LP1328922 <https://bugs.launchpad.net/openstack-manuals/+bug/1328922>`_
 and
-`LP1349398 <https://bugs.launchpad.net/openstack-manuals/+bug/1349398>`
+`LP1349398 <https://bugs.launchpad.net/openstack-manuals/+bug/1349398>`_
 are related.]
 
 OpenStack network nodes contain:
