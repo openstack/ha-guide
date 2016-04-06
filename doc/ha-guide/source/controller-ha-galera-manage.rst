@@ -175,8 +175,8 @@ strategies:
   ``SELECT ... FOR UPDATE`` type queries (used, for example, by nova
   and neutron). This issue is discussed more in the following:
 
- - http://lists.openstack.org/pipermail/openstack-dev/2014-May/035264.html
- - http://www.joinfu.com/
+  - http://lists.openstack.org/pipermail/openstack-dev/2014-May/035264.html
+  - http://www.joinfu.com/
 
 Of these options, the second one is highly recommended. Although Galera
 supports active/active configurations, we recommend active/passive
@@ -211,30 +211,30 @@ use the ``clustercheck`` utility to improve health checks.
 
       FLUSH PRIVILEGES;
 
-  You only need to do this on one cluster node. Galera Cluster
-  replicates the user to all the others.
+   You only need to do this on one cluster node. Galera Cluster
+   replicates the user to all the others.
 
 #. Create a configuration file for the HAProxy monitor service, at
    ``/etc/xinetd.d/galera-monitor``:
 
-  .. code-block:: ini
+   .. code-block:: ini
 
-     service galera-monitor {
-        port = 9200
-        disable = no
-        socket_type = stream
-        protocol = tcp
-        wait = no
-        user = root
-        group = root
-        groups = yes
-        server = /usr/bin/clustercheck
-        type = UNLISTED
-        per_source = UNLIMITED
-        log_on_success =
-        log_on_failure = HOST
-        flags = REUSE
-     }
+      service galera-monitor {
+         port = 9200
+         disable = no
+         socket_type = stream
+         protocol = tcp
+         wait = no
+         user = root
+         group = root
+         groups = yes
+         server = /usr/bin/clustercheck
+         type = UNLISTED
+         per_source = UNLIMITED
+         log_on_success =
+         log_on_failure = HOST
+         flags = REUSE
+      }
 
 #. Start the ``xinetd`` daemon for ``clustercheck``. For servers
    that use ``init``, run the following commands:
