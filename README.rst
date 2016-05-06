@@ -1,65 +1,13 @@
-OpenStack High Availability Guide
-+++++++++++++++++++++++++++++++++
+This project is no longer maintained.
 
-This repository contains the OpenStack High Availability Guide.
+The contents of this repository are still available in the Git
+source code management system.  To see the contents of this
+repository before it reached its end of life, please check out the
+previous commit with "git checkout HEAD^1".
 
-For more details, see the `OpenStack Documentation wiki page
-<http://wiki.openstack.org/Documentation>`_.
+The content has been merged into the openstack-manuals repository at
+http://git.openstack.org/cgit/openstack/openstack-manuals/
 
-Building
-========
-
-The root directory of the *OpenStack High Availability Guide*
-is ``doc/ha-guide``.
-
-To build the guide, run ``tox -e docs``.
-
-Testing of changes and building of the manual
-=============================================
-
-Install the python tox package and run ``tox`` from the top-level
-directory to use the same tests that are done as part of our Jenkins
-gating jobs.
-
-If you like to run individual tests, run:
-
- * ``tox -e checkniceness`` - to run the niceness tests
- * ``tox -e checkbuild`` - to actually build the manual
-
-tox will use the openstack-doc-tools package for execution of these
-tests.
-
-
-Contributing
-============
-
-Our community welcomes all people interested in open source cloud
-computing, and encourages you to join the `OpenStack Foundation
-<http://www.openstack.org/join>`_.
-
-The best way to get involved with the community is to talk with others
-online or at a meet up and offer contributions through our processes,
-the `OpenStack wiki <http://wiki.openstack.org>`_, blogs, or on IRC at
-``#openstack`` on ``irc.freenode.net``.
-
-We welcome all types of contributions, from blueprint designs to
-documentation to testing to deployment scripts.
-
-If you would like to contribute to the documents, please see the
-`OpenStack Documentation Contributor Guide
-<http://docs.openstack.org/contributor-guide/>`_.
-
-
-Bugs
-====
-
-Bugs should be filed on Launchpad, not GitHub:
-
-   https://bugs.launchpad.net/openstack-manuals
-
-
-Installing
-==========
-
-Refer to http://docs.openstack.org to see where these documents are published
-and to learn more about the OpenStack project.
+For any further questions, please email
+openstack-docs@lists.openstack.org or join #openstack-doc on
+Freenode.
