@@ -1,0 +1,6 @@
+- project:
+    templates:
+      - build-openstack-docs-pti
+    post:
+      jobs:
+        - publish-openstack-tox-docs-direct
