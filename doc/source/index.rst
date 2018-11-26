@@ -11,10 +11,16 @@ and assumes that you are familiar with the material in those guides.
 
 .. warning::
 
-   This guide is a work-in-progress and changing rapidly
-   while we continue to test and enhance the guidance. There are
-   open `TODO` items throughout and available on the OpenStack manuals
-   `bug list <https://bugs.launchpad.net/openstack-manuals?field.tag=ha-guide>`_.
+   This guide is a work-in-progress and changing rapidly while we
+   continue to test and enhance the guidance.  There are open TODO
+   items throughout the guide which will be tracked on
+   `the ha-guide Storyboard site
+   <https://storyboard.openstack.org/#!/project/openstack/ha-guide>`_.
+   There is also a `bug list corresponding to the old version of the
+   guide
+   <https://bugs.launchpad.net/openstack-manuals?field.tag=ha-guide>`_
+   which need to be triaged, as some of those bugs may still be
+   relevant in which case they need to be ported over to Storyboard.
    Please help where you are able.
 
 .. toctree::
