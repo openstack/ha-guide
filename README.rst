@@ -42,9 +42,9 @@ couple times through. Here is a suggested workflow to help you along the way.
 
 .. code-block:: console
 
-  git clone https://git.openstack.org/openstack/ha-guide
+  git clone https://opendev.org/openstack/ha-guide
   cd ha-guide
-  
+
   # it is useful to make changes on a separate branch in case you need to make
   # other changes
   git checkout -b my-topic

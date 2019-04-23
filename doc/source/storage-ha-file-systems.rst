@@ -66,7 +66,7 @@ Add Shared File Systems API resource to Pacemaker
    .. code-block:: console
 
       # cd /usr/lib/ocf/resource.d/openstack
-      # wget https://git.openstack.org/cgit/openstack/openstack-resource-agents/plain/ocf/manila-api
+      # wget https://opendev.org/x/openstack-resource-agents/raw/branch/master/ocf/manila-api
       # chmod a+rx *
 
 #. Add the Pacemaker configuration for the Shared File Systems

@@ -313,7 +313,7 @@ use a set of OCF agents for controlling OpenStack services.
       # cd /usr/lib/ocf/resource.d
       # mkdir openstack
       # cd openstack
-      # wget https://git.openstack.org/cgit/openstack/openstack-resource-agents/plain/ocf/keystone
+      # wget https://opendev.org/x/openstack-resource-agents/raw/branch/master/ocf/keystone
       # chmod a+rx *
 
 #. Add the Pacemaker configuration for the OpenStack Identity resource

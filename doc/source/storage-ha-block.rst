@@ -60,7 +60,7 @@ install the OCF resource agent:
 .. code-block:: console
 
    # cd /usr/lib/ocf/resource.d/openstack
-   # wget https://git.openstack.org/cgit/openstack/openstack-resource-agents/plain/ocf/cinder-api
+   # wget https://opendev.org/x/openstack-resource-agents/raw/branch/master/ocf/cinder-api
    # chmod a+rx *
 
 You can now add the Pacemaker configuration for Block Storage API resource.

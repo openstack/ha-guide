@@ -29,7 +29,7 @@ Add OpenStack Image API resource to Pacemaker
    .. code-block:: console
 
       # cd /usr/lib/ocf/resource.d/openstack
-      # wget https://git.openstack.org/cgit/openstack/openstack-resource-agents/plain/ocf/glance-api
+      # wget https://opendev.org/x/openstack-resource-agents/raw/branch/master/ocf/glance-api
       # chmod a+rx *
 
 #. Add the Pacemaker configuration for the OpenStack Image API resource.
