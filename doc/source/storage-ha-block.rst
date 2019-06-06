@@ -190,3 +190,12 @@ and define your endpoint. For example:
    $ openstack endpoint create --region $KEYSTONE_REGION \
      volumev2 internal http://10.0.0.11:8776/v2/%\(project_id\)s
 
+Use Cinder volume backup and restore service
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Cinder provides a feature to backup and restore volumes and snapshots.
+The first backup of a volume must be handled as a full backup.
+Subsequent backups may be either full or incremental backups from the
+last full backup.  See also `the Cinder Block Storage Administration
+Guide's section on backing up and restoring volumes and snapshots
+<https://docs.openstack.org/cinder/latest/admin/blockstorage-volume-backups.html>`_.
