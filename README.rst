@@ -6,7 +6,7 @@ This repository contains the source files for the OpenStack High Availability
 Guide.
 
 You can read this guide at `docs.openstack.org/ha-guide
-<http://docs.openstack.org/ha-guide>`_.
+https://docs.openstack.org/ha-guide/>`_.
 
 Prerequisites
 -------------
