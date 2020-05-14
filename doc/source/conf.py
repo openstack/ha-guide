@@ -51,8 +51,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-repository_name = "openstack/ha-guide"
-use_storyboard = True
+openstackdocs_repo_name = "openstack/ha-guide"
+openstackdocs_use_storyboard = True
 copyright = u'2016-present, OpenStack contributors'
 
 # The version info for the project you're documenting, acts as replacement for
