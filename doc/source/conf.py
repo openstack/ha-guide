@@ -53,7 +53,7 @@ master_doc = 'index'
 # General information about the project.
 openstackdocs_repo_name = "openstack/ha-guide"
 openstackdocs_use_storyboard = True
-copyright = u'2016-present, OpenStack contributors'
+copyright = '2016-present, OpenStack contributors'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -202,8 +202,8 @@ html_copy_source = False
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    ('index', 'HAGuide.tex', u'HA Guide',
-     u'OpenStack contributors', 'manual'),
+    ('index', 'HAGuide.tex', 'HA Guide',
+     'OpenStack contributors', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -232,8 +232,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'haguide', u'High Availability Guide',
-     [u'OpenStack contributors'], 1)
+    ('index', 'haguide', 'High Availability Guide',
+     ['OpenStack contributors'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -246,8 +246,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', 'HAGuide', u'High Availability Guide',
-     u'OpenStack contributors', 'HAGuide',
+    ('index', 'HAGuide', 'High Availability Guide',
+     'OpenStack contributors', 'HAGuide',
      'This guide shows OpenStack operators and deployers how to configure'
      'OpenStack to be robust and fault-tolerant.', 'Miscellaneous'),
 ]
