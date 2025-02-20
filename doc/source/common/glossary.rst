@@ -40,6 +40,14 @@ OpenStack contribution process.
 
       The code name for the thirtieth release of OpenStack.
 
+   2025.1 Epoxy
+
+      The code name for the thirty first release of OpenStack.
+
+   2025.2 Flamingo
+
+      The code name for the thirty second release of OpenStack.
+
    6to4
 
       A mechanism that allows IPv6 packets to be transmitted
@@ -411,10 +419,10 @@ B
       Storage, locally mounted file system, RADOS block devices, VMware
       datastore, and HTTP.
 
-   Backup, Restore, and Disaster Recovery service (freezer)
+   Backup and Restore service (freezer)
 
-      The project that provides integrated tooling for backing up, restoring,
-      and recovering file systems, instances, or database backups.
+      The project that provides integrated tooling for backing up and restoring
+      instances or database backups.
 
    bandwidth
 
@@ -1627,8 +1635,8 @@ F
 
    freezer
 
-      Code name for the :term:`Backup, Restore, and Disaster Recovery service
-      <Backup, Restore, and Disaster Recovery service (freezer)>`.
+      Code name for the :term:`Backup and Restore service
+      <Backup and Restore service (freezer)>`.
 
    front end
 
@@ -2875,7 +2883,7 @@ O
       `"year"."release count within the year"` and the name will be
       used mostly for marketing purposes. The first such release is
       2023.1 Antelope. Followed by, respectively, 2023.2 Bobcat,
-      2024.1 Caracal, 2024.2 Dalmatian.
+      2024.1 Caracal, 2024.2 Dalmatian, 2025.1 Epoxy.
 
    openSUSE
 
