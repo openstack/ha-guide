@@ -6,7 +6,7 @@ This repository contains the source files for the OpenStack High Availability
 Guide.
 
 You can read this guide at `docs.openstack.org/ha-guide
-https://docs.openstack.org/ha-guide/>`_.
+<https://docs.openstack.org/ha-guide/>`_.
 
 Prerequisites
 -------------
@@ -22,7 +22,7 @@ with it preinstalled, but you can review the `installation instructions
 do not have it by default.
 
 Once git is installed, you can follow the instructions for your platform to
-`install git-review <https://www.mediawiki.org/wiki/Gerrit/git-review>`_.
+`install git-review <https://docs.opendev.org/opendev/git-review/latest/installation.html>`_.
 
 The last step is to configure git with your name and email address used for
 your Gerrit account set up so it can link you patch to your user. Run the
@@ -36,6 +36,7 @@ following to set these values:
 
 Submitting Updates
 ------------------
+
 Proposing updates to the documentation is fairly straight forward once you've
 done it, but there are a few steps that can appear intimidating your first
 couple times through. Here is a suggested workflow to help you along the way.
@@ -63,13 +64,14 @@ to the docs.openstack.org site.
 
 Local Testing
 -------------
+
 If you would like to build the docs locally to make sure there are no issues
 with the changes, and to view locally generated HTML files, you will need to do
 a couple extra steps.
 
 The jobs are run using a tool called `tox`. You will need to install tox on
 your platform first following its `installation guide
-<https://tox.readthedocs.io/en/latest/install.html>`_.
+<https://tox.wiki/en/latest/installation.html>`_.
 
 You can then run the following to perform a local build with some tests:
 
