@@ -1836,10 +1836,6 @@ H
       public cloud services with orchestration between the two
       platforms.
 
-   Hyper-V
-
-      One of the hypervisors supported by OpenStack.
-
    hyperlink
 
       Any kind of text that contains a link to some other site,
@@ -4169,10 +4165,6 @@ V
    virtual VLAN
 
       Alternative term for a virtual network.
-
-   VirtualBox
-
-      An OpenStack-supported hypervisor.
 
    Vitrage
 
